@@ -1,0 +1,15 @@
+{
+  "name": "EGCOB-SARL Gestion Commerciale",
+  "short_name": "EGCOB-SARL",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f4f6f9",
+  "theme_color": "#0c2b50",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
