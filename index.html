@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b1f3a">
+
+<title>EGCOB-SARL</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f3f5f8;
+    color: #1b1b1b;
+    padding-bottom: 90px;
+}
+
+header {
+    background: #0b1f3a;
+    color: white;
+    padding: 22px 20px;
+    text-align: center;
+}
+
+.logo {
+    width: 65px;
+    height: 65px;
+    margin: auto;
+    border-radius: 50%;
+    background: #d4af37;
+    color: #0b1f3a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+header h1 {
+    font-size: 24px;
+}
+
+header p {
+    color: #d4af37;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.container {
+    padding: 15px;
+}
+
+.card {
+    background: white;
+    border-radius: 15px;
+    padding: 18px;
+    margin-bottom: 15px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
+
+.card h2 {
+    color: #0b1f3a;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.stat {
+    background: #eef2f7;
+    border-radius: 12px;
+    padding: 15px;
+}
+
+.stat h3 {
+    color: #777;
+    font-size: 13px;
+}
+
+.stat strong {
+    display: block;
+    color: #0b1f3a;
+    font-size: 22px;
+    margin-top: 8px;
+}
+
+label {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #333;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+textarea {
+    min-height: 80px;
+}
+
+button {
+    width: 100%;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.btn-primary {
+    background: #0b1f3a;
+    color: white;
+}
+
+.btn-gold {
+    background: #d4af37;
+    color: #0b1f3a;
+}
+
+.btn-danger {
+    background: #c0392b;
+    color: white;
+}
+
+.invoice {
+    border-left: 5px solid #d4af37;
+    margin-bottom: 12px;
+}
+
+.invoice h3 {
+    color: #0b1f3a;
+}
+
+.invoice p {
+    margin-top: 7px;
+    color: #555;
+}
+
+.amount {
+    font-weight: bold;
+    color: #0b1f3a;
+    font-size: 18px;
+}
+
+.delete-btn {
+    background: #c0392b;
+    color: white;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #0b1f3a;
+    display: flex;
+    justify-content: space-around;
+    padding: 12px 5px;
+    z-index: 100;
+}
+
+nav button {
+    width: auto;
+    background: transparent;
+    color: white;
+    margin: 0;
+    padding: 8px 10px;
+    font-size: 12px;
+}
+
+nav button.active {
+    color: #d4af37;
+}
+
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+.footer {
+    text-align: center;
+    color: #777;
+    margin-top: 20px;
+    font-size: 12px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">EG</div>
+    <h1>EGCOB-SARL</h1>
+    <p>Gestion Commerciale & Facturation</p>
+</header>
+
+
+<!-- ACCUEIL -->
+
+<div id="accueil" class="page active">
+<div class="container">
+
+<div class="card">
+<h2>Tableau de bord</h2>
+
+<div class="stats">
+
+<div class="stat">
+<h3>Nombre de factures</h3>
+<strong id="nombreFactures">0</strong>
+</div>
+
+<div class="stat">
+<h3>Total facturé</h3>
+<strong id="totalFacture">0 F</strong>
+</div>
+
+</div>
+</div>
+
+<div class="card">
+<h2>Bienvenue 👋</h2>
+
+<p>
+Bienvenue dans votre application de gestion EGCOB-SARL.
+Vous pouvez créer et enregistrer vos factures directement depuis votre téléphone.
+</p>
+
+</div>
+
+</div>
+</div>
+
+
+<!-- NOUVELLE FACTURE -->
+
+<div id="facture" class="page">
+<div class="container">
+
+<div class="card">
+
+<h2>Nouvelle facture</h2>
+
+<label>Nom du client</label>
+<input type="text" id="client" placeholder="Exemple : Société ABC">
+
+<label>Numéro de facture</label>
+<input type="text" id="numero" placeholder="Exemple : FACT-001">
+
+<label>Description</label>
+<textarea id="description" placeholder="Description du service ou produit"></textarea>
+
+<label>Montant (FCFA)</label>
+<input type="number" id="montant" placeholder="Exemple : 250000">
+
+<button class="btn-gold" onclick="ajouterFacture()">
+Créer la facture
+</button>
+
+</div>
+
+</div>
+</div>
+
+
+<!-- MES FACTURES -->
+
+<div id="factures" class="page">
+<div class="container">
+
+<div class="card">
+
+<h2>Mes factures</h2>
+
+<div id="listeFactures">
+
+<p style="color:#777;text-align:center;padding:20px;">
+Aucune facture enregistrée.
+</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+
+<!-- PROFIL -->
+
+<div id="profil" class="page">
+<div class="container">
+
+<div class="card">
+
+<h2>EGCOB-SARL</h2>
+
+<p><strong>Directeur Général :</strong> Ibrahima Diarra</p>
+
+<br>
+
+<p><strong>Activité :</strong></p>
+
+<p>
+Commerce • BTP • Prestations de services
+</p>
+
+<br>
+
+<button class="btn-danger" onclick="effacerDonnees()">
+Effacer toutes les factures
+</button>
+
+</div>
+
+<div class="footer">
+EGCOB-SARL © 2026
+</div>
+
+</div>
+</div>
+
+
+<!-- MENU -->
+
+<nav>
+
+<button class="active" onclick="ouvrirPage('accueil', this)">
+🏠<br>Accueil
+</button>
+
+<button onclick="ouvrirPage('facture', this)">
+➕<br>Facture
+</button>
+
+<button onclick="ouvrirPage('factures', this)">
+📄<br>Factures
+</button>
+
+<button onclick="ouvrirPage('profil', this)">
+👤<br>Profil
+</button>
+
+</nav>
+
+
+<script>
+
+let factures = JSON.parse(localStorage.getItem("egcobFactures")) || [];
+
+
+function ouvrirPage(pageId, bouton) {
+
+    document.querySelectorAll(".page").forEach(function(page) {
+        page.classList.remove("active");
+    });
+
+    document.getElementById(pageId).classList.add("active");
+
+    document.querySelectorAll("nav button").forEach(function(btn) {
+        btn.classList.remove("active");
+    });
+
+    bouton.classList.add("active");
+
+    afficherFactures();
+}
+
+
+function ajouterFacture() {
+
+    let client = document.getElementById("client").value.trim();
+    let numero = document.getElementById("numero").value.trim();
+    let description = document.getElementById("description").value.trim();
+    let montant = document.getElementById("montant").value;
+
+    if (client === "" || numero === "" || montant === "") {
+        alert("Veuillez remplir le client, le numéro et le montant.");
+        return;
+    }
+
+    let nouvelleFacture = {
+        id: Date.now(),
+        client: client,
+        numero: numero,
+        description: description,
+        montant: Number(montant),
+        date: new Date().toLocaleDateString("fr-FR")
+    };
+
+    factures.push(nouvelleFacture);
+
+    localStorage.setItem(
+        "egcobFactures",
+        JSON.stringify(factures)
+    );
+
+    document.getElementById("client").value = "";
+    document.getElementById("numero").value = "";
+    document.getElementById("description").value = "";
+    document.getElementById("montant").value = "";
+
+    afficherFactures();
+
+    alert("Facture créée avec succès !");
+}
+
+
+function afficherFactures() {
+
+    let liste = document.getElementById("listeFactures");
+
+    if (!liste) return;
+
+    liste.innerHTML = "";
+
+    if (factures.length === 0) {
+
+        liste.innerHTML =
+        '<p style="color:#777;text-align:center;padding:20px;">Aucune facture enregistrée.</p>';
+
+    } else {
+
+        factures.slice().reverse().forEach(function(facture) {
+
+            let div = document.createElement("div");
+
+            div.className = "card invoice";
+
+            div.innerHTML = `
+                <h3>${facture.client}</h3>
+
+                <p><strong>Facture :</strong> ${facture.numero}</p>
+
+                <p>${facture.description || ""}</p>
+
+                <p><strong>Date :</strong> ${facture.date}</p>
+
+                <p class="amount">
+                    ${facture.montant.toLocaleString("fr-FR")} FCFA
+                </p>
+
+                <button
+                class="delete-btn"
+                onclick="supprimerFacture(${facture.id})">
+                Supprimer
+                </button>
+            `;
+
+            liste.appendChild(div);
+
+        });
+
+    }
+
+    document.getElementById("nombreFactures").innerText =
+        factures.length;
+
+    let total = factures.reduce(function(somme, facture) {
+        return somme + facture.montant;
+    }, 0);
+
+    document.getElementById("totalFacture").innerText =
+        total.toLocaleString("fr-FR") + " F";
+}
+
+
+function supprimerFacture(id) {
+
+    if (!confirm("Voulez-vous supprimer cette facture ?")) {
+        return;
+    }
+
+    factures = factures.filter(function(facture) {
+        return facture.id !== id;
+    });
+
+    localStorage.setItem(
+        "egcobFactures",
+        JSON.stringify(factures)
+    );
+
+    afficherFactures();
+}
+
+
+function effacerDonnees() {
+
+    if (!confirm("Voulez-vous vraiment supprimer toutes les factures ?")) {
+        return;
+    }
+
+    factures = [];
+
+    localStorage.removeItem("egcobFactures");
+
+    afficherFactures();
+
+    alert("Toutes les factures ont été supprimées.");
+}
+
+
+afficherFactures();
+
+</script>
+
+</body>
+</html>
