@@ -7,1043 +7,1265 @@
 <title>EGCOB-SARL | Gestion Mobile</title>
 
 <style>
+
 :root{
-  --bleu:#17365d;
-  --bleu2:#244b78;
-  --or:#c9a227;
-  --fond:#f4f6f8;
-  --blanc:#ffffff;
-  --texte:#172033;
-  --gris:#687385;
-  --vert:#16803c;
-  --rouge:#c62828;
+    --bleu:#17365d;
+    --bleu2:#244b78;
+    --or:#c9a227;
+    --fond:#f4f6f8;
+    --blanc:#ffffff;
+    --texte:#172033;
+    --gris:#687385;
+    --vert:#16803c;
+    --rouge:#c62828;
 }
 
 *{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-  font-family:Arial,Helvetica,sans-serif;
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family:Arial, sans-serif;
 }
 
 body{
-  background:var(--fond);
-  color:var(--texte);
+    background:var(--fond);
+    color:var(--texte);
+    padding-bottom:20px;
 }
 
-header{
-  background:var(--bleu);
-  color:white;
-  padding:22px 15px;
-  text-align:center;
+/* =========================
+   EN-TÊTE
+========================= */
+
+.header{
+    background:var(--bleu);
+    color:white;
+    text-align:center;
+    padding:28px 15px 25px;
+    border-bottom:4px solid var(--or);
 }
 
-header h1{
-  font-size:28px;
-  letter-spacing:1px;
+.header h1{
+    font-size:32px;
+    letter-spacing:1px;
+    margin-bottom:10px;
 }
 
-header p{
-  color:#e1c76a;
-  margin-top:8px;
-  font-size:14px;
+.header p{
+    color:#e0c56d;
+    font-size:17px;
+    letter-spacing:1px;
 }
 
-nav{
-  display:flex;
-  overflow-x:auto;
-  background:#102846;
-  padding:8px;
-  gap:7px;
+/* =========================
+   MENU
+========================= */
+
+.nav{
+    background:#20344f;
+    display:flex;
+    overflow-x:auto;
+    padding:12px 8px;
+    gap:10px;
+    border-bottom:1px solid #ddd;
 }
 
-nav button{
-  border:none;
-  background:transparent;
-  color:white;
-  padding:11px 14px;
-  border-radius:8px;
-  white-space:nowrap;
-  cursor:pointer;
-  font-size:14px;
+.nav button{
+    border:none;
+    background:transparent;
+    color:white;
+    padding:14px 18px;
+    font-size:17px;
+    font-weight:bold;
+    border-radius:14px;
+    white-space:nowrap;
+    cursor:pointer;
 }
 
-nav button.active{
-  background:var(--or);
-  color:#172033;
-  font-weight:bold;
+.nav button.active{
+    background:#d2b34b;
+    color:#172033;
 }
+
+/* =========================
+   CONTENU
+========================= */
 
 .container{
-  max-width:900px;
-  margin:auto;
-  padding:15px;
+    max-width:1000px;
+    margin:auto;
+    padding:25px 15px;
 }
 
 .page{
-  display:none;
+    display:none;
 }
 
 .page.active{
-  display:block;
+    display:block;
 }
 
-h2{
-  color:var(--bleu);
-  margin-bottom:15px;
+.title{
+    font-size:30px;
+    color:var(--bleu);
+    margin-bottom:25px;
+}
+
+/* =========================
+   TABLEAU DE BORD
+========================= */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+    margin-bottom:20px;
 }
 
 .card{
-  background:white;
-  border-radius:14px;
-  padding:18px;
-  margin-bottom:15px;
-  box-shadow:0 3px 12px rgba(0,0,0,.08);
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
 }
 
-.stats{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:12px;
+.card p{
+    color:var(--gris);
+    font-size:18px;
+    margin-bottom:15px;
 }
 
-.stat{
-  background:white;
-  padding:16px;
-  border-radius:12px;
-  box-shadow:0 3px 12px rgba(0,0,0,.08);
+.card strong{
+    font-size:30px;
+    color:var(--bleu);
 }
 
-.stat small{
-  color:var(--gris);
-  display:block;
-  margin-bottom:8px;
+.welcome{
+    background:white;
+    border-radius:20px;
+    padding:30px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
 }
 
-.stat strong{
-  color:var(--bleu);
-  font-size:20px;
+.welcome h2{
+    margin-bottom:18px;
+    color:var(--texte);
+}
+
+.welcome p{
+    font-size:18px;
+    line-height:1.8;
+}
+
+/* =========================
+   FORMULAIRES
+========================= */
+
+.form-box{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+.form-group{
+    margin-bottom:18px;
 }
 
 label{
-  display:block;
-  margin-top:12px;
-  margin-bottom:5px;
-  font-weight:bold;
+    display:block;
+    font-weight:bold;
+    margin-bottom:8px;
 }
 
-input,select,textarea{
-  width:100%;
-  padding:12px;
-  border:1px solid #ccd2da;
-  border-radius:8px;
-  font-size:16px;
-  background:white;
+input,
+textarea,
+select{
+    width:100%;
+    padding:14px;
+    border:1px solid #d6dce5;
+    border-radius:10px;
+    font-size:16px;
 }
 
 textarea{
-  min-height:80px;
+    min-height:100px;
 }
 
 .btn{
-  border:none;
-  border-radius:8px;
-  padding:12px 16px;
-  margin-top:15px;
-  cursor:pointer;
-  font-size:15px;
-  font-weight:bold;
+    border:none;
+    padding:15px 20px;
+    border-radius:10px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:8px;
 }
 
 .btn-primary{
-  background:var(--bleu);
-  color:white;
+    background:var(--bleu);
+    color:white;
 }
 
 .btn-success{
-  background:var(--vert);
-  color:white;
+    background:var(--vert);
+    color:white;
 }
 
 .btn-danger{
-  background:var(--rouge);
-  color:white;
+    background:var(--rouge);
+    color:white;
 }
 
-.btn-gold{
-  background:var(--or);
-  color:#172033;
+.btn-warning{
+    background:var(--or);
+    color:white;
+}
+
+/* =========================
+   TABLEAUX
+========================= */
+
+.table-container{
+    overflow-x:auto;
+    background:white;
+    border-radius:15px;
+    margin-top:25px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.06);
 }
 
 table{
-  width:100%;
-  border-collapse:collapse;
-  margin-top:12px;
-  background:white;
+    width:100%;
+    border-collapse:collapse;
 }
 
 th{
-  background:var(--bleu);
-  color:white;
+    background:var(--bleu);
+    color:white;
 }
 
-th,td{
-  padding:10px;
-  border:1px solid #ddd;
-  text-align:left;
-  font-size:14px;
+th,
+td{
+    padding:14px;
+    text-align:left;
+    border-bottom:1px solid #eee;
 }
 
-.total-box{
-  background:#eef2f7;
-  padding:15px;
-  margin-top:15px;
-  border-radius:10px;
+/* =========================
+   FACTURE
+========================= */
+
+.invoice-total{
+    margin-top:20px;
+    background:#eef3f8;
+    padding:20px;
+    border-radius:15px;
 }
 
-.total-line{
-  display:flex;
-  justify-content:space-between;
-  padding:7px 0;
+.invoice-total div{
+    display:flex;
+    justify-content:space-between;
+    padding:8px 0;
+    font-size:17px;
 }
 
-.total-final{
-  font-size:20px;
-  font-weight:bold;
-  color:var(--bleu);
-  border-top:2px solid var(--bleu);
-  margin-top:8px;
-  padding-top:10px;
+.invoice-total .grand-total{
+    font-size:22px;
+    font-weight:bold;
+    color:var(--bleu);
+    border-top:2px solid #ddd;
+    margin-top:10px;
+    padding-top:15px;
 }
 
-.action-row{
-  display:flex;
-  gap:8px;
-  flex-wrap:wrap;
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+    margin-top:35px;
+    background:var(--bleu);
+    color:white;
+    padding:30px 15px;
+    text-align:center;
 }
 
-.item{
-  background:white;
-  border-radius:10px;
-  padding:14px;
-  margin-top:10px;
-  box-shadow:0 2px 8px rgba(0,0,0,.07);
+.footer-info{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+    max-width:1000px;
+    margin:auto;
 }
 
-.item-title{
-  font-weight:bold;
-  color:var(--bleu);
+.footer-block{
+    background:rgba(255,255,255,0.10);
+    padding:18px;
+    border-radius:15px;
+    line-height:1.9;
+    text-align:left;
 }
 
-.item small{
-  color:var(--gris);
+.footer-block strong{
+    color:#e0c56d;
 }
 
-.empty{
-  text-align:center;
-  color:var(--gris);
-  padding:25px;
+.footer-contact{
+    max-width:1000px;
+    margin:20px auto 0;
+    border-top:1px solid rgba(255,255,255,0.3);
+    padding-top:20px;
+    line-height:1.9;
 }
 
-footer{
-  text-align:center;
-  padding:20px;
-  color:#687385;
-  font-size:13px;
+.footer-slogan{
+    margin-top:25px;
+    padding-top:20px;
+    border-top:1px solid rgba(255,255,255,0.3);
+    color:#e0c56d;
+    font-size:18px;
 }
 
-@media(max-width:600px){
-  header h1{
-    font-size:25px;
-  }
-
-  .stats{
-    grid-template-columns:1fr 1fr;
-  }
-
-  table{
+.footer-slogan small{
+    display:block;
+    color:white;
+    margin-top:10px;
     font-size:12px;
-  }
-
-  th,td{
-    padding:7px;
-  }
+    letter-spacing:1px;
 }
 
-@media print{
-  nav,
-  .no-print,
-  footer,
-  button{
-    display:none!important;
-  }
+/* =========================
+   MOBILE
+========================= */
 
-  body{
-    background:white;
-  }
+@media(max-width:700px){
 
-  .page{
-    display:none!important;
-  }
+    .header h1{
+        font-size:28px;
+    }
 
-  #facture.page.active{
-    display:block!important;
-  }
+    .header p{
+        font-size:15px;
+    }
 
-  .card{
-    box-shadow:none;
-  }
+    .stats{
+        gap:15px;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    .card p{
+        font-size:16px;
+    }
+
+    .card strong{
+        font-size:27px;
+    }
+
+    .footer-info{
+        grid-template-columns:1fr;
+    }
+
+    .footer-block{
+        text-align:center;
+    }
+
 }
+
 </style>
 </head>
 
 <body>
 
-<header>
-  <h1>EGCOB-SARL</h1>
-  <p>COMMERCE & BTP • GESTION MOBILE</p>
+<!-- =========================
+     EN-TÊTE
+========================= -->
+
+<header class="header">
+
+    <h1>EGCOB-SARL</h1>
+
+    <p>COMMERCE & BTP • GESTION MOBILE</p>
+
 </header>
 
-<nav class="no-print">
-  <button class="active" onclick="showPage('accueil',this)">🏠 Accueil</button>
-  <button onclick="showPage('facture',this)">🧾 Facture</button>
-  <button onclick="showPage('devis',this)">📋 Devis</button>
-  <button onclick="showPage('depenses',this)">💰 Dépenses</button>
-  <button onclick="showPage('clients',this)">👥 Clients</button>
-  <button onclick="showPage('entreprise',this)">🏢 Entreprise</button>
+
+<!-- =========================
+     MENU
+========================= -->
+
+<nav class="nav">
+
+    <button class="active" onclick="showPage('accueil', this)">
+        🏠 Accueil
+    </button>
+
+    <button onclick="showPage('facture', this)">
+        🧾 Facture
+    </button>
+
+    <button onclick="showPage('devis', this)">
+        📋 Devis
+    </button>
+
+    <button onclick="showPage('depenses', this)">
+        💰 Dépenses
+    </button>
+
 </nav>
+
 
 <div class="container">
 
-<!-- ACCUEIL -->
+
+<!-- =========================
+     ACCUEIL
+========================= -->
+
 <section id="accueil" class="page active">
 
-<h2>📊 Tableau de bord</h2>
+    <h2 class="title">📊 Tableau de bord</h2>
 
-<div class="stats">
+    <div class="stats">
 
-<div class="stat">
-<small>Clients</small>
-<strong id="statClients">0</strong>
-</div>
+        <div class="card">
+            <p>Clients</p>
+            <strong id="totalClients">0</strong>
+        </div>
 
-<div class="stat">
-<small>Factures</small>
-<strong id="statFactures">0</strong>
-</div>
+        <div class="card">
+            <p>Factures</p>
+            <strong id="totalFactures">0</strong>
+        </div>
 
-<div class="stat">
-<small>Total facturé</small>
-<strong id="statTotal">0 F</strong>
-</div>
+        <div class="card">
+            <p>Total facturé</p>
+            <strong id="totalFacture">0 F</strong>
+        </div>
 
-<div class="stat">
-<small>Dépenses</small>
-<strong id="statDepenses">0 F</strong>
-</div>
+        <div class="card">
+            <p>Dépenses</p>
+            <strong id="totalDepenses">0 F</strong>
+        </div>
 
-</div>
+    </div>
 
-<div class="card">
-<h3>Bienvenue dans EGCOB-SARL</h3>
-<p style="margin-top:10px;line-height:1.6">
-Application mobile de gestion pour votre entreprise.
-Vous pouvez créer vos factures, devis, enregistrer vos clients et suivre vos dépenses.
-</p>
-</div>
+
+    <div class="welcome">
+
+        <h2>Bienvenue dans EGCOB-SARL</h2>
+
+        <p>
+            Application mobile de gestion pour votre entreprise.
+            Vous pouvez créer vos factures, préparer vos devis
+            et suivre vos dépenses.
+        </p>
+
+    </div>
 
 </section>
 
 
-<!-- FACTURE -->
+<!-- =========================
+     FACTURE
+========================= -->
+
 <section id="facture" class="page">
 
-<h2>🧾 Nouvelle facture</h2>
+    <h2 class="title">🧾 Créer une facture</h2>
 
-<div class="card">
+    <div class="form-box">
 
-<label>Numéro de facture</label>
-<input id="numeroFacture" value="FAC-001">
+        <div class="form-group">
 
-<label>Date</label>
-<input id="dateFacture" type="date">
+            <label>Nom du client</label>
 
-<label>Nom du client</label>
-<input id="clientFacture" placeholder="Nom du client">
+            <input
+                type="text"
+                id="factureClient"
+                placeholder="Nom du client">
 
-<label>Adresse / Téléphone</label>
-<input id="adresseFacture" placeholder="Adresse ou téléphone">
+        </div>
 
-</div>
 
-<div class="card">
+        <div class="form-group">
 
-<h3>Articles / Prestations</h3>
+            <label>Objet de la facture</label>
 
-<table>
-<thead>
-<tr>
-<th>Désignation</th>
-<th>Qté</th>
-<th>Prix HT</th>
-<th>Total</th>
-<th class="no-print">X</th>
-</tr>
-</thead>
+            <input
+                type="text"
+                id="factureObjet"
+                placeholder="Exemple : Travaux de construction">
 
-<tbody id="lignesFacture">
-</tbody>
+        </div>
 
-</table>
 
-<button class="btn btn-gold no-print" onclick="ajouterLigne()">
-+ Ajouter une ligne
-</button>
+        <div class="form-group">
 
-<div class="total-box">
+            <label>Montant HT</label>
 
-<div class="total-line">
-<span>Total HT</span>
-<strong id="totalHT">0 F</strong>
-</div>
+            <input
+                type="number"
+                id="factureHT"
+                placeholder="Montant hors taxe"
+                oninput="calculerFacture()">
 
-<div class="total-line">
-<span>TVA 18%</span>
-<strong id="tva">0 F</strong>
-</div>
+        </div>
 
-<div class="total-line total-final">
-<span>Total TTC</span>
-<strong id="totalTTC">0 F</strong>
-</div>
 
-</div>
+        <div class="invoice-total">
 
-<div class="action-row no-print">
+            <div>
+                <span>Total HT</span>
+                <strong id="afficherHT">0 F</strong>
+            </div>
 
-<button class="btn btn-success" onclick="enregistrerFacture()">
-💾 Enregistrer
-</button>
+            <div>
+                <span>TVA 18%</span>
+                <strong id="afficherTVA">0 F</strong>
+            </div>
 
-<button class="btn btn-primary" onclick="window.print()">
-🖨️ Imprimer
-</button>
+            <div class="grand-total">
+                <span>Total TTC</span>
+                <strong id="afficherTTC">0 F</strong>
+            </div>
 
-</div>
+        </div>
 
-</div>
 
-<div class="card">
-<h3>Factures enregistrées</h3>
-<div id="listeFactures"></div>
-</div>
+        <button
+            class="btn btn-success"
+            onclick="enregistrerFacture()">
+
+            Enregistrer la facture
+
+        </button>
+
+    </div>
+
+
+    <div class="table-container">
+
+        <table>
+
+            <thead>
+
+                <tr>
+                    <th>Client</th>
+                    <th>Objet</th>
+                    <th>Total TTC</th>
+                </tr>
+
+            </thead>
+
+            <tbody id="listeFactures">
+
+            </tbody>
+
+        </table>
+
+    </div>
 
 </section>
 
 
-<!-- DEVIS -->
+<!-- =========================
+     DEVIS
+========================= -->
+
 <section id="devis" class="page">
 
-<h2>📋 Nouveau devis</h2>
+    <h2 class="title">📋 Devis estimatif</h2>
 
-<div class="card">
+    <div class="form-box">
 
-<label>Numéro du devis</label>
-<input id="numeroDevis" value="DEV-001">
+        <div class="form-group">
 
-<label>Nom du client</label>
-<input id="clientDevis" placeholder="Nom du client">
+            <label>Nom du client</label>
 
-<label>Description des travaux / prestations</label>
-<textarea id="descriptionDevis" placeholder="Exemple : Construction, fourniture, prestation..."></textarea>
+            <input
+                type="text"
+                id="devisClient"
+                placeholder="Nom du client">
 
-<label>Montant HT</label>
-<input id="montantDevis" type="number" placeholder="0">
+        </div>
 
-<button class="btn btn-success" onclick="enregistrerDevis()">
-💾 Enregistrer le devis
-</button>
 
-</div>
+        <div class="form-group">
 
-<div class="card">
-<h3>Devis enregistrés</h3>
-<div id="listeDevis"></div>
-</div>
+            <label>Description des travaux / prestations</label>
+
+            <textarea
+                id="devisDescription"
+                placeholder="Décrivez les travaux ou prestations">
+            </textarea>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>Montant estimatif HT</label>
+
+            <input
+                type="number"
+                id="devisMontant"
+                placeholder="Montant estimatif">
+
+        </div>
+
+
+        <button
+            class="btn btn-primary"
+            onclick="enregistrerDevis()">
+
+            Enregistrer le devis
+
+        </button>
+
+    </div>
+
+
+    <div class="table-container">
+
+        <table>
+
+            <thead>
+
+                <tr>
+                    <th>Client</th>
+                    <th>Description</th>
+                    <th>Montant HT</th>
+                </tr>
+
+            </thead>
+
+            <tbody id="listeDevis">
+
+            </tbody>
+
+        </table>
+
+    </div>
 
 </section>
 
 
-<!-- DEPENSES -->
+<!-- =========================
+     DEPENSES
+========================= -->
+
 <section id="depenses" class="page">
 
-<h2>💰 Dépenses</h2>
+    <h2 class="title">💰 Enregistrer une dépense</h2>
 
-<div class="card">
+    <div class="form-box">
 
-<label>Description</label>
-<input id="depenseNom" placeholder="Exemple : Achat matériel">
+        <div class="form-group">
 
-<label>Montant</label>
-<input id="depenseMontant" type="number" placeholder="0">
+            <label>Libellé de la dépense</label>
 
-<button class="btn btn-success" onclick="ajouterDepense()">
-+ Ajouter la dépense
-</button>
+            <input
+                type="text"
+                id="depenseLibelle"
+                placeholder="Exemple : Achat de matériaux">
 
-</div>
-
-<div class="card">
-<h3>Liste des dépenses</h3>
-<div id="listeDepenses"></div>
-</div>
-
-</section>
+        </div>
 
 
-<!-- CLIENTS -->
-<section id="clients" class="page">
+        <div class="form-group">
 
-<h2>👥 Clients</h2>
+            <label>Montant</label>
 
-<div class="card">
+            <input
+                type="number"
+                id="depenseMontant"
+                placeholder="Montant en FCFA">
 
-<label>Nom complet / Entreprise</label>
-<input id="nomClient" placeholder="Nom du client">
-
-<label>Téléphone</label>
-<input id="telephoneClient" placeholder="Téléphone">
-
-<label>Adresse</label>
-<input id="adresseClient" placeholder="Adresse">
-
-<button class="btn btn-success" onclick="ajouterClient()">
-+ Ajouter le client
-</button>
-
-</div>
-
-<div class="card">
-<h3>Liste des clients</h3>
-<div id="listeClients"></div>
-</div>
-
-</section>
+        </div>
 
 
-<!-- ENTREPRISE -->
-<section id="entreprise" class="page">
+        <button
+            class="btn btn-danger"
+            onclick="enregistrerDepense()">
 
-<h2>🏢 Mon entreprise</h2>
+            Ajouter la dépense
 
-<div class="card">
+        </button>
 
-<label>Nom de l'entreprise</label>
-<input id="entrepriseNom" value="EGCOB-SARL">
+    </div>
 
-<label>Activité</label>
-<input id="entrepriseActivite" value="Commerce & BTP">
 
-<label>Directeur Général</label>
-<input id="entrepriseDirecteur" value="IBRAHIMA DIARRA">
+    <div class="table-container">
 
-<label>Adresse</label>
-<input id="entrepriseAdresse" placeholder="Adresse de l'entreprise">
+        <table>
 
-<button class="btn btn-primary" onclick="sauvegarderEntreprise()">
-💾 Enregistrer les informations
-</button>
+            <thead>
 
-</div>
+                <tr>
+                    <th>Libellé</th>
+                    <th>Montant</th>
+                </tr>
+
+            </thead>
+
+            <tbody id="listeDepenses">
+
+            </tbody>
+
+        </table>
+
+    </div>
 
 </section>
 
+
 </div>
 
-<footer>
-EGCOB-SARL • Bâtir aujourd'hui, construire demain
+
+<!-- =========================
+     INFORMATIONS EGCOB-SARL
+========================= -->
+
+<footer class="footer">
+
+    <div class="footer-info">
+
+
+        <!-- INFORMATIONS LEGALES -->
+
+        <div class="footer-block">
+
+            <strong>📄 Informations légales</strong>
+
+            <br>
+
+            R.C.C.M. : Ma Bko 2017 B 5034
+
+            <br>
+
+            NIF : 085135849D
+
+        </div>
+
+
+        <!-- INFORMATIONS BANCAIRES -->
+
+        <div class="footer-block">
+
+            <strong>🏦 Informations bancaires</strong>
+
+            <br>
+
+            Code banque : ML 109
+
+            <br>
+
+            Code guichet : 01001
+
+        </div>
+
+
+        <!-- COMPTE BANCAIRE -->
+
+        <div class="footer-block">
+
+            <strong>💳 Compte bancaire</strong>
+
+            <br>
+
+            N° de compte : 000100163151
+
+            <br>
+
+            RIB : 45 BSIC
+
+        </div>
+
+
+    </div>
+
+
+    <!-- CONTACT -->
+
+    <div class="footer-contact">
+
+        📍 Torokorobougou, R-400 P-191, Bamako – Mali
+
+        <br>
+
+        📞 +223 76 08 23 79
+
+        <br>
+
+        ✉️ egcobsarl@gmail.com
+
+    </div>
+
+
+    <!-- SLOGAN -->
+
+    <div class="footer-slogan">
+
+        <strong>EGCOB-SARL</strong>
+
+        <br>
+
+        Bâtir aujourd'hui, construire demain
+
+        <small>
+
+            PROFESSIONNALISME • QUALITÉ • INTÉGRITÉ • ENGAGEMENT
+
+        </small>
+
+    </div>
+
 </footer>
 
 
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
 <script>
 
-/* DATE */
+/* =========================
+   NAVIGATION
+========================= */
 
-document.getElementById("dateFacture").value =
-new Date().toISOString().split("T")[0];
+function showPage(pageId, button){
 
+    document.querySelectorAll(".page").forEach(function(page){
 
-/* NAVIGATION */
+        page.classList.remove("active");
 
-function showPage(id,button){
+    });
 
-document.querySelectorAll(".page").forEach(function(page){
-page.classList.remove("active");
-});
-
-document.getElementById(id).classList.add("active");
-
-document.querySelectorAll("nav button").forEach(function(btn){
-btn.classList.remove("active");
-});
-
-button.classList.add("active");
-
-}
+    document.getElementById(pageId).classList.add("active");
 
 
-/* FORMAT MONNAIE */
+    document.querySelectorAll(".nav button").forEach(function(btn){
 
-function formatMoney(nombre){
+        btn.classList.remove("active");
 
-return Number(nombre || 0).toLocaleString("fr-FR") + " F";
+    });
+
+    button.classList.add("active");
 
 }
 
 
-/* FACTURE */
-
-function ajouterLigne(){
-
-var tbody=document.getElementById("lignesFacture");
-
-var tr=document.createElement("tr");
-
-tr.innerHTML=`
-<td>
-<input type="text" placeholder="Désignation" oninput="calculerFacture()">
-</td>
-
-<td>
-<input type="number" value="1" min="1" oninput="calculerFacture()">
-</td>
-
-<td>
-<input type="number" value="0" min="0" oninput="calculerFacture()">
-</td>
-
-<td class="ligneTotal">0 F</td>
-
-<td class="no-print">
-<button class="btn btn-danger" style="margin:0;padding:7px"
-onclick="supprimerLigne(this)">X</button>
-</td>
-`;
-
-tbody.appendChild(tr);
-
-calculerFacture();
-
-}
-
-
-function supprimerLigne(button){
-
-button.closest("tr").remove();
-
-calculerFacture();
-
-}
-
+/* =========================
+   CALCUL FACTURE
+========================= */
 
 function calculerFacture(){
 
-var total=0;
+    let ht = Number(
+        document.getElementById("factureHT").value
+    ) || 0;
 
-document.querySelectorAll("#lignesFacture tr").forEach(function(ligne){
 
-var inputs=ligne.querySelectorAll("input");
+    let tva = ht * 0.18;
 
-var quantite=Number(inputs[1].value || 0);
+    let ttc = ht + tva;
 
-var prix=Number(inputs[2].value || 0);
 
-var montant=quantite*prix;
+    document.getElementById("afficherHT").innerText =
+        ht.toLocaleString("fr-FR") + " F";
 
-ligne.querySelector(".ligneTotal").innerText=formatMoney(montant);
 
-total+=montant;
+    document.getElementById("afficherTVA").innerText =
+        tva.toLocaleString("fr-FR") + " F";
 
-});
 
-var tva=total*0.18;
-
-var ttc=total+tva;
-
-document.getElementById("totalHT").innerText=formatMoney(total);
-
-document.getElementById("tva").innerText=formatMoney(tva);
-
-document.getElementById("totalTTC").innerText=formatMoney(ttc);
-
-return {ht:total,tva:tva,ttc:ttc};
+    document.getElementById("afficherTTC").innerText =
+        ttc.toLocaleString("fr-FR") + " F";
 
 }
 
+
+/* =========================
+   ENREGISTRER FACTURE
+========================= */
 
 function enregistrerFacture(){
 
-var client=document.getElementById("clientFacture").value.trim();
+    let client =
+        document.getElementById("factureClient").value;
 
-var calcul=calculerFacture();
+    let objet =
+        document.getElementById("factureObjet").value;
 
-if(client===""){
-alert("Veuillez saisir le nom du client.");
-return;
+    let ht =
+        Number(document.getElementById("factureHT").value) || 0;
+
+
+    if(client === "" || objet === "" || ht <= 0){
+
+        alert("Veuillez remplir toutes les informations.");
+
+        return;
+
+    }
+
+
+    let ttc = ht * 1.18;
+
+
+    let factures =
+        JSON.parse(localStorage.getItem("factures")) || [];
+
+
+    factures.push({
+
+        client:client,
+        objet:objet,
+        ht:ht,
+        ttc:ttc
+
+    });
+
+
+    localStorage.setItem(
+        "factures",
+        JSON.stringify(factures)
+    );
+
+
+    document.getElementById("factureClient").value = "";
+
+    document.getElementById("factureObjet").value = "";
+
+    document.getElementById("factureHT").value = "";
+
+
+    calculerFacture();
+
+    afficherFactures();
+
+    afficherTableau();
+
+    alert("Facture enregistrée avec succès !");
+
 }
 
-if(calcul.ht<=0){
-alert("Veuillez ajouter au moins une prestation avec un montant.");
-return;
-}
 
-var factures=JSON.parse(localStorage.getItem("egcob_factures") || "[]");
-
-factures.push({
-
-numero:document.getElementById("numeroFacture").value,
-date:document.getElementById("dateFacture").value,
-client:client,
-total:calcul.ttc
-
-});
-
-localStorage.setItem("egcob_factures",JSON.stringify(factures));
-
-alert("Facture enregistrée avec succès !");
-
-afficherFactures();
-
-mettreAJourTableau();
-
-}
-
+/* =========================
+   AFFICHER FACTURES
+========================= */
 
 function afficherFactures(){
 
-var factures=JSON.parse(localStorage.getItem("egcob_factures") || "[]");
-
-var zone=document.getElementById("listeFactures");
-
-if(factures.length===0){
-
-zone.innerHTML='<div class="empty">Aucune facture enregistrée.</div>';
-
-return;
-
-}
-
-zone.innerHTML="";
-
-factures.slice().reverse().forEach(function(facture){
-
-zone.innerHTML+=`
-<div class="item">
-<div class="item-title">${facture.numero}</div>
-<small>${facture.client} • ${facture.date}</small>
-<div style="margin-top:8px;font-weight:bold">
-${formatMoney(facture.total)}
-</div>
-</div>
-`;
-
-});
-
-}
+    let factures =
+        JSON.parse(localStorage.getItem("factures")) || [];
 
 
-/* CLIENTS */
+    let liste =
+        document.getElementById("listeFactures");
 
-function ajouterClient(){
 
-var nom=document.getElementById("nomClient").value.trim();
+    liste.innerHTML = "";
 
-if(nom===""){
-alert("Veuillez saisir le nom du client.");
-return;
-}
 
-var clients=JSON.parse(localStorage.getItem("egcob_clients") || "[]");
+    factures.forEach(function(facture){
 
-clients.push({
+        let ligne = document.createElement("tr");
 
-nom:nom,
-telephone:document.getElementById("telephoneClient").value,
-adresse:document.getElementById("adresseClient").value
 
-});
+        ligne.innerHTML =
 
-localStorage.setItem("egcob_clients",JSON.stringify(clients));
+            "<td>" + facture.client + "</td>" +
 
-document.getElementById("nomClient").value="";
-document.getElementById("telephoneClient").value="";
-document.getElementById("adresseClient").value="";
+            "<td>" + facture.objet + "</td>" +
 
-afficherClients();
+            "<td>" +
+            facture.ttc.toLocaleString("fr-FR") +
+            " F</td>";
 
-mettreAJourTableau();
+
+        liste.appendChild(ligne);
+
+    });
 
 }
 
 
-function afficherClients(){
-
-var clients=JSON.parse(localStorage.getItem("egcob_clients") || "[]");
-
-var zone=document.getElementById("listeClients");
-
-if(clients.length===0){
-
-zone.innerHTML='<div class="empty">Aucun client enregistré.</div>';
-
-return;
-
-}
-
-zone.innerHTML="";
-
-clients.forEach(function(client){
-
-zone.innerHTML+=`
-<div class="item">
-<div class="item-title">${client.nom}</div>
-<small>📞 ${client.telephone || "Non renseigné"}</small><br>
-<small>📍 ${client.adresse || "Non renseignée"}</small>
-</div>
-`;
-
-});
-
-}
-
-
-/* DEPENSES */
-
-function ajouterDepense(){
-
-var nom=document.getElementById("depenseNom").value.trim();
-
-var montant=Number(document.getElementById("depenseMontant").value);
-
-if(nom==="" || montant<=0){
-
-alert("Veuillez remplir la description et le montant.");
-
-return;
-
-}
-
-var depenses=JSON.parse(localStorage.getItem("egcob_depenses") || "[]");
-
-depenses.push({
-
-nom:nom,
-montant:montant,
-date:new Date().toLocaleDateString("fr-FR")
-
-});
-
-localStorage.setItem("egcob_depenses",JSON.stringify(depenses));
-
-document.getElementById("depenseNom").value="";
-document.getElementById("depenseMontant").value="";
-
-afficherDepenses();
-
-mettreAJourTableau();
-
-}
-
-
-function afficherDepenses(){
-
-var depenses=JSON.parse(localStorage.getItem("egcob_depenses") || "[]");
-
-var zone=document.getElementById("listeDepenses");
-
-if(depenses.length===0){
-
-zone.innerHTML='<div class="empty">Aucune dépense enregistrée.</div>';
-
-return;
-
-}
-
-zone.innerHTML="";
-
-depenses.slice().reverse().forEach(function(depense){
-
-zone.innerHTML+=`
-<div class="item">
-<div class="item-title">${depense.nom}</div>
-<small>${depense.date}</small>
-<div style="margin-top:8px;font-weight:bold;color:#c62828">
--${formatMoney(depense.montant)}
-</div>
-</div>
-`;
-
-});
-
-}
-
-
-/* DEVIS */
+/* =========================
+   ENREGISTRER DEVIS
+========================= */
 
 function enregistrerDevis(){
 
-var client=document.getElementById("clientDevis").value.trim();
+    let client =
+        document.getElementById("devisClient").value;
 
-var montant=Number(document.getElementById("montantDevis").value);
+    let description =
+        document.getElementById("devisDescription").value;
 
-if(client==="" || montant<=0){
+    let montant =
+        Number(document.getElementById("devisMontant").value) || 0;
 
-alert("Veuillez saisir le client et le montant.");
 
-return;
+    if(client === "" || description === "" || montant <= 0){
+
+        alert("Veuillez remplir toutes les informations.");
+
+        return;
+
+    }
+
+
+    let devis =
+        JSON.parse(localStorage.getItem("devis")) || [];
+
+
+    devis.push({
+
+        client:client,
+        description:description,
+        montant:montant
+
+    });
+
+
+    localStorage.setItem(
+        "devis",
+        JSON.stringify(devis)
+    );
+
+
+    document.getElementById("devisClient").value = "";
+
+    document.getElementById("devisDescription").value = "";
+
+    document.getElementById("devisMontant").value = "";
+
+
+    afficherDevis();
+
+    alert("Devis enregistré avec succès !");
 
 }
 
-var devis=JSON.parse(localStorage.getItem("egcob_devis") || "[]");
 
-devis.push({
-
-numero:document.getElementById("numeroDevis").value,
-client:client,
-description:document.getElementById("descriptionDevis").value,
-montant:montant
-
-});
-
-localStorage.setItem("egcob_devis",JSON.stringify(devis));
-
-document.getElementById("clientDevis").value="";
-document.getElementById("descriptionDevis").value="";
-document.getElementById("montantDevis").value="";
-
-afficherDevis();
-
-alert("Devis enregistré avec succès !");
-
-}
-
+/* =========================
+   AFFICHER DEVIS
+========================= */
 
 function afficherDevis(){
 
-var devis=JSON.parse(localStorage.getItem("egcob_devis") || "[]");
-
-var zone=document.getElementById("listeDevis");
-
-if(devis.length===0){
-
-zone.innerHTML='<div class="empty">Aucun devis enregistré.</div>';
-
-return;
-
-}
-
-zone.innerHTML="";
-
-devis.slice().reverse().forEach(function(devisItem){
-
-zone.innerHTML+=`
-<div class="item">
-<div class="item-title">${devisItem.numero}</div>
-<small>${devisItem.client}</small>
-<div style="margin-top:7px">${devisItem.description}</div>
-<div style="margin-top:8px;font-weight:bold">
-${formatMoney(devisItem.montant)}
-</div>
-</div>
-`;
-
-});
-
-}
+    let devis =
+        JSON.parse(localStorage.getItem("devis")) || [];
 
 
-/* ENTREPRISE */
+    let liste =
+        document.getElementById("listeDevis");
 
-function sauvegarderEntreprise(){
 
-var entreprise={
+    liste.innerHTML = "";
 
-nom:document.getElementById("entrepriseNom").value,
-activite:document.getElementById("entrepriseActivite").value,
-directeur:document.getElementById("entrepriseDirecteur").value,
-adresse:document.getElementById("entrepriseAdresse").value
 
-};
+    devis.forEach(function(item){
 
-localStorage.setItem("egcob_entreprise",JSON.stringify(entreprise));
+        let ligne =
+            document.createElement("tr");
 
-alert("Informations de l'entreprise enregistrées !");
+
+        ligne.innerHTML =
+
+            "<td>" + item.client + "</td>" +
+
+            "<td>" + item.description + "</td>" +
+
+            "<td>" +
+            item.montant.toLocaleString("fr-FR") +
+            " F</td>";
+
+
+        liste.appendChild(ligne);
+
+    });
 
 }
 
 
-function chargerEntreprise(){
+/* =========================
+   ENREGISTRER DEPENSE
+========================= */
 
-var entreprise=JSON.parse(localStorage.getItem("egcob_entreprise") || "null");
+function enregistrerDepense(){
 
-if(!entreprise)return;
+    let libelle =
+        document.getElementById("depenseLibelle").value;
 
-document.getElementById("entrepriseNom").value=entreprise.nom || "";
-document.getElementById("entrepriseActivite").value=entreprise.activite || "";
-document.getElementById("entrepriseDirecteur").value=entreprise.directeur || "";
-document.getElementById("entrepriseAdresse").value=entreprise.adresse || "";
+    let montant =
+        Number(
+            document.getElementById("depenseMontant").value
+        ) || 0;
+
+
+    if(libelle === "" || montant <= 0){
+
+        alert("Veuillez remplir toutes les informations.");
+
+        return;
+
+    }
+
+
+    let depenses =
+        JSON.parse(localStorage.getItem("depenses")) || [];
+
+
+    depenses.push({
+
+        libelle:libelle,
+        montant:montant
+
+    });
+
+
+    localStorage.setItem(
+        "depenses",
+        JSON.stringify(depenses)
+    );
+
+
+    document.getElementById("depenseLibelle").value = "";
+
+    document.getElementById("depenseMontant").value = "";
+
+
+    afficherDepenses();
+
+    afficherTableau();
+
+    alert("Dépense enregistrée avec succès !");
 
 }
 
 
-/* TABLEAU DE BORD */
+/* =========================
+   AFFICHER DEPENSES
+========================= */
 
-function mettreAJourTableau(){
+function afficherDepenses(){
 
-var clients=JSON.parse(localStorage.getItem("egcob_clients") || "[]");
+    let depenses =
+        JSON.parse(localStorage.getItem("depenses")) || [];
 
-var factures=JSON.parse(localStorage.getItem("egcob_factures") || "[]");
 
-var depenses=JSON.parse(localStorage.getItem("egcob_depenses") || "[]");
+    let liste =
+        document.getElementById("listeDepenses");
 
-var totalFactures=factures.reduce(function(total,item){
 
-return total+Number(item.total || 0);
+    liste.innerHTML = "";
 
-},0);
 
-var totalDepenses=depenses.reduce(function(total,item){
+    depenses.forEach(function(depense){
 
-return total+Number(item.montant || 0);
+        let ligne =
+            document.createElement("tr");
 
-},0);
 
-document.getElementById("statClients").innerText=clients.length;
+        ligne.innerHTML =
 
-document.getElementById("statFactures").innerText=factures.length;
+            "<td>" +
+            depense.libelle +
+            "</td>" +
 
-document.getElementById("statTotal").innerText=formatMoney(totalFactures);
+            "<td>" +
+            depense.montant.toLocaleString("fr-FR") +
+            " F</td>";
 
-document.getElementById("statDepenses").innerText=formatMoney(totalDepenses);
+
+        liste.appendChild(ligne);
+
+    });
 
 }
 
 
-/* DEMARRAGE */
+/* =========================
+   TABLEAU DE BORD
+========================= */
 
-ajouterLigne();
+function afficherTableau(){
+
+    let factures =
+        JSON.parse(localStorage.getItem("factures")) || [];
+
+
+    let depenses =
+        JSON.parse(localStorage.getItem("depenses")) || [];
+
+
+    let totalFacture = 0;
+
+    let totalDepenses = 0;
+
+
+    factures.forEach(function(facture){
+
+        totalFacture += facture.ttc;
+
+    });
+
+
+    depenses.forEach(function(depense){
+
+        totalDepenses += depense.montant;
+
+    });
+
+
+    let clients = [];
+
+
+    factures.forEach(function(facture){
+
+        if(!clients.includes(facture.client)){
+
+            clients.push(facture.client);
+
+        }
+
+    });
+
+
+    document.getElementById("totalClients").innerText =
+        clients.length;
+
+
+    document.getElementById("totalFactures").innerText =
+        factures.length;
+
+
+    document.getElementById("totalFacture").innerText =
+        totalFacture.toLocaleString("fr-FR") + " F";
+
+
+    document.getElementById("totalDepenses").innerText =
+        totalDepenses.toLocaleString("fr-FR") + " F";
+
+}
+
+
+/* =========================
+   CHARGEMENT
+========================= */
 
 afficherFactures();
 
-afficherClients();
+afficherDevis();
 
 afficherDepenses();
 
-afficherDevis();
-
-chargerEntreprise();
-
-mettreAJourTableau();
+afficherTableau();
 
 </script>
 
