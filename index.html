@@ -1,1 +1,242 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EGCOB-SARL</title>
 
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f6f8;
+    color:#172033;
+}
+
+header{
+    background:#0b2a4a;
+    color:white;
+    padding:22px 15px;
+    text-align:center;
+}
+
+header h1{
+    font-size:26px;
+}
+
+header p{
+    margin-top:7px;
+    color:#d4af37;
+    font-size:14px;
+}
+
+.container{
+    max-width:1000px;
+    margin:auto;
+    padding:15px;
+}
+
+.menu{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+    gap:12px;
+    margin-top:15px;
+}
+
+.menu button{
+    border:none;
+    border-radius:12px;
+    padding:22px 10px;
+    background:white;
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
+    font-size:16px;
+    font-weight:bold;
+    color:#0b2a4a;
+    cursor:pointer;
+}
+
+.menu button:active{
+    transform:scale(.98);
+}
+
+.page{
+    display:none;
+    background:white;
+    margin-top:20px;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+}
+
+.page.active{
+    display:block;
+}
+
+h2{
+    color:#0b2a4a;
+    margin-bottom:18px;
+}
+
+input, textarea, select{
+    width:100%;
+    padding:12px;
+    margin:7px 0;
+    border:1px solid #ccd3da;
+    border-radius:8px;
+    font-size:15px;
+}
+
+textarea{
+    min-height:80px;
+}
+
+.btn{
+    border:none;
+    padding:12px 18px;
+    margin:6px 3px;
+    border-radius:8px;
+    background:#0b2a4a;
+    color:white;
+    font-size:15px;
+    cursor:pointer;
+}
+
+.btn.gold{
+    background:#d4af37;
+    color:#111;
+}
+
+.btn.red{
+    background:#c62828;
+}
+
+.btn.green{
+    background:#238636;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:15px;
+    font-size:14px;
+}
+
+th{
+    background:#0b2a4a;
+    color:white;
+}
+
+th,td{
+    border:1px solid #cfd6dd;
+    padding:8px;
+    text-align:left;
+}
+
+.total{
+    margin-top:20px;
+    padding:15px;
+    background:#eef3f7;
+    border-radius:10px;
+    font-size:17px;
+}
+
+.total div{
+    display:flex;
+    justify-content:space-between;
+    margin:8px 0;
+}
+
+.big{
+    font-size:20px;
+    font-weight:bold;
+    color:#0b2a4a;
+}
+
+.client-box{
+    margin-bottom:15px;
+    padding:15px;
+    background:#f7f9fb;
+    border-radius:10px;
+}
+
+.action-bar{
+    margin-top:20px;
+}
+
+.document{
+    background:white;
+    padding:20px;
+}
+
+.document-header{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    border-bottom:3px solid #d4af37;
+    padding-bottom:15px;
+    margin-bottom:20px;
+}
+
+.document-header h1{
+    color:#0b2a4a;
+}
+
+.small{
+    font-size:13px;
+    color:#555;
+    margin-top:5px;
+}
+
+.hidden{
+    display:none;
+}
+
+@media(max-width:600px){
+    .document-header{
+        flex-direction:column;
+    }
+
+    table{
+        font-size:11px;
+    }
+
+    th,td{
+        padding:5px;
+    }
+
+    .btn{
+        width:100%;
+        margin:5px 0;
+    }
+}
+
+@media print{
+    body *{
+        visibility:hidden;
+    }
+
+    #printArea, #printArea *{
+        visibility:visible;
+    }
+
+    #printArea{
+        position:absolute;
+        left:0;
+        top:0;
+        width:100%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>EGCOB-SARL</h1>
+    <p>COMMERCE & BTP • GESTION MOBILE</p>
+</
