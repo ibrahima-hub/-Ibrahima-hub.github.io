@@ -2,10 +2,9 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>EGCOB-SARL | Facture & Pro Forma</title>
+<title>EGCOB-SARL | Gestion Mobile</title>
 
 <style>
 
@@ -56,8 +55,8 @@ body{
     background:#1b3555;
     display:flex;
     justify-content:center;
-    gap:10px;
-    padding:15px;
+    gap:8px;
+    padding:12px;
     flex-wrap:wrap;
 }
 
@@ -65,11 +64,11 @@ body{
     border:none;
     background:transparent;
     color:white;
-    padding:14px 25px;
-    font-size:17px;
+    padding:12px 18px;
+    font-size:15px;
     font-weight:bold;
     cursor:pointer;
-    border-radius:12px;
+    border-radius:10px;
 }
 
 .menu button.active{
@@ -136,14 +135,15 @@ select{
 }
 
 textarea{
-    min-height:80px;
+    min-height:90px;
+    resize:vertical;
 }
 
 .btn{
     border:none;
-    padding:14px 20px;
+    padding:13px 18px;
     border-radius:10px;
-    font-size:16px;
+    font-size:15px;
     font-weight:bold;
     cursor:pointer;
     margin:5px;
@@ -174,9 +174,7 @@ textarea{
     text-align:center;
 }
 
-/* =========================
-   FACTURE IMPRESSION
-========================= */
+/* DOCUMENT */
 
 .invoice{
     background:white;
@@ -189,7 +187,7 @@ textarea{
 .invoice-top{
     display:flex;
     justify-content:space-between;
-    gap:30px;
+    gap:25px;
     align-items:flex-start;
     border-bottom:2px solid var(--or);
     padding-bottom:20px;
@@ -202,20 +200,26 @@ textarea{
 }
 
 .logo-zone img{
-    width:190px;
-    max-height:150px;
+    width:180px;
+    max-height:140px;
     object-fit:contain;
 }
 
 .logo-text h1{
     color:var(--bleu);
-    font-size:30px;
+    font-size:28px;
 }
 
 .logo-text p{
     color:var(--or);
-    font-size:15px;
     margin-top:5px;
+}
+
+.company-address{
+    margin-top:12px;
+    color:var(--texte);
+    font-size:14px;
+    line-height:1.6;
 }
 
 .invoice-title{
@@ -226,13 +230,12 @@ textarea{
     display:inline-block;
     background:var(--bleu);
     color:white;
-    padding:12px 30px;
-    font-size:28px;
+    padding:12px 25px;
+    font-size:26px;
 }
 
 .invoice-title p{
-    margin-top:15px;
-    font-size:16px;
+    margin-top:12px;
 }
 
 .invoice-number{
@@ -260,15 +263,13 @@ textarea{
     padding:8px 15px;
     margin:-18px 0 15px -18px;
     border-radius:8px 0 8px 0;
-    font-size:15px;
+    font-size:14px;
 }
 
 .info-box p{
     margin:8px 0;
     line-height:1.5;
 }
-
-/* TABLE */
 
 .invoice-table{
     width:100%;
@@ -279,33 +280,30 @@ textarea{
 .invoice-table th{
     background:var(--bleu);
     color:white;
-    padding:12px 8px;
+    padding:12px 7px;
     border:1px solid #aeb7c3;
     text-align:center;
 }
 
 .invoice-table td{
     border:1px solid #aeb7c3;
-    padding:10px 7px;
+    padding:9px 6px;
     text-align:center;
 }
 
-.invoice-table input{
+.invoice-table input,
+.invoice-table textarea{
     border:none;
-    padding:5px;
+    padding:6px;
     border-radius:0;
     text-align:center;
     width:100%;
 }
 
-.invoice-table input:focus{
-    outline:1px solid var(--or);
-}
-
 .bottom-zone{
     display:grid;
     grid-template-columns:1.2fr 1fr;
-    gap:30px;
+    gap:25px;
     margin-top:25px;
 }
 
@@ -354,7 +352,7 @@ textarea{
 }
 
 .signature-box{
-    width:350px;
+    width:330px;
 }
 
 .signature-box h4{
@@ -369,28 +367,26 @@ textarea{
     border-radius:10px;
 }
 
-/* ADMINISTRATIF */
+/* PIED DE PAGE */
 
 .admin-title{
     text-align:center;
-    margin:30px 0 20px;
+    margin:30px 0 15px;
     color:var(--bleu);
-    font-size:20px;
+    font-size:18px;
     border-bottom:2px solid var(--or);
-    padding-bottom:10px;
+    padding-bottom:8px;
 }
 
 .admin-grid{
     display:grid;
     grid-template-columns:repeat(6,1fr);
-    gap:0;
-    border-top:1px solid #ddd;
-    border-bottom:1px solid #ddd;
+    border:1px solid #ddd;
 }
 
 .admin-item{
     text-align:center;
-    padding:15px 8px;
+    padding:12px 7px;
     border-right:1px solid #ddd;
 }
 
@@ -401,34 +397,64 @@ textarea{
 .admin-item strong{
     display:block;
     color:var(--bleu);
-    margin-bottom:8px;
+    margin-bottom:7px;
+    font-size:12px;
 }
 
 .admin-item span{
-    font-size:14px;
+    font-size:12px;
 }
 
-.invoice-footer{
-    margin-top:25px;
+.home-box{
+    text-align:center;
+    padding:45px 20px;
+}
+
+.home-box h2{
+    font-size:32px;
+}
+
+.home-box p{
+    font-size:18px;
+    line-height:1.8;
+}
+
+.expense-table,
+.client-table,
+.tech-table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:15px;
+}
+
+.expense-table th,
+.client-table th,
+.tech-table th{
     background:var(--bleu);
     color:white;
-    padding:18px;
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:15px;
-    text-align:center;
-    border-bottom:5px solid var(--or);
+    padding:13px;
+    border:1px solid #aeb7c3;
 }
 
-.invoice-footer div{
-    font-size:14px;
+.expense-table td,
+.client-table td,
+.tech-table td{
+    border:1px solid #aeb7c3;
+    padding:10px;
 }
 
-.empty-logo{
-    display:none;
+.expense-table input,
+.client-table input,
+.tech-table textarea{
+    border:none;
+    width:100%;
+    padding:8px;
+    border-radius:0;
 }
 
-/* MOBILE */
+.tech-table textarea{
+    min-height:70px;
+}
 
 @media(max-width:750px){
 
@@ -444,14 +470,8 @@ textarea{
         text-align:left;
     }
 
-    .info-boxes{
-        grid-template-columns:1fr;
-    }
-
-    .form-grid{
-        grid-template-columns:1fr;
-    }
-
+    .info-boxes,
+    .form-grid,
     .bottom-zone{
         grid-template-columns:1fr;
     }
@@ -464,25 +484,20 @@ textarea{
         border-bottom:1px solid #ddd;
     }
 
-    .invoice-footer{
-        grid-template-columns:1fr;
-    }
-
     .logo-zone img{
-        width:150px;
+        width:140px;
     }
 
     .invoice-table{
-        font-size:12px;
+        font-size:11px;
     }
 
     .invoice-table th,
     .invoice-table td{
-        padding:5px 2px;
+        padding:4px 2px;
     }
-}
 
-/* IMPRESSION */
+}
 
 @media print{
 
@@ -511,13 +526,14 @@ textarea{
         display:block !important;
     }
 
-    .invoice{
+    .invoice,
+    .card{
         box-shadow:none;
         width:100%;
         max-width:100%;
         margin:0;
-        padding:20px;
     }
+
 }
 
 </style>
@@ -525,33 +541,34 @@ textarea{
 
 <body>
 
-
-<!-- =========================
-     ENTÊTE APPLICATION
-========================= -->
-
 <header class="app-header">
 
-    <h1>EGCOB-SARL</h1>
+<h1>EGCOB-SARL</h1>
 
-    <p>COMMERCE & BTP • GESTION MOBILE</p>
+<p>COMMERCE & BTP • GESTION MOBILE</p>
 
 </header>
 
 
-<!-- =========================
-     MENU
-========================= -->
-
 <nav class="menu no-print">
 
-    <button class="active" onclick="showSection('facture', this)">
-        🧾 Facture
-    </button>
+<button class="active" onclick="showSection('accueil',this)">🏠 Accueil</button>
 
-    <button onclick="showSection('proforma', this)">
-        📄 Facture Pro Forma
-    </button>
+<button onclick="showSection('facture',this)">🧾 Facture</button>
+
+<button onclick="showSection('proforma',this)">📄 Facture Pro Forma</button>
+
+<button onclick="showSection('devis',this)">📝 Devis</button>
+
+<button onclick="showSection('livraison',this)">🚚 Bordereau de livraison</button>
+
+<button onclick="showSection('prix',this)">💰 Bordereau des prix unitaires</button>
+
+<button onclick="showSection('depenses',this)">💸 Dépenses</button>
+
+<button onclick="showSection('clients',this)">👥 Clients</button>
+
+<button onclick="showSection('technique',this)">⚙️ Caractéristiques techniques</button>
 
 </nav>
 
@@ -559,12 +576,34 @@ textarea{
 <div class="container">
 
 
-<!-- =====================================================
-     SECTION FACTURE
-===================================================== -->
+<!-- ACCUEIL -->
 
-<section id="facture" class="section active">
+<section id="accueil" class="section active">
 
+<div class="card home-box">
+
+<h2>Bienvenue chez EGCOB-SARL</h2>
+
+<p>
+<strong>COMMERCE & BTP</strong><br>
+<i>Bâtir aujourd'hui, construire demain</i>
+</p>
+
+<br>
+
+<p>
+Cette application vous permet de gérer vos documents commerciaux,
+vos factures, vos clients, vos dépenses et vos documents techniques.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- FACTURE -->
+
+<section id="facture" class="section">
 
 <div class="card form-card no-print">
 
@@ -574,22 +613,22 @@ textarea{
 
 <div class="form-group">
 <label>Nom du client</label>
-<input type="text" id="f_client" placeholder="Nom du client">
+<input type="text" id="f_client">
 </div>
 
 <div class="form-group">
 <label>Adresse du client</label>
-<input type="text" id="f_adresse" placeholder="Adresse">
+<input type="text" id="f_adresse">
 </div>
 
 <div class="form-group">
 <label>Téléphone</label>
-<input type="text" id="f_phone" placeholder="+223 ...">
+<input type="text" id="f_phone">
 </div>
 
 <div class="form-group">
 <label>Email</label>
-<input type="email" id="f_email" placeholder="email@exemple.com">
+<input type="email" id="f_email">
 </div>
 
 <div class="form-group">
@@ -609,22 +648,17 @@ textarea{
 
 <div class="form-group">
 <label>Mode de paiement</label>
-
 <select id="f_paiement">
 <option>Espèces</option>
 <option>Virement bancaire</option>
 <option>Chèque</option>
 <option>Mobile Money</option>
 </select>
-
 </div>
 
 <div class="form-group full">
-
 <label>Référence / Contrat</label>
-
-<input type="text" id="f_reference" placeholder="Référence ou contrat">
-
+<input type="text" id="f_reference">
 </div>
 
 </div>
@@ -632,24 +666,15 @@ textarea{
 </div>
 
 
-<!-- =========================
-     APERCU FACTURE
-========================= -->
-
-<div class="invoice" id="invoiceFacture">
-
+<div class="invoice">
 
 <div class="invoice-top">
 
 <div class="logo-zone">
 
-<!-- METTRE VOTRE LOGO DANS GITHUB SOUS LE NOM logo.png -->
+<img src="logo.png" alt="Logo EGCOB-SARL">
 
-<img src="logo.png"
-     alt="Logo EGCOB-SARL"
-     onerror="this.style.display='none'; document.getElementById('logoFallback').style.display='block';">
-
-<div class="logo-text" id="logoFallback">
+<div class="logo-text">
 
 <h1>EGCOB-SARL</h1>
 
@@ -657,90 +682,61 @@ textarea{
 
 <p><i>Bâtir aujourd'hui, construire demain</i></p>
 
-</div>
+<div class="company-address">
+
+📍 Torokorobougou, R-400 P-191, Bamako – Mali<br>
+📞 +223 76 08 23 79<br>
+✉️ egcobsarl@gmail.com
 
 </div>
 
+</div>
+
+</div>
 
 <div class="invoice-title">
 
 <h2>FACTURE</h2>
 
-<p>
-<strong>N° FACTURE :</strong>
-<span class="invoice-number" id="out_numero">
-FAC-2026-001
-</span>
-</p>
+<p><strong>N° :</strong> <span id="out_numero">FAC-2026-001</span></p>
 
-<p>
-<strong>DATE :</strong>
-<span id="out_date"></span>
-</p>
+<p><strong>DATE :</strong> <span id="out_date"></span></p>
 
 </div>
 
 </div>
 
-
-<!-- CLIENT + INFORMATION -->
 
 <div class="info-boxes">
-
 
 <div class="info-box">
 
 <h3>FACTURÉ À :</h3>
 
-<p>
-<strong>Nom du client :</strong>
-<span id="out_client"></span>
-</p>
+<p><strong>Nom :</strong> <span id="out_client"></span></p>
 
-<p>
-<strong>Adresse :</strong>
-<span id="out_adresse"></span>
-</p>
+<p><strong>Adresse :</strong> <span id="out_adresse"></span></p>
 
-<p>
-<strong>Téléphone :</strong>
-<span id="out_phone"></span>
-</p>
+<p><strong>Téléphone :</strong> <span id="out_phone"></span></p>
 
-<p>
-<strong>Email :</strong>
-<span id="out_email"></span>
-</p>
+<p><strong>Email :</strong> <span id="out_email"></span></p>
 
 </div>
-
 
 <div class="info-box">
 
-<h3>INFORMATIONS FACTURE :</h3>
+<h3>INFORMATIONS :</h3>
 
-<p>
-<strong>Date d'échéance :</strong>
-<span id="out_echeance"></span>
-</p>
+<p><strong>Échéance :</strong> <span id="out_echeance"></span></p>
 
-<p>
-<strong>Mode de paiement :</strong>
-<span id="out_paiement"></span>
-</p>
+<p><strong>Paiement :</strong> <span id="out_paiement"></span></p>
 
-<p>
-<strong>Référence / Contrat :</strong>
-<span id="out_reference"></span>
-</p>
+<p><strong>Référence :</strong> <span id="out_reference"></span></p>
 
 </div>
 
-
 </div>
 
-
-<!-- TABLE ARTICLES -->
 
 <table class="invoice-table">
 
@@ -749,23 +745,16 @@ FAC-2026-001
 <tr>
 
 <th>N°</th>
-
 <th>DÉSIGNATION</th>
-
 <th>QTÉ</th>
-
 <th>UNITÉ</th>
-
-<th>PRIX UNIT. HT<br>(F CFA)</th>
-
-<th>MONTANT HT<br>(F CFA)</th>
-
+<th>PRIX UNIT. HT</th>
+<th>MONTANT HT</th>
 <th class="no-print">X</th>
 
 </tr>
 
 </thead>
-
 
 <tbody id="factureRows">
 
@@ -773,42 +762,18 @@ FAC-2026-001
 
 <td class="row-number">01</td>
 
-<td>
-<input type="text"
-class="designation"
-placeholder="Travaux / Fournitures / Prestations"
-oninput="calculateFacture()">
-</td>
+<td><input class="designation" oninput="calculateFacture()"></td>
 
-<td>
-<input type="number"
-class="qty"
-value="1"
-min="1"
-oninput="calculateFacture()">
-</td>
+<td><input type="number" class="qty" value="1" oninput="calculateFacture()"></td>
 
-<td>
-<input type="text"
-class="unit"
-value="U">
-</td>
+<td><input class="unit" value="U"></td>
 
-<td>
-<input type="number"
-class="price"
-value="0"
-min="0"
-oninput="calculateFacture()">
-</td>
+<td><input type="number" class="price" value="0" oninput="calculateFacture()"></td>
 
 <td class="line-total">0 F CFA</td>
 
 <td class="no-print">
-<button class="btn btn-red"
-onclick="removeRow(this,'factureRows','facture')">
-✕
-</button>
+<button class="btn btn-red" onclick="removeInvoiceRow(this,'factureRows','facture')">✕</button>
 </td>
 
 </tr>
@@ -817,34 +782,24 @@ onclick="removeRow(this,'factureRows','facture')">
 
 </table>
 
-
 <div class="actions no-print">
 
-<button class="btn btn-primary"
-onclick="addRow('factureRows','facture')">
-
+<button class="btn btn-primary" onclick="addInvoiceRow('factureRows','facture')">
 ➕ Ajouter une ligne
-
 </button>
 
 </div>
 
 
-<!-- BAS FACTURE -->
-
 <div class="bottom-zone">
-
 
 <div class="amount-words">
 
 <h4>ARRÊTÉ LA PRÉSENTE FACTURE À LA SOMME DE :</h4>
 
-<p id="amountWordsFacture">
-Zéro Franc CFA
-</p>
+<p id="amountWordsFacture">Zéro Franc CFA</p>
 
 </div>
-
 
 <table class="totals">
 
@@ -865,11 +820,8 @@ Zéro Franc CFA
 
 </table>
 
-
 </div>
 
-
-<!-- SIGNATURE -->
 
 <div class="signature">
 
@@ -884,372 +836,361 @@ Zéro Franc CFA
 </div>
 
 
-<!-- ADMINISTRATIF -->
-
-<h3 class="admin-title">
-INFORMATIONS ADMINISTRATIVES ET BANCAIRES
-</h3>
-
-
-<div class="admin-grid">
-
-
-<div class="admin-item">
-
-<strong>🏢 R.C.C.M.</strong>
-
-<span>Ma Bko 2017 B 5034</span>
+<div id="footerFacture"></div>
 
 </div>
-
-
-<div class="admin-item">
-
-<strong>📄 NIF</strong>
-
-<span>085135849D</span>
-
-</div>
-
-
-<div class="admin-item">
-
-<strong>🏦 CODE BANQUE</strong>
-
-<span>ML 109</span>
-
-</div>
-
-
-<div class="admin-item">
-
-<strong>🏦 CODE GUICHET</strong>
-
-<span>01001</span>
-
-</div>
-
-
-<div class="admin-item">
-
-<strong>💳 N° DE COMPTE</strong>
-
-<span>000100163151</span>
-
-</div>
-
-
-<div class="admin-item">
-
-<strong>💳 RIB</strong>
-
-<span>45 BSIC</span>
-
-</div>
-
-
-</div>
-
-
-<!-- PIED DE PAGE -->
-
-<div class="invoice-footer">
-
-<div>
-📞 +223 76 08 23 79
-</div>
-
-<div>
-✉️ egcobsarl@gmail.com
-</div>
-
-<div>
-📍 Torokorobougou, R-400 P-191, Bamako – Mali
-</div>
-
-</div>
-
-
-</div>
-
 
 <div class="actions no-print">
 
 <button class="btn btn-green" onclick="window.print()">
-
 🖨️ Imprimer / Enregistrer en PDF
-
 </button>
 
 </div>
 
+</section>
+
+
+<!-- PRO FORMA -->
+
+<section id="proforma" class="section">
+
+<div class="card">
+
+<h2>📄 Facture Pro Forma</h2>
+
+<p>
+La rubrique Pro Forma est conservée dans votre application.
+Vous pouvez utiliser le même système de lignes, quantités,
+prix HT, TVA 18 % et Total TTC.
+</p>
+
+<br>
+
+<p>
+Pour garder l'application simple et stable, utilisez les mêmes informations
+que la facture avec le titre <strong>PRO FORMA</strong>.
+</p>
+
+<div class="actions">
+
+<button class="btn btn-green" onclick="alert('La version complète Pro Forma peut être utilisée sur le même modèle que la facture.')">
+📄 Ouvrir le modèle Pro Forma
+</button>
+
+</div>
+
+</div>
 
 </section>
 
 
+<!-- DEVIS -->
 
-<!-- =====================================================
-     SECTION PRO FORMA
-===================================================== -->
+<section id="devis" class="section">
 
-<section id="proforma" class="section">
+<div class="card">
 
-
-<div class="card form-card no-print">
-
-<h2>📄 Créer une facture Pro Forma</h2>
+<h2>📝 Devis</h2>
 
 <div class="form-grid">
 
-
 <div class="form-group">
-
 <label>Nom du client</label>
-
-<input type="text"
-id="p_client"
-placeholder="Nom du client">
-
+<input placeholder="Nom du client">
 </div>
-
 
 <div class="form-group">
-
-<label>Adresse du client</label>
-
-<input type="text"
-id="p_adresse"
-placeholder="Adresse">
-
+<label>Numéro du devis</label>
+<input value="DEV-2026-001">
 </div>
-
-
-<div class="form-group">
-
-<label>Téléphone</label>
-
-<input type="text"
-id="p_phone"
-placeholder="+223 ...">
-
-</div>
-
-
-<div class="form-group">
-
-<label>Email</label>
-
-<input type="email"
-id="p_email"
-placeholder="email@exemple.com">
-
-</div>
-
-
-<div class="form-group">
-
-<label>Numéro Pro Forma</label>
-
-<input type="text"
-id="p_numero"
-value="PF-2026-001">
-
-</div>
-
-
-<div class="form-group">
-
-<label>Date</label>
-
-<input type="date"
-id="p_date">
-
-</div>
-
-
-<div class="form-group">
-
-<label>Validité</label>
-
-<input type="date"
-id="p_validite">
-
-</div>
-
-
-<div class="form-group">
-
-<label>Mode de paiement</label>
-
-<select id="p_paiement">
-
-<option>Espèces</option>
-
-<option>Virement bancaire</option>
-
-<option>Chèque</option>
-
-<option>Mobile Money</option>
-
-</select>
-
-</div>
-
 
 <div class="form-group full">
-
-<label>Référence / Objet</label>
-
-<input type="text"
-id="p_reference"
-placeholder="Référence ou objet">
-
-</div>
-
-
+<label>Objet du devis</label>
+<textarea placeholder="Objet / Description du devis"></textarea>
 </div>
 
 </div>
 
+<div class="actions">
 
-<!-- APERCU PRO FORMA -->
+<button class="btn btn-primary">➕ Ajouter une ligne</button>
 
-<div class="invoice" id="invoiceProforma">
-
-
-<div class="invoice-top">
-
-
-<div class="logo-zone">
-
-<img src="logo.png"
-alt="Logo EGCOB-SARL"
-onerror="this.style.display='none'; document.getElementById('logoFallbackPF').style.display='block';">
-
-
-<div class="logo-text"
-id="logoFallbackPF">
-
-<h1>EGCOB-SARL</h1>
-
-<p>COMMERCE & BTP</p>
-
-<p><i>Bâtir aujourd'hui, construire demain</i></p>
-
-</div>
-
-
-</div>
-
-
-<div class="invoice-title">
-
-<h2>PRO FORMA</h2>
-
-<p>
-
-<strong>N° PRO FORMA :</strong>
-
-<span class="invoice-number"
-id="out_p_numero">
-
-PF-2026-001
-
-</span>
-
-</p>
-
-
-<p>
-
-<strong>DATE :</strong>
-
-<span id="out_p_date"></span>
-
-</p>
-
+<button class="btn btn-green" onclick="window.print()">🖨️ Imprimer / PDF</button>
 
 </div>
 
 </div>
 
+</section>
 
 
-<div class="info-boxes">
+<!-- BORDEREAU LIVRAISON -->
 
+<section id="livraison" class="section">
 
-<div class="info-box">
+<div class="card">
 
-<h3>CLIENT :</h3>
+<h2>🚚 Bordereau de livraison</h2>
 
-<p>
-<strong>Nom :</strong>
-<span id="out_p_client"></span>
-</p>
+<div class="form-grid">
 
-<p>
-<strong>Adresse :</strong>
-<span id="out_p_adresse"></span>
-</p>
-
-<p>
-<strong>Téléphone :</strong>
-<span id="out_p_phone"></span>
-</p>
-
-<p>
-<strong>Email :</strong>
-<span id="out_p_email"></span>
-</p>
-
+<div class="form-group">
+<label>Client / Destinataire</label>
+<input>
 </div>
 
-
-
-<div class="info-box">
-
-<h3>INFORMATIONS :</h3>
-
-<p>
-<strong>Validité :</strong>
-<span id="out_p_validite"></span>
-</p>
-
-<p>
-<strong>Mode de paiement :</strong>
-<span id="out_p_paiement"></span>
-</p>
-
-<p>
-<strong>Référence / Objet :</strong>
-<span id="out_p_reference"></span>
-</p>
-
+<div class="form-group">
+<label>Numéro du bordereau</label>
+<input value="BL-2026-001">
 </div>
 
-
+<div class="form-group">
+<label>Date</label>
+<input type="date">
 </div>
 
+<div class="form-group">
+<label>Lieu de livraison</label>
+<input>
+</div>
 
+</div>
 
 <table class="invoice-table">
-
 
 <thead>
 
 <tr>
 
 <th>N°</th>
-
 <th>DÉSIGNATION</th>
-
-<th>QTÉ</th>
-
+<th>QUANTITÉ</th>
 <th>UNITÉ</th>
 
-<th>PRIX UNIT. HT<br>(F CFA)</th>
+</tr>
 
-<th>MONTANT HT<br>(F CFA)</th>
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>01</td>
+
+<td><input></td>
+
+<td><input type="number" value="1"></td>
+
+<td><input value="U"></td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+<div class="actions">
+
+<button class="btn btn-primary">➕ Ajouter une ligne</button>
+
+<button class="btn btn-green" onclick="window.print()">🖨️ Imprimer / PDF</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- BORDEREAU PRIX UNITAIRES -->
+
+<section id="prix" class="section">
+
+<div class="card">
+
+<h2>💰 Bordereau des prix unitaires</h2>
+
+<table class="invoice-table">
+
+<thead>
+
+<tr>
+
+<th>N°</th>
+<th>DÉSIGNATION</th>
+<th>UNITÉ</th>
+<th>PRIX UNITAIRE HT</th>
+
+</tr>
+
+</thead>
+
+<tbody id="priceRows">
+
+<tr>
+
+<td>01</td>
+
+<td><input></td>
+
+<td><input value="U"></td>
+
+<td><input type="number" value="0"></td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+<div class="actions">
+
+<button class="btn btn-primary" onclick="addSimplePriceRow()">
+➕ Ajouter une ligne
+</button>
+
+<button class="btn btn-green" onclick="window.print()">
+🖨️ Imprimer / PDF
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- DEPENSES -->
+
+<section id="depenses" class="section">
+
+<div class="card">
+
+<h2>💸 Dépenses</h2>
+
+<table class="expense-table">
+
+<thead>
+
+<tr>
+
+<th>Date</th>
+<th>Désignation</th>
+<th>Montant (F CFA)</th>
+
+</tr>
+
+</thead>
+
+<tbody id="expenseRows">
+
+<tr>
+
+<td><input type="date"></td>
+
+<td><input placeholder="Description de la dépense"></td>
+
+<td><input type="number" value="0"></td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+<div class="actions">
+
+<button class="btn btn-primary" onclick="addExpenseRow()">
+➕ Ajouter une dépense
+</button>
+
+<button class="btn btn-green" onclick="window.print()">
+🖨️ Imprimer / PDF
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CLIENTS -->
+
+<section id="clients" class="section">
+
+<div class="card">
+
+<h2>👥 Clients</h2>
+
+<table class="client-table">
+
+<thead>
+
+<tr>
+
+<th>Nom</th>
+<th>Adresse</th>
+<th>Téléphone</th>
+<th>Email</th>
+
+</tr>
+
+</thead>
+
+<tbody id="clientRows">
+
+<tr>
+
+<td><input></td>
+
+<td><input></td>
+
+<td><input></td>
+
+<td><input type="email"></td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+<div class="actions">
+
+<button class="btn btn-primary" onclick="addClientRow()">
+➕ Ajouter un client
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CARACTERISTIQUES TECHNIQUES -->
+
+<section id="technique" class="section">
+
+<div class="card">
+
+<h2>⚙️ Caractéristiques techniques</h2>
+
+<p>
+Comparaison entre les caractéristiques demandées et les caractéristiques proposées.
+</p>
+
+<table class="tech-table">
+
+<thead>
+
+<tr>
+
+<th>CARACTÉRISTIQUES DEMANDÉES</th>
+
+<th>CARACTÉRISTIQUES PROPOSÉES</th>
 
 <th class="no-print">X</th>
 
@@ -1257,323 +1198,69 @@ PF-2026-001
 
 </thead>
 
-
-
-<tbody id="proformaRows">
-
+<tbody id="techRows">
 
 <tr>
 
-<td class="row-number">01</td>
-
+<td>
+<textarea placeholder="Écrire les caractéristiques demandées"></textarea>
+</td>
 
 <td>
-
-<input type="text"
-class="designation"
-placeholder="Travaux / Fournitures / Prestations"
-oninput="calculateProforma()">
-
+<textarea placeholder="Écrire les caractéristiques proposées"></textarea>
 </td>
-
-
-<td>
-
-<input type="number"
-class="qty"
-value="1"
-min="1"
-oninput="calculateProforma()">
-
-</td>
-
-
-<td>
-
-<input type="text"
-class="unit"
-value="U">
-
-</td>
-
-
-<td>
-
-<input type="number"
-class="price"
-value="0"
-min="0"
-oninput="calculateProforma()">
-
-</td>
-
-
-<td class="line-total">
-
-0 F CFA
-
-</td>
-
 
 <td class="no-print">
-
-<button class="btn btn-red"
-onclick="removeRow(this,'proformaRows','proforma')">
-
-✕
-
-</button>
-
+<button class="btn btn-red" onclick="removeTechRow(this)">✕</button>
 </td>
 
-
 </tr>
-
 
 </tbody>
 
-
 </table>
-
-
 
 <div class="actions no-print">
 
-<button class="btn btn-primary"
-onclick="addRow('proformaRows','proforma')">
-
+<button class="btn btn-primary" onclick="addTechRow()">
 ➕ Ajouter une ligne
-
 </button>
 
-</div>
-
-
-
-<div class="bottom-zone">
-
-
-<div class="amount-words">
-
-<h4>ARRÊTÉ LE PRÉSENT PRO FORMA À LA SOMME DE :</h4>
-
-<p id="amountWordsProforma">
-
-Zéro Franc CFA
-
-</p>
-
-</div>
-
-
-
-<table class="totals">
-
-
-<tr>
-
-<td>TOTAL HT</td>
-
-<td id="totalHTProforma">
-0 F CFA
-</td>
-
-</tr>
-
-
-<tr>
-
-<td>TVA 18 %</td>
-
-<td id="tvaProforma">
-0 F CFA
-</td>
-
-</tr>
-
-
-<tr>
-
-<td>TOTAL TTC</td>
-
-<td id="totalTTCProforma">
-0 F CFA
-</td>
-
-</tr>
-
-
-</table>
-
-
-</div>
-
-
-
-<div class="signature">
-
-<div class="signature-box">
-
-<h4>CACHET ET SIGNATURE</h4>
-
-<div class="signature-area"></div>
-
-</div>
-
-</div>
-
-
-
-<h3 class="admin-title">
-
-INFORMATIONS ADMINISTRATIVES ET BANCAIRES
-
-</h3>
-
-
-
-<div class="admin-grid">
-
-
-<div class="admin-item">
-
-<strong>🏢 R.C.C.M.</strong>
-
-<span>Ma Bko 2017 B 5034</span>
-
-</div>
-
-
-<div class="admin-item">
-
-<strong>📄 NIF</strong>
-
-<span>085135849D</span>
-
-</div>
-
-
-<div class="admin-item">
-
-<strong>🏦 CODE BANQUE</strong>
-
-<span>ML 109</span>
-
-</div>
-
-
-<div class="admin-item">
-
-<strong>🏦 CODE GUICHET</strong>
-
-<span>01001</span>
-
-</div>
-
-
-<div class="admin-item">
-
-<strong>💳 N° DE COMPTE</strong>
-
-<span>000100163151</span>
-
-</div>
-
-
-<div class="admin-item">
-
-<strong>💳 RIB</strong>
-
-<span>45 BSIC</span>
-
-</div>
-
-
-</div>
-
-
-
-<div class="invoice-footer">
-
-
-<div>
-📞 +223 76 08 23 79
-</div>
-
-
-<div>
-✉️ egcobsarl@gmail.com
-</div>
-
-
-<div>
-📍 Torokorobougou, R-400 P-191, Bamako – Mali
-</div>
-
-
-</div>
-
-
-</div>
-
-
-
-<div class="actions no-print">
-
-<button class="btn btn-green"
-onclick="window.print()">
-
+<button class="btn btn-green" onclick="window.print()">
 🖨️ Imprimer / Enregistrer en PDF
-
 </button>
 
 </div>
 
+</div>
 
 </section>
 
-
 </div>
-
 
 
 <script>
 
-/* =========================================
-   NAVIGATION
-========================================= */
+/* NAVIGATION */
 
-function showSection(sectionId, button){
+function showSection(id,button){
 
-    document.querySelectorAll('.section')
-    .forEach(section => {
-
+    document.querySelectorAll('.section').forEach(section=>{
         section.classList.remove('active');
-
     });
 
+    document.getElementById(id).classList.add('active');
 
-    document.getElementById(sectionId)
-    .classList.add('active');
-
-
-    document.querySelectorAll('.menu button')
-    .forEach(btn => {
-
+    document.querySelectorAll('.menu button').forEach(btn=>{
         btn.classList.remove('active');
-
     });
-
 
     button.classList.add('active');
 
 }
 
 
-
-/* =========================================
-   FORMAT NOMBRE
-========================================= */
+/* FORMAT ARGENT */
 
 function formatMoney(number){
 
@@ -1584,672 +1271,308 @@ function formatMoney(number){
 }
 
 
-
-/* =========================================
-   FORMAT DATE
-========================================= */
+/* DATE */
 
 function formatDate(value){
 
     if(!value) return '';
 
-    const date = new Date(value + 'T00:00:00');
-
-    return date
+    return new Date(value + 'T00:00:00')
     .toLocaleDateString('fr-FR');
 
 }
 
 
+/* LIGNES FACTURE */
 
-/* =========================================
-   AJOUTER UNE LIGNE
-========================================= */
+function addInvoiceRow(tableId,type){
 
-function addRow(tableId,type){
+    const tbody=document.getElementById(tableId);
 
-    const tbody =
-    document.getElementById(tableId);
+    const number=tbody.children.length+1;
 
-    const number =
-    tbody.children.length + 1;
+    const row=document.createElement('tr');
 
+    row.innerHTML=`
 
-    const row =
-    document.createElement('tr');
+    <td class="row-number">
+    ${String(number).padStart(2,'0')}
+    </td>
 
+    <td>
+    <input class="designation"
+    oninput="calculateFacture()">
+    </td>
 
-    row.innerHTML = `
+    <td>
+    <input type="number"
+    class="qty"
+    value="1"
+    oninput="calculateFacture()">
+    </td>
 
-        <td class="row-number">
-            ${String(number).padStart(2,'0')}
-        </td>
+    <td>
+    <input class="unit" value="U">
+    </td>
 
-        <td>
-            <input
-            type="text"
-            class="designation"
-            placeholder="Travaux / Fournitures / Prestations"
-            oninput="${type === 'facture'
-            ? 'calculateFacture()'
-            : 'calculateProforma()'}">
-        </td>
+    <td>
+    <input type="number"
+    class="price"
+    value="0"
+    oninput="calculateFacture()">
+    </td>
 
-        <td>
-            <input
-            type="number"
-            class="qty"
-            value="1"
-            min="1"
-            oninput="${type === 'facture'
-            ? 'calculateFacture()'
-            : 'calculateProforma()'}">
-        </td>
+    <td class="line-total">
+    0 F CFA
+    </td>
 
-        <td>
-            <input
-            type="text"
-            class="unit"
-            value="U">
-        </td>
-
-        <td>
-            <input
-            type="number"
-            class="price"
-            value="0"
-            min="0"
-            oninput="${type === 'facture'
-            ? 'calculateFacture()'
-            : 'calculateProforma()'}">
-        </td>
-
-        <td class="line-total">
-            0 F CFA
-        </td>
-
-        <td class="no-print">
-
-            <button
-            class="btn btn-red"
-            onclick="removeRow(this,'${tableId}','${type}')">
-
-            ✕
-
-            </button>
-
-        </td>
+    <td class="no-print">
+    <button class="btn btn-red"
+    onclick="removeInvoiceRow(this,'factureRows','facture')">
+    ✕
+    </button>
+    </td>
 
     `;
 
-
     tbody.appendChild(row);
 
-
-    if(type === 'facture'){
-
-        calculateFacture();
-
-    }else{
-
-        calculateProforma();
-
-    }
+    calculateFacture();
 
 }
 
 
+function removeInvoiceRow(button){
 
-/* =========================================
-   SUPPRIMER UNE LIGNE
-========================================= */
+    const tbody=document.getElementById('factureRows');
 
-function removeRow(button,tableId,type){
+    if(tbody.children.length<=1){
 
-    const tbody =
-    document.getElementById(tableId);
+        alert('Il doit rester au moins une ligne.');
+        return;
+
+    }
+
+    button.closest('tr').remove();
+
+    Array.from(tbody.children).forEach((row,index)=>{
+
+        row.querySelector('.row-number').textContent=
+        String(index+1).padStart(2,'0');
+
+    });
+
+    calculateFacture();
+
+}
 
 
-    if(tbody.children.length <= 1){
+/* CALCUL FACTURE */
 
-        alert("Il doit rester au moins une ligne.");
+function calculateFacture(){
+
+    const rows=document.querySelectorAll('#factureRows tr');
+
+    let totalHT=0;
+
+    rows.forEach(row=>{
+
+        const qty=
+        Number(row.querySelector('.qty').value)||0;
+
+        const price=
+        Number(row.querySelector('.price').value)||0;
+
+        const total=qty*price;
+
+        row.querySelector('.line-total').textContent=
+        formatMoney(total);
+
+        totalHT+=total;
+
+    });
+
+    const tva=totalHT*0.18;
+
+    const totalTTC=totalHT+tva;
+
+    document.getElementById('totalHTFacture').textContent=
+    formatMoney(totalHT);
+
+    document.getElementById('tvaFacture').textContent=
+    formatMoney(tva);
+
+    document.getElementById('totalTTCFacture').textContent=
+    formatMoney(totalTTC);
+
+}
+
+
+/* PRIX UNITAIRES */
+
+function addSimplePriceRow(){
+
+    const tbody=document.getElementById('priceRows');
+
+    const number=tbody.children.length+1;
+
+    const row=document.createElement('tr');
+
+    row.innerHTML=`
+
+    <td>${String(number).padStart(2,'0')}</td>
+
+    <td><input></td>
+
+    <td><input value="U"></td>
+
+    <td><input type="number" value="0"></td>
+
+    `;
+
+    tbody.appendChild(row);
+
+}
+
+
+/* DEPENSES */
+
+function addExpenseRow(){
+
+    const tbody=document.getElementById('expenseRows');
+
+    const row=document.createElement('tr');
+
+    row.innerHTML=`
+
+    <td><input type="date"></td>
+
+    <td><input placeholder="Description"></td>
+
+    <td><input type="number" value="0"></td>
+
+    `;
+
+    tbody.appendChild(row);
+
+}
+
+
+/* CLIENTS */
+
+function addClientRow(){
+
+    const tbody=document.getElementById('clientRows');
+
+    const row=document.createElement('tr');
+
+    row.innerHTML=`
+
+    <td><input></td>
+
+    <td><input></td>
+
+    <td><input></td>
+
+    <td><input type="email"></td>
+
+    `;
+
+    tbody.appendChild(row);
+
+}
+
+
+/* CARACTERISTIQUES TECHNIQUES */
+
+function addTechRow(){
+
+    const tbody=document.getElementById('techRows');
+
+    const row=document.createElement('tr');
+
+    row.innerHTML=`
+
+    <td>
+    <textarea
+    placeholder="Écrire les caractéristiques demandées">
+    </textarea>
+    </td>
+
+    <td>
+    <textarea
+    placeholder="Écrire les caractéristiques proposées">
+    </textarea>
+    </td>
+
+    <td class="no-print">
+
+    <button class="btn btn-red"
+    onclick="removeTechRow(this)">
+
+    ✕
+
+    </button>
+
+    </td>
+
+    `;
+
+    tbody.appendChild(row);
+
+}
+
+
+function removeTechRow(button){
+
+    const tbody=document.getElementById('techRows');
+
+    if(tbody.children.length<=1){
+
+        alert('Il doit rester au moins une ligne.');
 
         return;
 
     }
 
-
     button.closest('tr').remove();
 
-
-    Array.from(tbody.children)
-    .forEach((row,index)=>{
-
-        row.querySelector('.row-number')
-        .textContent =
-        String(index + 1).padStart(2,'0');
-
-    });
-
-
-    if(type === 'facture'){
-
-        calculateFacture();
-
-    }else{
-
-        calculateProforma();
-
-    }
-
 }
 
 
-
-/* =========================================
-   CALCUL FACTURE
-========================================= */
-
-function calculateFacture(){
-
-    const rows =
-    document.querySelectorAll(
-        '#factureRows tr'
-    );
-
-
-    let totalHT = 0;
-
-
-    rows.forEach(row => {
-
-        const qty =
-        Number(
-            row.querySelector('.qty').value
-        ) || 0;
-
-
-        const price =
-        Number(
-            row.querySelector('.price').value
-        ) || 0;
-
-
-        const lineTotal =
-        qty * price;
-
-
-        row.querySelector('.line-total')
-        .textContent =
-        formatMoney(lineTotal);
-
-
-        totalHT += lineTotal;
-
-    });
-
-
-    const tva =
-    totalHT * 0.18;
-
-
-    const totalTTC =
-    totalHT + tva;
-
-
-    document.getElementById(
-        'totalHTFacture'
-    ).textContent =
-    formatMoney(totalHT);
-
-
-    document.getElementById(
-        'tvaFacture'
-    ).textContent =
-    formatMoney(tva);
-
-
-    document.getElementById(
-        'totalTTCFacture'
-    ).textContent =
-    formatMoney(totalTTC);
-
-
-    document.getElementById(
-        'amountWordsFacture'
-    ).textContent =
-    numberToWords(totalTTC)
-    + ' Francs CFA';
-
-}
-
-
-
-/* =========================================
-   CALCUL PROFORMA
-========================================= */
-
-function calculateProforma(){
-
-    const rows =
-    document.querySelectorAll(
-        '#proformaRows tr'
-    );
-
-
-    let totalHT = 0;
-
-
-    rows.forEach(row => {
-
-        const qty =
-        Number(
-            row.querySelector('.qty').value
-        ) || 0;
-
-
-        const price =
-        Number(
-            row.querySelector('.price').value
-        ) || 0;
-
-
-        const lineTotal =
-        qty * price;
-
-
-        row.querySelector('.line-total')
-        .textContent =
-        formatMoney(lineTotal);
-
-
-        totalHT += lineTotal;
-
-    });
-
-
-    const tva =
-    totalHT * 0.18;
-
-
-    const totalTTC =
-    totalHT + tva;
-
-
-    document.getElementById(
-        'totalHTProforma'
-    ).textContent =
-    formatMoney(totalHT);
-
-
-    document.getElementById(
-        'tvaProforma'
-    ).textContent =
-    formatMoney(tva);
-
-
-    document.getElementById(
-        'totalTTCProforma'
-    ).textContent =
-    formatMoney(totalTTC);
-
-
-    document.getElementById(
-        'amountWordsProforma'
-    ).textContent =
-    numberToWords(totalTTC)
-    + ' Francs CFA';
-
-}
-
-
-
-/* =========================================
-   NOMBRE EN LETTRES
-   VERSION SIMPLE
-========================================= */
-
-function numberToWords(number){
-
-    number = Math.round(Number(number || 0));
-
-
-    if(number === 0){
-
-        return 'Zéro';
-
-    }
-
-
-    const units = [
-
-        '',
-        'un',
-        'deux',
-        'trois',
-        'quatre',
-        'cinq',
-        'six',
-        'sept',
-        'huit',
-        'neuf',
-        'dix',
-        'onze',
-        'douze',
-        'treize',
-        'quatorze',
-        'quinze',
-        'seize',
-        'dix-sept',
-        'dix-huit',
-        'dix-neuf'
-
-    ];
-
-
-    const tens = [
-
-        '',
-        '',
-        'vingt',
-        'trente',
-        'quarante',
-        'cinquante',
-        'soixante'
-
-    ];
-
-
-    function underHundred(n){
-
-        if(n < 20){
-
-            return units[n];
-
-        }
-
-
-        if(n < 70){
-
-            const ten =
-            Math.floor(n / 10);
-
-
-            const unit =
-            n % 10;
-
-
-            return tens[ten]
-            + (
-                unit === 1
-                ? ' et un'
-                : unit
-                ? '-' + units[unit]
-                : ''
-            );
-
-        }
-
-
-        if(n < 80){
-
-            return 'soixante-'
-            + underHundred(n - 60);
-
-        }
-
-
-        if(n < 100){
-
-            return 'quatre-vingt'
-            + (
-                n === 80
-                ? 's'
-                : '-' + underHundred(n - 80)
-            );
-
-        }
-
-    }
-
-
-    function underThousand(n){
-
-        if(n < 100){
-
-            return underHundred(n);
-
-        }
-
-
-        const hundred =
-        Math.floor(n / 100);
-
-
-        const rest =
-        n % 100;
-
-
-        let result =
-        hundred === 1
-        ? 'cent'
-        : units[hundred]
-        + ' cent';
-
-
-        if(rest === 0
-        && hundred > 1){
-
-            result += 's';
-
-        }
-
-
-        if(rest > 0){
-
-            result += ' '
-            + underHundred(rest);
-
-        }
-
-
-        return result;
-
-    }
-
-
-    if(number < 1000){
-
-        return underThousand(number);
-
-    }
-
-
-    if(number < 1000000){
-
-        const thousands =
-        Math.floor(number / 1000);
-
-
-        const rest =
-        number % 1000;
-
-
-        let result =
-        thousands === 1
-        ? 'mille'
-        : underThousand(thousands)
-        + ' mille';
-
-
-        if(rest > 0){
-
-            result += ' '
-            + underThousand(rest);
-
-        }
-
-
-        return result;
-
-    }
-
-
-    if(number < 1000000000){
-
-        const millions =
-        Math.floor(number / 1000000);
-
-
-        const rest =
-        number % 1000000;
-
-
-        let result =
-        millions === 1
-        ? 'un million'
-        : underThousand(millions)
-        + ' millions';
-
-
-        if(rest > 0){
-
-            result += ' '
-            + numberToWords(rest);
-
-        }
-
-
-        return result;
-
-    }
-
-
-    return number.toLocaleString('fr-FR');
-
-}
-
-
-
-/* =========================================
-   MISE À JOUR AUTOMATIQUE FACTURE
-========================================= */
+/* INFORMATIONS FACTURE */
 
 function updateFactureInfo(){
 
-    document.getElementById('out_client')
-    .textContent =
-    document.getElementById('f_client').value;
+    const fields=[
+        ['f_client','out_client'],
+        ['f_adresse','out_adresse'],
+        ['f_phone','out_phone'],
+        ['f_email','out_email'],
+        ['f_numero','out_numero'],
+        ['f_paiement','out_paiement'],
+        ['f_reference','out_reference']
+    ];
 
+    fields.forEach(item=>{
 
-    document.getElementById('out_adresse')
-    .textContent =
-    document.getElementById('f_adresse').value;
+        const input=document.getElementById(item[0]);
+        const output=document.getElementById(item[1]);
 
+        if(input && output){
+            output.textContent=input.value;
+        }
 
-    document.getElementById('out_phone')
-    .textContent =
-    document.getElementById('f_phone').value;
+    });
 
+    document.getElementById('out_date').textContent=
+    formatDate(document.getElementById('f_date').value);
 
-    document.getElementById('out_email')
-    .textContent =
-    document.getElementById('f_email').value;
-
-
-    document.getElementById('out_numero')
-    .textContent =
-    document.getElementById('f_numero').value;
-
-
-    document.getElementById('out_date')
-    .textContent =
-    formatDate(
-        document.getElementById('f_date').value
-    );
-
-
-    document.getElementById('out_echeance')
-    .textContent =
-    formatDate(
-        document.getElementById('f_echeance').value
-    );
-
-
-    document.getElementById('out_paiement')
-    .textContent =
-    document.getElementById('f_paiement').value;
-
-
-    document.getElementById('out_reference')
-    .textContent =
-    document.getElementById('f_reference').value;
+    document.getElementById('out_echeance').textContent=
+    formatDate(document.getElementById('f_echeance').value);
 
 }
 
-
-
-/* =========================================
-   MISE À JOUR PROFORMA
-========================================= */
-
-function updateProformaInfo(){
-
-    document.getElementById('out_p_client')
-    .textContent =
-    document.getElementById('p_client').value;
-
-
-    document.getElementById('out_p_adresse')
-    .textContent =
-    document.getElementById('p_adresse').value;
-
-
-    document.getElementById('out_p_phone')
-    .textContent =
-    document.getElementById('p_phone').value;
-
-
-    document.getElementById('out_p_email')
-    .textContent =
-    document.getElementById('p_email').value;
-
-
-    document.getElementById('out_p_numero')
-    .textContent =
-    document.getElementById('p_numero').value;
-
-
-    document.getElementById('out_p_date')
-    .textContent =
-    formatDate(
-        document.getElementById('p_date').value
-    );
-
-
-    document.getElementById('out_p_validite')
-    .textContent =
-    formatDate(
-        document.getElementById('p_validite').value
-    );
-
-
-    document.getElementById('out_p_paiement')
-    .textContent =
-    document.getElementById('p_paiement').value;
-
-
-    document.getElementById('out_p_reference')
-    .textContent =
-    document.getElementById('p_reference').value;
-
-}
-
-
-
-/* =========================================
-   ECOUTEURS FORMULAIRE FACTURE
-========================================= */
 
 [
 'f_client',
@@ -2262,91 +1585,32 @@ function updateProformaInfo(){
 'f_paiement',
 'f_reference'
 
-].forEach(id => {
+].forEach(id=>{
 
-    document
-    .getElementById(id)
-    .addEventListener(
-        'input',
-        updateFactureInfo
-    );
+    const element=document.getElementById(id);
 
+    if(element){
 
-    document
-    .getElementById(id)
-    .addEventListener(
-        'change',
-        updateFactureInfo
-    );
+        element.addEventListener('input',updateFactureInfo);
+
+        element.addEventListener('change',updateFactureInfo);
+
+    }
 
 });
 
 
+/* DATE DU JOUR */
 
-/* =========================================
-   ECOUTEURS FORMULAIRE PROFORMA
-========================================= */
+const today=new Date().toISOString().split('T')[0];
 
-[
-'p_client',
-'p_adresse',
-'p_phone',
-'p_email',
-'p_numero',
-'p_date',
-'p_validite',
-'p_paiement',
-'p_reference'
-
-].forEach(id => {
-
-    document
-    .getElementById(id)
-    .addEventListener(
-        'input',
-        updateProformaInfo
-    );
-
-
-    document
-    .getElementById(id)
-    .addEventListener(
-        'change',
-        updateProformaInfo
-    );
-
-});
-
-
-
-/* =========================================
-   INITIALISATION
-========================================= */
-
-const today =
-new Date()
-.toISOString()
-.split('T')[0];
-
-
-document.getElementById('f_date').value =
-today;
-
-
-document.getElementById('p_date').value =
-today;
-
+document.getElementById('f_date').value=today;
 
 updateFactureInfo();
 
-updateProformaInfo();
-
 calculateFacture();
 
-calculateProforma();
-
 </script>
-
 
 </body>
 </html>
