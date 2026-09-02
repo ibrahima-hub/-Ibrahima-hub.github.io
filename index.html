@@ -1,1273 +1,1637 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
 
-<title>EGCOB-SARL | Gestion Mobile</title>
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-<style>
+  <title>EGCOB-SARL | Gestion Mobile</title>
 
-:root{
-    --bleu:#17365d;
-    --bleu2:#244b78;
-    --or:#c9a227;
-    --fond:#f4f6f8;
-    --blanc:#ffffff;
-    --texte:#172033;
-    --gris:#687385;
-    --vert:#16803c;
-    --rouge:#c62828;
-}
+  <style>
 
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-    font-family:Arial, sans-serif;
-}
+    /* =========================
+       COULEURS
+    ========================== */
 
-body{
-    background:var(--fond);
-    color:var(--texte);
-    padding-bottom:20px;
-}
-
-/* =========================
-   EN-TÊTE
-========================= */
-
-.header{
-    background:var(--bleu);
-    color:white;
-    text-align:center;
-    padding:28px 15px 25px;
-    border-bottom:4px solid var(--or);
-}
-
-.header h1{
-    font-size:32px;
-    letter-spacing:1px;
-    margin-bottom:10px;
-}
-
-.header p{
-    color:#e0c56d;
-    font-size:17px;
-    letter-spacing:1px;
-}
-
-/* =========================
-   MENU
-========================= */
-
-.nav{
-    background:#20344f;
-    display:flex;
-    overflow-x:auto;
-    padding:12px 8px;
-    gap:10px;
-    border-bottom:1px solid #ddd;
-}
-
-.nav button{
-    border:none;
-    background:transparent;
-    color:white;
-    padding:14px 18px;
-    font-size:17px;
-    font-weight:bold;
-    border-radius:14px;
-    white-space:nowrap;
-    cursor:pointer;
-}
-
-.nav button.active{
-    background:#d2b34b;
-    color:#172033;
-}
-
-/* =========================
-   CONTENU
-========================= */
-
-.container{
-    max-width:1000px;
-    margin:auto;
-    padding:25px 15px;
-}
-
-.page{
-    display:none;
-}
-
-.page.active{
-    display:block;
-}
-
-.title{
-    font-size:30px;
-    color:var(--bleu);
-    margin-bottom:25px;
-}
-
-/* =========================
-   TABLEAU DE BORD
-========================= */
-
-.stats{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:18px;
-    margin-bottom:20px;
-}
-
-.card{
-    background:white;
-    padding:25px;
-    border-radius:20px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.08);
-}
-
-.card p{
-    color:var(--gris);
-    font-size:18px;
-    margin-bottom:15px;
-}
-
-.card strong{
-    font-size:30px;
-    color:var(--bleu);
-}
-
-.welcome{
-    background:white;
-    border-radius:20px;
-    padding:30px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.08);
-}
-
-.welcome h2{
-    margin-bottom:18px;
-    color:var(--texte);
-}
-
-.welcome p{
-    font-size:18px;
-    line-height:1.8;
-}
-
-/* =========================
-   FORMULAIRES
-========================= */
-
-.form-box{
-    background:white;
-    padding:25px;
-    border-radius:20px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.08);
-}
-
-.form-group{
-    margin-bottom:18px;
-}
-
-label{
-    display:block;
-    font-weight:bold;
-    margin-bottom:8px;
-}
-
-input,
-textarea,
-select{
-    width:100%;
-    padding:14px;
-    border:1px solid #d6dce5;
-    border-radius:10px;
-    font-size:16px;
-}
-
-textarea{
-    min-height:100px;
-}
-
-.btn{
-    border:none;
-    padding:15px 20px;
-    border-radius:10px;
-    font-size:16px;
-    font-weight:bold;
-    cursor:pointer;
-    margin-top:8px;
-}
-
-.btn-primary{
-    background:var(--bleu);
-    color:white;
-}
-
-.btn-success{
-    background:var(--vert);
-    color:white;
-}
-
-.btn-danger{
-    background:var(--rouge);
-    color:white;
-}
-
-.btn-warning{
-    background:var(--or);
-    color:white;
-}
-
-/* =========================
-   TABLEAUX
-========================= */
-
-.table-container{
-    overflow-x:auto;
-    background:white;
-    border-radius:15px;
-    margin-top:25px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.06);
-}
-
-table{
-    width:100%;
-    border-collapse:collapse;
-}
-
-th{
-    background:var(--bleu);
-    color:white;
-}
-
-th,
-td{
-    padding:14px;
-    text-align:left;
-    border-bottom:1px solid #eee;
-}
-
-/* =========================
-   FACTURE
-========================= */
-
-.invoice-total{
-    margin-top:20px;
-    background:#eef3f8;
-    padding:20px;
-    border-radius:15px;
-}
-
-.invoice-total div{
-    display:flex;
-    justify-content:space-between;
-    padding:8px 0;
-    font-size:17px;
-}
-
-.invoice-total .grand-total{
-    font-size:22px;
-    font-weight:bold;
-    color:var(--bleu);
-    border-top:2px solid #ddd;
-    margin-top:10px;
-    padding-top:15px;
-}
-
-/* =========================
-   FOOTER
-========================= */
-
-.footer{
-    margin-top:35px;
-    background:var(--bleu);
-    color:white;
-    padding:30px 15px;
-    text-align:center;
-}
-
-.footer-info{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:15px;
-    max-width:1000px;
-    margin:auto;
-}
-
-.footer-block{
-    background:rgba(255,255,255,0.10);
-    padding:18px;
-    border-radius:15px;
-    line-height:1.9;
-    text-align:left;
-}
-
-.footer-block strong{
-    color:#e0c56d;
-}
-
-.footer-contact{
-    max-width:1000px;
-    margin:20px auto 0;
-    border-top:1px solid rgba(255,255,255,0.3);
-    padding-top:20px;
-    line-height:1.9;
-}
-
-.footer-slogan{
-    margin-top:25px;
-    padding-top:20px;
-    border-top:1px solid rgba(255,255,255,0.3);
-    color:#e0c56d;
-    font-size:18px;
-}
-
-.footer-slogan small{
-    display:block;
-    color:white;
-    margin-top:10px;
-    font-size:12px;
-    letter-spacing:1px;
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-@media(max-width:700px){
-
-    .header h1{
-        font-size:28px;
+    :root{
+      --bleu:#17365d;
+      --bleu2:#244b78;
+      --or:#c9a227;
+      --fond:#f4f6f8;
+      --blanc:#ffffff;
+      --texte:#172033;
+      --gris:#687385;
+      --vert:#16803c;
+      --rouge:#c62828;
     }
 
-    .header p{
-        font-size:15px;
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
     }
+
+    body{
+      font-family:Arial, Helvetica, sans-serif;
+      background:var(--fond);
+      color:var(--texte);
+    }
+
+    button,
+    input,
+    select,
+    textarea{
+      font:inherit;
+    }
+
+
+    /* =========================
+       APPLICATION
+    ========================== */
+
+    .app{
+      width:100%;
+      min-height:100vh;
+      background:var(--fond);
+    }
+
+
+    /* =========================
+       ENTÊTE
+    ========================== */
+
+    header{
+      background:linear-gradient(
+        135deg,
+        var(--bleu),
+        var(--bleu2)
+      );
+
+      color:white;
+      text-align:center;
+      padding:35px 20px 30px;
+      border-bottom:4px solid var(--or);
+    }
+
+    .logo{
+      font-size:42px;
+      font-weight:bold;
+      letter-spacing:2px;
+    }
+
+    .sous-titre{
+      margin-top:12px;
+      color:#e3cd85;
+      font-size:21px;
+      letter-spacing:1px;
+    }
+
+
+    /* =========================
+       MENU
+    ========================== */
+
+    nav{
+      display:flex;
+      overflow-x:auto;
+      gap:8px;
+
+      background:#203a5a;
+      padding:14px;
+
+      border-bottom:1px solid rgba(255,255,255,.15);
+    }
+
+    nav button{
+      border:none;
+      background:transparent;
+      color:white;
+
+      padding:18px 22px;
+
+      border-radius:15px;
+
+      font-size:18px;
+      font-weight:bold;
+
+      white-space:nowrap;
+
+      cursor:pointer;
+
+      transition:.2s;
+    }
+
+    nav button:hover{
+      background:rgba(255,255,255,.12);
+    }
+
+    nav button.active{
+      background:linear-gradient(
+        135deg,
+        #d8b84b,
+        var(--or)
+      );
+
+      color:#172033;
+    }
+
+
+    /* =========================
+       CONTENU
+    ========================== */
+
+    main{
+      max-width:1000px;
+      margin:auto;
+      padding:35px 28px 50px;
+    }
+
+    .page{
+      display:none;
+    }
+
+    .page.active{
+      display:block;
+    }
+
+    h1{
+      font-size:34px;
+      margin-bottom:28px;
+      color:#263a57;
+    }
+
+    h2{
+      margin-bottom:20px;
+    }
+
+
+    /* =========================
+       TABLEAU DE BORD
+    ========================== */
 
     .stats{
-        gap:15px;
+      display:grid;
+
+      grid-template-columns:
+        repeat(auto-fit,minmax(210px,1fr));
+
+      gap:22px;
+
+      margin-bottom:28px;
     }
 
     .card{
-        padding:20px;
+      background:white;
+
+      padding:28px;
+
+      border-radius:22px;
+
+      box-shadow:
+        0 8px 25px
+        rgba(0,0,0,.08);
     }
 
-    .card p{
+    .card .label{
+      color:#687385;
+      font-size:19px;
+      margin-bottom:20px;
+    }
+
+    .card .value{
+      font-size:34px;
+      font-weight:bold;
+      color:#263a57;
+    }
+
+
+    /* =========================
+       BIENVENUE
+    ========================== */
+
+    .welcome{
+      background:white;
+
+      padding:35px;
+
+      border-radius:24px;
+
+      box-shadow:
+        0 8px 25px
+        rgba(0,0,0,.08);
+
+      margin-top:10px;
+    }
+
+    .welcome h2{
+      font-size:30px;
+    }
+
+    .welcome p{
+      font-size:21px;
+      line-height:1.7;
+      color:#374151;
+    }
+
+
+    /* =========================
+       FORMULAIRES
+    ========================== */
+
+    .form-card{
+      background:white;
+
+      padding:30px;
+
+      border-radius:22px;
+
+      box-shadow:
+        0 8px 25px
+        rgba(0,0,0,.08);
+    }
+
+    .form-group{
+      margin-bottom:20px;
+    }
+
+    label{
+      display:block;
+
+      font-weight:bold;
+
+      margin-bottom:8px;
+
+      color:#263a57;
+    }
+
+    input,
+    textarea,
+    select{
+      width:100%;
+
+      padding:15px;
+
+      border-radius:12px;
+
+      border:1px solid #ccd2db;
+
+      font-size:17px;
+    }
+
+    textarea{
+      min-height:100px;
+    }
+
+
+    /* =========================
+       BOUTONS
+    ========================== */
+
+    button{
+      border:none;
+      cursor:pointer;
+    }
+
+    .btn{
+      padding:14px 22px;
+
+      border-radius:12px;
+
+      font-size:16px;
+
+      font-weight:bold;
+
+      margin:5px 3px;
+    }
+
+    .btn-primary{
+      background:var(--bleu);
+      color:white;
+    }
+
+    .btn-success{
+      background:var(--vert);
+      color:white;
+    }
+
+    .btn-danger{
+      background:var(--rouge);
+      color:white;
+    }
+
+
+    /* =========================
+       TABLEAUX
+    ========================== */
+
+    .table-container{
+      overflow-x:auto;
+
+      background:white;
+
+      border-radius:20px;
+
+      padding:20px;
+
+      box-shadow:
+        0 8px 25px
+        rgba(0,0,0,.08);
+    }
+
+    table{
+      width:100%;
+
+      border-collapse:collapse;
+
+      min-width:600px;
+    }
+
+    th{
+      background:var(--bleu);
+      color:white;
+
+      padding:15px;
+
+      text-align:left;
+    }
+
+    td{
+      padding:14px;
+
+      border-bottom:
+        1px solid #e5e7eb;
+    }
+
+
+    /* =========================
+       BAS DE L'APPLICATION
+    ========================== */
+
+    .company-info{
+      margin-top:45px;
+
+      background:white;
+
+      border-radius:20px;
+
+      overflow:hidden;
+
+      box-shadow:
+        0 8px 25px
+        rgba(0,0,0,.08);
+    }
+
+    .company-info-title{
+      background:var(--bleu);
+
+      color:white;
+
+      text-align:center;
+
+      padding:18px;
+
+      font-size:20px;
+
+      font-weight:bold;
+
+      letter-spacing:1px;
+    }
+
+    .company-info-grid{
+      display:grid;
+
+      grid-template-columns:
+        repeat(auto-fit,minmax(220px,1fr));
+
+      gap:0;
+    }
+
+    .company-item{
+      padding:20px;
+
+      border-right:
+        1px solid #e5e7eb;
+
+      border-bottom:
+        1px solid #e5e7eb;
+    }
+
+    .company-item strong{
+      display:block;
+
+      color:var(--bleu);
+
+      margin-bottom:7px;
+
+      font-size:15px;
+    }
+
+    .company-item span{
+      color:#374151;
+
+      font-size:17px;
+
+      word-break:break-word;
+    }
+
+
+    /* =========================
+       PIED DE PAGE
+    ========================== */
+
+    footer{
+      background:var(--bleu);
+
+      color:white;
+
+      text-align:center;
+
+      padding:25px 15px;
+
+      margin-top:35px;
+    }
+
+    .slogan{
+      color:#e3cd85;
+
+      font-size:20px;
+
+      font-style:italic;
+
+      margin-bottom:10px;
+    }
+
+    .valeurs{
+      font-size:14px;
+
+      letter-spacing:1px;
+    }
+
+
+    /* =========================
+       RESPONSIVE MOBILE
+    ========================== */
+
+    @media(max-width:600px){
+
+      header{
+        padding:28px 15px;
+      }
+
+      .logo{
+        font-size:34px;
+      }
+
+      .sous-titre{
         font-size:16px;
-    }
+      }
 
-    .card strong{
+      main{
+        padding:30px 20px;
+      }
+
+      h1{
+        font-size:29px;
+      }
+
+      .welcome{
+        padding:28px;
+      }
+
+      .welcome h2{
         font-size:27px;
+      }
+
+      .welcome p{
+        font-size:18px;
+      }
+
+      .card{
+        padding:24px;
+      }
+
+      .company-item{
+        border-right:none;
+      }
+
     }
 
-    .footer-info{
-        grid-template-columns:1fr;
-    }
-
-    .footer-block{
-        text-align:center;
-    }
-
-}
-
-</style>
+  </style>
 </head>
+
 
 <body>
 
-<!-- =========================
-     EN-TÊTE
-========================= -->
-
-<header class="header">
-
-    <h1>EGCOB-SARL</h1>
-
-    <p>COMMERCE & BTP • GESTION MOBILE</p>
-
-</header>
+<div class="app">
 
 
-<!-- =========================
-     MENU
-========================= -->
+  <!-- =========================
+       ENTÊTE
+  ========================== -->
 
-<nav class="nav">
+  <header>
 
-    <button class="active" onclick="showPage('accueil', this)">
-        🏠 Accueil
-    </button>
-
-    <button onclick="showPage('facture', this)">
-        🧾 Facture
-    </button>
-
-    <button onclick="showPage('devis', this)">
-        📋 Devis
-    </button>
-
-    <button onclick="showPage('depenses', this)">
-        💰 Dépenses
-    </button>
-
-</nav>
-
-
-<div class="container">
-
-
-<!-- =========================
-     ACCUEIL
-========================= -->
-
-<section id="accueil" class="page active">
-
-    <h2 class="title">📊 Tableau de bord</h2>
-
-    <div class="stats">
-
-        <div class="card">
-            <p>Clients</p>
-            <strong id="totalClients">0</strong>
-        </div>
-
-        <div class="card">
-            <p>Factures</p>
-            <strong id="totalFactures">0</strong>
-        </div>
-
-        <div class="card">
-            <p>Total facturé</p>
-            <strong id="totalFacture">0 F</strong>
-        </div>
-
-        <div class="card">
-            <p>Dépenses</p>
-            <strong id="totalDepenses">0 F</strong>
-        </div>
-
+    <div class="logo">
+      EGCOB-SARL
     </div>
 
+    <div class="sous-titre">
+      COMMERCE & BTP • GESTION MOBILE
+    </div>
 
-    <div class="welcome">
+  </header>
 
-        <h2>Bienvenue dans EGCOB-SARL</h2>
+
+
+  <!-- =========================
+       MENU
+  ========================== -->
+
+  <nav>
+
+    <button
+      class="active"
+      onclick="showPage('home', this)">
+
+      🏠 Accueil
+
+    </button>
+
+
+    <button
+      onclick="showPage('facture', this)">
+
+      🧾 Facture
+
+    </button>
+
+
+    <button
+      onclick="showPage('devis', this)">
+
+      📋 Devis
+
+    </button>
+
+
+    <button
+      onclick="showPage('depenses', this)">
+
+      💰 Dépenses
+
+    </button>
+
+  </nav>
+
+
+
+  <main>
+
+
+    <!-- =========================
+         ACCUEIL
+    ========================== -->
+
+    <section
+      id="home"
+      class="page active">
+
+      <h1>
+        📊 Tableau de bord
+      </h1>
+
+
+      <div class="stats">
+
+
+        <div class="card">
+
+          <div class="label">
+            Clients
+          </div>
+
+          <div
+            class="value"
+            id="clientCount">
+
+            0
+
+          </div>
+
+        </div>
+
+
+
+        <div class="card">
+
+          <div class="label">
+            Factures
+          </div>
+
+          <div
+            class="value"
+            id="factureCount">
+
+            0
+
+          </div>
+
+        </div>
+
+
+
+        <div class="card">
+
+          <div class="label">
+            Total facturé
+          </div>
+
+          <div
+            class="value"
+            id="totalFacture">
+
+            0 F
+
+          </div>
+
+        </div>
+
+
+
+        <div class="card">
+
+          <div class="label">
+            Dépenses
+          </div>
+
+          <div
+            class="value"
+            id="totalDepense">
+
+            0 F
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+
+
+      <div class="welcome">
+
+        <h2>
+          Bienvenue dans EGCOB-SARL
+        </h2>
 
         <p>
-            Application mobile de gestion pour votre entreprise.
-            Vous pouvez créer vos factures, préparer vos devis
-            et suivre vos dépenses.
+
+          Application mobile de gestion pour votre entreprise.
+          Vous pouvez créer vos factures, vos devis,
+          enregistrer vos dépenses et suivre vos activités.
+
         </p>
 
-    </div>
-
-</section>
+      </div>
 
 
-<!-- =========================
-     FACTURE
-========================= -->
+    </section>
 
-<section id="facture" class="page">
 
-    <h2 class="title">🧾 Créer une facture</h2>
 
-    <div class="form-box">
+    <!-- =========================
+         FACTURES
+    ========================== -->
+
+    <section
+      id="facture"
+      class="page">
+
+      <h1>
+        🧾 Factures
+      </h1>
+
+
+      <div class="form-card">
 
         <div class="form-group">
 
-            <label>Nom du client</label>
+          <label>
+            Nom du client
+          </label>
 
-            <input
-                type="text"
-                id="factureClient"
-                placeholder="Nom du client">
+          <input
+            type="text"
+            id="factureClient"
+            placeholder="Nom du client">
 
         </div>
 
 
         <div class="form-group">
 
-            <label>Objet de la facture</label>
+          <label>
+            Désignation
+          </label>
 
-            <input
-                type="text"
-                id="factureObjet"
-                placeholder="Exemple : Travaux de construction">
+          <input
+            type="text"
+            id="factureDesignation"
+            placeholder="Exemple : Travaux de construction">
 
         </div>
 
 
         <div class="form-group">
 
-            <label>Montant HT</label>
+          <label>
+            Montant HT
+          </label>
 
-            <input
-                type="number"
-                id="factureHT"
-                placeholder="Montant hors taxe"
-                oninput="calculerFacture()">
-
-        </div>
-
-
-        <div class="invoice-total">
-
-            <div>
-                <span>Total HT</span>
-                <strong id="afficherHT">0 F</strong>
-            </div>
-
-            <div>
-                <span>TVA 18%</span>
-                <strong id="afficherTVA">0 F</strong>
-            </div>
-
-            <div class="grand-total">
-                <span>Total TTC</span>
-                <strong id="afficherTTC">0 F</strong>
-            </div>
+          <input
+            type="number"
+            id="factureMontant"
+            placeholder="0">
 
         </div>
 
 
         <button
-            class="btn btn-success"
-            onclick="enregistrerFacture()">
+          class="btn btn-success"
+          onclick="ajouterFacture()">
 
-            Enregistrer la facture
+          Ajouter la facture
 
         </button>
 
-    </div>
+
+      </div>
 
 
-    <div class="table-container">
+      <br>
+
+
+      <div class="table-container">
 
         <table>
 
-            <thead>
+          <thead>
 
-                <tr>
-                    <th>Client</th>
-                    <th>Objet</th>
-                    <th>Total TTC</th>
-                </tr>
+            <tr>
 
-            </thead>
+              <th>
+                Client
+              </th>
 
-            <tbody id="listeFactures">
+              <th>
+                Désignation
+              </th>
 
-            </tbody>
+              <th>
+                Montant HT
+              </th>
+
+              <th>
+                TVA 18%
+              </th>
+
+              <th>
+                Total TTC
+              </th>
+
+            </tr>
+
+          </thead>
+
+
+          <tbody
+            id="factureListe">
+
+          </tbody>
 
         </table>
 
-    </div>
-
-</section>
+      </div>
 
 
-<!-- =========================
-     DEVIS
-========================= -->
+    </section>
 
-<section id="devis" class="page">
 
-    <h2 class="title">📋 Devis estimatif</h2>
 
-    <div class="form-box">
+    <!-- =========================
+         DEVIS
+    ========================== -->
+
+    <section
+      id="devis"
+      class="page">
+
+      <h1>
+        📋 Devis
+      </h1>
+
+
+      <div class="form-card">
+
 
         <div class="form-group">
 
-            <label>Nom du client</label>
+          <label>
+            Nom du client
+          </label>
 
-            <input
-                type="text"
-                id="devisClient"
-                placeholder="Nom du client">
+          <input
+            type="text"
+            id="devisClient"
+            placeholder="Nom du client">
 
         </div>
 
 
         <div class="form-group">
 
-            <label>Description des travaux / prestations</label>
+          <label>
+            Objet du devis
+          </label>
 
-            <textarea
-                id="devisDescription"
-                placeholder="Décrivez les travaux ou prestations">
-            </textarea>
+          <textarea
+            id="devisObjet"
+            placeholder="Description des travaux ou services">
+
+          </textarea>
 
         </div>
 
 
         <div class="form-group">
 
-            <label>Montant estimatif HT</label>
+          <label>
+            Montant HT
+          </label>
 
-            <input
-                type="number"
-                id="devisMontant"
-                placeholder="Montant estimatif">
+          <input
+            type="number"
+            id="devisMontant"
+            placeholder="0">
 
         </div>
 
 
         <button
-            class="btn btn-primary"
-            onclick="enregistrerDevis()">
+          class="btn btn-primary"
+          onclick="creerDevis()">
 
-            Enregistrer le devis
+          Enregistrer le devis
 
         </button>
 
-    </div>
+
+      </div>
 
 
-    <div class="table-container">
+      <br>
+
+
+      <div class="table-container">
 
         <table>
 
-            <thead>
+          <thead>
 
-                <tr>
-                    <th>Client</th>
-                    <th>Description</th>
-                    <th>Montant HT</th>
-                </tr>
+            <tr>
 
-            </thead>
+              <th>
+                Client
+              </th>
 
-            <tbody id="listeDevis">
+              <th>
+                Objet
+              </th>
 
-            </tbody>
+              <th>
+                Montant HT
+              </th>
+
+              <th>
+                TVA
+              </th>
+
+              <th>
+                TTC
+              </th>
+
+            </tr>
+
+          </thead>
+
+
+          <tbody
+            id="devisListe">
+
+          </tbody>
 
         </table>
 
-    </div>
-
-</section>
+      </div>
 
 
-<!-- =========================
-     DEPENSES
-========================= -->
+    </section>
 
-<section id="depenses" class="page">
 
-    <h2 class="title">💰 Enregistrer une dépense</h2>
 
-    <div class="form-box">
+    <!-- =========================
+         DÉPENSES
+    ========================== -->
+
+    <section
+      id="depenses"
+      class="page">
+
+      <h1>
+        💰 Dépenses
+      </h1>
+
+
+      <div class="form-card">
+
 
         <div class="form-group">
 
-            <label>Libellé de la dépense</label>
+          <label>
+            Désignation de la dépense
+          </label>
 
-            <input
-                type="text"
-                id="depenseLibelle"
-                placeholder="Exemple : Achat de matériaux">
+          <input
+            type="text"
+            id="depenseNom"
+            placeholder="Exemple : Achat de matériel">
 
         </div>
 
 
         <div class="form-group">
 
-            <label>Montant</label>
+          <label>
+            Montant
+          </label>
 
-            <input
-                type="number"
-                id="depenseMontant"
-                placeholder="Montant en FCFA">
+          <input
+            type="number"
+            id="depenseMontant"
+            placeholder="0">
 
         </div>
 
 
         <button
-            class="btn btn-danger"
-            onclick="enregistrerDepense()">
+          class="btn btn-danger"
+          onclick="ajouterDepense()">
 
-            Ajouter la dépense
+          Ajouter la dépense
 
         </button>
 
-    </div>
+
+      </div>
 
 
-    <div class="table-container">
+      <br>
+
+
+      <div class="table-container">
 
         <table>
 
-            <thead>
+          <thead>
 
-                <tr>
-                    <th>Libellé</th>
-                    <th>Montant</th>
-                </tr>
+            <tr>
 
-            </thead>
+              <th>
+                Désignation
+              </th>
 
-            <tbody id="listeDepenses">
+              <th>
+                Montant
+              </th>
 
-            </tbody>
+            </tr>
+
+          </thead>
+
+
+          <tbody
+            id="depenseListe">
+
+          </tbody>
 
         </table>
 
+      </div>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         INFORMATIONS ENTREPRISE
+    ========================== -->
+
+    <div class="company-info">
+
+
+      <div class="company-info-title">
+
+        INFORMATIONS ADMINISTRATIVES ET BANCAIRES
+
+      </div>
+
+
+      <div class="company-info-grid">
+
+
+        <div class="company-item">
+
+          <strong>
+            🏢 R.C.C.M.
+          </strong>
+
+          <span>
+            Ma Bko 2017 B 5034
+          </span>
+
+        </div>
+
+
+
+        <div class="company-item">
+
+          <strong>
+            📄 NIF
+          </strong>
+
+          <span>
+            085135849D
+          </span>
+
+        </div>
+
+
+
+        <div class="company-item">
+
+          <strong>
+            🏦 Code banque
+          </strong>
+
+          <span>
+            ML 109
+          </span>
+
+        </div>
+
+
+
+        <div class="company-item">
+
+          <strong>
+            🏦 Code guichet
+          </strong>
+
+          <span>
+            01001
+          </span>
+
+        </div>
+
+
+
+        <div class="company-item">
+
+          <strong>
+            💳 N° de compte
+          </strong>
+
+          <span>
+            000100163151
+          </span>
+
+        </div>
+
+
+
+        <div class="company-item">
+
+          <strong>
+            💳 RIB
+          </strong>
+
+          <span>
+            45 BSIC
+          </span>
+
+        </div>
+
+
+      </div>
+
+
     </div>
 
-</section>
+
+  </main>
+
+
+
+  <!-- =========================
+       PIED DE PAGE
+  ========================== -->
+
+  <footer>
+
+    <div class="slogan">
+
+      Bâtir aujourd'hui, construire demain
+
+    </div>
+
+
+    <div class="valeurs">
+
+      PROFESSIONNALISME • QUALITÉ • INTÉGRITÉ • ENGAGEMENT
+
+    </div>
+
+  </footer>
 
 
 </div>
 
 
-<!-- =========================
-     INFORMATIONS EGCOB-SARL
-========================= -->
-
-<footer class="footer">
-
-    <div class="footer-info">
-
-
-        <!-- INFORMATIONS LEGALES -->
-
-        <div class="footer-block">
-
-            <strong>📄 Informations légales</strong>
-
-            <br>
-
-            R.C.C.M. : Ma Bko 2017 B 5034
-
-            <br>
-
-            NIF : 085135849D
-
-        </div>
-
-
-        <!-- INFORMATIONS BANCAIRES -->
-
-        <div class="footer-block">
-
-            <strong>🏦 Informations bancaires</strong>
-
-            <br>
-
-            Code banque : ML 109
-
-            <br>
-
-            Code guichet : 01001
-
-        </div>
-
-
-        <!-- COMPTE BANCAIRE -->
-
-        <div class="footer-block">
-
-            <strong>💳 Compte bancaire</strong>
-
-            <br>
-
-            N° de compte : 000100163151
-
-            <br>
-
-            RIB : 45 BSIC
-
-        </div>
-
-
-    </div>
-
-
-    <!-- CONTACT -->
-
-    <div class="footer-contact">
-
-        📍 Torokorobougou, R-400 P-191, Bamako – Mali
-
-        <br>
-
-        📞 +223 76 08 23 79
-
-        <br>
-
-        ✉️ egcobsarl@gmail.com
-
-    </div>
-
-
-    <!-- SLOGAN -->
-
-    <div class="footer-slogan">
-
-        <strong>EGCOB-SARL</strong>
-
-        <br>
-
-        Bâtir aujourd'hui, construire demain
-
-        <small>
-
-            PROFESSIONNALISME • QUALITÉ • INTÉGRITÉ • ENGAGEMENT
-
-        </small>
-
-    </div>
-
-</footer>
-
-
-<!-- =========================
-     JAVASCRIPT
-========================= -->
 
 <script>
 
-/* =========================
-   NAVIGATION
-========================= */
 
-function showPage(pageId, button){
+  /* =========================
+     VARIABLES
+  ========================== */
 
-    document.querySelectorAll(".page").forEach(function(page){
+  let factures = [];
+
+  let depenses = [];
+
+  let devis = [];
+
+
+
+  /* =========================
+     NAVIGATION
+  ========================== */
+
+  function showPage(pageId, button){
+
+    document
+      .querySelectorAll(".page")
+      .forEach(function(page){
 
         page.classList.remove("active");
 
-    });
-
-    document.getElementById(pageId).classList.add("active");
+      });
 
 
-    document.querySelectorAll(".nav button").forEach(function(btn){
+    document
+      .getElementById(pageId)
+      .classList.add("active");
+
+
+    document
+      .querySelectorAll("nav button")
+      .forEach(function(btn){
 
         btn.classList.remove("active");
 
-    });
+      });
+
 
     button.classList.add("active");
 
-}
+  }
 
 
-/* =========================
-   CALCUL FACTURE
-========================= */
 
-function calculerFacture(){
+  /* =========================
+     FORMAT ARGENT
+  ========================== */
 
-    let ht = Number(
-        document.getElementById("factureHT").value
-    ) || 0;
+  function formatMoney(number){
 
+    return Number(number)
+      .toLocaleString("fr-FR")
+      + " F";
 
-    let tva = ht * 0.18;
-
-    let ttc = ht + tva;
+  }
 
 
-    document.getElementById("afficherHT").innerText =
-        ht.toLocaleString("fr-FR") + " F";
 
+  /* =========================
+     FACTURES
+  ========================== */
 
-    document.getElementById("afficherTVA").innerText =
-        tva.toLocaleString("fr-FR") + " F";
-
-
-    document.getElementById("afficherTTC").innerText =
-        ttc.toLocaleString("fr-FR") + " F";
-
-}
-
-
-/* =========================
-   ENREGISTRER FACTURE
-========================= */
-
-function enregistrerFacture(){
+  function ajouterFacture(){
 
     let client =
-        document.getElementById("factureClient").value;
-
-    let objet =
-        document.getElementById("factureObjet").value;
-
-    let ht =
-        Number(document.getElementById("factureHT").value) || 0;
+      document
+      .getElementById("factureClient")
+      .value;
 
 
-    if(client === "" || objet === "" || ht <= 0){
+    let designation =
+      document
+      .getElementById("factureDesignation")
+      .value;
 
-        alert("Veuillez remplir toutes les informations.");
 
-        return;
+    let montant =
+      Number(
+        document
+        .getElementById("factureMontant")
+        .value
+      );
+
+
+    if(
+      client === "" ||
+      designation === "" ||
+      montant <= 0
+    ){
+
+      alert(
+        "Veuillez remplir toutes les informations."
+      );
+
+      return;
 
     }
 
 
-    let ttc = ht * 1.18;
+    let tva =
+      montant * 0.18;
 
 
-    let factures =
-        JSON.parse(localStorage.getItem("factures")) || [];
+    let total =
+      montant + tva;
 
 
     factures.push({
 
-        client:client,
-        objet:objet,
-        ht:ht,
-        ttc:ttc
+      client:client,
+
+      designation:designation,
+
+      montant:montant,
+
+      tva:tva,
+
+      total:total
 
     });
 
-
-    localStorage.setItem(
-        "factures",
-        JSON.stringify(factures)
-    );
-
-
-    document.getElementById("factureClient").value = "";
-
-    document.getElementById("factureObjet").value = "";
-
-    document.getElementById("factureHT").value = "";
-
-
-    calculerFacture();
 
     afficherFactures();
 
-    afficherTableau();
 
-    alert("Facture enregistrée avec succès !");
+    document
+      .getElementById("factureClient")
+      .value = "";
 
-}
+
+    document
+      .getElementById("factureDesignation")
+      .value = "";
 
 
-/* =========================
-   AFFICHER FACTURES
-========================= */
+    document
+      .getElementById("factureMontant")
+      .value = "";
 
-function afficherFactures(){
+  }
 
-    let factures =
-        JSON.parse(localStorage.getItem("factures")) || [];
 
+
+  function afficherFactures(){
 
     let liste =
-        document.getElementById("listeFactures");
+      document
+      .getElementById("factureListe");
 
 
     liste.innerHTML = "";
-
-
-    factures.forEach(function(facture){
-
-        let ligne = document.createElement("tr");
-
-
-        ligne.innerHTML =
-
-            "<td>" + facture.client + "</td>" +
-
-            "<td>" + facture.objet + "</td>" +
-
-            "<td>" +
-            facture.ttc.toLocaleString("fr-FR") +
-            " F</td>";
-
-
-        liste.appendChild(ligne);
-
-    });
-
-}
-
-
-/* =========================
-   ENREGISTRER DEVIS
-========================= */
-
-function enregistrerDevis(){
-
-    let client =
-        document.getElementById("devisClient").value;
-
-    let description =
-        document.getElementById("devisDescription").value;
-
-    let montant =
-        Number(document.getElementById("devisMontant").value) || 0;
-
-
-    if(client === "" || description === "" || montant <= 0){
-
-        alert("Veuillez remplir toutes les informations.");
-
-        return;
-
-    }
-
-
-    let devis =
-        JSON.parse(localStorage.getItem("devis")) || [];
-
-
-    devis.push({
-
-        client:client,
-        description:description,
-        montant:montant
-
-    });
-
-
-    localStorage.setItem(
-        "devis",
-        JSON.stringify(devis)
-    );
-
-
-    document.getElementById("devisClient").value = "";
-
-    document.getElementById("devisDescription").value = "";
-
-    document.getElementById("devisMontant").value = "";
-
-
-    afficherDevis();
-
-    alert("Devis enregistré avec succès !");
-
-}
-
-
-/* =========================
-   AFFICHER DEVIS
-========================= */
-
-function afficherDevis(){
-
-    let devis =
-        JSON.parse(localStorage.getItem("devis")) || [];
-
-
-    let liste =
-        document.getElementById("listeDevis");
-
-
-    liste.innerHTML = "";
-
-
-    devis.forEach(function(item){
-
-        let ligne =
-            document.createElement("tr");
-
-
-        ligne.innerHTML =
-
-            "<td>" + item.client + "</td>" +
-
-            "<td>" + item.description + "</td>" +
-
-            "<td>" +
-            item.montant.toLocaleString("fr-FR") +
-            " F</td>";
-
-
-        liste.appendChild(ligne);
-
-    });
-
-}
-
-
-/* =========================
-   ENREGISTRER DEPENSE
-========================= */
-
-function enregistrerDepense(){
-
-    let libelle =
-        document.getElementById("depenseLibelle").value;
-
-    let montant =
-        Number(
-            document.getElementById("depenseMontant").value
-        ) || 0;
-
-
-    if(libelle === "" || montant <= 0){
-
-        alert("Veuillez remplir toutes les informations.");
-
-        return;
-
-    }
-
-
-    let depenses =
-        JSON.parse(localStorage.getItem("depenses")) || [];
-
-
-    depenses.push({
-
-        libelle:libelle,
-        montant:montant
-
-    });
-
-
-    localStorage.setItem(
-        "depenses",
-        JSON.stringify(depenses)
-    );
-
-
-    document.getElementById("depenseLibelle").value = "";
-
-    document.getElementById("depenseMontant").value = "";
-
-
-    afficherDepenses();
-
-    afficherTableau();
-
-    alert("Dépense enregistrée avec succès !");
-
-}
-
-
-/* =========================
-   AFFICHER DEPENSES
-========================= */
-
-function afficherDepenses(){
-
-    let depenses =
-        JSON.parse(localStorage.getItem("depenses")) || [];
-
-
-    let liste =
-        document.getElementById("listeDepenses");
-
-
-    liste.innerHTML = "";
-
-
-    depenses.forEach(function(depense){
-
-        let ligne =
-            document.createElement("tr");
-
-
-        ligne.innerHTML =
-
-            "<td>" +
-            depense.libelle +
-            "</td>" +
-
-            "<td>" +
-            depense.montant.toLocaleString("fr-FR") +
-            " F</td>";
-
-
-        liste.appendChild(ligne);
-
-    });
-
-}
-
-
-/* =========================
-   TABLEAU DE BORD
-========================= */
-
-function afficherTableau(){
-
-    let factures =
-        JSON.parse(localStorage.getItem("factures")) || [];
-
-
-    let depenses =
-        JSON.parse(localStorage.getItem("depenses")) || [];
 
 
     let totalFacture = 0;
 
-    let totalDepenses = 0;
-
 
     factures.forEach(function(facture){
 
-        totalFacture += facture.ttc;
+      totalFacture +=
+        facture.total;
+
+
+      liste.innerHTML +=
+      `
+
+      <tr>
+
+        <td>
+          ${facture.client}
+        </td>
+
+        <td>
+          ${facture.designation}
+        </td>
+
+        <td>
+          ${formatMoney(facture.montant)}
+        </td>
+
+        <td>
+          ${formatMoney(facture.tva)}
+        </td>
+
+        <td>
+          ${formatMoney(facture.total)}
+        </td>
+
+      </tr>
+
+      `;
 
     });
+
+
+    document
+      .getElementById("factureCount")
+      .innerText =
+      factures.length;
+
+
+    document
+      .getElementById("clientCount")
+      .innerText =
+      factures.length;
+
+
+    document
+      .getElementById("totalFacture")
+      .innerText =
+      formatMoney(totalFacture);
+
+  }
+
+
+
+  /* =========================
+     DEVIS
+  ========================== */
+
+  function creerDevis(){
+
+    let client =
+      document
+      .getElementById("devisClient")
+      .value;
+
+
+    let objet =
+      document
+      .getElementById("devisObjet")
+      .value;
+
+
+    let montant =
+      Number(
+        document
+        .getElementById("devisMontant")
+        .value
+      );
+
+
+    if(
+      client === "" ||
+      objet === "" ||
+      montant <= 0
+    ){
+
+      alert(
+        "Veuillez remplir toutes les informations."
+      );
+
+      return;
+
+    }
+
+
+    let tva =
+      montant * 0.18;
+
+
+    let total =
+      montant + tva;
+
+
+    devis.push({
+
+      client:client,
+
+      objet:objet,
+
+      montant:montant,
+
+      tva:tva,
+
+      total:total
+
+    });
+
+
+    afficherDevis();
+
+
+    document
+      .getElementById("devisClient")
+      .value = "";
+
+
+    document
+      .getElementById("devisObjet")
+      .value = "";
+
+
+    document
+      .getElementById("devisMontant")
+      .value = "";
+
+  }
+
+
+
+  function afficherDevis(){
+
+    let liste =
+      document
+      .getElementById("devisListe");
+
+
+    liste.innerHTML = "";
+
+
+    devis.forEach(function(devisItem){
+
+      liste.innerHTML +=
+      `
+
+      <tr>
+
+        <td>
+          ${devisItem.client}
+        </td>
+
+        <td>
+          ${devisItem.objet}
+        </td>
+
+        <td>
+          ${formatMoney(devisItem.montant)}
+        </td>
+
+        <td>
+          ${formatMoney(devisItem.tva)}
+        </td>
+
+        <td>
+          ${formatMoney(devisItem.total)}
+        </td>
+
+      </tr>
+
+      `;
+
+    });
+
+  }
+
+
+
+  /* =========================
+     DÉPENSES
+  ========================== */
+
+  function ajouterDepense(){
+
+    let nom =
+      document
+      .getElementById("depenseNom")
+      .value;
+
+
+    let montant =
+      Number(
+        document
+        .getElementById("depenseMontant")
+        .value
+      );
+
+
+    if(
+      nom === "" ||
+      montant <= 0
+    ){
+
+      alert(
+        "Veuillez remplir toutes les informations."
+      );
+
+      return;
+
+    }
+
+
+    depenses.push({
+
+      nom:nom,
+
+      montant:montant
+
+    });
+
+
+    afficherDepenses();
+
+
+    document
+      .getElementById("depenseNom")
+      .value = "";
+
+
+    document
+      .getElementById("depenseMontant")
+      .value = "";
+
+  }
+
+
+
+  function afficherDepenses(){
+
+    let liste =
+      document
+      .getElementById("depenseListe");
+
+
+    liste.innerHTML = "";
+
+
+    let totalDepense = 0;
 
 
     depenses.forEach(function(depense){
 
-        totalDepenses += depense.montant;
+      totalDepense +=
+        depense.montant;
+
+
+      liste.innerHTML +=
+      `
+
+      <tr>
+
+        <td>
+          ${depense.nom}
+        </td>
+
+        <td>
+          ${formatMoney(depense.montant)}
+        </td>
+
+      </tr>
+
+      `;
 
     });
 
 
-    let clients = [];
+    document
+      .getElementById("totalDepense")
+      .innerText =
+      formatMoney(totalDepense);
 
+  }
 
-    factures.forEach(function(facture){
-
-        if(!clients.includes(facture.client)){
-
-            clients.push(facture.client);
-
-        }
-
-    });
-
-
-    document.getElementById("totalClients").innerText =
-        clients.length;
-
-
-    document.getElementById("totalFactures").innerText =
-        factures.length;
-
-
-    document.getElementById("totalFacture").innerText =
-        totalFacture.toLocaleString("fr-FR") + " F";
-
-
-    document.getElementById("totalDepenses").innerText =
-        totalDepenses.toLocaleString("fr-FR") + " F";
-
-}
-
-
-/* =========================
-   CHARGEMENT
-========================= */
-
-afficherFactures();
-
-afficherDevis();
-
-afficherDepenses();
-
-afficherTableau();
 
 </script>
+
 
 </body>
 </html>
