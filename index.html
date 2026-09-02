@@ -2,9 +2,10 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>EGCOB-SARL | Gestion Mobile</title>
+<title>EGCOB-SARL | Gestion Commerciale</title>
 
 <style>
 
@@ -56,7 +57,7 @@ body{
     display:flex;
     justify-content:center;
     gap:8px;
-    padding:12px;
+    padding:15px;
     flex-wrap:wrap;
 }
 
@@ -135,13 +136,12 @@ select{
 }
 
 textarea{
-    min-height:90px;
-    resize:vertical;
+    min-height:80px;
 }
 
 .btn{
     border:none;
-    padding:13px 18px;
+    padding:12px 18px;
     border-radius:10px;
     font-size:15px;
     font-weight:bold;
@@ -174,9 +174,11 @@ textarea{
     text-align:center;
 }
 
-/* DOCUMENT */
+/* =================================================
+DOCUMENT
+================================================= */
 
-.invoice{
+.document{
     background:white;
     max-width:1000px;
     margin:auto;
@@ -184,64 +186,75 @@ textarea{
     border-top:12px solid var(--bleu);
 }
 
-.invoice-top{
+.document-top{
     display:flex;
     justify-content:space-between;
-    gap:25px;
+    gap:30px;
     align-items:flex-start;
     border-bottom:2px solid var(--or);
     padding-bottom:20px;
 }
 
-.logo-zone{
-    display:flex;
-    align-items:center;
-    gap:15px;
+.company-zone{
+    flex:1;
 }
 
-.logo-zone img{
+.company-zone img{
     width:180px;
-    max-height:140px;
+    max-height:120px;
     object-fit:contain;
+    margin-bottom:10px;
 }
 
-.logo-text h1{
+.company-name{
     color:var(--bleu);
-    font-size:28px;
+    font-size:30px;
+    font-weight:bold;
 }
 
-.logo-text p{
+.company-sector{
     color:var(--or);
+    font-size:17px;
     margin-top:5px;
+}
+
+.company-slogan{
+    color:#8f7020;
+    font-style:italic;
+    margin-top:8px;
 }
 
 .company-address{
     margin-top:12px;
-    color:var(--texte);
     font-size:14px;
-    line-height:1.6;
+    line-height:1.7;
 }
 
-.invoice-title{
+.document-title{
     text-align:right;
 }
 
-.invoice-title h2{
+.document-title h2{
     display:inline-block;
     background:var(--bleu);
     color:white;
     padding:12px 25px;
-    font-size:26px;
+    font-size:25px;
 }
 
-.invoice-title p{
+.document-title p{
     margin-top:12px;
+    font-size:15px;
 }
 
-.invoice-number{
+.document-number{
     color:var(--bleu);
     font-weight:bold;
 }
+
+/* =================================================
+INFOS
+================================================= */
 
 .info-boxes{
     display:grid;
@@ -263,7 +276,7 @@ textarea{
     padding:8px 15px;
     margin:-18px 0 15px -18px;
     border-radius:8px 0 8px 0;
-    font-size:14px;
+    font-size:15px;
 }
 
 .info-box p{
@@ -271,13 +284,17 @@ textarea{
     line-height:1.5;
 }
 
-.invoice-table{
+/* =================================================
+TABLEAUX
+================================================= */
+
+.document-table{
     width:100%;
     border-collapse:collapse;
     margin-top:25px;
 }
 
-.invoice-table th{
+.document-table th{
     background:var(--bleu);
     color:white;
     padding:12px 7px;
@@ -285,25 +302,35 @@ textarea{
     text-align:center;
 }
 
-.invoice-table td{
+.document-table td{
     border:1px solid #aeb7c3;
     padding:9px 6px;
     text-align:center;
 }
 
-.invoice-table input,
-.invoice-table textarea{
+.document-table input{
     border:none;
-    padding:6px;
+    padding:5px;
     border-radius:0;
     text-align:center;
     width:100%;
 }
 
+.document-table textarea{
+    border:none;
+    min-height:70px;
+    resize:vertical;
+    border-radius:0;
+}
+
+/* =================================================
+TOTAL
+================================================= */
+
 .bottom-zone{
     display:grid;
     grid-template-columns:1.2fr 1fr;
-    gap:25px;
+    gap:30px;
     margin-top:25px;
 }
 
@@ -345,6 +372,10 @@ textarea{
     color:var(--bleu);
 }
 
+/* =================================================
+SIGNATURE
+================================================= */
+
 .signature{
     margin-top:25px;
     display:flex;
@@ -352,7 +383,7 @@ textarea{
 }
 
 .signature-box{
-    width:330px;
+    width:350px;
 }
 
 .signature-box h4{
@@ -367,15 +398,17 @@ textarea{
     border-radius:10px;
 }
 
-/* PIED DE PAGE */
+/* =================================================
+ADMINISTRATIF
+================================================= */
 
 .admin-title{
     text-align:center;
-    margin:30px 0 15px;
+    margin:30px 0 20px;
     color:var(--bleu);
-    font-size:18px;
+    font-size:19px;
     border-bottom:2px solid var(--or);
-    padding-bottom:8px;
+    padding-bottom:10px;
 }
 
 .admin-grid{
@@ -386,7 +419,7 @@ textarea{
 
 .admin-item{
     text-align:center;
-    padding:12px 7px;
+    padding:13px 7px;
     border-right:1px solid #ddd;
 }
 
@@ -397,81 +430,60 @@ textarea{
 .admin-item strong{
     display:block;
     color:var(--bleu);
-    margin-bottom:7px;
-    font-size:12px;
+    margin-bottom:8px;
+    font-size:13px;
 }
 
 .admin-item span{
     font-size:12px;
 }
 
-.home-box{
-    text-align:center;
-    padding:45px 20px;
-}
+/* =================================================
+PIED
+================================================= */
 
-.home-box h2{
-    font-size:32px;
-}
-
-.home-box p{
-    font-size:18px;
-    line-height:1.8;
-}
-
-.expense-table,
-.client-table,
-.tech-table{
-    width:100%;
-    border-collapse:collapse;
-    margin-top:15px;
-}
-
-.expense-table th,
-.client-table th,
-.tech-table th{
+.document-footer{
+    margin-top:20px;
     background:var(--bleu);
     color:white;
-    padding:13px;
-    border:1px solid #aeb7c3;
+    padding:15px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+    text-align:center;
+    border-bottom:5px solid var(--or);
 }
 
-.expense-table td,
-.client-table td,
-.tech-table td{
-    border:1px solid #aeb7c3;
-    padding:10px;
+.document-footer div{
+    font-size:13px;
 }
 
-.expense-table input,
-.client-table input,
-.tech-table textarea{
-    border:none;
-    width:100%;
-    padding:8px;
-    border-radius:0;
-}
-
-.tech-table textarea{
-    min-height:70px;
-}
+/* =================================================
+MOBILE
+================================================= */
 
 @media(max-width:750px){
 
-    .invoice{
+    .document{
         padding:15px;
     }
 
-    .invoice-top{
+    .document-top{
         flex-direction:column;
     }
 
-    .invoice-title{
+    .document-title{
         text-align:left;
     }
 
-    .info-boxes,
-    .form-grid,
+    .info-boxes{
+        grid-template-columns:1fr;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
     .bottom-zone{
         grid-template-columns:1fr;
     }
@@ -484,20 +496,23 @@ textarea{
         border-bottom:1px solid #ddd;
     }
 
-    .logo-zone img{
-        width:140px;
+    .document-footer{
+        grid-template-columns:1fr;
     }
 
-    .invoice-table{
+    .document-table{
         font-size:11px;
     }
 
-    .invoice-table th,
-    .invoice-table td{
+    .document-table th,
+    .document-table td{
         padding:4px 2px;
     }
-
 }
+
+/* =================================================
+IMPRESSION
+================================================= */
 
 @media print{
 
@@ -526,20 +541,23 @@ textarea{
         display:block !important;
     }
 
-    .invoice,
-    .card{
-        box-shadow:none;
+    .document{
         width:100%;
         max-width:100%;
         margin:0;
+        padding:15px;
+        box-shadow:none;
     }
-
 }
 
 </style>
 </head>
 
 <body>
+
+<!-- =================================================
+ENTETE APPLICATION
+================================================= -->
 
 <header class="app-header">
 
@@ -550,25 +568,35 @@ textarea{
 </header>
 
 
+<!-- =================================================
+MENU COMPLET
+================================================= -->
+
 <nav class="menu no-print">
 
-<button class="active" onclick="showSection('accueil',this)">🏠 Accueil</button>
+<button class="active" onclick="showSection('facture',this)">
+🧾 Facture
+</button>
 
-<button onclick="showSection('facture',this)">🧾 Facture</button>
+<button onclick="showSection('proforma',this)">
+📄 Pro Forma
+</button>
 
-<button onclick="showSection('proforma',this)">📄 Facture Pro Forma</button>
+<button onclick="showSection('devis',this)">
+📝 Devis
+</button>
 
-<button onclick="showSection('devis',this)">📝 Devis</button>
+<button onclick="showSection('livraison',this)">
+🚚 Bordereau de livraison
+</button>
 
-<button onclick="showSection('livraison',this)">🚚 Bordereau de livraison</button>
+<button onclick="showSection('bpu',this)">
+💰 Prix unitaires
+</button>
 
-<button onclick="showSection('prix',this)">💰 Bordereau des prix unitaires</button>
-
-<button onclick="showSection('depenses',this)">💸 Dépenses</button>
-
-<button onclick="showSection('clients',this)">👥 Clients</button>
-
-<button onclick="showSection('technique',this)">⚙️ Caractéristiques techniques</button>
+<button onclick="showSection('technique',this)">
+📋 Caractéristiques techniques
+</button>
 
 </nav>
 
@@ -576,34 +604,11 @@ textarea{
 <div class="container">
 
 
-<!-- ACCUEIL -->
+<!-- =================================================
+1 - FACTURE
+================================================= -->
 
-<section id="accueil" class="section active">
-
-<div class="card home-box">
-
-<h2>Bienvenue chez EGCOB-SARL</h2>
-
-<p>
-<strong>COMMERCE & BTP</strong><br>
-<i>Bâtir aujourd'hui, construire demain</i>
-</p>
-
-<br>
-
-<p>
-Cette application vous permet de gérer vos documents commerciaux,
-vos factures, vos clients, vos dépenses et vos documents techniques.
-</p>
-
-</div>
-
-</section>
-
-
-<!-- FACTURE -->
-
-<section id="facture" class="section">
+<section id="facture" class="section active">
 
 <div class="card form-card no-print">
 
@@ -613,42 +618,42 @@ vos factures, vos clients, vos dépenses et vos documents techniques.
 
 <div class="form-group">
 <label>Nom du client</label>
-<input type="text" id="f_client">
+<input id="f_client" oninput="updateClient('f')" placeholder="Nom du client">
 </div>
 
 <div class="form-group">
 <label>Adresse du client</label>
-<input type="text" id="f_adresse">
+<input id="f_adresse" oninput="updateClient('f')" placeholder="Adresse">
 </div>
 
 <div class="form-group">
 <label>Téléphone</label>
-<input type="text" id="f_phone">
+<input id="f_phone" oninput="updateClient('f')" placeholder="+223 ...">
 </div>
 
 <div class="form-group">
 <label>Email</label>
-<input type="email" id="f_email">
+<input id="f_email" oninput="updateClient('f')" placeholder="email@exemple.com">
 </div>
 
 <div class="form-group">
 <label>Numéro de facture</label>
-<input type="text" id="f_numero" value="FAC-2026-001">
+<input id="f_numero" value="FAC-2026-001" oninput="updateClient('f')">
 </div>
 
 <div class="form-group">
 <label>Date</label>
-<input type="date" id="f_date">
+<input type="date" id="f_date" onchange="updateClient('f')">
 </div>
 
 <div class="form-group">
 <label>Date d'échéance</label>
-<input type="date" id="f_echeance">
+<input type="date" id="f_echeance" onchange="updateClient('f')">
 </div>
 
 <div class="form-group">
 <label>Mode de paiement</label>
-<select id="f_paiement">
+<select id="f_paiement" onchange="updateClient('f')">
 <option>Espèces</option>
 <option>Virement bancaire</option>
 <option>Chèque</option>
@@ -658,7 +663,7 @@ vos factures, vos clients, vos dépenses et vos documents techniques.
 
 <div class="form-group full">
 <label>Référence / Contrat</label>
-<input type="text" id="f_reference">
+<input id="f_reference" oninput="updateClient('f')" placeholder="Référence ou contrat">
 </div>
 
 </div>
@@ -666,41 +671,43 @@ vos factures, vos clients, vos dépenses et vos documents techniques.
 </div>
 
 
-<div class="invoice">
+<div class="document">
 
-<div class="invoice-top">
+<div class="document-top">
 
-<div class="logo-zone">
+<div class="company-zone">
 
-<img src="logo.png" alt="Logo EGCOB-SARL">
+<h1 class="company-name">EGCOB-SARL</h1>
 
-<div class="logo-text">
+<p class="company-sector">COMMERCE & BTP</p>
 
-<h1>EGCOB-SARL</h1>
+<p class="company-slogan">
+Bâtir aujourd'hui, construire demain
+</p>
 
-<p>COMMERCE & BTP</p>
-
-<p><i>Bâtir aujourd'hui, construire demain</i></p>
-
-<div class="company-address">
-
+<p class="company-address">
 📍 Torokorobougou, R-400 P-191, Bamako – Mali<br>
 📞 +223 76 08 23 79<br>
 ✉️ egcobsarl@gmail.com
+</p>
 
 </div>
 
-</div>
-
-</div>
-
-<div class="invoice-title">
+<div class="document-title">
 
 <h2>FACTURE</h2>
 
-<p><strong>N° :</strong> <span id="out_numero">FAC-2026-001</span></p>
+<p>
+<strong>N° :</strong>
+<span id="out_f_numero" class="document-number">
+FAC-2026-001
+</span>
+</p>
 
-<p><strong>DATE :</strong> <span id="out_date"></span></p>
+<p>
+<strong>Date :</strong>
+<span id="out_f_date"></span>
+</p>
 
 </div>
 
@@ -713,37 +720,46 @@ vos factures, vos clients, vos dépenses et vos documents techniques.
 
 <h3>FACTURÉ À :</h3>
 
-<p><strong>Nom :</strong> <span id="out_client"></span></p>
+<p><strong>Nom :</strong> <span id="out_f_client"></span></p>
 
-<p><strong>Adresse :</strong> <span id="out_adresse"></span></p>
+<p><strong>Adresse :</strong> <span id="out_f_adresse"></span></p>
 
-<p><strong>Téléphone :</strong> <span id="out_phone"></span></p>
+<p><strong>Téléphone :</strong> <span id="out_f_phone"></span></p>
 
-<p><strong>Email :</strong> <span id="out_email"></span></p>
+<p><strong>Email :</strong> <span id="out_f_email"></span></p>
 
 </div>
+
 
 <div class="info-box">
 
 <h3>INFORMATIONS :</h3>
 
-<p><strong>Échéance :</strong> <span id="out_echeance"></span></p>
+<p>
+<strong>Échéance :</strong>
+<span id="out_f_echeance"></span>
+</p>
 
-<p><strong>Paiement :</strong> <span id="out_paiement"></span></p>
+<p>
+<strong>Paiement :</strong>
+<span id="out_f_paiement"></span>
+</p>
 
-<p><strong>Référence :</strong> <span id="out_reference"></span></p>
+<p>
+<strong>Référence :</strong>
+<span id="out_f_reference"></span>
+</p>
 
 </div>
 
 </div>
 
 
-<table class="invoice-table">
+<table class="document-table">
 
 <thead>
 
 <tr>
-
 <th>N°</th>
 <th>DÉSIGNATION</th>
 <th>QTÉ</th>
@@ -751,40 +767,18 @@ vos factures, vos clients, vos dépenses et vos documents techniques.
 <th>PRIX UNIT. HT</th>
 <th>MONTANT HT</th>
 <th class="no-print">X</th>
-
 </tr>
 
 </thead>
 
-<tbody id="factureRows">
-
-<tr>
-
-<td class="row-number">01</td>
-
-<td><input class="designation" oninput="calculateFacture()"></td>
-
-<td><input type="number" class="qty" value="1" oninput="calculateFacture()"></td>
-
-<td><input class="unit" value="U"></td>
-
-<td><input type="number" class="price" value="0" oninput="calculateFacture()"></td>
-
-<td class="line-total">0 F CFA</td>
-
-<td class="no-print">
-<button class="btn btn-red" onclick="removeInvoiceRow(this,'factureRows','facture')">✕</button>
-</td>
-
-</tr>
-
-</tbody>
+<tbody id="factureRows"></tbody>
 
 </table>
 
 <div class="actions no-print">
 
-<button class="btn btn-primary" onclick="addInvoiceRow('factureRows','facture')">
+<button class="btn btn-primary"
+onclick="addCommercialRow('factureRows','facture')">
 ➕ Ajouter une ligne
 </button>
 
@@ -797,7 +791,9 @@ vos factures, vos clients, vos dépenses et vos documents techniques.
 
 <h4>ARRÊTÉ LA PRÉSENTE FACTURE À LA SOMME DE :</h4>
 
-<p id="amountWordsFacture">Zéro Franc CFA</p>
+<p id="words_facture">
+Zéro Franc CFA
+</p>
 
 </div>
 
@@ -805,17 +801,17 @@ vos factures, vos clients, vos dépenses et vos documents techniques.
 
 <tr>
 <td>TOTAL HT</td>
-<td id="totalHTFacture">0 F CFA</td>
+<td id="ht_facture">0 F CFA</td>
 </tr>
 
 <tr>
 <td>TVA 18 %</td>
-<td id="tvaFacture">0 F CFA</td>
+<td id="tva_facture">0 F CFA</td>
 </tr>
 
 <tr>
 <td>TOTAL TTC</td>
-<td id="totalTTCFacture">0 F CFA</td>
+<td id="ttc_facture">0 F CFA</td>
 </tr>
 
 </table>
@@ -835,8 +831,53 @@ vos factures, vos clients, vos dépenses et vos documents techniques.
 
 </div>
 
+<div class="admin-title">
+INFORMATIONS ADMINISTRATIVES ET BANCAIRES
+</div>
 
-<div id="footerFacture"></div>
+<div class="admin-grid">
+
+<div class="admin-item">
+<strong>R.C.C.M.</strong>
+<span>Ma Bko 2017 B 5034</span>
+</div>
+
+<div class="admin-item">
+<strong>NIF</strong>
+<span>085135849D</span>
+</div>
+
+<div class="admin-item">
+<strong>CODE BANQUE</strong>
+<span>ML 109</span>
+</div>
+
+<div class="admin-item">
+<strong>CODE GUICHET</strong>
+<span>01001</span>
+</div>
+
+<div class="admin-item">
+<strong>N° DE COMPTE</strong>
+<span>000100163151</span>
+</div>
+
+<div class="admin-item">
+<strong>RIB</strong>
+<span>45 BSIC</span>
+</div>
+
+</div>
+
+<div class="document-footer">
+
+<div>📞 +223 76 08 23 79</div>
+
+<div>✉️ egcobsarl@gmail.com</div>
+
+<div>📍 Torokorobougou, R-400 P-191, Bamako – Mali</div>
+
+</div>
 
 </div>
 
@@ -851,338 +892,959 @@ vos factures, vos clients, vos dépenses et vos documents techniques.
 </section>
 
 
-<!-- PRO FORMA -->
+<!-- =================================================
+2 - PRO FORMA
+================================================= -->
 
 <section id="proforma" class="section">
 
-<div class="card">
+<div class="card form-card no-print">
 
-<h2>📄 Facture Pro Forma</h2>
-
-<p>
-La rubrique Pro Forma est conservée dans votre application.
-Vous pouvez utiliser le même système de lignes, quantités,
-prix HT, TVA 18 % et Total TTC.
-</p>
-
-<br>
-
-<p>
-Pour garder l'application simple et stable, utilisez les mêmes informations
-que la facture avec le titre <strong>PRO FORMA</strong>.
-</p>
-
-<div class="actions">
-
-<button class="btn btn-green" onclick="alert('La version complète Pro Forma peut être utilisée sur le même modèle que la facture.')">
-📄 Ouvrir le modèle Pro Forma
-</button>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- DEVIS -->
-
-<section id="devis" class="section">
-
-<div class="card">
-
-<h2>📝 Devis</h2>
+<h2>📄 Créer une facture Pro Forma</h2>
 
 <div class="form-grid">
 
 <div class="form-group">
 <label>Nom du client</label>
-<input placeholder="Nom du client">
+<input id="p_client" oninput="updateClient('p')">
 </div>
 
 <div class="form-group">
-<label>Numéro du devis</label>
-<input value="DEV-2026-001">
-</div>
-
-<div class="form-group full">
-<label>Objet du devis</label>
-<textarea placeholder="Objet / Description du devis"></textarea>
-</div>
-
-</div>
-
-<div class="actions">
-
-<button class="btn btn-primary">➕ Ajouter une ligne</button>
-
-<button class="btn btn-green" onclick="window.print()">🖨️ Imprimer / PDF</button>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- BORDEREAU LIVRAISON -->
-
-<section id="livraison" class="section">
-
-<div class="card">
-
-<h2>🚚 Bordereau de livraison</h2>
-
-<div class="form-grid">
-
-<div class="form-group">
-<label>Client / Destinataire</label>
-<input>
+<label>Adresse</label>
+<input id="p_adresse" oninput="updateClient('p')">
 </div>
 
 <div class="form-group">
-<label>Numéro du bordereau</label>
-<input value="BL-2026-001">
+<label>Téléphone</label>
+<input id="p_phone" oninput="updateClient('p')">
+</div>
+
+<div class="form-group">
+<label>Email</label>
+<input id="p_email" oninput="updateClient('p')">
+</div>
+
+<div class="form-group">
+<label>Numéro Pro Forma</label>
+<input id="p_numero" value="PF-2026-001" oninput="updateClient('p')">
 </div>
 
 <div class="form-group">
 <label>Date</label>
-<input type="date">
+<input type="date" id="p_date" onchange="updateClient('p')">
 </div>
 
 <div class="form-group">
-<label>Lieu de livraison</label>
-<input>
+<label>Validité</label>
+<input type="date" id="p_validite" onchange="updateClient('p')">
+</div>
+
+<div class="form-group">
+<label>Mode de paiement</label>
+<select id="p_paiement" onchange="updateClient('p')">
+<option>Espèces</option>
+<option>Virement bancaire</option>
+<option>Chèque</option>
+<option>Mobile Money</option>
+</select>
+</div>
+
+<div class="form-group full">
+<label>Référence / Objet</label>
+<input id="p_reference" oninput="updateClient('p')">
 </div>
 
 </div>
 
-<table class="invoice-table">
+</div>
+
+
+<div class="document">
+
+<div class="document-top">
+
+<div class="company-zone">
+
+<h1 class="company-name">EGCOB-SARL</h1>
+<p class="company-sector">COMMERCE & BTP</p>
+<p class="company-slogan">Bâtir aujourd'hui, construire demain</p>
+
+<p class="company-address">
+📍 Torokorobougou, R-400 P-191, Bamako – Mali<br>
+📞 +223 76 08 23 79
+</p>
+
+</div>
+
+<div class="document-title">
+
+<h2>PRO FORMA</h2>
+
+<p>
+<strong>N° :</strong>
+<span id="out_p_numero" class="document-number">
+PF-2026-001
+</span>
+</p>
+
+<p>
+<strong>Date :</strong>
+<span id="out_p_date"></span>
+</p>
+
+</div>
+
+</div>
+
+
+<div class="info-boxes">
+
+<div class="info-box">
+
+<h3>CLIENT :</h3>
+
+<p><strong>Nom :</strong> <span id="out_p_client"></span></p>
+<p><strong>Adresse :</strong> <span id="out_p_adresse"></span></p>
+<p><strong>Téléphone :</strong> <span id="out_p_phone"></span></p>
+<p><strong>Email :</strong> <span id="out_p_email"></span></p>
+
+</div>
+
+<div class="info-box">
+
+<h3>INFORMATIONS :</h3>
+
+<p><strong>Validité :</strong> <span id="out_p_validite"></span></p>
+<p><strong>Paiement :</strong> <span id="out_p_paiement"></span></p>
+<p><strong>Référence :</strong> <span id="out_p_reference"></span></p>
+
+</div>
+
+</div>
+
+
+<table class="document-table">
 
 <thead>
-
 <tr>
-
 <th>N°</th>
 <th>DÉSIGNATION</th>
-<th>QUANTITÉ</th>
+<th>QTÉ</th>
 <th>UNITÉ</th>
-
+<th>PRIX UNIT. HT</th>
+<th>MONTANT HT</th>
+<th class="no-print">X</th>
 </tr>
-
 </thead>
 
-<tbody>
-
-<tr>
-
-<td>01</td>
-
-<td><input></td>
-
-<td><input type="number" value="1"></td>
-
-<td><input value="U"></td>
-
-</tr>
-
-</tbody>
+<tbody id="proformaRows"></tbody>
 
 </table>
 
-<div class="actions">
+<div class="actions no-print">
 
-<button class="btn btn-primary">➕ Ajouter une ligne</button>
-
-<button class="btn btn-green" onclick="window.print()">🖨️ Imprimer / PDF</button>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- BORDEREAU PRIX UNITAIRES -->
-
-<section id="prix" class="section">
-
-<div class="card">
-
-<h2>💰 Bordereau des prix unitaires</h2>
-
-<table class="invoice-table">
-
-<thead>
-
-<tr>
-
-<th>N°</th>
-<th>DÉSIGNATION</th>
-<th>UNITÉ</th>
-<th>PRIX UNITAIRE HT</th>
-
-</tr>
-
-</thead>
-
-<tbody id="priceRows">
-
-<tr>
-
-<td>01</td>
-
-<td><input></td>
-
-<td><input value="U"></td>
-
-<td><input type="number" value="0"></td>
-
-</tr>
-
-</tbody>
-
-</table>
-
-<div class="actions">
-
-<button class="btn btn-primary" onclick="addSimplePriceRow()">
+<button class="btn btn-primary"
+onclick="addCommercialRow('proformaRows','proforma')">
 ➕ Ajouter une ligne
 </button>
 
-<button class="btn btn-green" onclick="window.print()">
-🖨️ Imprimer / PDF
-</button>
+</div>
+
+
+<div class="bottom-zone">
+
+<div class="amount-words">
+
+<h4>ARRÊTÉ LE PRÉSENT PRO FORMA À LA SOMME DE :</h4>
+
+<p id="words_proforma">
+Zéro Franc CFA
+</p>
 
 </div>
+
+<table class="totals">
+
+<tr>
+<td>TOTAL HT</td>
+<td id="ht_proforma">0 F CFA</td>
+</tr>
+
+<tr>
+<td>TVA 18 %</td>
+<td id="tva_proforma">0 F CFA</td>
+</tr>
+
+<tr>
+<td>TOTAL TTC</td>
+<td id="ttc_proforma">0 F CFA</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="signature">
+
+<div class="signature-box">
+
+<h4>CACHET ET SIGNATURE</h4>
+
+<div class="signature-area"></div>
+
+</div>
+
+</div>
+
+<div class="admin-title">
+INFORMATIONS ADMINISTRATIVES ET BANCAIRES
+</div>
+
+<div class="admin-grid">
+
+<div class="admin-item">
+<strong>R.C.C.M.</strong>
+<span>Ma Bko 2017 B 5034</span>
+</div>
+
+<div class="admin-item">
+<strong>NIF</strong>
+<span>085135849D</span>
+</div>
+
+<div class="admin-item">
+<strong>CODE BANQUE</strong>
+<span>ML 109</span>
+</div>
+
+<div class="admin-item">
+<strong>CODE GUICHET</strong>
+<span>01001</span>
+</div>
+
+<div class="admin-item">
+<strong>N° DE COMPTE</strong>
+<span>000100163151</span>
+</div>
+
+<div class="admin-item">
+<strong>RIB</strong>
+<span>45 BSIC</span>
+</div>
+
+</div>
+
+<div class="document-footer">
+
+<div>📞 +223 76 08 23 79</div>
+<div>✉️ egcobsarl@gmail.com</div>
+<div>📍 Torokorobougou, R-400 P-191, Bamako – Mali</div>
+
+</div>
+
+</div>
+
+<div class="actions no-print">
+
+<button class="btn btn-green" onclick="window.print()">
+🖨️ Imprimer / Enregistrer en PDF
+</button>
 
 </div>
 
 </section>
 
 
-<!-- DEPENSES -->
+<!-- =================================================
+3 - DEVIS
+================================================= -->
 
-<section id="depenses" class="section">
+<section id="devis" class="section">
 
-<div class="card">
+<div class="card form-card no-print">
 
-<h2>💸 Dépenses</h2>
+<h2>📝 Créer un devis</h2>
 
-<table class="expense-table">
+<div class="form-grid">
+
+<div class="form-group">
+<label>Nom du client</label>
+<input id="d_client" oninput="updateClient('d')">
+</div>
+
+<div class="form-group">
+<label>Adresse</label>
+<input id="d_adresse" oninput="updateClient('d')">
+</div>
+
+<div class="form-group">
+<label>Téléphone</label>
+<input id="d_phone" oninput="updateClient('d')">
+</div>
+
+<div class="form-group">
+<label>Email</label>
+<input id="d_email" oninput="updateClient('d')">
+</div>
+
+<div class="form-group">
+<label>Numéro du devis</label>
+<input id="d_numero" value="DEV-2026-001" oninput="updateClient('d')">
+</div>
+
+<div class="form-group">
+<label>Date</label>
+<input type="date" id="d_date" onchange="updateClient('d')">
+</div>
+
+<div class="form-group">
+<label>Validité du devis</label>
+<input type="date" id="d_validite" onchange="updateClient('d')">
+</div>
+
+<div class="form-group full">
+<label>Objet / Référence</label>
+<input id="d_reference" oninput="updateClient('d')">
+</div>
+
+</div>
+
+</div>
+
+
+<div class="document">
+
+<div class="document-top">
+
+<div class="company-zone">
+
+<h1 class="company-name">EGCOB-SARL</h1>
+<p class="company-sector">COMMERCE & BTP</p>
+<p class="company-slogan">Bâtir aujourd'hui, construire demain</p>
+
+<p class="company-address">
+📍 Torokorobougou, R-400 P-191, Bamako – Mali<br>
+📞 +223 76 08 23 79
+</p>
+
+</div>
+
+<div class="document-title">
+
+<h2>DEVIS</h2>
+
+<p>
+<strong>N° :</strong>
+<span id="out_d_numero" class="document-number">
+DEV-2026-001
+</span>
+</p>
+
+<p>
+<strong>Date :</strong>
+<span id="out_d_date"></span>
+</p>
+
+</div>
+
+</div>
+
+
+<div class="info-boxes">
+
+<div class="info-box">
+
+<h3>CLIENT :</h3>
+
+<p><strong>Nom :</strong> <span id="out_d_client"></span></p>
+<p><strong>Adresse :</strong> <span id="out_d_adresse"></span></p>
+<p><strong>Téléphone :</strong> <span id="out_d_phone"></span></p>
+<p><strong>Email :</strong> <span id="out_d_email"></span></p>
+
+</div>
+
+<div class="info-box">
+
+<h3>INFORMATIONS :</h3>
+
+<p><strong>Validité :</strong> <span id="out_d_validite"></span></p>
+<p><strong>Objet :</strong> <span id="out_d_reference"></span></p>
+
+</div>
+
+</div>
+
+
+<table class="document-table">
+
+<thead>
+<tr>
+<th>N°</th>
+<th>DÉSIGNATION</th>
+<th>QTÉ</th>
+<th>UNITÉ</th>
+<th>PRIX UNIT. HT</th>
+<th>MONTANT HT</th>
+<th class="no-print">X</th>
+</tr>
+</thead>
+
+<tbody id="devisRows"></tbody>
+
+</table>
+
+<div class="actions no-print">
+
+<button class="btn btn-primary"
+onclick="addCommercialRow('devisRows','devis')">
+➕ Ajouter une ligne
+</button>
+
+</div>
+
+
+<div class="bottom-zone">
+
+<div class="amount-words">
+
+<h4>ARRÊTÉ LE PRÉSENT DEVIS À LA SOMME DE :</h4>
+
+<p id="words_devis">
+Zéro Franc CFA
+</p>
+
+</div>
+
+<table class="totals">
+
+<tr>
+<td>TOTAL HT</td>
+<td id="ht_devis">0 F CFA</td>
+</tr>
+
+<tr>
+<td>TVA 18 %</td>
+<td id="tva_devis">0 F CFA</td>
+</tr>
+
+<tr>
+<td>TOTAL TTC</td>
+<td id="ttc_devis">0 F CFA</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<div class="signature">
+
+<div class="signature-box">
+
+<h4>CACHET ET SIGNATURE</h4>
+
+<div class="signature-area"></div>
+
+</div>
+
+</div>
+
+<div class="admin-title">
+INFORMATIONS ADMINISTRATIVES ET BANCAIRES
+</div>
+
+<div class="admin-grid">
+
+<div class="admin-item"><strong>R.C.C.M.</strong><span>Ma Bko 2017 B 5034</span></div>
+<div class="admin-item"><strong>NIF</strong><span>085135849D</span></div>
+<div class="admin-item"><strong>CODE BANQUE</strong><span>ML 109</span></div>
+<div class="admin-item"><strong>CODE GUICHET</strong><span>01001</span></div>
+<div class="admin-item"><strong>N° DE COMPTE</strong><span>000100163151</span></div>
+<div class="admin-item"><strong>RIB</strong><span>45 BSIC</span></div>
+
+</div>
+
+<div class="document-footer">
+
+<div>📞 +223 76 08 23 79</div>
+<div>✉️ egcobsarl@gmail.com</div>
+<div>📍 Torokorobougou, R-400 P-191, Bamako – Mali</div>
+
+</div>
+
+</div>
+
+<div class="actions no-print">
+
+<button class="btn btn-green" onclick="window.print()">
+🖨️ Imprimer / Enregistrer en PDF
+</button>
+
+</div>
+
+</section>
+
+
+<!-- =================================================
+4 - BORDEREAU DE LIVRAISON
+================================================= -->
+
+<section id="livraison" class="section">
+
+<div class="card form-card no-print">
+
+<h2>🚚 Créer un bordereau de livraison</h2>
+
+<div class="form-grid">
+
+<div class="form-group">
+<label>Nom du client / destinataire</label>
+<input id="l_client" oninput="updateClient('l')">
+</div>
+
+<div class="form-group">
+<label>Adresse de livraison</label>
+<input id="l_adresse" oninput="updateClient('l')">
+</div>
+
+<div class="form-group">
+<label>Téléphone</label>
+<input id="l_phone" oninput="updateClient('l')">
+</div>
+
+<div class="form-group">
+<label>Email</label>
+<input id="l_email" oninput="updateClient('l')">
+</div>
+
+<div class="form-group">
+<label>Numéro du bordereau</label>
+<input id="l_numero" value="BL-2026-001" oninput="updateClient('l')">
+</div>
+
+<div class="form-group">
+<label>Date de livraison</label>
+<input type="date" id="l_date" onchange="updateClient('l')">
+</div>
+
+<div class="form-group full">
+<label>Référence / Contrat / Commande</label>
+<input id="l_reference" oninput="updateClient('l')">
+</div>
+
+</div>
+
+</div>
+
+
+<div class="document">
+
+<div class="document-top">
+
+<div class="company-zone">
+
+<h1 class="company-name">EGCOB-SARL</h1>
+<p class="company-sector">COMMERCE & BTP</p>
+<p class="company-slogan">Bâtir aujourd'hui, construire demain</p>
+
+<p class="company-address">
+📍 Torokorobougou, R-400 P-191, Bamako – Mali<br>
+📞 +223 76 08 23 79
+</p>
+
+</div>
+
+<div class="document-title">
+
+<h2>BORDEREAU<br>DE LIVRAISON</h2>
+
+<p>
+<strong>N° :</strong>
+<span id="out_l_numero" class="document-number">
+BL-2026-001
+</span>
+</p>
+
+<p>
+<strong>Date :</strong>
+<span id="out_l_date"></span>
+</p>
+
+</div>
+
+</div>
+
+
+<div class="info-boxes">
+
+<div class="info-box">
+
+<h3>LIVRÉ À :</h3>
+
+<p><strong>Nom :</strong> <span id="out_l_client"></span></p>
+<p><strong>Adresse :</strong> <span id="out_l_adresse"></span></p>
+<p><strong>Téléphone :</strong> <span id="out_l_phone"></span></p>
+<p><strong>Email :</strong> <span id="out_l_email"></span></p>
+
+</div>
+
+<div class="info-box">
+
+<h3>RÉFÉRENCE :</h3>
+
+<p>
+<strong>Contrat / Commande :</strong>
+<span id="out_l_reference"></span>
+</p>
+
+</div>
+
+</div>
+
+
+<table class="document-table">
 
 <thead>
 
 <tr>
-
-<th>Date</th>
-<th>Désignation</th>
-<th>Montant (F CFA)</th>
-
+<th>N°</th>
+<th>DÉSIGNATION</th>
+<th>QTÉ</th>
+<th>UNITÉ</th>
+<th>OBSERVATIONS</th>
+<th class="no-print">X</th>
 </tr>
 
 </thead>
 
-<tbody id="expenseRows">
-
-<tr>
-
-<td><input type="date"></td>
-
-<td><input placeholder="Description de la dépense"></td>
-
-<td><input type="number" value="0"></td>
-
-</tr>
-
-</tbody>
+<tbody id="livraisonRows"></tbody>
 
 </table>
 
-<div class="actions">
+<div class="actions no-print">
 
-<button class="btn btn-primary" onclick="addExpenseRow()">
-➕ Ajouter une dépense
-</button>
-
-<button class="btn btn-green" onclick="window.print()">
-🖨️ Imprimer / PDF
+<button class="btn btn-primary"
+onclick="addDeliveryRow()">
+➕ Ajouter une ligne
 </button>
 
 </div>
+
+
+<div class="signature">
+
+<div class="signature-box">
+
+<h4>RÉCEPTION / SIGNATURE DU CLIENT</h4>
+
+<div class="signature-area"></div>
+
+</div>
+
+</div>
+
+
+<div class="admin-title">
+INFORMATIONS ADMINISTRATIVES ET BANCAIRES
+</div>
+
+<div class="admin-grid">
+
+<div class="admin-item"><strong>R.C.C.M.</strong><span>Ma Bko 2017 B 5034</span></div>
+<div class="admin-item"><strong>NIF</strong><span>085135849D</span></div>
+<div class="admin-item"><strong>CODE BANQUE</strong><span>ML 109</span></div>
+<div class="admin-item"><strong>CODE GUICHET</strong><span>01001</span></div>
+<div class="admin-item"><strong>N° DE COMPTE</strong><span>000100163151</span></div>
+<div class="admin-item"><strong>RIB</strong><span>45 BSIC</span></div>
+
+</div>
+
+<div class="document-footer">
+
+<div>📞 +223 76 08 23 79</div>
+<div>✉️ egcobsarl@gmail.com</div>
+<div>📍 Torokorobougou, R-400 P-191, Bamako – Mali</div>
+
+</div>
+
+</div>
+
+<div class="actions no-print">
+
+<button class="btn btn-green" onclick="window.print()">
+🖨️ Imprimer / Enregistrer en PDF
+</button>
 
 </div>
 
 </section>
 
 
-<!-- CLIENTS -->
+<!-- =================================================
+5 - BORDEREAU DES PRIX UNITAIRES
+================================================= -->
 
-<section id="clients" class="section">
+<section id="bpu" class="section">
 
-<div class="card">
+<div class="card form-card no-print">
 
-<h2>👥 Clients</h2>
+<h2>💰 Bordereau des prix unitaires</h2>
 
-<table class="client-table">
+<div class="form-grid">
+
+<div class="form-group">
+<label>Objet du marché / projet</label>
+<input id="b_objet" oninput="updateBPU()">
+</div>
+
+<div class="form-group">
+<label>Référence</label>
+<input id="b_reference" oninput="updateBPU()">
+</div>
+
+<div class="form-group">
+<label>Numéro du BPU</label>
+<input id="b_numero" value="BPU-2026-001" oninput="updateBPU()">
+</div>
+
+<div class="form-group">
+<label>Date</label>
+<input type="date" id="b_date" onchange="updateBPU()">
+</div>
+
+</div>
+
+</div>
+
+
+<div class="document">
+
+<div class="document-top">
+
+<div class="company-zone">
+
+<h1 class="company-name">EGCOB-SARL</h1>
+<p class="company-sector">COMMERCE & BTP</p>
+<p class="company-slogan">Bâtir aujourd'hui, construire demain</p>
+
+<p class="company-address">
+📍 Torokorobougou, R-400 P-191, Bamako – Mali<br>
+📞 +223 76 08 23 79
+</p>
+
+</div>
+
+<div class="document-title">
+
+<h2>BORDEREAU DES<br>PRIX UNITAIRES</h2>
+
+<p>
+<strong>N° :</strong>
+<span id="out_b_numero">
+BPU-2026-001
+</span>
+</p>
+
+<p>
+<strong>Date :</strong>
+<span id="out_b_date"></span>
+</p>
+
+</div>
+
+</div>
+
+
+<div class="info-boxes">
+
+<div class="info-box">
+
+<h3>OBJET :</h3>
+
+<p id="out_b_objet"></p>
+
+</div>
+
+<div class="info-box">
+
+<h3>RÉFÉRENCE :</h3>
+
+<p id="out_b_reference"></p>
+
+</div>
+
+</div>
+
+
+<table class="document-table">
 
 <thead>
 
 <tr>
-
-<th>Nom</th>
-<th>Adresse</th>
-<th>Téléphone</th>
-<th>Email</th>
-
+<th>N°</th>
+<th>DÉSIGNATION</th>
+<th>UNITÉ</th>
+<th>PRIX UNITAIRE HT (F CFA)</th>
+<th class="no-print">X</th>
 </tr>
 
 </thead>
 
-<tbody id="clientRows">
-
-<tr>
-
-<td><input></td>
-
-<td><input></td>
-
-<td><input></td>
-
-<td><input type="email"></td>
-
-</tr>
-
-</tbody>
+<tbody id="bpuRows"></tbody>
 
 </table>
 
-<div class="actions">
+<div class="actions no-print">
 
-<button class="btn btn-primary" onclick="addClientRow()">
-➕ Ajouter un client
+<button class="btn btn-primary"
+onclick="addBPURow()">
+➕ Ajouter une ligne
 </button>
 
 </div>
+
+
+<div class="admin-title">
+INFORMATIONS ADMINISTRATIVES ET BANCAIRES
+</div>
+
+<div class="admin-grid">
+
+<div class="admin-item"><strong>R.C.C.M.</strong><span>Ma Bko 2017 B 5034</span></div>
+<div class="admin-item"><strong>NIF</strong><span>085135849D</span></div>
+<div class="admin-item"><strong>CODE BANQUE</strong><span>ML 109</span></div>
+<div class="admin-item"><strong>CODE GUICHET</strong><span>01001</span></div>
+<div class="admin-item"><strong>N° DE COMPTE</strong><span>000100163151</span></div>
+<div class="admin-item"><strong>RIB</strong><span>45 BSIC</span></div>
+
+</div>
+
+<div class="document-footer">
+
+<div>📞 +223 76 08 23 79</div>
+<div>✉️ egcobsarl@gmail.com</div>
+<div>📍 Torokorobougou, R-400 P-191, Bamako – Mali</div>
+
+</div>
+
+</div>
+
+<div class="actions no-print">
+
+<button class="btn btn-green" onclick="window.print()">
+🖨️ Imprimer / Enregistrer en PDF
+</button>
 
 </div>
 
 </section>
 
 
-<!-- CARACTERISTIQUES TECHNIQUES -->
+<!-- =================================================
+6 - CARACTERISTIQUES TECHNIQUES
+================================================= -->
 
 <section id="technique" class="section">
 
-<div class="card">
+<div class="card form-card no-print">
 
-<h2>⚙️ Caractéristiques techniques</h2>
+<h2>📋 Caractéristiques techniques</h2>
 
-<p>
-Comparaison entre les caractéristiques demandées et les caractéristiques proposées.
+<div class="form-grid">
+
+<div class="form-group">
+<label>Objet / Projet</label>
+<input id="t_objet" oninput="updateTechnique()">
+</div>
+
+<div class="form-group">
+<label>Référence</label>
+<input id="t_reference" oninput="updateTechnique()">
+</div>
+
+<div class="form-group">
+<label>Numéro du document</label>
+<input id="t_numero" value="CT-2026-001" oninput="updateTechnique()">
+</div>
+
+<div class="form-group">
+<label>Date</label>
+<input type="date" id="t_date" onchange="updateTechnique()">
+</div>
+
+</div>
+
+</div>
+
+
+<div class="document">
+
+<div class="document-top">
+
+<div class="company-zone">
+
+<h1 class="company-name">EGCOB-SARL</h1>
+
+<p class="company-sector">
+COMMERCE & BTP
 </p>
 
-<table class="tech-table">
+<p class="company-slogan">
+Bâtir aujourd'hui, construire demain
+</p>
+
+<p class="company-address">
+📍 Torokorobougou, R-400 P-191, Bamako – Mali<br>
+📞 +223 76 08 23 79
+</p>
+
+</div>
+
+<div class="document-title">
+
+<h2>CARACTÉRISTIQUES<br>TECHNIQUES</h2>
+
+<p>
+<strong>N° :</strong>
+<span id="out_t_numero">
+CT-2026-001
+</span>
+</p>
+
+<p>
+<strong>Date :</strong>
+<span id="out_t_date"></span>
+</p>
+
+</div>
+
+</div>
+
+
+<div class="info-boxes">
+
+<div class="info-box">
+
+<h3>OBJET / PROJET :</h3>
+
+<p id="out_t_objet"></p>
+
+</div>
+
+<div class="info-box">
+
+<h3>RÉFÉRENCE :</h3>
+
+<p id="out_t_reference"></p>
+
+</div>
+
+</div>
+
+
+<!-- UNIQUEMENT DEUX COLONNES -->
+
+<table class="document-table">
 
 <thead>
 
@@ -1198,320 +1860,587 @@ Comparaison entre les caractéristiques demandées et les caractéristiques prop
 
 </thead>
 
-<tbody id="techRows">
-
-<tr>
-
-<td>
-<textarea placeholder="Écrire les caractéristiques demandées"></textarea>
-</td>
-
-<td>
-<textarea placeholder="Écrire les caractéristiques proposées"></textarea>
-</td>
-
-<td class="no-print">
-<button class="btn btn-red" onclick="removeTechRow(this)">✕</button>
-</td>
-
-</tr>
-
-</tbody>
+<tbody id="techniqueRows"></tbody>
 
 </table>
 
+
 <div class="actions no-print">
 
-<button class="btn btn-primary" onclick="addTechRow()">
-➕ Ajouter une ligne
-</button>
+<button class="btn btn-primary"
+onclick="addTechniqueRow()">
 
-<button class="btn btn-green" onclick="window.print()">
-🖨️ Imprimer / Enregistrer en PDF
+➕ Ajouter une ligne
+
 </button>
 
 </div>
+
+
+<div class="signature">
+
+<div class="signature-box">
+
+<h4>CACHET ET SIGNATURE</h4>
+
+<div class="signature-area"></div>
+
+</div>
+
+</div>
+
+
+<div class="admin-title">
+
+INFORMATIONS ADMINISTRATIVES ET BANCAIRES
+
+</div>
+
+
+<div class="admin-grid">
+
+<div class="admin-item"><strong>R.C.C.M.</strong><span>Ma Bko 2017 B 5034</span></div>
+
+<div class="admin-item"><strong>NIF</strong><span>085135849D</span></div>
+
+<div class="admin-item"><strong>CODE BANQUE</strong><span>ML 109</span></div>
+
+<div class="admin-item"><strong>CODE GUICHET</strong><span>01001</span></div>
+
+<div class="admin-item"><strong>N° DE COMPTE</strong><span>000100163151</span></div>
+
+<div class="admin-item"><strong>RIB</strong><span>45 BSIC</span></div>
+
+</div>
+
+
+<div class="document-footer">
+
+<div>📞 +223 76 08 23 79</div>
+
+<div>✉️ egcobsarl@gmail.com</div>
+
+<div>📍 Torokorobougou, R-400 P-191, Bamako – Mali</div>
+
+</div>
+
+</div>
+
+
+<div class="actions no-print">
+
+<button class="btn btn-green"
+onclick="window.print()">
+
+🖨️ Imprimer / Enregistrer en PDF
+
+</button>
 
 </div>
 
 </section>
+
 
 </div>
 
 
 <script>
 
-/* NAVIGATION */
+/* ==============================================
+NAVIGATION
+============================================== */
 
 function showSection(id,button){
 
-    document.querySelectorAll('.section').forEach(section=>{
+    document.querySelectorAll('.section')
+    .forEach(section=>{
         section.classList.remove('active');
     });
 
-    document.getElementById(id).classList.add('active');
+    document.getElementById(id)
+    .classList.add('active');
 
-    document.querySelectorAll('.menu button').forEach(btn=>{
+    document.querySelectorAll('.menu button')
+    .forEach(btn=>{
         btn.classList.remove('active');
     });
 
     button.classList.add('active');
-
 }
 
 
-/* FORMAT ARGENT */
+/* ==============================================
+FORMAT ARGENT
+============================================== */
 
-function formatMoney(number){
+function money(value){
 
-    return Number(number || 0)
+    return Number(value || 0)
     .toLocaleString('fr-FR')
     + ' F CFA';
-
 }
 
 
-/* DATE */
+/* ==============================================
+FORMAT DATE
+============================================== */
 
-function formatDate(value){
+function dateFR(value){
 
     if(!value) return '';
 
     return new Date(value + 'T00:00:00')
     .toLocaleDateString('fr-FR');
+}
+
+
+/* ==============================================
+MISE A JOUR CLIENT
+============================================== */
+
+function updateClient(prefix){
+
+    const fields = [
+        'client',
+        'adresse',
+        'phone',
+        'email',
+        'numero',
+        'date'
+    ];
+
+    fields.forEach(field=>{
+
+        const input =
+        document.getElementById(prefix+'_'+field);
+
+        const output =
+        document.getElementById('out_'+prefix+'_'+field);
+
+        if(input && output){
+
+            if(field === 'date'){
+
+                output.textContent =
+                dateFR(input.value);
+
+            }else{
+
+                output.textContent =
+                input.value;
+
+            }
+
+        }
+
+    });
+
+
+    if(prefix === 'f'){
+
+        document.getElementById('out_f_echeance')
+        .textContent =
+        dateFR(
+            document.getElementById('f_echeance').value
+        );
+
+        document.getElementById('out_f_paiement')
+        .textContent =
+        document.getElementById('f_paiement').value;
+
+        document.getElementById('out_f_reference')
+        .textContent =
+        document.getElementById('f_reference').value;
+
+    }
+
+
+    if(prefix === 'p'){
+
+        document.getElementById('out_p_validite')
+        .textContent =
+        dateFR(
+            document.getElementById('p_validite').value
+        );
+
+        document.getElementById('out_p_paiement')
+        .textContent =
+        document.getElementById('p_paiement').value;
+
+        document.getElementById('out_p_reference')
+        .textContent =
+        document.getElementById('p_reference').value;
+
+    }
+
+
+    if(prefix === 'd'){
+
+        document.getElementById('out_d_validite')
+        .textContent =
+        dateFR(
+            document.getElementById('d_validite').value
+        );
+
+        document.getElementById('out_d_reference')
+        .textContent =
+        document.getElementById('d_reference').value;
+
+    }
+
+
+    if(prefix === 'l'){
+
+        document.getElementById('out_l_reference')
+        .textContent =
+        document.getElementById('l_reference').value;
+
+    }
 
 }
 
 
-/* LIGNES FACTURE */
+/* ==============================================
+LIGNES COMMERCIALES
+FACTURE / PROFORMA / DEVIS
+============================================== */
 
-function addInvoiceRow(tableId,type){
+function addCommercialRow(tableId,type){
 
-    const tbody=document.getElementById(tableId);
+    const tbody =
+    document.getElementById(tableId);
 
-    const number=tbody.children.length+1;
+    const row =
+    document.createElement('tr');
 
-    const row=document.createElement('tr');
+    const number =
+    tbody.children.length + 1;
 
-    row.innerHTML=`
+    row.innerHTML = `
+
+        <td class="row-number">
+        ${String(number).padStart(2,'0')}
+        </td>
+
+        <td>
+        <input type="text"
+        class="designation"
+        placeholder="Désignation">
+        </td>
+
+        <td>
+        <input type="number"
+        class="qty"
+        value="1"
+        min="0"
+        oninput="calculateCommercial('${type}')">
+        </td>
+
+        <td>
+        <input type="text"
+        class="unit"
+        value="U">
+        </td>
+
+        <td>
+        <input type="number"
+        class="price"
+        value="0"
+        min="0"
+        oninput="calculateCommercial('${type}')">
+        </td>
+
+        <td class="line-total">
+        0 F CFA
+        </td>
+
+        <td class="no-print">
+
+        <button class="btn btn-red"
+        onclick="deleteRow(this,'${tableId}','${type}')">
+        ✕
+        </button>
+
+        </td>
+
+    `;
+
+    tbody.appendChild(row);
+
+    calculateCommercial(type);
+}
+
+
+/* ==============================================
+SUPPRIMER LIGNE
+============================================== */
+
+function deleteRow(button,tableId,type){
+
+    const tbody =
+    document.getElementById(tableId);
+
+    if(tbody.children.length <= 1){
+
+        alert(
+        "Il doit rester au moins une ligne."
+        );
+
+        return;
+    }
+
+    button.closest('tr').remove();
+
+    Array.from(tbody.children)
+    .forEach((row,index)=>{
+
+        const number =
+        row.querySelector('.row-number');
+
+        if(number){
+
+            number.textContent =
+            String(index+1).padStart(2,'0');
+
+        }
+
+    });
+
+    if(
+        type === 'facture' ||
+        type === 'proforma' ||
+        type === 'devis'
+    ){
+
+        calculateCommercial(type);
+
+    }
+
+}
+
+
+/* ==============================================
+CALCUL COMMERCIAL
+============================================== */
+
+function calculateCommercial(type){
+
+    const rows =
+    document.querySelectorAll(
+        '#'+type+'Rows tr'
+    );
+
+    let totalHT = 0;
+
+    rows.forEach(row=>{
+
+        const qty =
+        Number(
+            row.querySelector('.qty').value
+        ) || 0;
+
+        const price =
+        Number(
+            row.querySelector('.price').value
+        ) || 0;
+
+        const total =
+        qty * price;
+
+        row.querySelector('.line-total')
+        .textContent =
+        money(total);
+
+        totalHT += total;
+
+    });
+
+    const tva =
+    totalHT * 0.18;
+
+    const totalTTC =
+    totalHT + tva;
+
+    document.getElementById(
+        'ht_'+type
+    ).textContent =
+    money(totalHT);
+
+    document.getElementById(
+        'tva_'+type
+    ).textContent =
+    money(tva);
+
+    document.getElementById(
+        'ttc_'+type
+    ).textContent =
+    money(totalTTC);
+
+    document.getElementById(
+        'words_'+type
+    ).textContent =
+    numberToWords(totalTTC)
+    + ' Francs CFA';
+
+}
+
+
+/* ==============================================
+BORDEREAU DE LIVRAISON
+============================================== */
+
+function addDeliveryRow(){
+
+    const tbody =
+    document.getElementById('livraisonRows');
+
+    const number =
+    tbody.children.length + 1;
+
+    const row =
+    document.createElement('tr');
+
+    row.innerHTML = `
 
     <td class="row-number">
     ${String(number).padStart(2,'0')}
     </td>
 
     <td>
-    <input class="designation"
-    oninput="calculateFacture()">
+    <input placeholder="Désignation">
+    </td>
+
+    <td>
+    <input type="number" value="1">
+    </td>
+
+    <td>
+    <input value="U">
+    </td>
+
+    <td>
+    <input placeholder="Observations">
+    </td>
+
+    <td class="no-print">
+
+    <button class="btn btn-red"
+    onclick="deleteRow(this,'livraisonRows','livraison')">
+    ✕
+    </button>
+
+    </td>
+
+    `;
+
+    tbody.appendChild(row);
+}
+
+
+/* ==============================================
+BPU
+============================================== */
+
+function addBPURow(){
+
+    const tbody =
+    document.getElementById('bpuRows');
+
+    const number =
+    tbody.children.length + 1;
+
+    const row =
+    document.createElement('tr');
+
+    row.innerHTML = `
+
+    <td class="row-number">
+    ${String(number).padStart(2,'0')}
+    </td>
+
+    <td>
+    <input placeholder="Désignation">
+    </td>
+
+    <td>
+    <input value="U">
     </td>
 
     <td>
     <input type="number"
-    class="qty"
-    value="1"
-    oninput="calculateFacture()">
-    </td>
-
-    <td>
-    <input class="unit" value="U">
-    </td>
-
-    <td>
-    <input type="number"
-    class="price"
     value="0"
-    oninput="calculateFacture()">
-    </td>
-
-    <td class="line-total">
-    0 F CFA
+    min="0">
     </td>
 
     <td class="no-print">
+
     <button class="btn btn-red"
-    onclick="removeInvoiceRow(this,'factureRows','facture')">
+    onclick="deleteRow(this,'bpuRows','bpu')">
     ✕
     </button>
+
     </td>
 
     `;
 
     tbody.appendChild(row);
+}
 
-    calculateFacture();
+
+function updateBPU(){
+
+    document.getElementById('out_b_objet')
+    .textContent =
+    document.getElementById('b_objet').value;
+
+    document.getElementById('out_b_reference')
+    .textContent =
+    document.getElementById('b_reference').value;
+
+    document.getElementById('out_b_numero')
+    .textContent =
+    document.getElementById('b_numero').value;
+
+    document.getElementById('out_b_date')
+    .textContent =
+    dateFR(
+        document.getElementById('b_date').value
+    );
 
 }
 
 
-function removeInvoiceRow(button){
+/* ==============================================
+CARACTERISTIQUES TECHNIQUES
+============================================== */
 
-    const tbody=document.getElementById('factureRows');
+function addTechniqueRow(){
 
-    if(tbody.children.length<=1){
+    const tbody =
+    document.getElementById('techniqueRows');
 
-        alert('Il doit rester au moins une ligne.');
-        return;
+    const row =
+    document.createElement('tr');
 
-    }
-
-    button.closest('tr').remove();
-
-    Array.from(tbody.children).forEach((row,index)=>{
-
-        row.querySelector('.row-number').textContent=
-        String(index+1).padStart(2,'0');
-
-    });
-
-    calculateFacture();
-
-}
-
-
-/* CALCUL FACTURE */
-
-function calculateFacture(){
-
-    const rows=document.querySelectorAll('#factureRows tr');
-
-    let totalHT=0;
-
-    rows.forEach(row=>{
-
-        const qty=
-        Number(row.querySelector('.qty').value)||0;
-
-        const price=
-        Number(row.querySelector('.price').value)||0;
-
-        const total=qty*price;
-
-        row.querySelector('.line-total').textContent=
-        formatMoney(total);
-
-        totalHT+=total;
-
-    });
-
-    const tva=totalHT*0.18;
-
-    const totalTTC=totalHT+tva;
-
-    document.getElementById('totalHTFacture').textContent=
-    formatMoney(totalHT);
-
-    document.getElementById('tvaFacture').textContent=
-    formatMoney(tva);
-
-    document.getElementById('totalTTCFacture').textContent=
-    formatMoney(totalTTC);
-
-}
-
-
-/* PRIX UNITAIRES */
-
-function addSimplePriceRow(){
-
-    const tbody=document.getElementById('priceRows');
-
-    const number=tbody.children.length+1;
-
-    const row=document.createElement('tr');
-
-    row.innerHTML=`
-
-    <td>${String(number).padStart(2,'0')}</td>
-
-    <td><input></td>
-
-    <td><input value="U"></td>
-
-    <td><input type="number" value="0"></td>
-
-    `;
-
-    tbody.appendChild(row);
-
-}
-
-
-/* DEPENSES */
-
-function addExpenseRow(){
-
-    const tbody=document.getElementById('expenseRows');
-
-    const row=document.createElement('tr');
-
-    row.innerHTML=`
-
-    <td><input type="date"></td>
-
-    <td><input placeholder="Description"></td>
-
-    <td><input type="number" value="0"></td>
-
-    `;
-
-    tbody.appendChild(row);
-
-}
-
-
-/* CLIENTS */
-
-function addClientRow(){
-
-    const tbody=document.getElementById('clientRows');
-
-    const row=document.createElement('tr');
-
-    row.innerHTML=`
-
-    <td><input></td>
-
-    <td><input></td>
-
-    <td><input></td>
-
-    <td><input type="email"></td>
-
-    `;
-
-    tbody.appendChild(row);
-
-}
-
-
-/* CARACTERISTIQUES TECHNIQUES */
-
-function addTechRow(){
-
-    const tbody=document.getElementById('techRows');
-
-    const row=document.createElement('tr');
-
-    row.innerHTML=`
+    row.innerHTML = `
 
     <td>
     <textarea
-    placeholder="Écrire les caractéristiques demandées">
+    placeholder="Caractéristiques demandées">
     </textarea>
     </td>
 
     <td>
     <textarea
-    placeholder="Écrire les caractéristiques proposées">
+    placeholder="Caractéristiques proposées">
     </textarea>
     </td>
 
     <td class="no-print">
 
     <button class="btn btn-red"
-    onclick="removeTechRow(this)">
-
+    onclick="deleteTechniqueRow(this)">
     ✕
-
     </button>
 
     </td>
@@ -1523,92 +2452,301 @@ function addTechRow(){
 }
 
 
-function removeTechRow(button){
+function deleteTechniqueRow(button){
 
-    const tbody=document.getElementById('techRows');
+    const tbody =
+    document.getElementById('techniqueRows');
 
-    if(tbody.children.length<=1){
+    if(tbody.children.length <= 1){
 
-        alert('Il doit rester au moins une ligne.');
+        alert(
+        "Il doit rester au moins une ligne."
+        );
 
         return;
-
     }
 
     button.closest('tr').remove();
+}
+
+
+function updateTechnique(){
+
+    document.getElementById('out_t_objet')
+    .textContent =
+    document.getElementById('t_objet').value;
+
+    document.getElementById('out_t_reference')
+    .textContent =
+    document.getElementById('t_reference').value;
+
+    document.getElementById('out_t_numero')
+    .textContent =
+    document.getElementById('t_numero').value;
+
+    document.getElementById('out_t_date')
+    .textContent =
+    dateFR(
+        document.getElementById('t_date').value
+    );
 
 }
 
 
-/* INFORMATIONS FACTURE */
+/* ==============================================
+NOMBRE EN LETTRES
+============================================== */
 
-function updateFactureInfo(){
+function numberToWords(number){
 
-    const fields=[
-        ['f_client','out_client'],
-        ['f_adresse','out_adresse'],
-        ['f_phone','out_phone'],
-        ['f_email','out_email'],
-        ['f_numero','out_numero'],
-        ['f_paiement','out_paiement'],
-        ['f_reference','out_reference']
+    number =
+    Math.round(Number(number || 0));
+
+    if(number === 0){
+        return 'Zéro';
+    }
+
+    const units = [
+        '',
+        'un',
+        'deux',
+        'trois',
+        'quatre',
+        'cinq',
+        'six',
+        'sept',
+        'huit',
+        'neuf',
+        'dix',
+        'onze',
+        'douze',
+        'treize',
+        'quatorze',
+        'quinze',
+        'seize',
+        'dix-sept',
+        'dix-huit',
+        'dix-neuf'
     ];
 
-    fields.forEach(item=>{
+    const tens = [
+        '',
+        '',
+        'vingt',
+        'trente',
+        'quarante',
+        'cinquante',
+        'soixante'
+    ];
 
-        const input=document.getElementById(item[0]);
-        const output=document.getElementById(item[1]);
+    function underHundred(n){
 
-        if(input && output){
-            output.textContent=input.value;
+        if(n < 20){
+            return units[n];
         }
 
-    });
+        if(n < 70){
 
-    document.getElementById('out_date').textContent=
-    formatDate(document.getElementById('f_date').value);
+            const ten =
+            Math.floor(n/10);
 
-    document.getElementById('out_echeance').textContent=
-    formatDate(document.getElementById('f_echeance').value);
+            const unit =
+            n%10;
+
+            return tens[ten]
+            +
+            (
+                unit === 1
+                ? ' et un'
+                : unit
+                ? '-'+units[unit]
+                : ''
+            );
+
+        }
+
+        if(n < 80){
+
+            return 'soixante-'
+            + underHundred(n-60);
+
+        }
+
+        if(n < 100){
+
+            return 'quatre-vingt'
+            +
+            (
+                n === 80
+                ? 's'
+                : '-'+underHundred(n-80)
+            );
+
+        }
+
+    }
+
+
+    function underThousand(n){
+
+        if(n < 100){
+            return underHundred(n);
+        }
+
+        const hundred =
+        Math.floor(n/100);
+
+        const rest =
+        n%100;
+
+        let result =
+        hundred === 1
+        ? 'cent'
+        : units[hundred]
+        + ' cent';
+
+        if(rest === 0 && hundred > 1){
+            result += 's';
+        }
+
+        if(rest > 0){
+            result +=
+            ' '+underHundred(rest);
+        }
+
+        return result;
+    }
+
+
+    if(number < 1000){
+
+        return underThousand(number);
+
+    }
+
+
+    if(number < 1000000){
+
+        const thousands =
+        Math.floor(number/1000);
+
+        const rest =
+        number%1000;
+
+        let result =
+        thousands === 1
+        ? 'mille'
+        : underThousand(thousands)
+        + ' mille';
+
+        if(rest > 0){
+
+            result +=
+            ' '+underThousand(rest);
+
+        }
+
+        return result;
+
+    }
+
+
+    if(number < 1000000000){
+
+        const millions =
+        Math.floor(number/1000000);
+
+        const rest =
+        number%1000000;
+
+        let result =
+        millions === 1
+        ? 'un million'
+        : underThousand(millions)
+        + ' millions';
+
+        if(rest > 0){
+
+            result +=
+            ' '+numberToWords(rest);
+
+        }
+
+        return result;
+
+    }
+
+    return number.toLocaleString('fr-FR');
 
 }
 
 
+/* ==============================================
+INITIALISATION
+============================================== */
+
+const today =
+new Date()
+.toISOString()
+.split('T')[0];
+
+
+/* Dates */
+
 [
-'f_client',
-'f_adresse',
-'f_phone',
-'f_email',
-'f_numero',
 'f_date',
-'f_echeance',
-'f_paiement',
-'f_reference'
+'p_date',
+'d_date',
+'l_date',
+'b_date',
+'t_date'
 
 ].forEach(id=>{
 
-    const element=document.getElementById(id);
+    const element =
+    document.getElementById(id);
 
     if(element){
-
-        element.addEventListener('input',updateFactureInfo);
-
-        element.addEventListener('change',updateFactureInfo);
-
+        element.value = today;
     }
 
 });
 
 
-/* DATE DU JOUR */
+/* Premières lignes */
 
-const today=new Date().toISOString().split('T')[0];
+addCommercialRow(
+    'factureRows',
+    'facture'
+);
 
-document.getElementById('f_date').value=today;
+addCommercialRow(
+    'proformaRows',
+    'proforma'
+);
 
-updateFactureInfo();
+addCommercialRow(
+    'devisRows',
+    'devis'
+);
 
-calculateFacture();
+addDeliveryRow();
+
+addBPURow();
+
+addTechniqueRow();
+
+
+/* Mise à jour */
+
+updateClient('f');
+updateClient('p');
+updateClient('d');
+updateClient('l');
+
+updateBPU();
+
+updateTechnique();
 
 </script>
 
