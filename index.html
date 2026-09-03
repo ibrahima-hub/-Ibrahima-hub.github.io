@@ -2,7 +2,6 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>EGCOB-SARL | Gestion Commerciale</title>
@@ -18,6 +17,7 @@
     --blanc:#ffffff;
     --vert:#187a45;
     --rouge:#b52d2d;
+    --gris:#6b7280;
 }
 
 *{
@@ -27,7 +27,7 @@
 }
 
 body{
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:Arial,Helvetica,sans-serif;
     background:var(--fond);
     color:var(--texte);
 }
@@ -41,23 +41,20 @@ body{
 }
 
 .app-header h1{
-    font-size:32px;
-    letter-spacing:2px;
+    font-size:30px;
 }
 
 .app-header p{
     color:#e5c96d;
-    margin-top:8px;
-    font-size:16px;
-    letter-spacing:1px;
+    margin-top:7px;
 }
 
 .menu{
     background:#1b3555;
     display:flex;
     justify-content:center;
-    gap:8px;
-    padding:15px;
+    gap:6px;
+    padding:12px;
     flex-wrap:wrap;
 }
 
@@ -65,11 +62,10 @@ body{
     border:none;
     background:transparent;
     color:white;
-    padding:12px 18px;
-    font-size:15px;
-    font-weight:bold;
+    padding:11px 15px;
+    border-radius:9px;
     cursor:pointer;
-    border-radius:10px;
+    font-weight:bold;
 }
 
 .menu button.active{
@@ -78,9 +74,9 @@ body{
 }
 
 .container{
-    max-width:1100px;
-    margin:25px auto;
-    padding:15px;
+    max-width:1150px;
+    margin:auto;
+    padding:18px;
 }
 
 .section{
@@ -93,21 +89,21 @@ body{
 
 .card{
     background:white;
-    padding:25px;
-    border-radius:18px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+    padding:22px;
+    border-radius:16px;
     margin-bottom:20px;
+    box-shadow:0 5px 18px rgba(0,0,0,.08);
 }
 
 .card h2{
     color:var(--bleu);
-    margin-bottom:20px;
+    margin-bottom:18px;
 }
 
 .form-grid{
     display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:18px;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
 }
 
 .form-group{
@@ -116,23 +112,21 @@ body{
 }
 
 .form-group.full{
-    grid-column:1 / -1;
+    grid-column:1/-1;
 }
 
 label{
     font-weight:bold;
-    margin-bottom:7px;
+    margin-bottom:6px;
     color:var(--bleu);
 }
 
-input,
-textarea,
-select{
-    padding:13px;
-    border:1px solid #c9d0d8;
-    border-radius:10px;
-    font-size:16px;
+input,select,textarea{
     width:100%;
+    padding:12px;
+    border:1px solid #cbd3dd;
+    border-radius:9px;
+    font-size:15px;
 }
 
 textarea{
@@ -141,12 +135,11 @@ textarea{
 
 .btn{
     border:none;
-    padding:12px 18px;
-    border-radius:10px;
-    font-size:15px;
-    font-weight:bold;
+    padding:12px 16px;
+    margin:4px;
+    border-radius:9px;
     cursor:pointer;
-    margin:5px;
+    font-weight:bold;
 }
 
 .btn-primary{
@@ -170,64 +163,48 @@ textarea{
 }
 
 .actions{
-    margin-top:20px;
     text-align:center;
+    margin-top:18px;
 }
 
-/* =================================================
-DOCUMENT
-================================================= */
+/* DOCUMENT */
 
 .document{
     background:white;
-    max-width:1000px;
+    max-width:1050px;
     margin:auto;
-    padding:35px;
-    border-top:12px solid var(--bleu);
+    padding:30px;
+    border-top:10px solid var(--bleu);
 }
 
 .document-top{
     display:flex;
     justify-content:space-between;
-    gap:30px;
-    align-items:flex-start;
+    gap:25px;
     border-bottom:2px solid var(--or);
-    padding-bottom:20px;
-}
-
-.company-zone{
-    flex:1;
-}
-
-.company-zone img{
-    width:180px;
-    max-height:120px;
-    object-fit:contain;
-    margin-bottom:10px;
+    padding-bottom:18px;
 }
 
 .company-name{
     color:var(--bleu);
     font-size:30px;
-    font-weight:bold;
 }
 
 .company-sector{
     color:var(--or);
-    font-size:17px;
+    font-weight:bold;
     margin-top:5px;
 }
 
 .company-slogan{
-    color:#8f7020;
+    margin-top:6px;
     font-style:italic;
-    margin-top:8px;
 }
 
 .company-address{
     margin-top:12px;
+    line-height:1.6;
     font-size:14px;
-    line-height:1.7;
 }
 
 .document-title{
@@ -235,16 +212,9 @@ DOCUMENT
 }
 
 .document-title h2{
-    display:inline-block;
     background:var(--bleu);
     color:white;
-    padding:12px 25px;
-    font-size:25px;
-}
-
-.document-title p{
-    margin-top:12px;
-    font-size:15px;
+    padding:12px 20px;
 }
 
 .document-number{
@@ -252,102 +222,76 @@ DOCUMENT
     font-weight:bold;
 }
 
-/* =================================================
-INFOS
-================================================= */
+/* INFOS */
 
 .info-boxes{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:20px;
-    margin-top:25px;
+    gap:18px;
+    margin-top:22px;
 }
 
 .info-box{
-    border:1px solid #aeb7c3;
-    border-radius:10px;
-    padding:18px;
+    border:1px solid #bfc8d3;
+    padding:15px;
+    border-radius:9px;
 }
 
 .info-box h3{
-    background:var(--bleu);
-    color:white;
-    display:inline-block;
-    padding:8px 15px;
-    margin:-18px 0 15px -18px;
-    border-radius:8px 0 8px 0;
-    font-size:15px;
+    color:var(--bleu);
+    margin-bottom:12px;
 }
 
 .info-box p{
-    margin:8px 0;
-    line-height:1.5;
+    margin:7px 0;
 }
 
-/* =================================================
-TABLEAUX
-================================================= */
+/* TABLE */
 
 .document-table{
     width:100%;
     border-collapse:collapse;
-    margin-top:25px;
+    margin-top:22px;
 }
 
 .document-table th{
     background:var(--bleu);
     color:white;
-    padding:12px 7px;
-    border:1px solid #aeb7c3;
-    text-align:center;
+    padding:10px 5px;
+    border:1px solid #aaa;
 }
 
 .document-table td{
-    border:1px solid #aeb7c3;
-    padding:9px 6px;
+    border:1px solid #aaa;
+    padding:7px;
     text-align:center;
 }
 
-.document-table input{
-    border:none;
-    padding:5px;
-    border-radius:0;
-    text-align:center;
-    width:100%;
-}
-
+.document-table input,
 .document-table textarea{
     border:none;
-    min-height:70px;
-    resize:vertical;
     border-radius:0;
+    padding:5px;
+    text-align:center;
 }
 
-/* =================================================
-TOTAL
-================================================= */
+/* TOTAL */
 
 .bottom-zone{
     display:grid;
     grid-template-columns:1.2fr 1fr;
-    gap:30px;
-    margin-top:25px;
+    gap:20px;
+    margin-top:22px;
 }
 
 .amount-words{
-    border:1px solid #aeb7c3;
-    border-radius:10px;
+    border:1px solid #aaa;
     padding:15px;
-    min-height:100px;
 }
 
 .amount-words h4{
-    background:var(--bleu);
-    color:white;
-    display:inline-block;
-    padding:7px 12px;
-    font-size:13px;
-    margin-bottom:12px;
+    color:var(--bleu);
+    margin-bottom:10px;
 }
 
 .totals{
@@ -356,15 +300,14 @@ TOTAL
 }
 
 .totals td{
-    border:1px solid #aeb7c3;
-    padding:13px;
+    padding:12px;
+    border:1px solid #aaa;
     font-weight:bold;
 }
 
 .totals td:first-child{
     background:var(--bleu);
     color:white;
-    text-align:right;
 }
 
 .totals tr:last-child td:first-child{
@@ -372,43 +315,32 @@ TOTAL
     color:var(--bleu);
 }
 
-/* =================================================
-SIGNATURE
-================================================= */
+/* SIGNATURE */
 
 .signature{
-    margin-top:25px;
     display:flex;
     justify-content:flex-end;
+    margin-top:25px;
 }
 
 .signature-box{
-    width:350px;
-}
-
-.signature-box h4{
+    width:330px;
     text-align:center;
-    margin-bottom:10px;
-    color:var(--bleu);
 }
 
 .signature-area{
-    border:1px solid #aeb7c3;
-    height:110px;
-    border-radius:10px;
+    height:100px;
+    border:1px solid #aaa;
+    margin-top:8px;
 }
 
-/* =================================================
-ADMINISTRATIF
-================================================= */
+/* ADMIN */
 
 .admin-title{
     text-align:center;
-    margin:30px 0 20px;
     color:var(--bleu);
-    font-size:19px;
-    border-bottom:2px solid var(--or);
-    padding-bottom:10px;
+    font-weight:bold;
+    margin:25px 0 15px;
 }
 
 .admin-grid{
@@ -418,51 +350,54 @@ ADMINISTRATIF
 }
 
 .admin-item{
+    padding:10px;
     text-align:center;
-    padding:13px 7px;
     border-right:1px solid #ddd;
-}
-
-.admin-item:last-child{
-    border-right:none;
 }
 
 .admin-item strong{
     display:block;
     color:var(--bleu);
-    margin-bottom:8px;
-    font-size:13px;
+    font-size:12px;
 }
 
 .admin-item span{
     font-size:12px;
 }
 
-/* =================================================
-PIED
-================================================= */
-
 .document-footer{
     margin-top:20px;
     background:var(--bleu);
     color:white;
-    padding:15px;
+    padding:14px;
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:15px;
     text-align:center;
+    gap:10px;
     border-bottom:5px solid var(--or);
 }
 
-.document-footer div{
-    font-size:13px;
+/* HISTORIQUE */
+
+.history-item{
+    border:1px solid #ddd;
+    padding:15px;
+    margin-bottom:10px;
+    border-radius:10px;
+    background:white;
 }
 
-/* =================================================
-MOBILE
-================================================= */
+.history-item strong{
+    color:var(--bleu);
+}
 
 @media(max-width:750px){
+
+    .form-grid,
+    .info-boxes,
+    .bottom-zone{
+        grid-template-columns:1fr;
+    }
 
     .document{
         padding:15px;
@@ -476,24 +411,8 @@ MOBILE
         text-align:left;
     }
 
-    .info-boxes{
-        grid-template-columns:1fr;
-    }
-
-    .form-grid{
-        grid-template-columns:1fr;
-    }
-
-    .bottom-zone{
-        grid-template-columns:1fr;
-    }
-
     .admin-grid{
         grid-template-columns:1fr 1fr;
-    }
-
-    .admin-item{
-        border-bottom:1px solid #ddd;
     }
 
     .document-footer{
@@ -501,18 +420,14 @@ MOBILE
     }
 
     .document-table{
-        font-size:11px;
+        font-size:10px;
     }
 
     .document-table th,
     .document-table td{
-        padding:4px 2px;
+        padding:3px;
     }
 }
-
-/* =================================================
-IMPRESSION
-================================================= */
 
 @media print{
 
@@ -523,30 +438,30 @@ IMPRESSION
     .app-header,
     .menu,
     .no-print,
-    .form-card{
-        display:none !important;
+    .form-card,
+    .history-card{
+        display:none!important;
     }
 
     .container{
-        max-width:100%;
         margin:0;
         padding:0;
+        max-width:100%;
     }
 
     .section{
-        display:none !important;
+        display:none!important;
     }
 
     .section.active{
-        display:block !important;
+        display:block!important;
     }
 
     .document{
-        width:100%;
         max-width:100%;
-        margin:0;
-        padding:15px;
+        width:100%;
         box-shadow:none;
+        padding:12px;
     }
 }
 
@@ -555,22 +470,10 @@ IMPRESSION
 
 <body>
 
-<!-- =================================================
-ENTETE APPLICATION
-================================================= -->
-
 <header class="app-header">
-
 <h1>EGCOB-SARL</h1>
-
-<p>COMMERCE & BTP • GESTION MOBILE</p>
-
+<p>COMMERCE & BTP • GESTION COMMERCIALE</p>
 </header>
-
-
-<!-- =================================================
-MENU COMPLET
-================================================= -->
 
 <nav class="menu no-print">
 
@@ -587,109 +490,128 @@ MENU COMPLET
 </button>
 
 <button onclick="showSection('livraison',this)">
-🚚 Bordereau de livraison
+🚚 Livraison
 </button>
 
 <button onclick="showSection('bpu',this)">
-💰 Prix unitaires
+💰 BPU
 </button>
 
 <button onclick="showSection('technique',this)">
-📋 Caractéristiques techniques
+📋 Technique
+</button>
+
+<button onclick="showSection('societe',this)">
+🏢 Société
+</button>
+
+<button onclick="showSection('historique',this)">
+📂 Historique
 </button>
 
 </nav>
 
-
 <div class="container">
 
 
-<!-- =================================================
-1 - FACTURE
-================================================= -->
+<!-- FACTURE -->
 
 <section id="facture" class="section active">
 
 <div class="card form-card no-print">
 
-<h2>🧾 Créer une facture</h2>
+<h2>🧾 Nouvelle facture</h2>
 
 <div class="form-grid">
 
 <div class="form-group">
-<label>Nom du client</label>
-<input id="f_client" oninput="updateClient('f')" placeholder="Nom du client">
+<label>Client</label>
+<input id="f_client" oninput="updateDocument('f')">
 </div>
 
 <div class="form-group">
-<label>Adresse du client</label>
-<input id="f_adresse" oninput="updateClient('f')" placeholder="Adresse">
+<label>Adresse</label>
+<input id="f_adresse" oninput="updateDocument('f')">
 </div>
 
 <div class="form-group">
 <label>Téléphone</label>
-<input id="f_phone" oninput="updateClient('f')" placeholder="+223 ...">
+<input id="f_phone" oninput="updateDocument('f')">
 </div>
 
 <div class="form-group">
 <label>Email</label>
-<input id="f_email" oninput="updateClient('f')" placeholder="email@exemple.com">
+<input id="f_email" oninput="updateDocument('f')">
 </div>
 
 <div class="form-group">
-<label>Numéro de facture</label>
-<input id="f_numero" value="FAC-2026-001" oninput="updateClient('f')">
+<label>N° Facture</label>
+<input id="f_numero" value="FAC-2026-001" oninput="updateDocument('f')">
 </div>
 
 <div class="form-group">
 <label>Date</label>
-<input type="date" id="f_date" onchange="updateClient('f')">
+<input type="date" id="f_date" onchange="updateDocument('f')">
 </div>
 
 <div class="form-group">
-<label>Date d'échéance</label>
-<input type="date" id="f_echeance" onchange="updateClient('f')">
+<label>Échéance</label>
+<input type="date" id="f_echeance" onchange="updateDocument('f')">
 </div>
 
 <div class="form-group">
-<label>Mode de paiement</label>
-<select id="f_paiement" onchange="updateClient('f')">
-<option>Espèces</option>
-<option>Virement bancaire</option>
-<option>Chèque</option>
-<option>Mobile Money</option>
-</select>
+<label>TVA (%)</label>
+<input type="number" id="f_tva" value="18" oninput="calculateCommercial('facture')">
 </div>
 
 <div class="form-group full">
-<label>Référence / Contrat</label>
-<input id="f_reference" oninput="updateClient('f')" placeholder="Référence ou contrat">
+<label>Objet / Référence / Contrat</label>
+<input id="f_reference" oninput="updateDocument('f')">
 </div>
 
 </div>
 
+<div class="actions">
+
+<button class="btn btn-gold" onclick="copyFactureTo('proforma')">
+➡️ Générer Pro Forma
+</button>
+
+<button class="btn btn-gold" onclick="copyFactureTo('devis')">
+➡️ Générer Devis
+</button>
+
+<button class="btn btn-gold" onclick="copyFactureTo('livraison')">
+➡️ Générer Livraison
+</button>
+
+<button class="btn btn-gold" onclick="copyFactureTo('bpu')">
+➡️ Générer BPU
+</button>
+
+<button class="btn btn-gold" onclick="copyFactureTo('technique')">
+➡️ Générer Technique
+</button>
+
 </div>
 
+</div>
 
 <div class="document">
 
 <div class="document-top">
 
-<div class="company-zone">
+<div>
 
-<h1 class="company-name">EGCOB-SARL</h1>
+<h1 class="company-name" id="companyName">EGCOB-SARL</h1>
 
-<p class="company-sector">COMMERCE & BTP</p>
+<p class="company-sector" id="companySector">COMMERCE & BTP</p>
 
-<p class="company-slogan">
+<p class="company-slogan" id="companySlogan">
 Bâtir aujourd'hui, construire demain
 </p>
 
-<p class="company-address">
-📍 Torokorobougou, R-400 P-191, Bamako – Mali<br>
-📞 +223 76 08 23 79<br>
-✉️ egcobsarl@gmail.com
-</p>
+<p class="company-address" id="companyContact"></p>
 
 </div>
 
@@ -697,78 +619,49 @@ Bâtir aujourd'hui, construire demain
 
 <h2>FACTURE</h2>
 
-<p>
-<strong>N° :</strong>
-<span id="out_f_numero" class="document-number">
-FAC-2026-001
-</span>
-</p>
-
-<p>
-<strong>Date :</strong>
-<span id="out_f_date"></span>
-</p>
+<p>N° : <span id="out_f_numero"></span></p>
+<p>Date : <span id="out_f_date"></span></p>
 
 </div>
 
 </div>
-
 
 <div class="info-boxes">
 
 <div class="info-box">
 
-<h3>FACTURÉ À :</h3>
+<h3>FACTURÉ À</h3>
 
-<p><strong>Nom :</strong> <span id="out_f_client"></span></p>
-
+<p><strong>Client :</strong> <span id="out_f_client"></span></p>
 <p><strong>Adresse :</strong> <span id="out_f_adresse"></span></p>
-
 <p><strong>Téléphone :</strong> <span id="out_f_phone"></span></p>
-
 <p><strong>Email :</strong> <span id="out_f_email"></span></p>
 
 </div>
 
-
 <div class="info-box">
 
-<h3>INFORMATIONS :</h3>
+<h3>INFORMATIONS</h3>
 
-<p>
-<strong>Échéance :</strong>
-<span id="out_f_echeance"></span>
-</p>
-
-<p>
-<strong>Paiement :</strong>
-<span id="out_f_paiement"></span>
-</p>
-
-<p>
-<strong>Référence :</strong>
-<span id="out_f_reference"></span>
-</p>
+<p><strong>Échéance :</strong> <span id="out_f_echeance"></span></p>
+<p><strong>Référence :</strong> <span id="out_f_reference"></span></p>
 
 </div>
 
 </div>
-
 
 <table class="document-table">
 
 <thead>
-
 <tr>
 <th>N°</th>
 <th>DÉSIGNATION</th>
 <th>QTÉ</th>
 <th>UNITÉ</th>
-<th>PRIX UNIT. HT</th>
+<th>PRIX HT</th>
 <th>MONTANT HT</th>
 <th class="no-print">X</th>
 </tr>
-
 </thead>
 
 <tbody id="factureRows"></tbody>
@@ -779,21 +672,18 @@ FAC-2026-001
 
 <button class="btn btn-primary"
 onclick="addCommercialRow('factureRows','facture')">
-➕ Ajouter une ligne
+➕ Ajouter ligne
 </button>
 
 </div>
-
 
 <div class="bottom-zone">
 
 <div class="amount-words">
 
-<h4>ARRÊTÉ LA PRÉSENTE FACTURE À LA SOMME DE :</h4>
+<h4>ARRÊTÉ À LA SOMME DE :</h4>
 
-<p id="words_facture">
-Zéro Franc CFA
-</p>
+<p id="words_facture"></p>
 
 </div>
 
@@ -801,90 +691,48 @@ Zéro Franc CFA
 
 <tr>
 <td>TOTAL HT</td>
-<td id="ht_facture">0 F CFA</td>
+<td id="ht_facture"></td>
 </tr>
 
 <tr>
-<td>TVA 18 %</td>
-<td id="tva_facture">0 F CFA</td>
+<td>TVA</td>
+<td id="tva_facture"></td>
 </tr>
 
 <tr>
 <td>TOTAL TTC</td>
-<td id="ttc_facture">0 F CFA</td>
+<td id="ttc_facture"></td>
 </tr>
 
 </table>
 
 </div>
 
-
 <div class="signature">
-
 <div class="signature-box">
-
-<h4>CACHET ET SIGNATURE</h4>
-
+<strong>CACHET ET SIGNATURE</strong>
 <div class="signature-area"></div>
-
 </div>
-
 </div>
 
 <div class="admin-title">
 INFORMATIONS ADMINISTRATIVES ET BANCAIRES
 </div>
 
-<div class="admin-grid">
+<div class="admin-grid" id="adminFacture"></div>
 
-<div class="admin-item">
-<strong>R.C.C.M.</strong>
-<span>Ma Bko 2017 B 5034</span>
-</div>
-
-<div class="admin-item">
-<strong>NIF</strong>
-<span>085135849D</span>
-</div>
-
-<div class="admin-item">
-<strong>CODE BANQUE</strong>
-<span>ML 109</span>
-</div>
-
-<div class="admin-item">
-<strong>CODE GUICHET</strong>
-<span>01001</span>
-</div>
-
-<div class="admin-item">
-<strong>N° DE COMPTE</strong>
-<span>000100163151</span>
-</div>
-
-<div class="admin-item">
-<strong>RIB</strong>
-<span>45 BSIC</span>
-</div>
-
-</div>
-
-<div class="document-footer">
-
-<div>📞 +223 76 08 23 79</div>
-
-<div>✉️ egcobsarl@gmail.com</div>
-
-<div>📍 Torokorobougou, R-400 P-191, Bamako – Mali</div>
-
-</div>
+<div class="document-footer" id="footerFacture"></div>
 
 </div>
 
 <div class="actions no-print">
 
+<button class="btn btn-primary" onclick="saveInvoice()">
+💾 Sauvegarder
+</button>
+
 <button class="btn btn-green" onclick="window.print()">
-🖨️ Imprimer / Enregistrer en PDF
+🖨️ Imprimer / PDF
 </button>
 
 </div>
@@ -892,697 +740,196 @@ INFORMATIONS ADMINISTRATIVES ET BANCAIRES
 </section>
 
 
-<!-- =================================================
-2 - PRO FORMA
-================================================= -->
+<!-- PROFORMA -->
 
 <section id="proforma" class="section">
 
 <div class="card form-card no-print">
 
-<h2>📄 Créer une facture Pro Forma</h2>
+<h2>📄 Facture Pro Forma</h2>
 
 <div class="form-grid">
 
 <div class="form-group">
-<label>Nom du client</label>
-<input id="p_client" oninput="updateClient('p')">
+<label>Client</label>
+<input id="p_client" oninput="updateDocument('p')">
 </div>
 
 <div class="form-group">
 <label>Adresse</label>
-<input id="p_adresse" oninput="updateClient('p')">
+<input id="p_adresse" oninput="updateDocument('p')">
 </div>
 
 <div class="form-group">
 <label>Téléphone</label>
-<input id="p_phone" oninput="updateClient('p')">
+<input id="p_phone" oninput="updateDocument('p')">
 </div>
 
 <div class="form-group">
 <label>Email</label>
-<input id="p_email" oninput="updateClient('p')">
+<input id="p_email" oninput="updateDocument('p')">
 </div>
 
 <div class="form-group">
-<label>Numéro Pro Forma</label>
-<input id="p_numero" value="PF-2026-001" oninput="updateClient('p')">
+<label>N° Pro Forma</label>
+<input id="p_numero" value="PF-2026-001" oninput="updateDocument('p')">
 </div>
 
 <div class="form-group">
 <label>Date</label>
-<input type="date" id="p_date" onchange="updateClient('p')">
+<input type="date" id="p_date" onchange="updateDocument('p')">
 </div>
 
 <div class="form-group">
 <label>Validité</label>
-<input type="date" id="p_validite" onchange="updateClient('p')">
+<input type="date" id="p_validite" onchange="updateDocument('p')">
 </div>
 
 <div class="form-group">
-<label>Mode de paiement</label>
-<select id="p_paiement" onchange="updateClient('p')">
-<option>Espèces</option>
-<option>Virement bancaire</option>
-<option>Chèque</option>
-<option>Mobile Money</option>
-</select>
+<label>TVA (%)</label>
+<input type="number" id="p_tva" value="18" oninput="calculateCommercial('proforma')">
 </div>
 
 <div class="form-group full">
 <label>Référence / Objet</label>
-<input id="p_reference" oninput="updateClient('p')">
+<input id="p_reference" oninput="updateDocument('p')">
 </div>
 
 </div>
 
 </div>
 
-
-<div class="document">
-
-<div class="document-top">
-
-<div class="company-zone">
-
-<h1 class="company-name">EGCOB-SARL</h1>
-<p class="company-sector">COMMERCE & BTP</p>
-<p class="company-slogan">Bâtir aujourd'hui, construire demain</p>
-
-<p class="company-address">
-📍 Torokorobougou, R-400 P-191, Bamako – Mali<br>
-📞 +223 76 08 23 79
-</p>
-
-</div>
-
-<div class="document-title">
-
-<h2>PRO FORMA</h2>
-
-<p>
-<strong>N° :</strong>
-<span id="out_p_numero" class="document-number">
-PF-2026-001
-</span>
-</p>
-
-<p>
-<strong>Date :</strong>
-<span id="out_p_date"></span>
-</p>
-
-</div>
-
-</div>
-
-
-<div class="info-boxes">
-
-<div class="info-box">
-
-<h3>CLIENT :</h3>
-
-<p><strong>Nom :</strong> <span id="out_p_client"></span></p>
-<p><strong>Adresse :</strong> <span id="out_p_adresse"></span></p>
-<p><strong>Téléphone :</strong> <span id="out_p_phone"></span></p>
-<p><strong>Email :</strong> <span id="out_p_email"></span></p>
-
-</div>
-
-<div class="info-box">
-
-<h3>INFORMATIONS :</h3>
-
-<p><strong>Validité :</strong> <span id="out_p_validite"></span></p>
-<p><strong>Paiement :</strong> <span id="out_p_paiement"></span></p>
-<p><strong>Référence :</strong> <span id="out_p_reference"></span></p>
-
-</div>
-
-</div>
-
-
-<table class="document-table">
-
-<thead>
-<tr>
-<th>N°</th>
-<th>DÉSIGNATION</th>
-<th>QTÉ</th>
-<th>UNITÉ</th>
-<th>PRIX UNIT. HT</th>
-<th>MONTANT HT</th>
-<th class="no-print">X</th>
-</tr>
-</thead>
-
-<tbody id="proformaRows"></tbody>
-
-</table>
+<div id="proformaContent"></div>
 
 <div class="actions no-print">
-
-<button class="btn btn-primary"
-onclick="addCommercialRow('proformaRows','proforma')">
-➕ Ajouter une ligne
-</button>
-
-</div>
-
-
-<div class="bottom-zone">
-
-<div class="amount-words">
-
-<h4>ARRÊTÉ LE PRÉSENT PRO FORMA À LA SOMME DE :</h4>
-
-<p id="words_proforma">
-Zéro Franc CFA
-</p>
-
-</div>
-
-<table class="totals">
-
-<tr>
-<td>TOTAL HT</td>
-<td id="ht_proforma">0 F CFA</td>
-</tr>
-
-<tr>
-<td>TVA 18 %</td>
-<td id="tva_proforma">0 F CFA</td>
-</tr>
-
-<tr>
-<td>TOTAL TTC</td>
-<td id="ttc_proforma">0 F CFA</td>
-</tr>
-
-</table>
-
-</div>
-
-<div class="signature">
-
-<div class="signature-box">
-
-<h4>CACHET ET SIGNATURE</h4>
-
-<div class="signature-area"></div>
-
-</div>
-
-</div>
-
-<div class="admin-title">
-INFORMATIONS ADMINISTRATIVES ET BANCAIRES
-</div>
-
-<div class="admin-grid">
-
-<div class="admin-item">
-<strong>R.C.C.M.</strong>
-<span>Ma Bko 2017 B 5034</span>
-</div>
-
-<div class="admin-item">
-<strong>NIF</strong>
-<span>085135849D</span>
-</div>
-
-<div class="admin-item">
-<strong>CODE BANQUE</strong>
-<span>ML 109</span>
-</div>
-
-<div class="admin-item">
-<strong>CODE GUICHET</strong>
-<span>01001</span>
-</div>
-
-<div class="admin-item">
-<strong>N° DE COMPTE</strong>
-<span>000100163151</span>
-</div>
-
-<div class="admin-item">
-<strong>RIB</strong>
-<span>45 BSIC</span>
-</div>
-
-</div>
-
-<div class="document-footer">
-
-<div>📞 +223 76 08 23 79</div>
-<div>✉️ egcobsarl@gmail.com</div>
-<div>📍 Torokorobougou, R-400 P-191, Bamako – Mali</div>
-
-</div>
-
-</div>
-
-<div class="actions no-print">
-
 <button class="btn btn-green" onclick="window.print()">
-🖨️ Imprimer / Enregistrer en PDF
+🖨️ Imprimer / PDF
 </button>
-
 </div>
 
 </section>
 
 
-<!-- =================================================
-3 - DEVIS
-================================================= -->
+<!-- DEVIS -->
 
 <section id="devis" class="section">
 
 <div class="card form-card no-print">
 
-<h2>📝 Créer un devis</h2>
+<h2>📝 Devis</h2>
 
 <div class="form-grid">
 
 <div class="form-group">
-<label>Nom du client</label>
-<input id="d_client" oninput="updateClient('d')">
+<label>Client</label>
+<input id="d_client" oninput="updateDocument('d')">
 </div>
 
 <div class="form-group">
 <label>Adresse</label>
-<input id="d_adresse" oninput="updateClient('d')">
+<input id="d_adresse" oninput="updateDocument('d')">
 </div>
 
 <div class="form-group">
 <label>Téléphone</label>
-<input id="d_phone" oninput="updateClient('d')">
+<input id="d_phone" oninput="updateDocument('d')">
 </div>
 
 <div class="form-group">
 <label>Email</label>
-<input id="d_email" oninput="updateClient('d')">
+<input id="d_email" oninput="updateDocument('d')">
 </div>
 
 <div class="form-group">
-<label>Numéro du devis</label>
-<input id="d_numero" value="DEV-2026-001" oninput="updateClient('d')">
+<label>N° Devis</label>
+<input id="d_numero" value="DEV-2026-001" oninput="updateDocument('d')">
 </div>
 
 <div class="form-group">
 <label>Date</label>
-<input type="date" id="d_date" onchange="updateClient('d')">
+<input type="date" id="d_date" onchange="updateDocument('d')">
 </div>
 
 <div class="form-group">
-<label>Validité du devis</label>
-<input type="date" id="d_validite" onchange="updateClient('d')">
+<label>Validité</label>
+<input type="date" id="d_validite" onchange="updateDocument('d')">
+</div>
+
+<div class="form-group">
+<label>TVA (%)</label>
+<input type="number" id="d_tva" value="18" oninput="calculateCommercial('devis')">
 </div>
 
 <div class="form-group full">
 <label>Objet / Référence</label>
-<input id="d_reference" oninput="updateClient('d')">
+<input id="d_reference" oninput="updateDocument('d')">
 </div>
 
 </div>
 
 </div>
 
-
-<div class="document">
-
-<div class="document-top">
-
-<div class="company-zone">
-
-<h1 class="company-name">EGCOB-SARL</h1>
-<p class="company-sector">COMMERCE & BTP</p>
-<p class="company-slogan">Bâtir aujourd'hui, construire demain</p>
-
-<p class="company-address">
-📍 Torokorobougou, R-400 P-191, Bamako – Mali<br>
-📞 +223 76 08 23 79
-</p>
-
-</div>
-
-<div class="document-title">
-
-<h2>DEVIS</h2>
-
-<p>
-<strong>N° :</strong>
-<span id="out_d_numero" class="document-number">
-DEV-2026-001
-</span>
-</p>
-
-<p>
-<strong>Date :</strong>
-<span id="out_d_date"></span>
-</p>
-
-</div>
-
-</div>
-
-
-<div class="info-boxes">
-
-<div class="info-box">
-
-<h3>CLIENT :</h3>
-
-<p><strong>Nom :</strong> <span id="out_d_client"></span></p>
-<p><strong>Adresse :</strong> <span id="out_d_adresse"></span></p>
-<p><strong>Téléphone :</strong> <span id="out_d_phone"></span></p>
-<p><strong>Email :</strong> <span id="out_d_email"></span></p>
-
-</div>
-
-<div class="info-box">
-
-<h3>INFORMATIONS :</h3>
-
-<p><strong>Validité :</strong> <span id="out_d_validite"></span></p>
-<p><strong>Objet :</strong> <span id="out_d_reference"></span></p>
-
-</div>
-
-</div>
-
-
-<table class="document-table">
-
-<thead>
-<tr>
-<th>N°</th>
-<th>DÉSIGNATION</th>
-<th>QTÉ</th>
-<th>UNITÉ</th>
-<th>PRIX UNIT. HT</th>
-<th>MONTANT HT</th>
-<th class="no-print">X</th>
-</tr>
-</thead>
-
-<tbody id="devisRows"></tbody>
-
-</table>
+<div id="devisContent"></div>
 
 <div class="actions no-print">
-
-<button class="btn btn-primary"
-onclick="addCommercialRow('devisRows','devis')">
-➕ Ajouter une ligne
-</button>
-
-</div>
-
-
-<div class="bottom-zone">
-
-<div class="amount-words">
-
-<h4>ARRÊTÉ LE PRÉSENT DEVIS À LA SOMME DE :</h4>
-
-<p id="words_devis">
-Zéro Franc CFA
-</p>
-
-</div>
-
-<table class="totals">
-
-<tr>
-<td>TOTAL HT</td>
-<td id="ht_devis">0 F CFA</td>
-</tr>
-
-<tr>
-<td>TVA 18 %</td>
-<td id="tva_devis">0 F CFA</td>
-</tr>
-
-<tr>
-<td>TOTAL TTC</td>
-<td id="ttc_devis">0 F CFA</td>
-</tr>
-
-</table>
-
-</div>
-
-
-<div class="signature">
-
-<div class="signature-box">
-
-<h4>CACHET ET SIGNATURE</h4>
-
-<div class="signature-area"></div>
-
-</div>
-
-</div>
-
-<div class="admin-title">
-INFORMATIONS ADMINISTRATIVES ET BANCAIRES
-</div>
-
-<div class="admin-grid">
-
-<div class="admin-item"><strong>R.C.C.M.</strong><span>Ma Bko 2017 B 5034</span></div>
-<div class="admin-item"><strong>NIF</strong><span>085135849D</span></div>
-<div class="admin-item"><strong>CODE BANQUE</strong><span>ML 109</span></div>
-<div class="admin-item"><strong>CODE GUICHET</strong><span>01001</span></div>
-<div class="admin-item"><strong>N° DE COMPTE</strong><span>000100163151</span></div>
-<div class="admin-item"><strong>RIB</strong><span>45 BSIC</span></div>
-
-</div>
-
-<div class="document-footer">
-
-<div>📞 +223 76 08 23 79</div>
-<div>✉️ egcobsarl@gmail.com</div>
-<div>📍 Torokorobougou, R-400 P-191, Bamako – Mali</div>
-
-</div>
-
-</div>
-
-<div class="actions no-print">
-
 <button class="btn btn-green" onclick="window.print()">
-🖨️ Imprimer / Enregistrer en PDF
+🖨️ Imprimer / PDF
 </button>
-
 </div>
 
 </section>
 
 
-<!-- =================================================
-4 - BORDEREAU DE LIVRAISON
-================================================= -->
+<!-- LIVRAISON -->
 
 <section id="livraison" class="section">
 
 <div class="card form-card no-print">
 
-<h2>🚚 Créer un bordereau de livraison</h2>
+<h2>🚚 Bordereau de livraison</h2>
 
 <div class="form-grid">
 
 <div class="form-group">
-<label>Nom du client / destinataire</label>
-<input id="l_client" oninput="updateClient('l')">
+<label>Destinataire</label>
+<input id="l_client">
 </div>
 
 <div class="form-group">
-<label>Adresse de livraison</label>
-<input id="l_adresse" oninput="updateClient('l')">
+<label>Adresse</label>
+<input id="l_adresse">
 </div>
 
 <div class="form-group">
 <label>Téléphone</label>
-<input id="l_phone" oninput="updateClient('l')">
+<input id="l_phone">
 </div>
 
 <div class="form-group">
-<label>Email</label>
-<input id="l_email" oninput="updateClient('l')">
+<label>N° Bordereau</label>
+<input id="l_numero" value="BL-2026-001">
 </div>
 
 <div class="form-group">
-<label>Numéro du bordereau</label>
-<input id="l_numero" value="BL-2026-001" oninput="updateClient('l')">
-</div>
-
-<div class="form-group">
-<label>Date de livraison</label>
-<input type="date" id="l_date" onchange="updateClient('l')">
+<label>Date</label>
+<input type="date" id="l_date">
 </div>
 
 <div class="form-group full">
-<label>Référence / Contrat / Commande</label>
-<input id="l_reference" oninput="updateClient('l')">
+<label>Référence</label>
+<input id="l_reference">
 </div>
 
 </div>
 
 </div>
 
-
-<div class="document">
-
-<div class="document-top">
-
-<div class="company-zone">
-
-<h1 class="company-name">EGCOB-SARL</h1>
-<p class="company-sector">COMMERCE & BTP</p>
-<p class="company-slogan">Bâtir aujourd'hui, construire demain</p>
-
-<p class="company-address">
-📍 Torokorobougou, R-400 P-191, Bamako – Mali<br>
-📞 +223 76 08 23 79
-</p>
-
-</div>
-
-<div class="document-title">
-
-<h2>BORDEREAU<br>DE LIVRAISON</h2>
-
-<p>
-<strong>N° :</strong>
-<span id="out_l_numero" class="document-number">
-BL-2026-001
-</span>
-</p>
-
-<p>
-<strong>Date :</strong>
-<span id="out_l_date"></span>
-</p>
-
-</div>
-
-</div>
-
-
-<div class="info-boxes">
-
-<div class="info-box">
-
-<h3>LIVRÉ À :</h3>
-
-<p><strong>Nom :</strong> <span id="out_l_client"></span></p>
-<p><strong>Adresse :</strong> <span id="out_l_adresse"></span></p>
-<p><strong>Téléphone :</strong> <span id="out_l_phone"></span></p>
-<p><strong>Email :</strong> <span id="out_l_email"></span></p>
-
-</div>
-
-<div class="info-box">
-
-<h3>RÉFÉRENCE :</h3>
-
-<p>
-<strong>Contrat / Commande :</strong>
-<span id="out_l_reference"></span>
-</p>
-
-</div>
-
-</div>
-
-
-<table class="document-table">
-
-<thead>
-
-<tr>
-<th>N°</th>
-<th>DÉSIGNATION</th>
-<th>QTÉ</th>
-<th>UNITÉ</th>
-<th>OBSERVATIONS</th>
-<th class="no-print">X</th>
-</tr>
-
-</thead>
-
-<tbody id="livraisonRows"></tbody>
-
-</table>
-
-<div class="actions no-print">
-
-<button class="btn btn-primary"
-onclick="addDeliveryRow()">
-➕ Ajouter une ligne
-</button>
-
-</div>
-
-
-<div class="signature">
-
-<div class="signature-box">
-
-<h4>RÉCEPTION / SIGNATURE DU CLIENT</h4>
-
-<div class="signature-area"></div>
-
-</div>
-
-</div>
-
-
-<div class="admin-title">
-INFORMATIONS ADMINISTRATIVES ET BANCAIRES
-</div>
-
-<div class="admin-grid">
-
-<div class="admin-item"><strong>R.C.C.M.</strong><span>Ma Bko 2017 B 5034</span></div>
-<div class="admin-item"><strong>NIF</strong><span>085135849D</span></div>
-<div class="admin-item"><strong>CODE BANQUE</strong><span>ML 109</span></div>
-<div class="admin-item"><strong>CODE GUICHET</strong><span>01001</span></div>
-<div class="admin-item"><strong>N° DE COMPTE</strong><span>000100163151</span></div>
-<div class="admin-item"><strong>RIB</strong><span>45 BSIC</span></div>
-
-</div>
-
-<div class="document-footer">
-
-<div>📞 +223 76 08 23 79</div>
-<div>✉️ egcobsarl@gmail.com</div>
-<div>📍 Torokorobougou, R-400 P-191, Bamako – Mali</div>
-
-</div>
-
-</div>
-
-<div class="actions no-print">
-
-<button class="btn btn-green" onclick="window.print()">
-🖨️ Imprimer / Enregistrer en PDF
-</button>
-
-</div>
+<div id="livraisonContent"></div>
 
 </section>
 
 
-<!-- =================================================
-5 - BORDEREAU DES PRIX UNITAIRES
-================================================= -->
+<!-- BPU -->
 
 <section id="bpu" class="section">
 
@@ -1593,101 +940,70 @@ INFORMATIONS ADMINISTRATIVES ET BANCAIRES
 <div class="form-grid">
 
 <div class="form-group">
-<label>Objet du marché / projet</label>
-<input id="b_objet" oninput="updateBPU()">
+<label>Objet</label>
+<input id="b_objet">
 </div>
 
 <div class="form-group">
 <label>Référence</label>
-<input id="b_reference" oninput="updateBPU()">
+<input id="b_reference">
 </div>
 
 <div class="form-group">
-<label>Numéro du BPU</label>
-<input id="b_numero" value="BPU-2026-001" oninput="updateBPU()">
+<label>N° BPU</label>
+<input id="b_numero" value="BPU-2026-001">
 </div>
 
 <div class="form-group">
 <label>Date</label>
-<input type="date" id="b_date" onchange="updateBPU()">
+<input type="date" id="b_date">
 </div>
 
 </div>
 
 </div>
-
 
 <div class="document">
 
 <div class="document-top">
 
-<div class="company-zone">
-
+<div>
 <h1 class="company-name">EGCOB-SARL</h1>
 <p class="company-sector">COMMERCE & BTP</p>
 <p class="company-slogan">Bâtir aujourd'hui, construire demain</p>
-
-<p class="company-address">
-📍 Torokorobougou, R-400 P-191, Bamako – Mali<br>
-📞 +223 76 08 23 79
-</p>
-
 </div>
 
 <div class="document-title">
-
-<h2>BORDEREAU DES<br>PRIX UNITAIRES</h2>
-
-<p>
-<strong>N° :</strong>
-<span id="out_b_numero">
-BPU-2026-001
-</span>
-</p>
-
-<p>
-<strong>Date :</strong>
-<span id="out_b_date"></span>
-</p>
-
+<h2>BORDEREAU DES PRIX UNITAIRES</h2>
 </div>
 
 </div>
-
 
 <div class="info-boxes">
 
 <div class="info-box">
-
-<h3>OBJET :</h3>
-
+<h3>OBJET</h3>
 <p id="out_b_objet"></p>
-
 </div>
 
 <div class="info-box">
-
-<h3>RÉFÉRENCE :</h3>
-
+<h3>RÉFÉRENCE</h3>
 <p id="out_b_reference"></p>
-
 </div>
 
 </div>
-
 
 <table class="document-table">
 
 <thead>
-
 <tr>
 <th>N°</th>
 <th>DÉSIGNATION</th>
 <th>UNITÉ</th>
-<th>PRIX UNITAIRE HT (F CFA)</th>
+<th>PRIX EN CHIFFRES</th>
+<th>PRIX EN LETTRES</th>
 <th class="no-print">X</th>
 </tr>
-
 </thead>
 
 <tbody id="bpuRows"></tbody>
@@ -1696,53 +1012,18 @@ BPU-2026-001
 
 <div class="actions no-print">
 
-<button class="btn btn-primary"
-onclick="addBPURow()">
-➕ Ajouter une ligne
+<button class="btn btn-primary" onclick="addBPURow()">
+➕ Ajouter ligne
 </button>
 
 </div>
-
-
-<div class="admin-title">
-INFORMATIONS ADMINISTRATIVES ET BANCAIRES
-</div>
-
-<div class="admin-grid">
-
-<div class="admin-item"><strong>R.C.C.M.</strong><span>Ma Bko 2017 B 5034</span></div>
-<div class="admin-item"><strong>NIF</strong><span>085135849D</span></div>
-<div class="admin-item"><strong>CODE BANQUE</strong><span>ML 109</span></div>
-<div class="admin-item"><strong>CODE GUICHET</strong><span>01001</span></div>
-<div class="admin-item"><strong>N° DE COMPTE</strong><span>000100163151</span></div>
-<div class="admin-item"><strong>RIB</strong><span>45 BSIC</span></div>
-
-</div>
-
-<div class="document-footer">
-
-<div>📞 +223 76 08 23 79</div>
-<div>✉️ egcobsarl@gmail.com</div>
-<div>📍 Torokorobougou, R-400 P-191, Bamako – Mali</div>
-
-</div>
-
-</div>
-
-<div class="actions no-print">
-
-<button class="btn btn-green" onclick="window.print()">
-🖨️ Imprimer / Enregistrer en PDF
-</button>
 
 </div>
 
 </section>
 
 
-<!-- =================================================
-6 - CARACTERISTIQUES TECHNIQUES
-================================================= -->
+<!-- TECHNIQUE -->
 
 <section id="technique" class="section">
 
@@ -1754,944 +1035,905 @@ INFORMATIONS ADMINISTRATIVES ET BANCAIRES
 
 <div class="form-group">
 <label>Objet / Projet</label>
-<input id="t_objet" oninput="updateTechnique()">
+<input id="t_objet">
 </div>
 
 <div class="form-group">
 <label>Référence</label>
-<input id="t_reference" oninput="updateTechnique()">
+<input id="t_reference">
 </div>
 
 <div class="form-group">
-<label>Numéro du document</label>
-<input id="t_numero" value="CT-2026-001" oninput="updateTechnique()">
+<label>N° Document</label>
+<input id="t_numero" value="CT-2026-001">
 </div>
 
 <div class="form-group">
 <label>Date</label>
-<input type="date" id="t_date" onchange="updateTechnique()">
+<input type="date" id="t_date">
 </div>
 
 </div>
 
 </div>
-
 
 <div class="document">
 
 <div class="document-top">
 
-<div class="company-zone">
-
+<div>
 <h1 class="company-name">EGCOB-SARL</h1>
-
-<p class="company-sector">
-COMMERCE & BTP
-</p>
-
-<p class="company-slogan">
-Bâtir aujourd'hui, construire demain
-</p>
-
-<p class="company-address">
-📍 Torokorobougou, R-400 P-191, Bamako – Mali<br>
-📞 +223 76 08 23 79
-</p>
-
+<p class="company-sector">COMMERCE & BTP</p>
 </div>
 
 <div class="document-title">
-
-<h2>CARACTÉRISTIQUES<br>TECHNIQUES</h2>
-
-<p>
-<strong>N° :</strong>
-<span id="out_t_numero">
-CT-2026-001
-</span>
-</p>
-
-<p>
-<strong>Date :</strong>
-<span id="out_t_date"></span>
-</p>
-
+<h2>CARACTÉRISTIQUES TECHNIQUES</h2>
 </div>
 
 </div>
-
-
-<div class="info-boxes">
-
-<div class="info-box">
-
-<h3>OBJET / PROJET :</h3>
-
-<p id="out_t_objet"></p>
-
-</div>
-
-<div class="info-box">
-
-<h3>RÉFÉRENCE :</h3>
-
-<p id="out_t_reference"></p>
-
-</div>
-
-</div>
-
-
-<!-- UNIQUEMENT DEUX COLONNES -->
 
 <table class="document-table">
 
 <thead>
-
 <tr>
-
+<th>ARTICLE / PRODUIT</th>
 <th>CARACTÉRISTIQUES DEMANDÉES</th>
-
 <th>CARACTÉRISTIQUES PROPOSÉES</th>
-
 <th class="no-print">X</th>
-
 </tr>
-
 </thead>
 
 <tbody id="techniqueRows"></tbody>
 
 </table>
 
-
 <div class="actions no-print">
 
-<button class="btn btn-primary"
-onclick="addTechniqueRow()">
-
-➕ Ajouter une ligne
-
+<button class="btn btn-primary" onclick="addTechniqueRow()">
+➕ Ajouter ligne
 </button>
 
 </div>
-
-
-<div class="signature">
-
-<div class="signature-box">
-
-<h4>CACHET ET SIGNATURE</h4>
-
-<div class="signature-area"></div>
-
-</div>
-
-</div>
-
-
-<div class="admin-title">
-
-INFORMATIONS ADMINISTRATIVES ET BANCAIRES
-
-</div>
-
-
-<div class="admin-grid">
-
-<div class="admin-item"><strong>R.C.C.M.</strong><span>Ma Bko 2017 B 5034</span></div>
-
-<div class="admin-item"><strong>NIF</strong><span>085135849D</span></div>
-
-<div class="admin-item"><strong>CODE BANQUE</strong><span>ML 109</span></div>
-
-<div class="admin-item"><strong>CODE GUICHET</strong><span>01001</span></div>
-
-<div class="admin-item"><strong>N° DE COMPTE</strong><span>000100163151</span></div>
-
-<div class="admin-item"><strong>RIB</strong><span>45 BSIC</span></div>
-
-</div>
-
-
-<div class="document-footer">
-
-<div>📞 +223 76 08 23 79</div>
-
-<div>✉️ egcobsarl@gmail.com</div>
-
-<div>📍 Torokorobougou, R-400 P-191, Bamako – Mali</div>
-
-</div>
-
-</div>
-
-
-<div class="actions no-print">
-
-<button class="btn btn-green"
-onclick="window.print()">
-
-🖨️ Imprimer / Enregistrer en PDF
-
-</button>
 
 </div>
 
 </section>
 
 
+<!-- SOCIETE -->
+
+<section id="societe" class="section">
+
+<div class="card">
+
+<h2>🏢 Informations de la société</h2>
+
+<div class="form-grid">
+
+<div class="form-group">
+<label>Nom société</label>
+<input id="s_nom" value="EGCOB-SARL">
+</div>
+
+<div class="form-group">
+<label>Secteur</label>
+<input id="s_secteur" value="COMMERCE & BTP">
+</div>
+
+<div class="form-group full">
+<label>Slogan</label>
+<input id="s_slogan" value="Bâtir aujourd'hui, construire demain">
+</div>
+
+<div class="form-group">
+<label>Adresse</label>
+<input id="s_adresse" value="Torokorobougou, R-400 P-191, Bamako – Mali">
+</div>
+
+<div class="form-group">
+<label>Téléphone principal</label>
+<input id="s_tel1" value="+223 76 08 23 79">
+</div>
+
+<div class="form-group">
+<label>Téléphone secondaire</label>
+<input id="s_tel2">
+</div>
+
+<div class="form-group">
+<label>Email</label>
+<input id="s_email" value="egcobsarl@gmail.com">
+</div>
+
+<div class="form-group">
+<label>R.C.C.M.</label>
+<input id="s_rccm" value="Ma Bko 2017 B 5034">
+</div>
+
+<div class="form-group">
+<label>NIF</label>
+<input id="s_nif" value="085135849D">
+</div>
+
+<div class="form-group">
+<label>Code Banque</label>
+<input id="s_banque" value="ML 109">
+</div>
+
+<div class="form-group">
+<label>Code Guichet</label>
+<input id="s_guichet" value="01001">
+</div>
+
+<div class="form-group">
+<label>N° Compte</label>
+<input id="s_compte" value="000100163151">
+</div>
+
+<div class="form-group">
+<label>RIB</label>
+<input id="s_rib" value="45 BSIC">
+</div>
+
+</div>
+
+<div class="actions">
+
+<button class="btn btn-primary" onclick="saveCompany()">
+💾 Enregistrer les informations
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- HISTORIQUE -->
+
+<section id="historique" class="section">
+
+<div class="card history-card">
+
+<h2>📂 Historique des factures</h2>
+
+<div id="historyList"></div>
+
+</div>
+
+</section>
+
 </div>
 
 
 <script>
 
-/* ==============================================
+/* ================================
 NAVIGATION
-============================================== */
+================================ */
 
 function showSection(id,button){
 
-    document.querySelectorAll('.section')
-    .forEach(section=>{
-        section.classList.remove('active');
-    });
+document.querySelectorAll('.section').forEach(s=>{
+s.classList.remove('active');
+});
 
-    document.getElementById(id)
-    .classList.add('active');
+document.getElementById(id).classList.add('active');
 
-    document.querySelectorAll('.menu button')
-    .forEach(btn=>{
-        btn.classList.remove('active');
-    });
+document.querySelectorAll('.menu button').forEach(b=>{
+b.classList.remove('active');
+});
 
-    button.classList.add('active');
+button.classList.add('active');
+
 }
 
 
-/* ==============================================
-FORMAT ARGENT
-============================================== */
+/* ================================
+ARGENT
+================================ */
 
 function money(value){
 
-    return Number(value || 0)
-    .toLocaleString('fr-FR')
-    + ' F CFA';
+return Number(value||0)
+.toLocaleString('fr-FR')
++' F CFA';
+
 }
 
 
-/* ==============================================
-FORMAT DATE
-============================================== */
+/* ================================
+DATE
+================================ */
 
 function dateFR(value){
 
-    if(!value) return '';
+if(!value)return '';
 
-    return new Date(value + 'T00:00:00')
-    .toLocaleDateString('fr-FR');
-}
-
-
-/* ==============================================
-MISE A JOUR CLIENT
-============================================== */
-
-function updateClient(prefix){
-
-    const fields = [
-        'client',
-        'adresse',
-        'phone',
-        'email',
-        'numero',
-        'date'
-    ];
-
-    fields.forEach(field=>{
-
-        const input =
-        document.getElementById(prefix+'_'+field);
-
-        const output =
-        document.getElementById('out_'+prefix+'_'+field);
-
-        if(input && output){
-
-            if(field === 'date'){
-
-                output.textContent =
-                dateFR(input.value);
-
-            }else{
-
-                output.textContent =
-                input.value;
-
-            }
-
-        }
-
-    });
-
-
-    if(prefix === 'f'){
-
-        document.getElementById('out_f_echeance')
-        .textContent =
-        dateFR(
-            document.getElementById('f_echeance').value
-        );
-
-        document.getElementById('out_f_paiement')
-        .textContent =
-        document.getElementById('f_paiement').value;
-
-        document.getElementById('out_f_reference')
-        .textContent =
-        document.getElementById('f_reference').value;
-
-    }
-
-
-    if(prefix === 'p'){
-
-        document.getElementById('out_p_validite')
-        .textContent =
-        dateFR(
-            document.getElementById('p_validite').value
-        );
-
-        document.getElementById('out_p_paiement')
-        .textContent =
-        document.getElementById('p_paiement').value;
-
-        document.getElementById('out_p_reference')
-        .textContent =
-        document.getElementById('p_reference').value;
-
-    }
-
-
-    if(prefix === 'd'){
-
-        document.getElementById('out_d_validite')
-        .textContent =
-        dateFR(
-            document.getElementById('d_validite').value
-        );
-
-        document.getElementById('out_d_reference')
-        .textContent =
-        document.getElementById('d_reference').value;
-
-    }
-
-
-    if(prefix === 'l'){
-
-        document.getElementById('out_l_reference')
-        .textContent =
-        document.getElementById('l_reference').value;
-
-    }
+return new Date(value+'T00:00:00')
+.toLocaleDateString('fr-FR');
 
 }
 
 
-/* ==============================================
+/* ================================
+MISE A JOUR
+================================ */
+
+function updateDocument(prefix){
+
+['client','adresse','phone','email','numero','date']
+.forEach(field=>{
+
+const input=document.getElementById(prefix+'_'+field);
+const output=document.getElementById('out_'+prefix+'_'+field);
+
+if(input&&output){
+
+output.textContent=
+field==='date'
+?dateFR(input.value)
+:input.value;
+
+}
+
+});
+
+if(prefix==='f'){
+
+document.getElementById('out_f_echeance').textContent=
+dateFR(document.getElementById('f_echeance').value);
+
+document.getElementById('out_f_reference').textContent=
+document.getElementById('f_reference').value;
+
+}
+
+}
+
+
+/* ================================
 LIGNES COMMERCIALES
-FACTURE / PROFORMA / DEVIS
-============================================== */
+================================ */
 
 function addCommercialRow(tableId,type){
 
-    const tbody =
-    document.getElementById(tableId);
+const tbody=document.getElementById(tableId);
 
-    const row =
-    document.createElement('tr');
+const row=document.createElement('tr');
 
-    const number =
-    tbody.children.length + 1;
+row.innerHTML=`
 
-    row.innerHTML = `
+<td class="row-number">
+${String(tbody.children.length+1).padStart(2,'0')}
+</td>
 
-        <td class="row-number">
-        ${String(number).padStart(2,'0')}
-        </td>
+<td>
+<input class="designation" placeholder="Désignation">
+</td>
 
-        <td>
-        <input type="text"
-        class="designation"
-        placeholder="Désignation">
-        </td>
+<td>
+<input type="number" class="qty" value="1"
+oninput="calculateCommercial('${type}')">
+</td>
 
-        <td>
-        <input type="number"
-        class="qty"
-        value="1"
-        min="0"
-        oninput="calculateCommercial('${type}')">
-        </td>
+<td>
+<input class="unit" value="U">
+</td>
 
-        <td>
-        <input type="text"
-        class="unit"
-        value="U">
-        </td>
+<td>
+<input type="number" class="price" value="0"
+oninput="calculateCommercial('${type}')">
+</td>
 
-        <td>
-        <input type="number"
-        class="price"
-        value="0"
-        min="0"
-        oninput="calculateCommercial('${type}')">
-        </td>
+<td class="line-total">0 F CFA</td>
 
-        <td class="line-total">
-        0 F CFA
-        </td>
+<td class="no-print">
 
-        <td class="no-print">
+<button class="btn btn-red"
+onclick="this.closest('tr').remove();calculateCommercial('${type}')">
+✕
+</button>
 
-        <button class="btn btn-red"
-        onclick="deleteRow(this,'${tableId}','${type}')">
-        ✕
-        </button>
+</td>
+`;
 
-        </td>
+tbody.appendChild(row);
 
-    `;
-
-    tbody.appendChild(row);
-
-    calculateCommercial(type);
-}
-
-
-/* ==============================================
-SUPPRIMER LIGNE
-============================================== */
-
-function deleteRow(button,tableId,type){
-
-    const tbody =
-    document.getElementById(tableId);
-
-    if(tbody.children.length <= 1){
-
-        alert(
-        "Il doit rester au moins une ligne."
-        );
-
-        return;
-    }
-
-    button.closest('tr').remove();
-
-    Array.from(tbody.children)
-    .forEach((row,index)=>{
-
-        const number =
-        row.querySelector('.row-number');
-
-        if(number){
-
-            number.textContent =
-            String(index+1).padStart(2,'0');
-
-        }
-
-    });
-
-    if(
-        type === 'facture' ||
-        type === 'proforma' ||
-        type === 'devis'
-    ){
-
-        calculateCommercial(type);
-
-    }
+calculateCommercial(type);
 
 }
 
 
-/* ==============================================
-CALCUL COMMERCIAL
-============================================== */
+/* ================================
+CALCUL
+================================ */
 
 function calculateCommercial(type){
 
-    const rows =
-    document.querySelectorAll(
-        '#'+type+'Rows tr'
-    );
+const rows=document.querySelectorAll('#'+type+'Rows tr');
 
-    let totalHT = 0;
+let total=0;
 
-    rows.forEach(row=>{
+rows.forEach(row=>{
 
-        const qty =
-        Number(
-            row.querySelector('.qty').value
-        ) || 0;
+const qty=Number(row.querySelector('.qty').value)||0;
+const price=Number(row.querySelector('.price').value)||0;
 
-        const price =
-        Number(
-            row.querySelector('.price').value
-        ) || 0;
+const line=qty*price;
 
-        const total =
-        qty * price;
+row.querySelector('.line-total').textContent=money(line);
 
-        row.querySelector('.line-total')
-        .textContent =
-        money(total);
+total+=line;
 
-        totalHT += total;
+});
 
-    });
+const rate=Number(
+document.getElementById(
+type==='facture'?'f_tva':
+type==='proforma'?'p_tva':'d_tva'
+)?.value||18
+);
 
-    const tva =
-    totalHT * 0.18;
+const tva=total*rate/100;
+const ttc=total+tva;
 
-    const totalTTC =
-    totalHT + tva;
+document.getElementById('ht_'+type).textContent=money(total);
+document.getElementById('tva_'+type).textContent=money(tva);
+document.getElementById('ttc_'+type).textContent=money(ttc);
 
-    document.getElementById(
-        'ht_'+type
-    ).textContent =
-    money(totalHT);
-
-    document.getElementById(
-        'tva_'+type
-    ).textContent =
-    money(tva);
-
-    document.getElementById(
-        'ttc_'+type
-    ).textContent =
-    money(totalTTC);
-
-    document.getElementById(
-        'words_'+type
-    ).textContent =
-    numberToWords(totalTTC)
-    + ' Francs CFA';
+document.getElementById('words_'+type).textContent=
+numberToWords(ttc)+' Francs CFA';
 
 }
 
 
-/* ==============================================
-BORDEREAU DE LIVRAISON
-============================================== */
+/* ================================
+FACTURE -> AUTRES DOCUMENTS
+================================ */
 
-function addDeliveryRow(){
+function copyFactureTo(target){
 
-    const tbody =
-    document.getElementById('livraisonRows');
+const rows=[...document.querySelectorAll('#factureRows tr')];
 
-    const number =
-    tbody.children.length + 1;
+if(target==='bpu'){
 
-    const row =
-    document.createElement('tr');
+document.getElementById('bpuRows').innerHTML='';
 
-    row.innerHTML = `
+rows.forEach(row=>{
 
-    <td class="row-number">
-    ${String(number).padStart(2,'0')}
-    </td>
+const designation=row.querySelector('.designation').value;
+const unit=row.querySelector('.unit').value;
+const price=row.querySelector('.price').value;
 
-    <td>
-    <input placeholder="Désignation">
-    </td>
+addBPURow(designation,unit,price);
 
-    <td>
-    <input type="number" value="1">
-    </td>
+});
 
-    <td>
-    <input value="U">
-    </td>
+document.getElementById('b_objet').value=
+document.getElementById('f_reference').value;
 
-    <td>
-    <input placeholder="Observations">
-    </td>
+alert('BPU généré avec les articles de la facture.');
 
-    <td class="no-print">
+}
 
-    <button class="btn btn-red"
-    onclick="deleteRow(this,'livraisonRows','livraison')">
-    ✕
-    </button>
+if(target==='technique'){
 
-    </td>
+document.getElementById('techniqueRows').innerHTML='';
 
-    `;
+rows.forEach(row=>{
 
-    tbody.appendChild(row);
+addTechniqueRow(
+row.querySelector('.designation').value
+);
+
+});
+
+document.getElementById('t_objet').value=
+document.getElementById('f_reference').value;
+
+alert('Caractéristiques techniques générées.');
+
+}
+
+if(target==='livraison'){
+
+document.getElementById('l_client').value=
+document.getElementById('f_client').value;
+
+document.getElementById('l_adresse').value=
+document.getElementById('f_adresse').value;
+
+document.getElementById('l_phone').value=
+document.getElementById('f_phone').value;
+
+document.getElementById('l_reference').value=
+document.getElementById('f_reference').value;
+
+}
+
+if(target==='proforma'){
+
+copyFields('f','p');
+
+document.getElementById('proformaRows').innerHTML='';
+
+rows.forEach(row=>{
+
+addCommercialRow('proformaRows','proforma');
+
+const newRow=
+document.querySelector('#proformaRows tr:last-child');
+
+newRow.querySelector('.designation').value=
+row.querySelector('.designation').value;
+
+newRow.querySelector('.qty').value=
+row.querySelector('.qty').value;
+
+newRow.querySelector('.unit').value=
+row.querySelector('.unit').value;
+
+newRow.querySelector('.price').value=
+row.querySelector('.price').value;
+
+});
+
+calculateCommercial('proforma');
+
+}
+
+if(target==='devis'){
+
+copyFields('f','d');
+
+document.getElementById('devisRows').innerHTML='';
+
+rows.forEach(row=>{
+
+addCommercialRow('devisRows','devis');
+
+const newRow=
+document.querySelector('#devisRows tr:last-child');
+
+newRow.querySelector('.designation').value=
+row.querySelector('.designation').value;
+
+newRow.querySelector('.qty').value=
+row.querySelector('.qty').value;
+
+newRow.querySelector('.unit').value=
+row.querySelector('.unit').value;
+
+newRow.querySelector('.price').value=
+row.querySelector('.price').value;
+
+});
+
+calculateCommercial('devis');
+
+}
+
+alert('Document préparé.');
+
 }
 
 
-/* ==============================================
+function copyFields(from,to){
+
+['client','adresse','phone','email','reference']
+.forEach(field=>{
+
+const source=document.getElementById(from+'_'+field);
+const target=document.getElementById(to+'_'+field);
+
+if(source&&target){
+target.value=source.value;
+}
+
+});
+
+}
+
+
+/* ================================
 BPU
-============================================== */
+================================ */
 
-function addBPURow(){
+function addBPURow(designation='',unit='U',price=0){
 
-    const tbody =
-    document.getElementById('bpuRows');
+const tbody=document.getElementById('bpuRows');
 
-    const number =
-    tbody.children.length + 1;
+const row=document.createElement('tr');
 
-    const row =
-    document.createElement('tr');
+row.innerHTML=`
 
-    row.innerHTML = `
+<td>${String(tbody.children.length+1).padStart(2,'0')}</td>
 
-    <td class="row-number">
-    ${String(number).padStart(2,'0')}
-    </td>
+<td>
+<input value="${designation}">
+</td>
 
-    <td>
-    <input placeholder="Désignation">
-    </td>
+<td>
+<input value="${unit}">
+</td>
 
-    <td>
-    <input value="U">
-    </td>
+<td>
+<input type="number"
+value="${price}"
+oninput="updateBPUWords(this)">
+</td>
 
-    <td>
-    <input type="number"
-    value="0"
-    min="0">
-    </td>
+<td class="price-words">
+${numberToWords(price)} Francs CFA
+</td>
 
-    <td class="no-print">
+<td class="no-print">
 
-    <button class="btn btn-red"
-    onclick="deleteRow(this,'bpuRows','bpu')">
-    ✕
-    </button>
+<button class="btn btn-red"
+onclick="this.closest('tr').remove()">
+✕
+</button>
 
-    </td>
+</td>
+`;
 
-    `;
-
-    tbody.appendChild(row);
-}
-
-
-function updateBPU(){
-
-    document.getElementById('out_b_objet')
-    .textContent =
-    document.getElementById('b_objet').value;
-
-    document.getElementById('out_b_reference')
-    .textContent =
-    document.getElementById('b_reference').value;
-
-    document.getElementById('out_b_numero')
-    .textContent =
-    document.getElementById('b_numero').value;
-
-    document.getElementById('out_b_date')
-    .textContent =
-    dateFR(
-        document.getElementById('b_date').value
-    );
+tbody.appendChild(row);
 
 }
 
 
-/* ==============================================
-CARACTERISTIQUES TECHNIQUES
-============================================== */
+function updateBPUWords(input){
 
-function addTechniqueRow(){
-
-    const tbody =
-    document.getElementById('techniqueRows');
-
-    const row =
-    document.createElement('tr');
-
-    row.innerHTML = `
-
-    <td>
-    <textarea
-    placeholder="Caractéristiques demandées">
-    </textarea>
-    </td>
-
-    <td>
-    <textarea
-    placeholder="Caractéristiques proposées">
-    </textarea>
-    </td>
-
-    <td class="no-print">
-
-    <button class="btn btn-red"
-    onclick="deleteTechniqueRow(this)">
-    ✕
-    </button>
-
-    </td>
-
-    `;
-
-    tbody.appendChild(row);
+input.closest('tr')
+.querySelector('.price-words')
+.textContent=
+numberToWords(input.value)
++' Francs CFA';
 
 }
 
 
-function deleteTechniqueRow(button){
+/* ================================
+TECHNIQUE
+================================ */
 
-    const tbody =
-    document.getElementById('techniqueRows');
+function addTechniqueRow(article=''){
 
-    if(tbody.children.length <= 1){
+const tbody=document.getElementById('techniqueRows');
 
-        alert(
-        "Il doit rester au moins une ligne."
-        );
+const row=document.createElement('tr');
 
-        return;
-    }
+row.innerHTML=`
 
-    button.closest('tr').remove();
+<td>
+<input value="${article}"
+placeholder="Article">
+</td>
+
+<td>
+<textarea
+placeholder="Caractéristiques demandées"></textarea>
+</td>
+
+<td>
+<textarea
+placeholder="Caractéristiques proposées"></textarea>
+</td>
+
+<td class="no-print">
+
+<button class="btn btn-red"
+onclick="this.closest('tr').remove()">
+✕
+</button>
+
+</td>
+`;
+
+tbody.appendChild(row);
+
 }
 
 
-function updateTechnique(){
+/* ================================
+SAUVEGARDE SOCIETE
+================================ */
 
-    document.getElementById('out_t_objet')
-    .textContent =
-    document.getElementById('t_objet').value;
+function saveCompany(){
 
-    document.getElementById('out_t_reference')
-    .textContent =
-    document.getElementById('t_reference').value;
+const company={
 
-    document.getElementById('out_t_numero')
-    .textContent =
-    document.getElementById('t_numero').value;
+nom:s_nom.value,
+secteur:s_secteur.value,
+slogan:s_slogan.value,
+adresse:s_adresse.value,
+tel1:s_tel1.value,
+tel2:s_tel2.value,
+email:s_email.value,
+rccm:s_rccm.value,
+nif:s_nif.value,
+banque:s_banque.value,
+guichet:s_guichet.value,
+compte:s_compte.value,
+rib:s_rib.value
 
-    document.getElementById('out_t_date')
-    .textContent =
-    dateFR(
-        document.getElementById('t_date').value
-    );
+};
+
+localStorage.setItem(
+'egcob_company',
+JSON.stringify(company)
+);
+
+loadCompany();
+
+alert('Informations de la société enregistrées.');
 
 }
 
 
-/* ==============================================
+function loadCompany(){
+
+const data=
+JSON.parse(
+localStorage.getItem('egcob_company')
+||'{}'
+);
+
+if(!data.nom)return;
+
+document.getElementById('companyName').textContent=data.nom;
+document.getElementById('companySector').textContent=data.secteur;
+document.getElementById('companySlogan').textContent=data.slogan;
+
+document.getElementById('companyContact').innerHTML=
+'📍 '+data.adresse+'<br>'+
+'📞 '+data.tel1+
+(data.tel2?' / '+data.tel2:'')+
+'<br>✉️ '+data.email;
+
+const admin=`
+
+<div class="admin-item">
+<strong>R.C.C.M.</strong>
+<span>${data.rccm}</span>
+</div>
+
+<div class="admin-item">
+<strong>NIF</strong>
+<span>${data.nif}</span>
+</div>
+
+<div class="admin-item">
+<strong>CODE BANQUE</strong>
+<span>${data.banque}</span>
+</div>
+
+<div class="admin-item">
+<strong>CODE GUICHET</strong>
+<span>${data.guichet}</span>
+</div>
+
+<div class="admin-item">
+<strong>N° COMPTE</strong>
+<span>${data.compte}</span>
+</div>
+
+<div class="admin-item">
+<strong>RIB</strong>
+<span>${data.rib}</span>
+</div>
+
+`;
+
+document.getElementById('adminFacture').innerHTML=admin;
+
+document.getElementById('footerFacture').innerHTML=`
+
+<div>📞 ${data.tel1}</div>
+<div>✉️ ${data.email}</div>
+<div>📍 ${data.adresse}</div>
+
+`;
+
+}
+
+
+/* ================================
+SAUVEGARDE FACTURE
+================================ */
+
+function saveInvoice(){
+
+const invoice={
+
+numero:f_numero.value,
+client:f_client.value,
+date:f_date.value,
+total:document.getElementById('ttc_facture').textContent,
+created:new Date().toLocaleString('fr-FR')
+
+};
+
+let history=
+JSON.parse(
+localStorage.getItem('egcob_history')
+||'[]'
+);
+
+history.unshift(invoice);
+
+localStorage.setItem(
+'egcob_history',
+JSON.stringify(history)
+);
+
+loadHistory();
+
+alert('Facture sauvegardée.');
+
+}
+
+
+function loadHistory(){
+
+const history=
+JSON.parse(
+localStorage.getItem('egcob_history')
+||'[]'
+);
+
+const container=
+document.getElementById('historyList');
+
+container.innerHTML='';
+
+if(!history.length){
+
+container.innerHTML=
+'<p>Aucune facture enregistrée.</p>';
+
+return;
+
+}
+
+history.forEach(item=>{
+
+const div=document.createElement('div');
+
+div.className='history-item';
+
+div.innerHTML=`
+
+<strong>${item.numero}</strong><br>
+
+Client : ${item.client}<br>
+
+Date : ${dateFR(item.date)}<br>
+
+Total : ${item.total}<br>
+
+<small>Enregistrée : ${item.created}</small>
+
+`;
+
+container.appendChild(div);
+
+});
+
+}
+
+
+/* ================================
 NOMBRE EN LETTRES
-============================================== */
+================================ */
 
 function numberToWords(number){
 
-    number =
-    Math.round(Number(number || 0));
+number=Math.round(Number(number||0));
 
-    if(number === 0){
-        return 'Zéro';
-    }
+if(number===0)return'Zéro';
 
-    const units = [
-        '',
-        'un',
-        'deux',
-        'trois',
-        'quatre',
-        'cinq',
-        'six',
-        'sept',
-        'huit',
-        'neuf',
-        'dix',
-        'onze',
-        'douze',
-        'treize',
-        'quatorze',
-        'quinze',
-        'seize',
-        'dix-sept',
-        'dix-huit',
-        'dix-neuf'
-    ];
+const units=[
+'','un','deux','trois','quatre',
+'cinq','six','sept','huit','neuf',
+'dix','onze','douze','treize',
+'quatorze','quinze','seize',
+'dix-sept','dix-huit','dix-neuf'
+];
 
-    const tens = [
-        '',
-        '',
-        'vingt',
-        'trente',
-        'quarante',
-        'cinquante',
-        'soixante'
-    ];
+const tens=[
+'','','vingt','trente',
+'quarante','cinquante','soixante'
+];
 
-    function underHundred(n){
+function underHundred(n){
 
-        if(n < 20){
-            return units[n];
-        }
+if(n<20)return units[n];
 
-        if(n < 70){
+if(n<70){
 
-            const ten =
-            Math.floor(n/10);
+const ten=Math.floor(n/10);
+const unit=n%10;
 
-            const unit =
-            n%10;
+return tens[ten]+
+(unit===1?' et un':
+unit?'-'+units[unit]:'');
 
-            return tens[ten]
-            +
-            (
-                unit === 1
-                ? ' et un'
-                : unit
-                ? '-'+units[unit]
-                : ''
-            );
+}
 
-        }
+if(n<80){
+return'soixante-'+underHundred(n-60);
+}
 
-        if(n < 80){
+return'quatre-vingt'+
+(n===80?'s':'-'+underHundred(n-80));
 
-            return 'soixante-'
-            + underHundred(n-60);
+}
 
-        }
+function underThousand(n){
 
-        if(n < 100){
+if(n<100)return underHundred(n);
 
-            return 'quatre-vingt'
-            +
-            (
-                n === 80
-                ? 's'
-                : '-'+underHundred(n-80)
-            );
+const hundred=Math.floor(n/100);
+const rest=n%100;
 
-        }
+let result=
+hundred===1
+?'cent'
+:units[hundred]+' cent';
 
-    }
+if(rest===0&&hundred>1)
+result+='s';
 
+if(rest>0)
+result+=' '+underHundred(rest);
 
-    function underThousand(n){
+return result;
 
-        if(n < 100){
-            return underHundred(n);
-        }
+}
 
-        const hundred =
-        Math.floor(n/100);
+if(number<1000)
+return underThousand(number);
 
-        const rest =
-        n%100;
+if(number<1000000){
 
-        let result =
-        hundred === 1
-        ? 'cent'
-        : units[hundred]
-        + ' cent';
+const thousands=Math.floor(number/1000);
+const rest=number%1000;
 
-        if(rest === 0 && hundred > 1){
-            result += 's';
-        }
+return(thousands===1
+?'mille'
+:underThousand(thousands)+' mille')
++(rest?' '+underThousand(rest):'');
 
-        if(rest > 0){
-            result +=
-            ' '+underHundred(rest);
-        }
+}
 
-        return result;
-    }
+if(number<1000000000){
 
+const millions=Math.floor(number/1000000);
+const rest=number%1000000;
 
-    if(number < 1000){
+return(millions===1
+?'un million'
+:underThousand(millions)+' millions')
++(rest?' '+numberToWords(rest):'');
 
-        return underThousand(number);
+}
 
-    }
-
-
-    if(number < 1000000){
-
-        const thousands =
-        Math.floor(number/1000);
-
-        const rest =
-        number%1000;
-
-        let result =
-        thousands === 1
-        ? 'mille'
-        : underThousand(thousands)
-        + ' mille';
-
-        if(rest > 0){
-
-            result +=
-            ' '+underThousand(rest);
-
-        }
-
-        return result;
-
-    }
-
-
-    if(number < 1000000000){
-
-        const millions =
-        Math.floor(number/1000000);
-
-        const rest =
-        number%1000000;
-
-        let result =
-        millions === 1
-        ? 'un million'
-        : underThousand(millions)
-        + ' millions';
-
-        if(rest > 0){
-
-            result +=
-            ' '+numberToWords(rest);
-
-        }
-
-        return result;
-
-    }
-
-    return number.toLocaleString('fr-FR');
+return number.toLocaleString('fr-FR');
 
 }
 
 
-/* ==============================================
+/* ================================
 INITIALISATION
-============================================== */
+================================ */
 
-const today =
+const today=
 new Date()
 .toISOString()
 .split('T')[0];
-
-
-/* Dates */
 
 [
 'f_date',
@@ -2700,53 +1942,203 @@ new Date()
 'l_date',
 'b_date',
 't_date'
-
 ].forEach(id=>{
 
-    const element =
-    document.getElementById(id);
+const el=document.getElementById(id);
 
-    if(element){
-        element.value = today;
-    }
+if(el)el.value=today;
 
 });
 
-
-/* Premières lignes */
-
 addCommercialRow(
-    'factureRows',
-    'facture'
+'factureRows',
+'facture'
 );
 
-addCommercialRow(
-    'proformaRows',
-    'proforma'
-);
+/* Création des lignes Pro Forma */
+
+const proformaContainer=
+document.getElementById('proformaContent');
+
+proformaContainer.innerHTML=`
+
+<div class="document">
+
+<div class="document-top">
+
+<div>
+<h1 class="company-name">EGCOB-SARL</h1>
+<p class="company-sector">COMMERCE & BTP</p>
+</div>
+
+<div class="document-title">
+<h2>PRO FORMA</h2>
+</div>
+
+</div>
+
+<table class="document-table">
+
+<thead>
+
+<tr>
+<th>N°</th>
+<th>DÉSIGNATION</th>
+<th>QTÉ</th>
+<th>UNITÉ</th>
+<th>PRIX HT</th>
+<th>MONTANT</th>
+<th class="no-print">X</th>
+</tr>
+
+</thead>
+
+<tbody id="proformaRows"></tbody>
+
+</table>
+
+<div class="actions no-print">
+
+<button class="btn btn-primary"
+onclick="addCommercialRow('proformaRows','proforma')">
+➕ Ajouter ligne
+</button>
+
+</div>
+
+<div class="bottom-zone">
+
+<div class="amount-words">
+<h4>MONTANT EN LETTRES</h4>
+<p id="words_proforma"></p>
+</div>
+
+<table class="totals">
+
+<tr>
+<td>TOTAL HT</td>
+<td id="ht_proforma"></td>
+</tr>
+
+<tr>
+<td>TVA</td>
+<td id="tva_proforma"></td>
+</tr>
+
+<tr>
+<td>TOTAL TTC</td>
+<td id="ttc_proforma"></td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+`;
 
 addCommercialRow(
-    'devisRows',
-    'devis'
+'proformaRows',
+'proforma'
 );
 
-addDeliveryRow();
+
+/* Création Devis */
+
+const devisContainer=
+document.getElementById('devisContent');
+
+devisContainer.innerHTML=`
+
+<div class="document">
+
+<div class="document-top">
+
+<div>
+<h1 class="company-name">EGCOB-SARL</h1>
+<p class="company-sector">COMMERCE & BTP</p>
+</div>
+
+<div class="document-title">
+<h2>DEVIS</h2>
+</div>
+
+</div>
+
+<table class="document-table">
+
+<thead>
+
+<tr>
+<th>N°</th>
+<th>DÉSIGNATION</th>
+<th>QTÉ</th>
+<th>UNITÉ</th>
+<th>PRIX HT</th>
+<th>MONTANT</th>
+<th class="no-print">X</th>
+</tr>
+
+</thead>
+
+<tbody id="devisRows"></tbody>
+
+</table>
+
+<div class="actions no-print">
+
+<button class="btn btn-primary"
+onclick="addCommercialRow('devisRows','devis')">
+➕ Ajouter ligne
+</button>
+
+</div>
+
+<div class="bottom-zone">
+
+<div class="amount-words">
+<h4>MONTANT EN LETTRES</h4>
+<p id="words_devis"></p>
+</div>
+
+<table class="totals">
+
+<tr>
+<td>TOTAL HT</td>
+<td id="ht_devis"></td>
+</tr>
+
+<tr>
+<td>TVA</td>
+<td id="tva_devis"></td>
+</tr>
+
+<tr>
+<td>TOTAL TTC</td>
+<td id="ttc_devis"></td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+`;
+
+addCommercialRow(
+'devisRows',
+'devis'
+);
 
 addBPURow();
-
 addTechniqueRow();
 
+updateDocument('f');
 
-/* Mise à jour */
-
-updateClient('f');
-updateClient('p');
-updateClient('d');
-updateClient('l');
-
-updateBPU();
-
-updateTechnique();
+loadCompany();
+loadHistory();
 
 </script>
 
