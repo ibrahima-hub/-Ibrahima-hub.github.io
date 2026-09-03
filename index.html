@@ -17,7 +17,6 @@
     --blanc:#ffffff;
     --vert:#187a45;
     --rouge:#b52d2d;
-    --gris:#6b7280;
 }
 
 *{
@@ -36,7 +35,7 @@ body{
     background:var(--bleu);
     color:white;
     text-align:center;
-    padding:25px 15px;
+    padding:22px 15px;
     border-bottom:5px solid var(--or);
 }
 
@@ -53,8 +52,8 @@ body{
     background:#1b3555;
     display:flex;
     justify-content:center;
-    gap:6px;
-    padding:12px;
+    gap:5px;
+    padding:10px;
     flex-wrap:wrap;
 }
 
@@ -62,8 +61,8 @@ body{
     border:none;
     background:transparent;
     color:white;
-    padding:11px 15px;
-    border-radius:9px;
+    padding:10px 14px;
+    border-radius:8px;
     cursor:pointer;
     font-weight:bold;
 }
@@ -89,8 +88,8 @@ body{
 
 .card{
     background:white;
-    padding:22px;
-    border-radius:16px;
+    padding:20px;
+    border-radius:15px;
     margin-bottom:20px;
     box-shadow:0 5px 18px rgba(0,0,0,.08);
 }
@@ -123,9 +122,9 @@ label{
 
 input,select,textarea{
     width:100%;
-    padding:12px;
+    padding:11px;
     border:1px solid #cbd3dd;
-    border-radius:9px;
+    border-radius:8px;
     font-size:15px;
 }
 
@@ -135,9 +134,9 @@ textarea{
 
 .btn{
     border:none;
-    padding:12px 16px;
+    padding:11px 15px;
     margin:4px;
-    border-radius:9px;
+    border-radius:8px;
     cursor:pointer;
     font-weight:bold;
 }
@@ -173,8 +172,9 @@ textarea{
     background:white;
     max-width:1050px;
     margin:auto;
-    padding:30px;
+    padding:28px;
     border-top:10px solid var(--bleu);
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
 }
 
 .document-top{
@@ -187,7 +187,7 @@ textarea{
 
 .company-name{
     color:var(--bleu);
-    font-size:30px;
+    font-size:28px;
 }
 
 .company-sector{
@@ -202,9 +202,9 @@ textarea{
 }
 
 .company-address{
-    margin-top:12px;
+    margin-top:10px;
     line-height:1.6;
-    font-size:14px;
+    font-size:13px;
 }
 
 .document-title{
@@ -214,15 +214,8 @@ textarea{
 .document-title h2{
     background:var(--bleu);
     color:white;
-    padding:12px 20px;
+    padding:12px 18px;
 }
-
-.document-number{
-    color:var(--bleu);
-    font-weight:bold;
-}
-
-/* INFOS */
 
 .info-boxes{
     display:grid;
@@ -233,17 +226,17 @@ textarea{
 
 .info-box{
     border:1px solid #bfc8d3;
-    padding:15px;
-    border-radius:9px;
+    padding:14px;
+    border-radius:8px;
 }
 
 .info-box h3{
     color:var(--bleu);
-    margin-bottom:12px;
+    margin-bottom:10px;
 }
 
 .info-box p{
-    margin:7px 0;
+    margin:6px 0;
 }
 
 /* TABLE */
@@ -251,19 +244,19 @@ textarea{
 .document-table{
     width:100%;
     border-collapse:collapse;
-    margin-top:22px;
+    margin-top:20px;
 }
 
 .document-table th{
     background:var(--bleu);
     color:white;
-    padding:10px 5px;
+    padding:9px 5px;
     border:1px solid #aaa;
 }
 
 .document-table td{
     border:1px solid #aaa;
-    padding:7px;
+    padding:6px;
     text-align:center;
 }
 
@@ -275,23 +268,21 @@ textarea{
     text-align:center;
 }
 
-/* TOTAL */
-
 .bottom-zone{
     display:grid;
     grid-template-columns:1.2fr 1fr;
     gap:20px;
-    margin-top:22px;
+    margin-top:20px;
 }
 
 .amount-words{
     border:1px solid #aaa;
-    padding:15px;
+    padding:14px;
 }
 
 .amount-words h4{
     color:var(--bleu);
-    margin-bottom:10px;
+    margin-bottom:8px;
 }
 
 .totals{
@@ -300,7 +291,7 @@ textarea{
 }
 
 .totals td{
-    padding:12px;
+    padding:11px;
     border:1px solid #aaa;
     font-weight:bold;
 }
@@ -315,8 +306,6 @@ textarea{
     color:var(--bleu);
 }
 
-/* SIGNATURE */
-
 .signature{
     display:flex;
     justify-content:flex-end;
@@ -324,23 +313,21 @@ textarea{
 }
 
 .signature-box{
-    width:330px;
+    width:300px;
     text-align:center;
 }
 
 .signature-area{
-    height:100px;
+    height:90px;
     border:1px solid #aaa;
     margin-top:8px;
 }
-
-/* ADMIN */
 
 .admin-title{
     text-align:center;
     color:var(--bleu);
     font-weight:bold;
-    margin:25px 0 15px;
+    margin:22px 0 12px;
 }
 
 .admin-grid{
@@ -350,7 +337,7 @@ textarea{
 }
 
 .admin-item{
-    padding:10px;
+    padding:8px;
     text-align:center;
     border-right:1px solid #ddd;
 }
@@ -358,30 +345,34 @@ textarea{
 .admin-item strong{
     display:block;
     color:var(--bleu);
-    font-size:12px;
+    font-size:11px;
 }
 
 .admin-item span{
-    font-size:12px;
+    font-size:11px;
 }
 
 .document-footer{
-    margin-top:20px;
+    margin-top:18px;
     background:var(--bleu);
     color:white;
-    padding:14px;
+    padding:12px;
     display:grid;
     grid-template-columns:repeat(3,1fr);
     text-align:center;
-    gap:10px;
+    gap:8px;
     border-bottom:5px solid var(--or);
 }
 
-/* HISTORIQUE */
+.observation-title{
+    margin-top:22px;
+    color:var(--bleu);
+    font-size:18px;
+}
 
 .history-item{
     border:1px solid #ddd;
-    padding:15px;
+    padding:14px;
     margin-bottom:10px;
     border-radius:10px;
     background:white;
@@ -390,6 +381,8 @@ textarea{
 .history-item strong{
     color:var(--bleu);
 }
+
+/* MOBILE */
 
 @media(max-width:750px){
 
@@ -400,7 +393,7 @@ textarea{
     }
 
     .document{
-        padding:15px;
+        padding:12px;
     }
 
     .document-top{
@@ -420,13 +413,24 @@ textarea{
     }
 
     .document-table{
-        font-size:10px;
+        font-size:9px;
     }
 
     .document-table th,
     .document-table td{
-        padding:3px;
+        padding:2px;
     }
+
+    .btn{
+        font-size:13px;
+    }
+}
+
+/* A4 PDF */
+
+@page{
+    size:A4 portrait;
+    margin:8mm;
 }
 
 @media print{
@@ -458,11 +462,22 @@ textarea{
     }
 
     .document{
-        max-width:100%;
         width:100%;
+        max-width:100%;
         box-shadow:none;
-        padding:12px;
+        padding:10px;
+        border-top-width:6px;
     }
+
+    .document-table{
+        font-size:9px;
+    }
+
+    input,textarea{
+        color:#000!important;
+        opacity:1!important;
+    }
+
 }
 
 </style>
@@ -471,50 +486,26 @@ textarea{
 <body>
 
 <header class="app-header">
-<h1>EGCOB-SARL</h1>
-<p>COMMERCE & BTP • GESTION COMMERCIALE</p>
+    <h1>EGCOB-SARL</h1>
+    <p>COMMERCE & BTP • GESTION COMMERCIALE</p>
 </header>
 
 <nav class="menu no-print">
 
-<button class="active" onclick="showSection('facture',this)">
-🧾 Facture
-</button>
-
-<button onclick="showSection('proforma',this)">
-📄 Pro Forma
-</button>
-
-<button onclick="showSection('devis',this)">
-📝 Devis
-</button>
-
-<button onclick="showSection('livraison',this)">
-🚚 Livraison
-</button>
-
-<button onclick="showSection('bpu',this)">
-💰 BPU
-</button>
-
-<button onclick="showSection('technique',this)">
-📋 Technique
-</button>
-
-<button onclick="showSection('societe',this)">
-🏢 Société
-</button>
-
-<button onclick="showSection('historique',this)">
-📂 Historique
-</button>
+<button class="active" onclick="showSection('facture',this)">🧾 Facture</button>
+<button onclick="showSection('proforma',this)">📄 Pro Forma</button>
+<button onclick="showSection('devis',this)">📝 Devis</button>
+<button onclick="showSection('livraison',this)">🚚 Livraison</button>
+<button onclick="showSection('bpu',this)">💰 BPU</button>
+<button onclick="showSection('technique',this)">📋 Technique</button>
+<button onclick="showSection('societe',this)">🏢 Société</button>
+<button onclick="showSection('historique',this)">📂 Historique</button>
 
 </nav>
 
 <div class="container">
 
-
-<!-- FACTURE -->
+<!-- ================= FACTURE ================= -->
 
 <section id="facture" class="section active">
 
@@ -573,25 +564,11 @@ textarea{
 
 <div class="actions">
 
-<button class="btn btn-gold" onclick="copyFactureTo('proforma')">
-➡️ Générer Pro Forma
-</button>
-
-<button class="btn btn-gold" onclick="copyFactureTo('devis')">
-➡️ Générer Devis
-</button>
-
-<button class="btn btn-gold" onclick="copyFactureTo('livraison')">
-➡️ Générer Livraison
-</button>
-
-<button class="btn btn-gold" onclick="copyFactureTo('bpu')">
-➡️ Générer BPU
-</button>
-
-<button class="btn btn-gold" onclick="copyFactureTo('technique')">
-➡️ Générer Technique
-</button>
+<button class="btn btn-gold" onclick="copyFactureTo('proforma')">➡️ Générer Pro Forma</button>
+<button class="btn btn-gold" onclick="copyFactureTo('devis')">➡️ Générer Devis</button>
+<button class="btn btn-gold" onclick="copyFactureTo('livraison')">➡️ Générer Livraison</button>
+<button class="btn btn-gold" onclick="copyFactureTo('bpu')">➡️ Générer BPU</button>
+<button class="btn btn-gold" onclick="copyFactureTo('technique')">➡️ Générer Technique</button>
 
 </div>
 
@@ -604,13 +581,8 @@ textarea{
 <div>
 
 <h1 class="company-name" id="companyName">EGCOB-SARL</h1>
-
 <p class="company-sector" id="companySector">COMMERCE & BTP</p>
-
-<p class="company-slogan" id="companySlogan">
-Bâtir aujourd'hui, construire demain
-</p>
-
+<p class="company-slogan" id="companySlogan">Bâtir aujourd'hui, construire demain</p>
 <p class="company-address" id="companyContact"></p>
 
 </div>
@@ -618,7 +590,6 @@ Bâtir aujourd'hui, construire demain
 <div class="document-title">
 
 <h2>FACTURE</h2>
-
 <p>N° : <span id="out_f_numero"></span></p>
 <p>Date : <span id="out_f_date"></span></p>
 
@@ -670,8 +641,7 @@ Bâtir aujourd'hui, construire demain
 
 <div class="actions no-print">
 
-<button class="btn btn-primary"
-onclick="addCommercialRow('factureRows','facture')">
+<button class="btn btn-primary" onclick="addCommercialRow('factureRows','facture')">
 ➕ Ajouter ligne
 </button>
 
@@ -680,29 +650,15 @@ onclick="addCommercialRow('factureRows','facture')">
 <div class="bottom-zone">
 
 <div class="amount-words">
-
 <h4>ARRÊTÉ À LA SOMME DE :</h4>
-
 <p id="words_facture"></p>
-
 </div>
 
 <table class="totals">
 
-<tr>
-<td>TOTAL HT</td>
-<td id="ht_facture"></td>
-</tr>
-
-<tr>
-<td>TVA</td>
-<td id="tva_facture"></td>
-</tr>
-
-<tr>
-<td>TOTAL TTC</td>
-<td id="ttc_facture"></td>
-</tr>
+<tr><td>TOTAL HT</td><td id="ht_facture"></td></tr>
+<tr><td>TVA</td><td id="tva_facture"></td></tr>
+<tr><td>TOTAL TTC</td><td id="ttc_facture"></td></tr>
 
 </table>
 
@@ -715,9 +671,7 @@ onclick="addCommercialRow('factureRows','facture')">
 </div>
 </div>
 
-<div class="admin-title">
-INFORMATIONS ADMINISTRATIVES ET BANCAIRES
-</div>
+<div class="admin-title">INFORMATIONS ADMINISTRATIVES ET BANCAIRES</div>
 
 <div class="admin-grid" id="adminFacture"></div>
 
@@ -727,20 +681,15 @@ INFORMATIONS ADMINISTRATIVES ET BANCAIRES
 
 <div class="actions no-print">
 
-<button class="btn btn-primary" onclick="saveInvoice()">
-💾 Sauvegarder
-</button>
-
-<button class="btn btn-green" onclick="window.print()">
-🖨️ Imprimer / PDF
-</button>
+<button class="btn btn-primary" onclick="saveInvoice()">💾 Sauvegarder</button>
+<button class="btn btn-green" onclick="window.print()">🖨️ Imprimer / PDF A4</button>
 
 </div>
 
 </section>
 
 
-<!-- PROFORMA -->
+<!-- ================= PROFORMA ================= -->
 
 <section id="proforma" class="section">
 
@@ -750,39 +699,24 @@ INFORMATIONS ADMINISTRATIVES ET BANCAIRES
 
 <div class="form-grid">
 
-<div class="form-group">
-<label>Client</label>
-<input id="p_client" oninput="updateDocument('p')">
-</div>
-
-<div class="form-group">
-<label>Adresse</label>
-<input id="p_adresse" oninput="updateDocument('p')">
-</div>
-
-<div class="form-group">
-<label>Téléphone</label>
-<input id="p_phone" oninput="updateDocument('p')">
-</div>
-
-<div class="form-group">
-<label>Email</label>
-<input id="p_email" oninput="updateDocument('p')">
-</div>
+<div class="form-group"><label>Client</label><input id="p_client"></div>
+<div class="form-group"><label>Adresse</label><input id="p_adresse"></div>
+<div class="form-group"><label>Téléphone</label><input id="p_phone"></div>
+<div class="form-group"><label>Email</label><input id="p_email"></div>
 
 <div class="form-group">
 <label>N° Pro Forma</label>
-<input id="p_numero" value="PF-2026-001" oninput="updateDocument('p')">
+<input id="p_numero" value="PF-2026-001">
 </div>
 
 <div class="form-group">
 <label>Date</label>
-<input type="date" id="p_date" onchange="updateDocument('p')">
+<input type="date" id="p_date">
 </div>
 
 <div class="form-group">
 <label>Validité</label>
-<input type="date" id="p_validite" onchange="updateDocument('p')">
+<input type="date" id="p_validite">
 </div>
 
 <div class="form-group">
@@ -792,7 +726,7 @@ INFORMATIONS ADMINISTRATIVES ET BANCAIRES
 
 <div class="form-group full">
 <label>Référence / Objet</label>
-<input id="p_reference" oninput="updateDocument('p')">
+<input id="p_reference">
 </div>
 
 </div>
@@ -802,15 +736,13 @@ INFORMATIONS ADMINISTRATIVES ET BANCAIRES
 <div id="proformaContent"></div>
 
 <div class="actions no-print">
-<button class="btn btn-green" onclick="window.print()">
-🖨️ Imprimer / PDF
-</button>
+<button class="btn btn-green" onclick="window.print()">🖨️ Imprimer / PDF A4</button>
 </div>
 
 </section>
 
 
-<!-- DEVIS -->
+<!-- ================= DEVIS ================= -->
 
 <section id="devis" class="section">
 
@@ -820,39 +752,24 @@ INFORMATIONS ADMINISTRATIVES ET BANCAIRES
 
 <div class="form-grid">
 
-<div class="form-group">
-<label>Client</label>
-<input id="d_client" oninput="updateDocument('d')">
-</div>
-
-<div class="form-group">
-<label>Adresse</label>
-<input id="d_adresse" oninput="updateDocument('d')">
-</div>
-
-<div class="form-group">
-<label>Téléphone</label>
-<input id="d_phone" oninput="updateDocument('d')">
-</div>
-
-<div class="form-group">
-<label>Email</label>
-<input id="d_email" oninput="updateDocument('d')">
-</div>
+<div class="form-group"><label>Client</label><input id="d_client"></div>
+<div class="form-group"><label>Adresse</label><input id="d_adresse"></div>
+<div class="form-group"><label>Téléphone</label><input id="d_phone"></div>
+<div class="form-group"><label>Email</label><input id="d_email"></div>
 
 <div class="form-group">
 <label>N° Devis</label>
-<input id="d_numero" value="DEV-2026-001" oninput="updateDocument('d')">
+<input id="d_numero" value="DEV-2026-001">
 </div>
 
 <div class="form-group">
 <label>Date</label>
-<input type="date" id="d_date" onchange="updateDocument('d')">
+<input type="date" id="d_date">
 </div>
 
 <div class="form-group">
 <label>Validité</label>
-<input type="date" id="d_validite" onchange="updateDocument('d')">
+<input type="date" id="d_validite">
 </div>
 
 <div class="form-group">
@@ -862,7 +779,7 @@ INFORMATIONS ADMINISTRATIVES ET BANCAIRES
 
 <div class="form-group full">
 <label>Objet / Référence</label>
-<input id="d_reference" oninput="updateDocument('d')">
+<input id="d_reference">
 </div>
 
 </div>
@@ -872,15 +789,13 @@ INFORMATIONS ADMINISTRATIVES ET BANCAIRES
 <div id="devisContent"></div>
 
 <div class="actions no-print">
-<button class="btn btn-green" onclick="window.print()">
-🖨️ Imprimer / PDF
-</button>
+<button class="btn btn-green" onclick="window.print()">🖨️ Imprimer / PDF A4</button>
 </div>
 
 </section>
 
 
-<!-- LIVRAISON -->
+<!-- ================= LIVRAISON ================= -->
 
 <section id="livraison" class="section">
 
@@ -892,44 +807,177 @@ INFORMATIONS ADMINISTRATIVES ET BANCAIRES
 
 <div class="form-group">
 <label>Destinataire</label>
-<input id="l_client">
+<input id="l_client" oninput="updateLivraison()">
 </div>
 
 <div class="form-group">
 <label>Adresse</label>
-<input id="l_adresse">
+<input id="l_adresse" oninput="updateLivraison()">
 </div>
 
 <div class="form-group">
 <label>Téléphone</label>
-<input id="l_phone">
+<input id="l_phone" oninput="updateLivraison()">
 </div>
 
 <div class="form-group">
 <label>N° Bordereau</label>
-<input id="l_numero" value="BL-2026-001">
+<input id="l_numero" value="BL-2026-001" oninput="updateLivraison()">
 </div>
 
 <div class="form-group">
 <label>Date</label>
-<input type="date" id="l_date">
+<input type="date" id="l_date" onchange="updateLivraison()">
 </div>
 
-<div class="form-group full">
+<div class="form-group">
 <label>Référence</label>
-<input id="l_reference">
+<input id="l_reference" oninput="updateLivraison()">
 </div>
 
 </div>
 
 </div>
 
-<div id="livraisonContent"></div>
+<div class="document">
+
+<div class="document-top">
+
+<div>
+
+<h1 class="company-name">EGCOB-SARL</h1>
+<p class="company-sector">COMMERCE & BTP</p>
+<p class="company-slogan">Bâtir aujourd'hui, construire demain</p>
+
+</div>
+
+<div class="document-title">
+
+<h2>BORDEREAU DE LIVRAISON</h2>
+<p>N° : <span id="out_l_numero"></span></p>
+<p>Date : <span id="out_l_date"></span></p>
+
+</div>
+
+</div>
+
+<div class="info-boxes">
+
+<div class="info-box">
+
+<h3>DESTINATAIRE</h3>
+
+<p><strong>Nom :</strong> <span id="out_l_client"></span></p>
+<p><strong>Adresse :</strong> <span id="out_l_adresse"></span></p>
+<p><strong>Téléphone :</strong> <span id="out_l_phone"></span></p>
+
+</div>
+
+<div class="info-box">
+
+<h3>INFORMATIONS</h3>
+
+<p><strong>Référence :</strong> <span id="out_l_reference"></span></p>
+
+</div>
+
+</div>
+
+<!-- TABLEAU ARTICLES LIVRÉS -->
+
+<table class="document-table">
+
+<thead>
+
+<tr>
+<th>N°</th>
+<th>DÉSIGNATION DES ARTICLES</th>
+<th>QTÉ COMMANDÉE</th>
+<th>QTÉ LIVRÉE</th>
+<th>UNITÉ</th>
+<th class="no-print">X</th>
+</tr>
+
+</thead>
+
+<tbody id="livraisonRows"></tbody>
+
+</table>
+
+<div class="actions no-print">
+
+<button class="btn btn-primary" onclick="addLivraisonRow()">
+➕ Ajouter un article
+</button>
+
+</div>
+
+<!-- TABLEAU OBSERVATIONS -->
+
+<h3 class="observation-title">OBSERVATIONS</h3>
+
+<table class="document-table">
+
+<thead>
+
+<tr>
+<th>N°</th>
+<th>OBSERVATIONS / REMARQUES</th>
+<th class="no-print">X</th>
+</tr>
+
+</thead>
+
+<tbody id="observationRows"></tbody>
+
+</table>
+
+<div class="actions no-print">
+
+<button class="btn btn-primary" onclick="addObservationRow()">
+➕ Ajouter une observation
+</button>
+
+</div>
+
+<div class="info-boxes">
+
+<div class="info-box">
+
+<h3>LIVRÉ PAR</h3>
+
+<p>Nom : ........................................................</p>
+<br>
+<p>Signature : ...................................................</p>
+
+</div>
+
+<div class="info-box">
+
+<h3>RÉCEPTIONNÉ PAR</h3>
+
+<p>Nom : ........................................................</p>
+<br>
+<p>Signature et cachet : ....................................</p>
+
+</div>
+
+</div>
+
+<div class="admin-title">INFORMATIONS DE LA SOCIÉTÉ</div>
+
+<div class="document-footer" id="footerLivraison"></div>
+
+</div>
+
+<div class="actions no-print">
+<button class="btn btn-green" onclick="window.print()">🖨️ Imprimer / PDF A4</button>
+</div>
 
 </section>
 
 
-<!-- BPU -->
+<!-- ================= BPU ================= -->
 
 <section id="bpu" class="section">
 
@@ -939,15 +987,8 @@ INFORMATIONS ADMINISTRATIVES ET BANCAIRES
 
 <div class="form-grid">
 
-<div class="form-group">
-<label>Objet</label>
-<input id="b_objet">
-</div>
-
-<div class="form-group">
-<label>Référence</label>
-<input id="b_reference">
-</div>
+<div class="form-group"><label>Objet</label><input id="b_objet"></div>
+<div class="form-group"><label>Référence</label><input id="b_reference"></div>
 
 <div class="form-group">
 <label>N° BPU</label>
@@ -979,23 +1020,10 @@ INFORMATIONS ADMINISTRATIVES ET BANCAIRES
 
 </div>
 
-<div class="info-boxes">
-
-<div class="info-box">
-<h3>OBJET</h3>
-<p id="out_b_objet"></p>
-</div>
-
-<div class="info-box">
-<h3>RÉFÉRENCE</h3>
-<p id="out_b_reference"></p>
-</div>
-
-</div>
-
 <table class="document-table">
 
 <thead>
+
 <tr>
 <th>N°</th>
 <th>DÉSIGNATION</th>
@@ -1004,6 +1032,7 @@ INFORMATIONS ADMINISTRATIVES ET BANCAIRES
 <th>PRIX EN LETTRES</th>
 <th class="no-print">X</th>
 </tr>
+
 </thead>
 
 <tbody id="bpuRows"></tbody>
@@ -1011,11 +1040,7 @@ INFORMATIONS ADMINISTRATIVES ET BANCAIRES
 </table>
 
 <div class="actions no-print">
-
-<button class="btn btn-primary" onclick="addBPURow()">
-➕ Ajouter ligne
-</button>
-
+<button class="btn btn-primary" onclick="addBPURow()">➕ Ajouter ligne</button>
 </div>
 
 </div>
@@ -1023,7 +1048,7 @@ INFORMATIONS ADMINISTRATIVES ET BANCAIRES
 </section>
 
 
-<!-- TECHNIQUE -->
+<!-- ================= TECHNIQUE ================= -->
 
 <section id="technique" class="section">
 
@@ -1033,15 +1058,8 @@ INFORMATIONS ADMINISTRATIVES ET BANCAIRES
 
 <div class="form-grid">
 
-<div class="form-group">
-<label>Objet / Projet</label>
-<input id="t_objet">
-</div>
-
-<div class="form-group">
-<label>Référence</label>
-<input id="t_reference">
-</div>
+<div class="form-group"><label>Objet / Projet</label><input id="t_objet"></div>
+<div class="form-group"><label>Référence</label><input id="t_reference"></div>
 
 <div class="form-group">
 <label>N° Document</label>
@@ -1075,12 +1093,14 @@ INFORMATIONS ADMINISTRATIVES ET BANCAIRES
 <table class="document-table">
 
 <thead>
+
 <tr>
 <th>ARTICLE / PRODUIT</th>
 <th>CARACTÉRISTIQUES DEMANDÉES</th>
 <th>CARACTÉRISTIQUES PROPOSÉES</th>
 <th class="no-print">X</th>
 </tr>
+
 </thead>
 
 <tbody id="techniqueRows"></tbody>
@@ -1088,11 +1108,7 @@ INFORMATIONS ADMINISTRATIVES ET BANCAIRES
 </table>
 
 <div class="actions no-print">
-
-<button class="btn btn-primary" onclick="addTechniqueRow()">
-➕ Ajouter ligne
-</button>
-
+<button class="btn btn-primary" onclick="addTechniqueRow()">➕ Ajouter ligne</button>
 </div>
 
 </div>
@@ -1100,7 +1116,7 @@ INFORMATIONS ADMINISTRATIVES ET BANCAIRES
 </section>
 
 
-<!-- SOCIETE -->
+<!-- ================= SOCIETE ================= -->
 
 <section id="societe" class="section">
 
@@ -1110,79 +1126,36 @@ INFORMATIONS ADMINISTRATIVES ET BANCAIRES
 
 <div class="form-grid">
 
-<div class="form-group">
-<label>Nom société</label>
-<input id="s_nom" value="EGCOB-SARL">
-</div>
+<div class="form-group"><label>Nom société</label><input id="s_nom" value="EGCOB-SARL"></div>
 
-<div class="form-group">
-<label>Secteur</label>
-<input id="s_secteur" value="COMMERCE & BTP">
-</div>
+<div class="form-group"><label>Secteur</label><input id="s_secteur" value="COMMERCE & BTP"></div>
 
-<div class="form-group full">
-<label>Slogan</label>
-<input id="s_slogan" value="Bâtir aujourd'hui, construire demain">
-</div>
+<div class="form-group full"><label>Slogan</label><input id="s_slogan" value="Bâtir aujourd'hui, construire demain"></div>
 
-<div class="form-group">
-<label>Adresse</label>
-<input id="s_adresse" value="Torokorobougou, R-400 P-191, Bamako – Mali">
-</div>
+<div class="form-group"><label>Adresse</label><input id="s_adresse" value="Torokorobougou, R-400 P-191, Bamako – Mali"></div>
 
-<div class="form-group">
-<label>Téléphone principal</label>
-<input id="s_tel1" value="+223 76 08 23 79">
-</div>
+<div class="form-group"><label>Téléphone principal</label><input id="s_tel1" value="+223 76 08 23 79"></div>
 
-<div class="form-group">
-<label>Téléphone secondaire</label>
-<input id="s_tel2">
-</div>
+<div class="form-group"><label>Téléphone secondaire</label><input id="s_tel2"></div>
 
-<div class="form-group">
-<label>Email</label>
-<input id="s_email" value="egcobsarl@gmail.com">
-</div>
+<div class="form-group"><label>Email</label><input id="s_email" value="egcobsarl@gmail.com"></div>
 
-<div class="form-group">
-<label>R.C.C.M.</label>
-<input id="s_rccm" value="Ma Bko 2017 B 5034">
-</div>
+<div class="form-group"><label>R.C.C.M.</label><input id="s_rccm" value="Ma Bko 2017 B 5034"></div>
 
-<div class="form-group">
-<label>NIF</label>
-<input id="s_nif" value="085135849D">
-</div>
+<div class="form-group"><label>NIF</label><input id="s_nif" value="085135849D"></div>
 
-<div class="form-group">
-<label>Code Banque</label>
-<input id="s_banque" value="ML 109">
-</div>
+<div class="form-group"><label>Code Banque</label><input id="s_banque" value="ML 109"></div>
 
-<div class="form-group">
-<label>Code Guichet</label>
-<input id="s_guichet" value="01001">
-</div>
+<div class="form-group"><label>Code Guichet</label><input id="s_guichet" value="01001"></div>
 
-<div class="form-group">
-<label>N° Compte</label>
-<input id="s_compte" value="000100163151">
-</div>
+<div class="form-group"><label>N° Compte</label><input id="s_compte" value="000100163151"></div>
 
-<div class="form-group">
-<label>RIB</label>
-<input id="s_rib" value="45 BSIC">
-</div>
+<div class="form-group"><label>RIB</label><input id="s_rib" value="45 BSIC"></div>
 
 </div>
 
 <div class="actions">
-
-<button class="btn btn-primary" onclick="saveCompany()">
-💾 Enregistrer les informations
-</button>
-
+<button class="btn btn-primary" onclick="saveCompany()">💾 Enregistrer les informations</button>
 </div>
 
 </div>
@@ -1190,7 +1163,7 @@ INFORMATIONS ADMINISTRATIVES ET BANCAIRES
 </section>
 
 
-<!-- HISTORIQUE -->
+<!-- ================= HISTORIQUE ================= -->
 
 <section id="historique" class="section">
 
@@ -1209,72 +1182,53 @@ INFORMATIONS ADMINISTRATIVES ET BANCAIRES
 
 <script>
 
-/* ================================
-NAVIGATION
-================================ */
+/* NAVIGATION */
 
 function showSection(id,button){
 
-document.querySelectorAll('.section').forEach(s=>{
-s.classList.remove('active');
-});
+document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
 
 document.getElementById(id).classList.add('active');
 
-document.querySelectorAll('.menu button').forEach(b=>{
-b.classList.remove('active');
-});
+document.querySelectorAll('.menu button').forEach(b=>b.classList.remove('active'));
 
 button.classList.add('active');
 
 }
 
 
-/* ================================
-ARGENT
-================================ */
+/* ARGENT */
 
 function money(value){
 
-return Number(value||0)
-.toLocaleString('fr-FR')
-+' F CFA';
+return Number(value||0).toLocaleString('fr-FR')+' F CFA';
 
 }
 
 
-/* ================================
-DATE
-================================ */
+/* DATE */
 
 function dateFR(value){
 
 if(!value)return '';
 
-return new Date(value+'T00:00:00')
-.toLocaleDateString('fr-FR');
+return new Date(value+'T00:00:00').toLocaleDateString('fr-FR');
 
 }
 
 
-/* ================================
-MISE A JOUR
-================================ */
+/* FACTURE */
 
 function updateDocument(prefix){
 
-['client','adresse','phone','email','numero','date']
-.forEach(field=>{
+['client','adresse','phone','email','numero','date'].forEach(field=>{
 
 const input=document.getElementById(prefix+'_'+field);
 const output=document.getElementById('out_'+prefix+'_'+field);
 
 if(input&&output){
 
-output.textContent=
-field==='date'
-?dateFR(input.value)
-:input.value;
+output.textContent=field==='date'?dateFR(input.value):input.value;
 
 }
 
@@ -1293,9 +1247,7 @@ document.getElementById('f_reference').value;
 }
 
 
-/* ================================
-LIGNES COMMERCIALES
-================================ */
+/* LIGNES COMMERCIALES */
 
 function addCommercialRow(tableId,type){
 
@@ -1305,22 +1257,16 @@ const row=document.createElement('tr');
 
 row.innerHTML=`
 
-<td class="row-number">
-${String(tbody.children.length+1).padStart(2,'0')}
-</td>
+<td>${String(tbody.children.length+1).padStart(2,'0')}</td>
 
-<td>
-<input class="designation" placeholder="Désignation">
-</td>
+<td><input class="designation" placeholder="Désignation"></td>
 
 <td>
 <input type="number" class="qty" value="1"
 oninput="calculateCommercial('${type}')">
 </td>
 
-<td>
-<input class="unit" value="U">
-</td>
+<td><input class="unit" value="U"></td>
 
 <td>
 <input type="number" class="price" value="0"
@@ -1330,12 +1276,10 @@ oninput="calculateCommercial('${type}')">
 <td class="line-total">0 F CFA</td>
 
 <td class="no-print">
-
 <button class="btn btn-red"
 onclick="this.closest('tr').remove();calculateCommercial('${type}')">
 ✕
 </button>
-
 </td>
 `;
 
@@ -1346,9 +1290,7 @@ calculateCommercial(type);
 }
 
 
-/* ================================
-CALCUL
-================================ */
+/* CALCULS */
 
 function calculateCommercial(type){
 
@@ -1369,12 +1311,11 @@ total+=line;
 
 });
 
-const rate=Number(
-document.getElementById(
+const tvaInput=
 type==='facture'?'f_tva':
-type==='proforma'?'p_tva':'d_tva'
-)?.value||18
-);
+type==='proforma'?'p_tva':'d_tva';
+
+const rate=Number(document.getElementById(tvaInput).value)||0;
 
 const tva=total*rate/100;
 const ttc=total+tva;
@@ -1389,13 +1330,130 @@ numberToWords(ttc)+' Francs CFA';
 }
 
 
-/* ================================
-FACTURE -> AUTRES DOCUMENTS
-================================ */
+/* LIVRAISON */
+
+function updateLivraison(){
+
+['client','adresse','phone','numero','reference'].forEach(field=>{
+
+const input=document.getElementById('l_'+field);
+const output=document.getElementById('out_l_'+field);
+
+if(input&&output)output.textContent=input.value;
+
+});
+
+document.getElementById('out_l_date').textContent=
+dateFR(document.getElementById('l_date').value);
+
+}
+
+
+function addLivraisonRow(designation='',qty='1',unit='U'){
+
+const tbody=document.getElementById('livraisonRows');
+
+const row=document.createElement('tr');
+
+row.innerHTML=`
+
+<td>${String(tbody.children.length+1).padStart(2,'0')}</td>
+
+<td>
+<input class="l-designation" value="${designation}" placeholder="Désignation de l'article">
+</td>
+
+<td>
+<input type="number" class="l-qty-commanded" value="${qty}">
+</td>
+
+<td>
+<input type="number" class="l-qty-delivered" value="${qty}">
+</td>
+
+<td>
+<input class="l-unit" value="${unit}">
+</td>
+
+<td class="no-print">
+<button class="btn btn-red" onclick="this.closest('tr').remove();renumberRows('livraisonRows')">✕</button>
+</td>
+
+`;
+
+tbody.appendChild(row);
+
+}
+
+
+function addObservationRow(){
+
+const tbody=document.getElementById('observationRows');
+
+const row=document.createElement('tr');
+
+row.innerHTML=`
+
+<td>${String(tbody.children.length+1).padStart(2,'0')}</td>
+
+<td>
+<textarea placeholder="Écrivez une observation ou une remarque"></textarea>
+</td>
+
+<td class="no-print">
+<button class="btn btn-red" onclick="this.closest('tr').remove();renumberRows('observationRows')">✕</button>
+</td>
+
+`;
+
+tbody.appendChild(row);
+
+}
+
+
+function renumberRows(id){
+
+const rows=document.querySelectorAll('#'+id+' tr');
+
+rows.forEach((row,index)=>{
+row.children[0].textContent=String(index+1).padStart(2,'0');
+});
+
+}
+
+
+/* COPIER FACTURE */
 
 function copyFactureTo(target){
 
 const rows=[...document.querySelectorAll('#factureRows tr')];
+
+if(target==='livraison'){
+
+document.getElementById('l_client').value=f_client.value;
+document.getElementById('l_adresse').value=f_adresse.value;
+document.getElementById('l_phone').value=f_phone.value;
+document.getElementById('l_reference').value=f_reference.value;
+
+document.getElementById('livraisonRows').innerHTML='';
+
+rows.forEach(row=>{
+
+addLivraisonRow(
+row.querySelector('.designation').value,
+row.querySelector('.qty').value,
+row.querySelector('.unit').value
+);
+
+});
+
+updateLivraison();
+
+alert('Bordereau de livraison généré.');
+
+return;
+
+}
 
 if(target==='bpu'){
 
@@ -1403,18 +1461,19 @@ document.getElementById('bpuRows').innerHTML='';
 
 rows.forEach(row=>{
 
-const designation=row.querySelector('.designation').value;
-const unit=row.querySelector('.unit').value;
-const price=row.querySelector('.price').value;
-
-addBPURow(designation,unit,price);
+addBPURow(
+row.querySelector('.designation').value,
+row.querySelector('.unit').value,
+row.querySelector('.price').value
+);
 
 });
 
-document.getElementById('b_objet').value=
-document.getElementById('f_reference').value;
+document.getElementById('b_objet').value=f_reference.value;
 
-alert('BPU généré avec les articles de la facture.');
+alert('BPU généré.');
+
+return;
 
 }
 
@@ -1423,33 +1482,14 @@ if(target==='technique'){
 document.getElementById('techniqueRows').innerHTML='';
 
 rows.forEach(row=>{
-
-addTechniqueRow(
-row.querySelector('.designation').value
-);
-
+addTechniqueRow(row.querySelector('.designation').value);
 });
 
-document.getElementById('t_objet').value=
-document.getElementById('f_reference').value;
+document.getElementById('t_objet').value=f_reference.value;
 
 alert('Caractéristiques techniques générées.');
 
-}
-
-if(target==='livraison'){
-
-document.getElementById('l_client').value=
-document.getElementById('f_client').value;
-
-document.getElementById('l_adresse').value=
-document.getElementById('f_adresse').value;
-
-document.getElementById('l_phone').value=
-document.getElementById('f_phone').value;
-
-document.getElementById('l_reference').value=
-document.getElementById('f_reference').value;
+return;
 
 }
 
@@ -1463,24 +1503,18 @@ rows.forEach(row=>{
 
 addCommercialRow('proformaRows','proforma');
 
-const newRow=
-document.querySelector('#proformaRows tr:last-child');
+const newRow=document.querySelector('#proformaRows tr:last-child');
 
-newRow.querySelector('.designation').value=
-row.querySelector('.designation').value;
-
-newRow.querySelector('.qty').value=
-row.querySelector('.qty').value;
-
-newRow.querySelector('.unit').value=
-row.querySelector('.unit').value;
-
-newRow.querySelector('.price').value=
-row.querySelector('.price').value;
+newRow.querySelector('.designation').value=row.querySelector('.designation').value;
+newRow.querySelector('.qty').value=row.querySelector('.qty').value;
+newRow.querySelector('.unit').value=row.querySelector('.unit').value;
+newRow.querySelector('.price').value=row.querySelector('.price').value;
 
 });
 
 calculateCommercial('proforma');
+
+alert('Pro Forma générée.');
 
 }
 
@@ -1494,52 +1528,39 @@ rows.forEach(row=>{
 
 addCommercialRow('devisRows','devis');
 
-const newRow=
-document.querySelector('#devisRows tr:last-child');
+const newRow=document.querySelector('#devisRows tr:last-child');
 
-newRow.querySelector('.designation').value=
-row.querySelector('.designation').value;
-
-newRow.querySelector('.qty').value=
-row.querySelector('.qty').value;
-
-newRow.querySelector('.unit').value=
-row.querySelector('.unit').value;
-
-newRow.querySelector('.price').value=
-row.querySelector('.price').value;
+newRow.querySelector('.designation').value=row.querySelector('.designation').value;
+newRow.querySelector('.qty').value=row.querySelector('.qty').value;
+newRow.querySelector('.unit').value=row.querySelector('.unit').value;
+newRow.querySelector('.price').value=row.querySelector('.price').value;
 
 });
 
 calculateCommercial('devis');
 
-}
+alert('Devis généré.');
 
-alert('Document préparé.');
+}
 
 }
 
 
 function copyFields(from,to){
 
-['client','adresse','phone','email','reference']
-.forEach(field=>{
+['client','adresse','phone','email','reference'].forEach(field=>{
 
 const source=document.getElementById(from+'_'+field);
 const target=document.getElementById(to+'_'+field);
 
-if(source&&target){
-target.value=source.value;
-}
+if(source&&target)target.value=source.value;
 
 });
 
 }
 
 
-/* ================================
-BPU
-================================ */
+/* BPU */
 
 function addBPURow(designation='',unit='U',price=0){
 
@@ -1551,17 +1572,12 @@ row.innerHTML=`
 
 <td>${String(tbody.children.length+1).padStart(2,'0')}</td>
 
-<td>
-<input value="${designation}">
-</td>
+<td><input value="${designation}"></td>
+
+<td><input value="${unit}"></td>
 
 <td>
-<input value="${unit}">
-</td>
-
-<td>
-<input type="number"
-value="${price}"
+<input type="number" value="${price}"
 oninput="updateBPUWords(this)">
 </td>
 
@@ -1570,12 +1586,7 @@ ${numberToWords(price)} Francs CFA
 </td>
 
 <td class="no-print">
-
-<button class="btn btn-red"
-onclick="this.closest('tr').remove()">
-✕
-</button>
-
+<button class="btn btn-red" onclick="this.closest('tr').remove()">✕</button>
 </td>
 `;
 
@@ -1586,18 +1597,13 @@ tbody.appendChild(row);
 
 function updateBPUWords(input){
 
-input.closest('tr')
-.querySelector('.price-words')
-.textContent=
-numberToWords(input.value)
-+' Francs CFA';
+input.closest('tr').querySelector('.price-words').textContent=
+numberToWords(input.value)+' Francs CFA';
 
 }
 
 
-/* ================================
-TECHNIQUE
-================================ */
+/* TECHNIQUE */
 
 function addTechniqueRow(article=''){
 
@@ -1607,28 +1613,18 @@ const row=document.createElement('tr');
 
 row.innerHTML=`
 
+<td><input value="${article}" placeholder="Article"></td>
+
 <td>
-<input value="${article}"
-placeholder="Article">
+<textarea placeholder="Caractéristiques demandées"></textarea>
 </td>
 
 <td>
-<textarea
-placeholder="Caractéristiques demandées"></textarea>
-</td>
-
-<td>
-<textarea
-placeholder="Caractéristiques proposées"></textarea>
+<textarea placeholder="Caractéristiques proposées"></textarea>
 </td>
 
 <td class="no-print">
-
-<button class="btn btn-red"
-onclick="this.closest('tr').remove()">
-✕
-</button>
-
+<button class="btn btn-red" onclick="this.closest('tr').remove()">✕</button>
 </td>
 `;
 
@@ -1637,9 +1633,7 @@ tbody.appendChild(row);
 }
 
 
-/* ================================
-SAUVEGARDE SOCIETE
-================================ */
+/* SOCIETE */
 
 function saveCompany(){
 
@@ -1661,10 +1655,7 @@ rib:s_rib.value
 
 };
 
-localStorage.setItem(
-'egcob_company',
-JSON.stringify(company)
-);
+localStorage.setItem('egcob_company',JSON.stringify(company));
 
 loadCompany();
 
@@ -1675,11 +1666,7 @@ alert('Informations de la société enregistrées.');
 
 function loadCompany(){
 
-const data=
-JSON.parse(
-localStorage.getItem('egcob_company')
-||'{}'
-);
+const data=JSON.parse(localStorage.getItem('egcob_company')||'{}');
 
 if(!data.nom)return;
 
@@ -1693,43 +1680,18 @@ document.getElementById('companyContact').innerHTML=
 (data.tel2?' / '+data.tel2:'')+
 '<br>✉️ '+data.email;
 
-const admin=`
+document.getElementById('adminFacture').innerHTML=`
 
-<div class="admin-item">
-<strong>R.C.C.M.</strong>
-<span>${data.rccm}</span>
-</div>
-
-<div class="admin-item">
-<strong>NIF</strong>
-<span>${data.nif}</span>
-</div>
-
-<div class="admin-item">
-<strong>CODE BANQUE</strong>
-<span>${data.banque}</span>
-</div>
-
-<div class="admin-item">
-<strong>CODE GUICHET</strong>
-<span>${data.guichet}</span>
-</div>
-
-<div class="admin-item">
-<strong>N° COMPTE</strong>
-<span>${data.compte}</span>
-</div>
-
-<div class="admin-item">
-<strong>RIB</strong>
-<span>${data.rib}</span>
-</div>
+<div class="admin-item"><strong>R.C.C.M.</strong><span>${data.rccm}</span></div>
+<div class="admin-item"><strong>NIF</strong><span>${data.nif}</span></div>
+<div class="admin-item"><strong>CODE BANQUE</strong><span>${data.banque}</span></div>
+<div class="admin-item"><strong>CODE GUICHET</strong><span>${data.guichet}</span></div>
+<div class="admin-item"><strong>N° COMPTE</strong><span>${data.compte}</span></div>
+<div class="admin-item"><strong>RIB</strong><span>${data.rib}</span></div>
 
 `;
 
-document.getElementById('adminFacture').innerHTML=admin;
-
-document.getElementById('footerFacture').innerHTML=`
+const footer=`
 
 <div>📞 ${data.tel1}</div>
 <div>✉️ ${data.email}</div>
@@ -1737,12 +1699,13 @@ document.getElementById('footerFacture').innerHTML=`
 
 `;
 
+document.getElementById('footerFacture').innerHTML=footer;
+document.getElementById('footerLivraison').innerHTML=footer;
+
 }
 
 
-/* ================================
-SAUVEGARDE FACTURE
-================================ */
+/* SAUVEGARDE FACTURE */
 
 function saveInvoice(){
 
@@ -1756,18 +1719,11 @@ created:new Date().toLocaleString('fr-FR')
 
 };
 
-let history=
-JSON.parse(
-localStorage.getItem('egcob_history')
-||'[]'
-);
+let history=JSON.parse(localStorage.getItem('egcob_history')||'[]');
 
 history.unshift(invoice);
 
-localStorage.setItem(
-'egcob_history',
-JSON.stringify(history)
-);
+localStorage.setItem('egcob_history',JSON.stringify(history));
 
 loadHistory();
 
@@ -1778,21 +1734,15 @@ alert('Facture sauvegardée.');
 
 function loadHistory(){
 
-const history=
-JSON.parse(
-localStorage.getItem('egcob_history')
-||'[]'
-);
+const history=JSON.parse(localStorage.getItem('egcob_history')||'[]');
 
-const container=
-document.getElementById('historyList');
+const container=document.getElementById('historyList');
 
 container.innerHTML='';
 
 if(!history.length){
 
-container.innerHTML=
-'<p>Aucune facture enregistrée.</p>';
+container.innerHTML='<p>Aucune facture enregistrée.</p>';
 
 return;
 
@@ -1807,13 +1757,9 @@ div.className='history-item';
 div.innerHTML=`
 
 <strong>${item.numero}</strong><br>
-
 Client : ${item.client}<br>
-
 Date : ${dateFR(item.date)}<br>
-
 Total : ${item.total}<br>
-
 <small>Enregistrée : ${item.created}</small>
 
 `;
@@ -1825,9 +1771,7 @@ container.appendChild(div);
 }
 
 
-/* ================================
-NOMBRE EN LETTRES
-================================ */
+/* NOMBRE EN LETTRES */
 
 function numberToWords(number){
 
@@ -1863,9 +1807,7 @@ unit?'-'+units[unit]:'');
 
 }
 
-if(n<80){
-return'soixante-'+underHundred(n-60);
-}
+if(n<80)return'soixante-'+underHundred(n-60);
 
 return'quatre-vingt'+
 (n===80?'s':'-'+underHundred(n-80));
@@ -1880,31 +1822,24 @@ const hundred=Math.floor(n/100);
 const rest=n%100;
 
 let result=
-hundred===1
-?'cent'
-:units[hundred]+' cent';
+hundred===1?'cent':units[hundred]+' cent';
 
-if(rest===0&&hundred>1)
-result+='s';
+if(rest===0&&hundred>1)result+='s';
 
-if(rest>0)
-result+=' '+underHundred(rest);
+if(rest>0)result+=' '+underHundred(rest);
 
 return result;
 
 }
 
-if(number<1000)
-return underThousand(number);
+if(number<1000)return underThousand(number);
 
 if(number<1000000){
 
 const thousands=Math.floor(number/1000);
 const rest=number%1000;
 
-return(thousands===1
-?'mille'
-:underThousand(thousands)+' mille')
+return(thousands===1?'mille':underThousand(thousands)+' mille')
 +(rest?' '+underThousand(rest):'');
 
 }
@@ -1914,9 +1849,7 @@ if(number<1000000000){
 const millions=Math.floor(number/1000000);
 const rest=number%1000000;
 
-return(millions===1
-?'un million'
-:underThousand(millions)+' millions')
+return(millions===1?'un million':underThousand(millions)+' millions')
 +(rest?' '+numberToWords(rest):'');
 
 }
@@ -1926,14 +1859,139 @@ return number.toLocaleString('fr-FR');
 }
 
 
-/* ================================
-INITIALISATION
-================================ */
+/* CREATION PROFORMA */
 
-const today=
-new Date()
-.toISOString()
-.split('T')[0];
+document.getElementById('proformaContent').innerHTML=`
+
+<div class="document">
+
+<div class="document-top">
+
+<div>
+<h1 class="company-name">EGCOB-SARL</h1>
+<p class="company-sector">COMMERCE & BTP</p>
+<p class="company-slogan">Bâtir aujourd'hui, construire demain</p>
+</div>
+
+<div class="document-title">
+<h2>FACTURE PRO FORMA</h2>
+</div>
+
+</div>
+
+<table class="document-table">
+
+<thead>
+<tr>
+<th>N°</th>
+<th>DÉSIGNATION</th>
+<th>QTÉ</th>
+<th>UNITÉ</th>
+<th>PRIX HT</th>
+<th>MONTANT HT</th>
+<th class="no-print">X</th>
+</tr>
+</thead>
+
+<tbody id="proformaRows"></tbody>
+
+</table>
+
+<div class="actions no-print">
+<button class="btn btn-primary"
+onclick="addCommercialRow('proformaRows','proforma')">
+➕ Ajouter ligne
+</button>
+</div>
+
+<div class="bottom-zone">
+
+<div class="amount-words">
+<h4>MONTANT EN LETTRES</h4>
+<p id="words_proforma"></p>
+</div>
+
+<table class="totals">
+<tr><td>TOTAL HT</td><td id="ht_proforma"></td></tr>
+<tr><td>TVA</td><td id="tva_proforma"></td></tr>
+<tr><td>TOTAL TTC</td><td id="ttc_proforma"></td></tr>
+</table>
+
+</div>
+
+</div>
+
+`;
+
+
+/* CREATION DEVIS */
+
+document.getElementById('devisContent').innerHTML=`
+
+<div class="document">
+
+<div class="document-top">
+
+<div>
+<h1 class="company-name">EGCOB-SARL</h1>
+<p class="company-sector">COMMERCE & BTP</p>
+<p class="company-slogan">Bâtir aujourd'hui, construire demain</p>
+</div>
+
+<div class="document-title">
+<h2>DEVIS</h2>
+</div>
+
+</div>
+
+<table class="document-table">
+
+<thead>
+<tr>
+<th>N°</th>
+<th>DÉSIGNATION</th>
+<th>QTÉ</th>
+<th>UNITÉ</th>
+<th>PRIX HT</th>
+<th>MONTANT HT</th>
+<th class="no-print">X</th>
+</tr>
+</thead>
+
+<tbody id="devisRows"></tbody>
+
+</table>
+
+<div class="actions no-print">
+<button class="btn btn-primary"
+onclick="addCommercialRow('devisRows','devis')">
+➕ Ajouter ligne
+</button>
+</div>
+
+<div class="bottom-zone">
+
+<div class="amount-words">
+<h4>MONTANT EN LETTRES</h4>
+<p id="words_devis"></p>
+</div>
+
+<table class="totals">
+<tr><td>TOTAL HT</td><td id="ht_devis"></td></tr>
+<tr><td>TVA</td><td id="tva_devis"></td></tr>
+<tr><td>TOTAL TTC</td><td id="ttc_devis"></td></tr>
+</table>
+
+</div>
+
+</div>
+
+`;
+
+
+/* INITIALISATION */
+
+const today=new Date().toISOString().split('T')[0];
 
 [
 'f_date',
@@ -1950,192 +2008,18 @@ if(el)el.value=today;
 
 });
 
-addCommercialRow(
-'factureRows',
-'facture'
-);
+addCommercialRow('factureRows','facture');
+addCommercialRow('proformaRows','proforma');
+addCommercialRow('devisRows','devis');
 
-/* Création des lignes Pro Forma */
-
-const proformaContainer=
-document.getElementById('proformaContent');
-
-proformaContainer.innerHTML=`
-
-<div class="document">
-
-<div class="document-top">
-
-<div>
-<h1 class="company-name">EGCOB-SARL</h1>
-<p class="company-sector">COMMERCE & BTP</p>
-</div>
-
-<div class="document-title">
-<h2>PRO FORMA</h2>
-</div>
-
-</div>
-
-<table class="document-table">
-
-<thead>
-
-<tr>
-<th>N°</th>
-<th>DÉSIGNATION</th>
-<th>QTÉ</th>
-<th>UNITÉ</th>
-<th>PRIX HT</th>
-<th>MONTANT</th>
-<th class="no-print">X</th>
-</tr>
-
-</thead>
-
-<tbody id="proformaRows"></tbody>
-
-</table>
-
-<div class="actions no-print">
-
-<button class="btn btn-primary"
-onclick="addCommercialRow('proformaRows','proforma')">
-➕ Ajouter ligne
-</button>
-
-</div>
-
-<div class="bottom-zone">
-
-<div class="amount-words">
-<h4>MONTANT EN LETTRES</h4>
-<p id="words_proforma"></p>
-</div>
-
-<table class="totals">
-
-<tr>
-<td>TOTAL HT</td>
-<td id="ht_proforma"></td>
-</tr>
-
-<tr>
-<td>TVA</td>
-<td id="tva_proforma"></td>
-</tr>
-
-<tr>
-<td>TOTAL TTC</td>
-<td id="ttc_proforma"></td>
-</tr>
-
-</table>
-
-</div>
-
-</div>
-
-`;
-
-addCommercialRow(
-'proformaRows',
-'proforma'
-);
-
-
-/* Création Devis */
-
-const devisContainer=
-document.getElementById('devisContent');
-
-devisContainer.innerHTML=`
-
-<div class="document">
-
-<div class="document-top">
-
-<div>
-<h1 class="company-name">EGCOB-SARL</h1>
-<p class="company-sector">COMMERCE & BTP</p>
-</div>
-
-<div class="document-title">
-<h2>DEVIS</h2>
-</div>
-
-</div>
-
-<table class="document-table">
-
-<thead>
-
-<tr>
-<th>N°</th>
-<th>DÉSIGNATION</th>
-<th>QTÉ</th>
-<th>UNITÉ</th>
-<th>PRIX HT</th>
-<th>MONTANT</th>
-<th class="no-print">X</th>
-</tr>
-
-</thead>
-
-<tbody id="devisRows"></tbody>
-
-</table>
-
-<div class="actions no-print">
-
-<button class="btn btn-primary"
-onclick="addCommercialRow('devisRows','devis')">
-➕ Ajouter ligne
-</button>
-
-</div>
-
-<div class="bottom-zone">
-
-<div class="amount-words">
-<h4>MONTANT EN LETTRES</h4>
-<p id="words_devis"></p>
-</div>
-
-<table class="totals">
-
-<tr>
-<td>TOTAL HT</td>
-<td id="ht_devis"></td>
-</tr>
-
-<tr>
-<td>TVA</td>
-<td id="tva_devis"></td>
-</tr>
-
-<tr>
-<td>TOTAL TTC</td>
-<td id="ttc_devis"></td>
-</tr>
-
-</table>
-
-</div>
-
-</div>
-
-`;
-
-addCommercialRow(
-'devisRows',
-'devis'
-);
+addLivraisonRow();
+addObservationRow();
 
 addBPURow();
 addTechniqueRow();
 
 updateDocument('f');
+updateLivraison();
 
 loadCompany();
 loadHistory();
