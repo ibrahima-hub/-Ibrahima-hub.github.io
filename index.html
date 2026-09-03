@@ -7,7 +7,6 @@
 <title>EGCOB-SARL | Gestion Commerciale</title>
 
 <style>
-
 :root{
     --bleu:#11284a;
     --bleu2:#203d63;
@@ -120,7 +119,9 @@ label{
     color:var(--bleu);
 }
 
-input,select,textarea{
+input,
+select,
+textarea{
     width:100%;
     padding:11px;
     border:1px solid #cbd3dd;
@@ -130,6 +131,7 @@ input,select,textarea{
 
 textarea{
     min-height:80px;
+    resize:vertical;
 }
 
 .btn{
@@ -217,6 +219,10 @@ textarea{
     padding:12px 18px;
 }
 
+.document-title p{
+    margin-top:6px;
+}
+
 .info-boxes{
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -239,7 +245,7 @@ textarea{
     margin:6px 0;
 }
 
-/* TABLE */
+/* TABLEAUX */
 
 .document-table{
     width:100%;
@@ -266,6 +272,11 @@ textarea{
     border-radius:0;
     padding:5px;
     text-align:center;
+    background:transparent;
+}
+
+.document-table textarea{
+    min-height:45px;
 }
 
 .bottom-zone{
@@ -342,6 +353,10 @@ textarea{
     border-right:1px solid #ddd;
 }
 
+.admin-item:last-child{
+    border-right:none;
+}
+
 .admin-item strong{
     display:block;
     color:var(--bleu);
@@ -350,6 +365,7 @@ textarea{
 
 .admin-item span{
     font-size:11px;
+    word-break:break-word;
 }
 
 .document-footer{
@@ -426,7 +442,7 @@ textarea{
     }
 }
 
-/* A4 PDF */
+/* IMPRESSION */
 
 @page{
     size:A4 portrait;
@@ -444,7 +460,7 @@ textarea{
     .no-print,
     .form-card,
     .history-card{
-        display:none!important;
+        display:none !important;
     }
 
     .container{
@@ -454,11 +470,11 @@ textarea{
     }
 
     .section{
-        display:none!important;
+        display:none !important;
     }
 
     .section.active{
-        display:block!important;
+        display:block !important;
     }
 
     .document{
@@ -473,13 +489,12 @@ textarea{
         font-size:9px;
     }
 
-    input,textarea{
-        color:#000!important;
-        opacity:1!important;
+    input,
+    textarea{
+        color:#000 !important;
+        opacity:1 !important;
     }
-
 }
-
 </style>
 </head>
 
@@ -505,7 +520,7 @@ textarea{
 
 <div class="container">
 
-<!-- ================= FACTURE ================= -->
+<!-- FACTURE -->
 
 <section id="facture" class="section active">
 
@@ -564,11 +579,11 @@ textarea{
 
 <div class="actions">
 
-<button class="btn btn-gold" onclick="copyFactureTo('proforma')">➡️ Générer Pro Forma</button>
-<button class="btn btn-gold" onclick="copyFactureTo('devis')">➡️ Générer Devis</button>
-<button class="btn btn-gold" onclick="copyFactureTo('livraison')">➡️ Générer Livraison</button>
-<button class="btn btn-gold" onclick="copyFactureTo('bpu')">➡️ Générer BPU</button>
-<button class="btn btn-gold" onclick="copyFactureTo('technique')">➡️ Générer Technique</button>
+<button class="btn btn-gold" onclick="copyFactureTo('proforma')">📄 Générer Pro Forma</button>
+<button class="btn btn-gold" onclick="copyFactureTo('devis')">📝 Générer Devis</button>
+<button class="btn btn-gold" onclick="copyFactureTo('livraison')">🚚 Générer Livraison</button>
+<button class="btn btn-gold" onclick="copyFactureTo('bpu')">💰 Générer BPU</button>
+<button class="btn btn-gold" onclick="copyFactureTo('technique')">📋 Générer Technique</button>
 
 </div>
 
@@ -579,20 +594,16 @@ textarea{
 <div class="document-top">
 
 <div>
-
-<h1 class="company-name" id="companyName">EGCOB-SARL</h1>
-<p class="company-sector" id="companySector">COMMERCE & BTP</p>
-<p class="company-slogan" id="companySlogan">Bâtir aujourd'hui, construire demain</p>
-<p class="company-address" id="companyContact"></p>
-
+<h1 class="company-name company-name-out"></h1>
+<p class="company-sector company-sector-out"></p>
+<p class="company-slogan company-slogan-out"></p>
+<p class="company-address company-contact-out"></p>
 </div>
 
 <div class="document-title">
-
 <h2>FACTURE</h2>
 <p>N° : <span id="out_f_numero"></span></p>
 <p>Date : <span id="out_f_date"></span></p>
-
 </div>
 
 </div>
@@ -600,23 +611,17 @@ textarea{
 <div class="info-boxes">
 
 <div class="info-box">
-
 <h3>FACTURÉ À</h3>
-
 <p><strong>Client :</strong> <span id="out_f_client"></span></p>
 <p><strong>Adresse :</strong> <span id="out_f_adresse"></span></p>
 <p><strong>Téléphone :</strong> <span id="out_f_phone"></span></p>
 <p><strong>Email :</strong> <span id="out_f_email"></span></p>
-
 </div>
 
 <div class="info-box">
-
 <h3>INFORMATIONS</h3>
-
 <p><strong>Échéance :</strong> <span id="out_f_echeance"></span></p>
 <p><strong>Référence :</strong> <span id="out_f_reference"></span></p>
-
 </div>
 
 </div>
@@ -640,11 +645,9 @@ textarea{
 </table>
 
 <div class="actions no-print">
-
 <button class="btn btn-primary" onclick="addCommercialRow('factureRows','facture')">
 ➕ Ajouter ligne
 </button>
-
 </div>
 
 <div class="bottom-zone">
@@ -655,11 +658,9 @@ textarea{
 </div>
 
 <table class="totals">
-
 <tr><td>TOTAL HT</td><td id="ht_facture"></td></tr>
 <tr><td>TVA</td><td id="tva_facture"></td></tr>
 <tr><td>TOTAL TTC</td><td id="ttc_facture"></td></tr>
-
 </table>
 
 </div>
@@ -672,24 +673,20 @@ textarea{
 </div>
 
 <div class="admin-title">INFORMATIONS ADMINISTRATIVES ET BANCAIRES</div>
-
-<div class="admin-grid" id="adminFacture"></div>
-
-<div class="document-footer" id="footerFacture"></div>
+<div class="admin-grid admin-company-out"></div>
+<div class="document-footer footer-company-out"></div>
 
 </div>
 
 <div class="actions no-print">
-
 <button class="btn btn-primary" onclick="saveInvoice()">💾 Sauvegarder</button>
 <button class="btn btn-green" onclick="window.print()">🖨️ Imprimer / PDF A4</button>
-
 </div>
 
 </section>
 
 
-<!-- ================= PROFORMA ================= -->
+<!-- PROFORMA -->
 
 <section id="proforma" class="section">
 
@@ -699,24 +696,24 @@ textarea{
 
 <div class="form-grid">
 
-<div class="form-group"><label>Client</label><input id="p_client"></div>
-<div class="form-group"><label>Adresse</label><input id="p_adresse"></div>
-<div class="form-group"><label>Téléphone</label><input id="p_phone"></div>
-<div class="form-group"><label>Email</label><input id="p_email"></div>
+<div class="form-group"><label>Client</label><input id="p_client" oninput="updateDocument('p')"></div>
+<div class="form-group"><label>Adresse</label><input id="p_adresse" oninput="updateDocument('p')"></div>
+<div class="form-group"><label>Téléphone</label><input id="p_phone" oninput="updateDocument('p')"></div>
+<div class="form-group"><label>Email</label><input id="p_email" oninput="updateDocument('p')"></div>
 
 <div class="form-group">
 <label>N° Pro Forma</label>
-<input id="p_numero" value="PF-2026-001">
+<input id="p_numero" value="PF-2026-001" oninput="updateDocument('p')">
 </div>
 
 <div class="form-group">
 <label>Date</label>
-<input type="date" id="p_date">
+<input type="date" id="p_date" onchange="updateDocument('p')">
 </div>
 
 <div class="form-group">
 <label>Validité</label>
-<input type="date" id="p_validite">
+<input type="date" id="p_validite" onchange="updateDocument('p')">
 </div>
 
 <div class="form-group">
@@ -726,14 +723,105 @@ textarea{
 
 <div class="form-group full">
 <label>Référence / Objet</label>
-<input id="p_reference">
+<input id="p_reference" oninput="updateDocument('p')">
 </div>
 
 </div>
 
+<div class="actions">
+<button class="btn btn-gold" onclick="copyFactureTo('proforma')">🔄 Générer à partir de la facture</button>
 </div>
 
-<div id="proformaContent"></div>
+</div>
+
+<div class="document">
+
+<div class="document-top">
+
+<div>
+<h1 class="company-name company-name-out"></h1>
+<p class="company-sector company-sector-out"></p>
+<p class="company-slogan company-slogan-out"></p>
+<p class="company-address company-contact-out"></p>
+</div>
+
+<div class="document-title">
+<h2>FACTURE PRO FORMA</h2>
+<p>N° : <span id="out_p_numero"></span></p>
+<p>Date : <span id="out_p_date"></span></p>
+</div>
+
+</div>
+
+<div class="info-boxes">
+
+<div class="info-box">
+<h3>CLIENT</h3>
+<p><strong>Client :</strong> <span id="out_p_client"></span></p>
+<p><strong>Adresse :</strong> <span id="out_p_adresse"></span></p>
+<p><strong>Téléphone :</strong> <span id="out_p_phone"></span></p>
+<p><strong>Email :</strong> <span id="out_p_email"></span></p>
+</div>
+
+<div class="info-box">
+<h3>INFORMATIONS</h3>
+<p><strong>Validité :</strong> <span id="out_p_validite"></span></p>
+<p><strong>Référence :</strong> <span id="out_p_reference"></span></p>
+</div>
+
+</div>
+
+<table class="document-table">
+
+<thead>
+<tr>
+<th>N°</th>
+<th>DÉSIGNATION</th>
+<th>QTÉ</th>
+<th>UNITÉ</th>
+<th>PRIX HT</th>
+<th>MONTANT HT</th>
+<th class="no-print">X</th>
+</tr>
+</thead>
+
+<tbody id="proformaRows"></tbody>
+
+</table>
+
+<div class="actions no-print">
+<button class="btn btn-primary" onclick="addCommercialRow('proformaRows','proforma')">
+➕ Ajouter ligne
+</button>
+</div>
+
+<div class="bottom-zone">
+
+<div class="amount-words">
+<h4>MONTANT EN LETTRES</h4>
+<p id="words_proforma"></p>
+</div>
+
+<table class="totals">
+<tr><td>TOTAL HT</td><td id="ht_proforma"></td></tr>
+<tr><td>TVA</td><td id="tva_proforma"></td></tr>
+<tr><td>TOTAL TTC</td><td id="ttc_proforma"></td></tr>
+</table>
+
+</div>
+
+<div class="signature">
+<div class="signature-box">
+<strong>CACHET ET SIGNATURE</strong>
+<div class="signature-area"></div>
+</div>
+</div>
+
+<div class="admin-title">INFORMATIONS ADMINISTRATIVES ET BANCAIRES</div>
+<div class="admin-grid admin-company-out"></div>
+<div class="document-footer footer-company-out"></div>
+
+</div>
 
 <div class="actions no-print">
 <button class="btn btn-green" onclick="window.print()">🖨️ Imprimer / PDF A4</button>
@@ -742,7 +830,7 @@ textarea{
 </section>
 
 
-<!-- ================= DEVIS ================= -->
+<!-- DEVIS -->
 
 <section id="devis" class="section">
 
@@ -752,24 +840,24 @@ textarea{
 
 <div class="form-grid">
 
-<div class="form-group"><label>Client</label><input id="d_client"></div>
-<div class="form-group"><label>Adresse</label><input id="d_adresse"></div>
-<div class="form-group"><label>Téléphone</label><input id="d_phone"></div>
-<div class="form-group"><label>Email</label><input id="d_email"></div>
+<div class="form-group"><label>Client</label><input id="d_client" oninput="updateDocument('d')"></div>
+<div class="form-group"><label>Adresse</label><input id="d_adresse" oninput="updateDocument('d')"></div>
+<div class="form-group"><label>Téléphone</label><input id="d_phone" oninput="updateDocument('d')"></div>
+<div class="form-group"><label>Email</label><input id="d_email" oninput="updateDocument('d')"></div>
 
 <div class="form-group">
 <label>N° Devis</label>
-<input id="d_numero" value="DEV-2026-001">
+<input id="d_numero" value="DEV-2026-001" oninput="updateDocument('d')">
 </div>
 
 <div class="form-group">
 <label>Date</label>
-<input type="date" id="d_date">
+<input type="date" id="d_date" onchange="updateDocument('d')">
 </div>
 
 <div class="form-group">
 <label>Validité</label>
-<input type="date" id="d_validite">
+<input type="date" id="d_validite" onchange="updateDocument('d')">
 </div>
 
 <div class="form-group">
@@ -779,14 +867,105 @@ textarea{
 
 <div class="form-group full">
 <label>Objet / Référence</label>
-<input id="d_reference">
+<input id="d_reference" oninput="updateDocument('d')">
 </div>
 
 </div>
 
+<div class="actions">
+<button class="btn btn-gold" onclick="copyFactureTo('devis')">🔄 Générer à partir de la facture</button>
 </div>
 
-<div id="devisContent"></div>
+</div>
+
+<div class="document">
+
+<div class="document-top">
+
+<div>
+<h1 class="company-name company-name-out"></h1>
+<p class="company-sector company-sector-out"></p>
+<p class="company-slogan company-slogan-out"></p>
+<p class="company-address company-contact-out"></p>
+</div>
+
+<div class="document-title">
+<h2>DEVIS</h2>
+<p>N° : <span id="out_d_numero"></span></p>
+<p>Date : <span id="out_d_date"></span></p>
+</div>
+
+</div>
+
+<div class="info-boxes">
+
+<div class="info-box">
+<h3>CLIENT</h3>
+<p><strong>Client :</strong> <span id="out_d_client"></span></p>
+<p><strong>Adresse :</strong> <span id="out_d_adresse"></span></p>
+<p><strong>Téléphone :</strong> <span id="out_d_phone"></span></p>
+<p><strong>Email :</strong> <span id="out_d_email"></span></p>
+</div>
+
+<div class="info-box">
+<h3>INFORMATIONS</h3>
+<p><strong>Validité :</strong> <span id="out_d_validite"></span></p>
+<p><strong>Référence :</strong> <span id="out_d_reference"></span></p>
+</div>
+
+</div>
+
+<table class="document-table">
+
+<thead>
+<tr>
+<th>N°</th>
+<th>DÉSIGNATION</th>
+<th>QTÉ</th>
+<th>UNITÉ</th>
+<th>PRIX HT</th>
+<th>MONTANT HT</th>
+<th class="no-print">X</th>
+</tr>
+</thead>
+
+<tbody id="devisRows"></tbody>
+
+</table>
+
+<div class="actions no-print">
+<button class="btn btn-primary" onclick="addCommercialRow('devisRows','devis')">
+➕ Ajouter ligne
+</button>
+</div>
+
+<div class="bottom-zone">
+
+<div class="amount-words">
+<h4>MONTANT EN LETTRES</h4>
+<p id="words_devis"></p>
+</div>
+
+<table class="totals">
+<tr><td>TOTAL HT</td><td id="ht_devis"></td></tr>
+<tr><td>TVA</td><td id="tva_devis"></td></tr>
+<tr><td>TOTAL TTC</td><td id="ttc_devis"></td></tr>
+</table>
+
+</div>
+
+<div class="signature">
+<div class="signature-box">
+<strong>CACHET ET SIGNATURE</strong>
+<div class="signature-area"></div>
+</div>
+</div>
+
+<div class="admin-title">INFORMATIONS ADMINISTRATIVES ET BANCAIRES</div>
+<div class="admin-grid admin-company-out"></div>
+<div class="document-footer footer-company-out"></div>
+
+</div>
 
 <div class="actions no-print">
 <button class="btn btn-green" onclick="window.print()">🖨️ Imprimer / PDF A4</button>
@@ -795,7 +974,7 @@ textarea{
 </section>
 
 
-<!-- ================= LIVRAISON ================= -->
+<!-- LIVRAISON -->
 
 <section id="livraison" class="section">
 
@@ -837,6 +1016,12 @@ textarea{
 
 </div>
 
+<div class="actions">
+<button class="btn btn-gold" onclick="copyFactureTo('livraison')">
+🔄 Générer à partir de la facture
+</button>
+</div>
+
 </div>
 
 <div class="document">
@@ -844,19 +1029,16 @@ textarea{
 <div class="document-top">
 
 <div>
-
-<h1 class="company-name">EGCOB-SARL</h1>
-<p class="company-sector">COMMERCE & BTP</p>
-<p class="company-slogan">Bâtir aujourd'hui, construire demain</p>
-
+<h1 class="company-name company-name-out"></h1>
+<p class="company-sector company-sector-out"></p>
+<p class="company-slogan company-slogan-out"></p>
+<p class="company-address company-contact-out"></p>
 </div>
 
 <div class="document-title">
-
 <h2>BORDEREAU DE LIVRAISON</h2>
 <p>N° : <span id="out_l_numero"></span></p>
 <p>Date : <span id="out_l_date"></span></p>
-
 </div>
 
 </div>
@@ -864,31 +1046,22 @@ textarea{
 <div class="info-boxes">
 
 <div class="info-box">
-
 <h3>DESTINATAIRE</h3>
-
 <p><strong>Nom :</strong> <span id="out_l_client"></span></p>
 <p><strong>Adresse :</strong> <span id="out_l_adresse"></span></p>
 <p><strong>Téléphone :</strong> <span id="out_l_phone"></span></p>
-
 </div>
 
 <div class="info-box">
-
 <h3>INFORMATIONS</h3>
-
 <p><strong>Référence :</strong> <span id="out_l_reference"></span></p>
-
 </div>
 
 </div>
-
-<!-- TABLEAU ARTICLES LIVRÉS -->
 
 <table class="document-table">
 
 <thead>
-
 <tr>
 <th>N°</th>
 <th>DÉSIGNATION DES ARTICLES</th>
@@ -897,7 +1070,6 @@ textarea{
 <th>UNITÉ</th>
 <th class="no-print">X</th>
 </tr>
-
 </thead>
 
 <tbody id="livraisonRows"></tbody>
@@ -905,27 +1077,21 @@ textarea{
 </table>
 
 <div class="actions no-print">
-
 <button class="btn btn-primary" onclick="addLivraisonRow()">
 ➕ Ajouter un article
 </button>
-
 </div>
 
-<!-- TABLEAU OBSERVATIONS -->
-
-<h3 class="observation-title">OBSERVATIONS</h3>
+<h3 class="observation-title">OBSERVATIONS / REMARQUES</h3>
 
 <table class="document-table">
 
 <thead>
-
 <tr>
 <th>N°</th>
 <th>OBSERVATIONS / REMARQUES</th>
 <th class="no-print">X</th>
 </tr>
-
 </thead>
 
 <tbody id="observationRows"></tbody>
@@ -933,40 +1099,32 @@ textarea{
 </table>
 
 <div class="actions no-print">
-
 <button class="btn btn-primary" onclick="addObservationRow()">
 ➕ Ajouter une observation
 </button>
-
 </div>
 
 <div class="info-boxes">
 
 <div class="info-box">
-
 <h3>LIVRÉ PAR</h3>
-
 <p>Nom : ........................................................</p>
 <br>
 <p>Signature : ...................................................</p>
-
 </div>
 
 <div class="info-box">
-
 <h3>RÉCEPTIONNÉ PAR</h3>
-
 <p>Nom : ........................................................</p>
 <br>
 <p>Signature et cachet : ....................................</p>
-
 </div>
 
 </div>
 
-<div class="admin-title">INFORMATIONS DE LA SOCIÉTÉ</div>
-
-<div class="document-footer" id="footerLivraison"></div>
+<div class="admin-title">INFORMATIONS ADMINISTRATIVES ET BANCAIRES</div>
+<div class="admin-grid admin-company-out"></div>
+<div class="document-footer footer-company-out"></div>
 
 </div>
 
@@ -977,7 +1135,7 @@ textarea{
 </section>
 
 
-<!-- ================= BPU ================= -->
+<!-- BPU -->
 
 <section id="bpu" class="section">
 
@@ -987,19 +1145,32 @@ textarea{
 
 <div class="form-grid">
 
-<div class="form-group"><label>Objet</label><input id="b_objet"></div>
-<div class="form-group"><label>Référence</label><input id="b_reference"></div>
+<div class="form-group">
+<label>Objet</label>
+<input id="b_objet" oninput="updateBPUInfo()">
+</div>
+
+<div class="form-group">
+<label>Référence</label>
+<input id="b_reference" oninput="updateBPUInfo()">
+</div>
 
 <div class="form-group">
 <label>N° BPU</label>
-<input id="b_numero" value="BPU-2026-001">
+<input id="b_numero" value="BPU-2026-001" oninput="updateBPUInfo()">
 </div>
 
 <div class="form-group">
 <label>Date</label>
-<input type="date" id="b_date">
+<input type="date" id="b_date" onchange="updateBPUInfo()">
 </div>
 
+</div>
+
+<div class="actions">
+<button class="btn btn-gold" onclick="copyFactureTo('bpu')">
+🔄 Générer à partir de la facture
+</button>
 </div>
 
 </div>
@@ -1009,13 +1180,30 @@ textarea{
 <div class="document-top">
 
 <div>
-<h1 class="company-name">EGCOB-SARL</h1>
-<p class="company-sector">COMMERCE & BTP</p>
-<p class="company-slogan">Bâtir aujourd'hui, construire demain</p>
+<h1 class="company-name company-name-out"></h1>
+<p class="company-sector company-sector-out"></p>
+<p class="company-slogan company-slogan-out"></p>
+<p class="company-address company-contact-out"></p>
 </div>
 
 <div class="document-title">
 <h2>BORDEREAU DES PRIX UNITAIRES</h2>
+<p>N° : <span id="out_b_numero"></span></p>
+<p>Date : <span id="out_b_date"></span></p>
+</div>
+
+</div>
+
+<div class="info-boxes">
+
+<div class="info-box">
+<h3>OBJET</h3>
+<p id="out_b_objet"></p>
+</div>
+
+<div class="info-box">
+<h3>RÉFÉRENCE</h3>
+<p id="out_b_reference"></p>
 </div>
 
 </div>
@@ -1023,7 +1211,6 @@ textarea{
 <table class="document-table">
 
 <thead>
-
 <tr>
 <th>N°</th>
 <th>DÉSIGNATION</th>
@@ -1032,7 +1219,6 @@ textarea{
 <th>PRIX EN LETTRES</th>
 <th class="no-print">X</th>
 </tr>
-
 </thead>
 
 <tbody id="bpuRows"></tbody>
@@ -1043,12 +1229,20 @@ textarea{
 <button class="btn btn-primary" onclick="addBPURow()">➕ Ajouter ligne</button>
 </div>
 
+<div class="admin-title">INFORMATIONS ADMINISTRATIVES ET BANCAIRES</div>
+<div class="admin-grid admin-company-out"></div>
+<div class="document-footer footer-company-out"></div>
+
+</div>
+
+<div class="actions no-print">
+<button class="btn btn-green" onclick="window.print()">🖨️ Imprimer / PDF A4</button>
 </div>
 
 </section>
 
 
-<!-- ================= TECHNIQUE ================= -->
+<!-- TECHNIQUE -->
 
 <section id="technique" class="section">
 
@@ -1058,19 +1252,32 @@ textarea{
 
 <div class="form-grid">
 
-<div class="form-group"><label>Objet / Projet</label><input id="t_objet"></div>
-<div class="form-group"><label>Référence</label><input id="t_reference"></div>
+<div class="form-group">
+<label>Objet / Projet</label>
+<input id="t_objet" oninput="updateTechniqueInfo()">
+</div>
+
+<div class="form-group">
+<label>Référence</label>
+<input id="t_reference" oninput="updateTechniqueInfo()">
+</div>
 
 <div class="form-group">
 <label>N° Document</label>
-<input id="t_numero" value="CT-2026-001">
+<input id="t_numero" value="CT-2026-001" oninput="updateTechniqueInfo()">
 </div>
 
 <div class="form-group">
 <label>Date</label>
-<input type="date" id="t_date">
+<input type="date" id="t_date" onchange="updateTechniqueInfo()">
 </div>
 
+</div>
+
+<div class="actions">
+<button class="btn btn-gold" onclick="copyFactureTo('technique')">
+🔄 Générer à partir de la facture
+</button>
 </div>
 
 </div>
@@ -1080,12 +1287,30 @@ textarea{
 <div class="document-top">
 
 <div>
-<h1 class="company-name">EGCOB-SARL</h1>
-<p class="company-sector">COMMERCE & BTP</p>
+<h1 class="company-name company-name-out"></h1>
+<p class="company-sector company-sector-out"></p>
+<p class="company-slogan company-slogan-out"></p>
+<p class="company-address company-contact-out"></p>
 </div>
 
 <div class="document-title">
 <h2>CARACTÉRISTIQUES TECHNIQUES</h2>
+<p>N° : <span id="out_t_numero"></span></p>
+<p>Date : <span id="out_t_date"></span></p>
+</div>
+
+</div>
+
+<div class="info-boxes">
+
+<div class="info-box">
+<h3>OBJET / PROJET</h3>
+<p id="out_t_objet"></p>
+</div>
+
+<div class="info-box">
+<h3>RÉFÉRENCE</h3>
+<p id="out_t_reference"></p>
 </div>
 
 </div>
@@ -1093,14 +1318,12 @@ textarea{
 <table class="document-table">
 
 <thead>
-
 <tr>
 <th>ARTICLE / PRODUIT</th>
 <th>CARACTÉRISTIQUES DEMANDÉES</th>
 <th>CARACTÉRISTIQUES PROPOSÉES</th>
 <th class="no-print">X</th>
 </tr>
-
 </thead>
 
 <tbody id="techniqueRows"></tbody>
@@ -1111,12 +1334,20 @@ textarea{
 <button class="btn btn-primary" onclick="addTechniqueRow()">➕ Ajouter ligne</button>
 </div>
 
+<div class="admin-title">INFORMATIONS ADMINISTRATIVES ET BANCAIRES</div>
+<div class="admin-grid admin-company-out"></div>
+<div class="document-footer footer-company-out"></div>
+
+</div>
+
+<div class="actions no-print">
+<button class="btn btn-green" onclick="window.print()">🖨️ Imprimer / PDF A4</button>
 </div>
 
 </section>
 
 
-<!-- ================= SOCIETE ================= -->
+<!-- SOCIETE -->
 
 <section id="societe" class="section">
 
@@ -1126,36 +1357,77 @@ textarea{
 
 <div class="form-grid">
 
-<div class="form-group"><label>Nom société</label><input id="s_nom" value="EGCOB-SARL"></div>
+<div class="form-group">
+<label>Nom société</label>
+<input id="s_nom" value="EGCOB-SARL">
+</div>
 
-<div class="form-group"><label>Secteur</label><input id="s_secteur" value="COMMERCE & BTP"></div>
+<div class="form-group">
+<label>Secteur</label>
+<input id="s_secteur" value="COMMERCE & BTP">
+</div>
 
-<div class="form-group full"><label>Slogan</label><input id="s_slogan" value="Bâtir aujourd'hui, construire demain"></div>
+<div class="form-group full">
+<label>Slogan</label>
+<input id="s_slogan" value="Bâtir aujourd'hui, construire demain">
+</div>
 
-<div class="form-group"><label>Adresse</label><input id="s_adresse" value="Torokorobougou, R-400 P-191, Bamako – Mali"></div>
+<div class="form-group">
+<label>Adresse</label>
+<input id="s_adresse" value="Torokorobougou, R-400 P-191, Bamako – Mali">
+</div>
 
-<div class="form-group"><label>Téléphone principal</label><input id="s_tel1" value="+223 76 08 23 79"></div>
+<div class="form-group">
+<label>Téléphone principal</label>
+<input id="s_tel1" value="+223 76 08 23 79">
+</div>
 
-<div class="form-group"><label>Téléphone secondaire</label><input id="s_tel2"></div>
+<div class="form-group">
+<label>Téléphone secondaire</label>
+<input id="s_tel2">
+</div>
 
-<div class="form-group"><label>Email</label><input id="s_email" value="egcobsarl@gmail.com"></div>
+<div class="form-group">
+<label>Email</label>
+<input id="s_email" value="egcobsarl@gmail.com">
+</div>
 
-<div class="form-group"><label>R.C.C.M.</label><input id="s_rccm" value="Ma Bko 2017 B 5034"></div>
+<div class="form-group">
+<label>R.C.C.M.</label>
+<input id="s_rccm" value="Ma Bko 2017 B 5034">
+</div>
 
-<div class="form-group"><label>NIF</label><input id="s_nif" value="085135849D"></div>
+<div class="form-group">
+<label>NIF</label>
+<input id="s_nif" value="085135849D">
+</div>
 
-<div class="form-group"><label>Code Banque</label><input id="s_banque" value="ML 109"></div>
+<div class="form-group">
+<label>Code Banque</label>
+<input id="s_banque" value="ML 109">
+</div>
 
-<div class="form-group"><label>Code Guichet</label><input id="s_guichet" value="01001"></div>
+<div class="form-group">
+<label>Code Guichet</label>
+<input id="s_guichet" value="01001">
+</div>
 
-<div class="form-group"><label>N° Compte</label><input id="s_compte" value="000100163151"></div>
+<div class="form-group">
+<label>N° Compte</label>
+<input id="s_compte" value="000100163151">
+</div>
 
-<div class="form-group"><label>RIB</label><input id="s_rib" value="45 BSIC"></div>
+<div class="form-group">
+<label>RIB</label>
+<input id="s_rib" value="45 BSIC">
+</div>
 
 </div>
 
 <div class="actions">
-<button class="btn btn-primary" onclick="saveCompany()">💾 Enregistrer les informations</button>
+<button class="btn btn-primary" onclick="saveCompany()">
+💾 Enregistrer les informations
+</button>
 </div>
 
 </div>
@@ -1163,7 +1435,7 @@ textarea{
 </section>
 
 
-<!-- ================= HISTORIQUE ================= -->
+<!-- HISTORIQUE -->
 
 <section id="historique" class="section">
 
@@ -1186,14 +1458,23 @@ textarea{
 
 function showSection(id,button){
 
-document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+    document.querySelectorAll('.section').forEach(function(section){
+        section.classList.remove('active');
+    });
 
-document.getElementById(id).classList.add('active');
+    const target=document.getElementById(id);
 
-document.querySelectorAll('.menu button').forEach(b=>b.classList.remove('active'));
+    if(target){
+        target.classList.add('active');
+    }
 
-button.classList.add('active');
+    document.querySelectorAll('.menu button').forEach(function(btn){
+        btn.classList.remove('active');
+    });
 
+    if(button){
+        button.classList.add('active');
+    }
 }
 
 
@@ -1201,8 +1482,7 @@ button.classList.add('active');
 
 function money(value){
 
-return Number(value||0).toLocaleString('fr-FR')+' F CFA';
-
+    return Number(value||0).toLocaleString('fr-FR')+' F CFA';
 }
 
 
@@ -1210,40 +1490,101 @@ return Number(value||0).toLocaleString('fr-FR')+' F CFA';
 
 function dateFR(value){
 
-if(!value)return '';
+    if(!value){
+        return '';
+    }
 
-return new Date(value+'T00:00:00').toLocaleDateString('fr-FR');
-
+    return new Date(value+'T00:00:00').toLocaleDateString('fr-FR');
 }
 
 
-/* FACTURE */
+/* RENUMEROTATION */
+
+function renumberRows(id){
+
+    const rows=document.querySelectorAll('#'+id+' tr');
+
+    rows.forEach(function(row,index){
+
+        if(row.children[0]){
+            row.children[0].textContent=String(index+1).padStart(2,'0');
+        }
+
+    });
+}
+
+
+/* MISE A JOUR DOCUMENT */
 
 function updateDocument(prefix){
 
-['client','adresse','phone','email','numero','date'].forEach(field=>{
+    const fields=['client','adresse','phone','email','numero','date'];
 
-const input=document.getElementById(prefix+'_'+field);
-const output=document.getElementById('out_'+prefix+'_'+field);
+    fields.forEach(function(field){
 
-if(input&&output){
+        const input=document.getElementById(prefix+'_'+field);
+        const output=document.getElementById('out_'+prefix+'_'+field);
 
-output.textContent=field==='date'?dateFR(input.value):input.value;
+        if(input && output){
 
-}
+            if(field==='date'){
+                output.textContent=dateFR(input.value);
+            }else{
+                output.textContent=input.value;
+            }
+        }
+    });
 
-});
+    if(prefix==='f'){
 
-if(prefix==='f'){
+        const echeance=document.getElementById('f_echeance');
+        const reference=document.getElementById('f_reference');
 
-document.getElementById('out_f_echeance').textContent=
-dateFR(document.getElementById('f_echeance').value);
+        const outEcheance=document.getElementById('out_f_echeance');
+        const outReference=document.getElementById('out_f_reference');
 
-document.getElementById('out_f_reference').textContent=
-document.getElementById('f_reference').value;
+        if(echeance && outEcheance){
+            outEcheance.textContent=dateFR(echeance.value);
+        }
 
-}
+        if(reference && outReference){
+            outReference.textContent=reference.value;
+        }
+    }
 
+    if(prefix==='p'){
+
+        const validite=document.getElementById('p_validite');
+        const reference=document.getElementById('p_reference');
+
+        const outValidite=document.getElementById('out_p_validite');
+        const outReference=document.getElementById('out_p_reference');
+
+        if(validite && outValidite){
+            outValidite.textContent=dateFR(validite.value);
+        }
+
+        if(reference && outReference){
+            outReference.textContent=reference.value;
+        }
+    }
+
+    if(prefix==='d'){
+
+        const validite=document.getElementById('d_validite');
+        const reference=document.getElementById('d_reference');
+
+        const outValidite=document.getElementById('out_d_validite');
+        const outReference=document.getElementById('out_d_reference');
+
+        if(validite && outValidite){
+            outValidite.textContent=dateFR(validite.value);
+        }
+
+        if(reference && outReference){
+            outReference.textContent=reference.value;
+        }
+    }
 }
 
 
@@ -1251,42 +1592,62 @@ document.getElementById('f_reference').value;
 
 function addCommercialRow(tableId,type){
 
-const tbody=document.getElementById(tableId);
+    const tbody=document.getElementById(tableId);
 
-const row=document.createElement('tr');
+    if(!tbody){
+        return;
+    }
 
-row.innerHTML=`
+    const row=document.createElement('tr');
 
-<td>${String(tbody.children.length+1).padStart(2,'0')}</td>
+    row.innerHTML=`
 
-<td><input class="designation" placeholder="Désignation"></td>
+        <td>${String(tbody.children.length+1).padStart(2,'0')}</td>
 
-<td>
-<input type="number" class="qty" value="1"
-oninput="calculateCommercial('${type}')">
-</td>
+        <td>
+            <input class="designation" placeholder="Désignation">
+        </td>
 
-<td><input class="unit" value="U"></td>
+        <td>
+            <input type="number" class="qty" value="1"
+            oninput="calculateCommercial('${type}')">
+        </td>
 
-<td>
-<input type="number" class="price" value="0"
-oninput="calculateCommercial('${type}')">
-</td>
+        <td>
+            <input class="unit" value="U">
+        </td>
 
-<td class="line-total">0 F CFA</td>
+        <td>
+            <input type="number" class="price" value="0"
+            oninput="calculateCommercial('${type}')">
+        </td>
 
-<td class="no-print">
-<button class="btn btn-red"
-onclick="this.closest('tr').remove();calculateCommercial('${type}')">
-✕
-</button>
-</td>
-`;
+        <td class="line-total">0 F CFA</td>
 
-tbody.appendChild(row);
+        <td class="no-print">
+            <button class="btn btn-red"
+            onclick="removeCommercialRow(this,'${tableId}','${type}')">
+            ✕
+            </button>
+        </td>
+    `;
 
-calculateCommercial(type);
+    tbody.appendChild(row);
 
+    calculateCommercial(type);
+}
+
+
+function removeCommercialRow(button,tableId,type){
+
+    const row=button.closest('tr');
+
+    if(row){
+        row.remove();
+    }
+
+    renumberRows(tableId);
+    calculateCommercial(type);
 }
 
 
@@ -1294,39 +1655,71 @@ calculateCommercial(type);
 
 function calculateCommercial(type){
 
-const rows=document.querySelectorAll('#'+type+'Rows tr');
+    const rows=document.querySelectorAll('#'+type+'Rows tr');
 
-let total=0;
+    let total=0;
 
-rows.forEach(row=>{
+    rows.forEach(function(row){
 
-const qty=Number(row.querySelector('.qty').value)||0;
-const price=Number(row.querySelector('.price').value)||0;
+        const qtyInput=row.querySelector('.qty');
+        const priceInput=row.querySelector('.price');
+        const lineTotal=row.querySelector('.line-total');
 
-const line=qty*price;
+        if(!qtyInput || !priceInput || !lineTotal){
+            return;
+        }
 
-row.querySelector('.line-total').textContent=money(line);
+        const qty=Number(qtyInput.value)||0;
+        const price=Number(priceInput.value)||0;
 
-total+=line;
+        const line=qty*price;
 
-});
+        lineTotal.textContent=money(line);
 
-const tvaInput=
-type==='facture'?'f_tva':
-type==='proforma'?'p_tva':'d_tva';
+        total+=line;
+    });
 
-const rate=Number(document.getElementById(tvaInput).value)||0;
+    let tvaInputId='';
 
-const tva=total*rate/100;
-const ttc=total+tva;
+    if(type==='facture'){
+        tvaInputId='f_tva';
+    }
 
-document.getElementById('ht_'+type).textContent=money(total);
-document.getElementById('tva_'+type).textContent=money(tva);
-document.getElementById('ttc_'+type).textContent=money(ttc);
+    if(type==='proforma'){
+        tvaInputId='p_tva';
+    }
 
-document.getElementById('words_'+type).textContent=
-numberToWords(ttc)+' Francs CFA';
+    if(type==='devis'){
+        tvaInputId='d_tva';
+    }
 
+    const tvaInput=document.getElementById(tvaInputId);
+
+    const rate=tvaInput ? Number(tvaInput.value)||0 : 0;
+
+    const tva=total*rate/100;
+    const ttc=total+tva;
+
+    const ht=document.getElementById('ht_'+type);
+    const tvaOut=document.getElementById('tva_'+type);
+    const ttcOut=document.getElementById('ttc_'+type);
+    const words=document.getElementById('words_'+type);
+
+    if(ht){
+        ht.textContent=money(total);
+    }
+
+    if(tvaOut){
+        tvaOut.textContent=money(tva);
+    }
+
+    if(ttcOut){
+        ttcOut.textContent=money(ttc);
+    }
+
+    if(words){
+        words.textContent=numberToWords(ttc)+' Francs CFA';
+    }
 }
 
 
@@ -1334,91 +1727,115 @@ numberToWords(ttc)+' Francs CFA';
 
 function updateLivraison(){
 
-['client','adresse','phone','numero','reference'].forEach(field=>{
+    const fields=['client','adresse','phone','numero','reference'];
 
-const input=document.getElementById('l_'+field);
-const output=document.getElementById('out_l_'+field);
+    fields.forEach(function(field){
 
-if(input&&output)output.textContent=input.value;
+        const input=document.getElementById('l_'+field);
+        const output=document.getElementById('out_l_'+field);
 
-});
+        if(input && output){
+            output.textContent=input.value;
+        }
+    });
 
-document.getElementById('out_l_date').textContent=
-dateFR(document.getElementById('l_date').value);
+    const date=document.getElementById('l_date');
+    const outDate=document.getElementById('out_l_date');
 
+    if(date && outDate){
+        outDate.textContent=dateFR(date.value);
+    }
 }
 
 
 function addLivraisonRow(designation='',qty='1',unit='U'){
 
-const tbody=document.getElementById('livraisonRows');
+    const tbody=document.getElementById('livraisonRows');
 
-const row=document.createElement('tr');
+    if(!tbody){
+        return;
+    }
 
-row.innerHTML=`
+    const row=document.createElement('tr');
 
-<td>${String(tbody.children.length+1).padStart(2,'0')}</td>
+    row.innerHTML=`
 
-<td>
-<input class="l-designation" value="${designation}" placeholder="Désignation de l'article">
-</td>
+        <td>${String(tbody.children.length+1).padStart(2,'0')}</td>
 
-<td>
-<input type="number" class="l-qty-commanded" value="${qty}">
-</td>
+        <td>
+            <input class="l-designation"
+            value="${designation}"
+            placeholder="Désignation de l'article">
+        </td>
 
-<td>
-<input type="number" class="l-qty-delivered" value="${qty}">
-</td>
+        <td>
+            <input type="number"
+            class="l-qty-commanded"
+            value="${qty}">
+        </td>
 
-<td>
-<input class="l-unit" value="${unit}">
-</td>
+        <td>
+            <input type="number"
+            class="l-qty-delivered"
+            value="${qty}">
+        </td>
 
-<td class="no-print">
-<button class="btn btn-red" onclick="this.closest('tr').remove();renumberRows('livraisonRows')">✕</button>
-</td>
+        <td>
+            <input class="l-unit"
+            value="${unit}">
+        </td>
 
-`;
+        <td class="no-print">
+            <button class="btn btn-red"
+            onclick="removeSimpleRow(this,'livraisonRows')">
+            ✕
+            </button>
+        </td>
+    `;
 
-tbody.appendChild(row);
-
+    tbody.appendChild(row);
 }
 
 
 function addObservationRow(){
 
-const tbody=document.getElementById('observationRows');
+    const tbody=document.getElementById('observationRows');
 
-const row=document.createElement('tr');
+    if(!tbody){
+        return;
+    }
 
-row.innerHTML=`
+    const row=document.createElement('tr');
 
-<td>${String(tbody.children.length+1).padStart(2,'0')}</td>
+    row.innerHTML=`
 
-<td>
-<textarea placeholder="Écrivez une observation ou une remarque"></textarea>
-</td>
+        <td>${String(tbody.children.length+1).padStart(2,'0')}</td>
 
-<td class="no-print">
-<button class="btn btn-red" onclick="this.closest('tr').remove();renumberRows('observationRows')">✕</button>
-</td>
+        <td>
+            <textarea placeholder="Écrivez une observation ou une remarque"></textarea>
+        </td>
 
-`;
+        <td class="no-print">
+            <button class="btn btn-red"
+            onclick="removeSimpleRow(this,'observationRows')">
+            ✕
+            </button>
+        </td>
+    `;
 
-tbody.appendChild(row);
-
+    tbody.appendChild(row);
 }
 
 
-function renumberRows(id){
+function removeSimpleRow(button,tableId){
 
-const rows=document.querySelectorAll('#'+id+' tr');
+    const row=button.closest('tr');
 
-rows.forEach((row,index)=>{
-row.children[0].textContent=String(index+1).padStart(2,'0');
-});
+    if(row){
+        row.remove();
+    }
 
+    renumberRows(tableId);
 }
 
 
@@ -1426,137 +1843,177 @@ row.children[0].textContent=String(index+1).padStart(2,'0');
 
 function copyFactureTo(target){
 
-const rows=[...document.querySelectorAll('#factureRows tr')];
+    const rows=[...document.querySelectorAll('#factureRows tr')];
 
-if(target==='livraison'){
+    if(target==='livraison'){
 
-document.getElementById('l_client').value=f_client.value;
-document.getElementById('l_adresse').value=f_adresse.value;
-document.getElementById('l_phone').value=f_phone.value;
-document.getElementById('l_reference').value=f_reference.value;
+        document.getElementById('l_client').value=
+        document.getElementById('f_client').value;
 
-document.getElementById('livraisonRows').innerHTML='';
+        document.getElementById('l_adresse').value=
+        document.getElementById('f_adresse').value;
 
-rows.forEach(row=>{
+        document.getElementById('l_phone').value=
+        document.getElementById('f_phone').value;
 
-addLivraisonRow(
-row.querySelector('.designation').value,
-row.querySelector('.qty').value,
-row.querySelector('.unit').value
-);
+        document.getElementById('l_reference').value=
+        document.getElementById('f_reference').value;
 
-});
+        document.getElementById('livraisonRows').innerHTML='';
 
-updateLivraison();
+        rows.forEach(function(row){
 
-alert('Bordereau de livraison généré.');
+            addLivraisonRow(
+                row.querySelector('.designation').value,
+                row.querySelector('.qty').value,
+                row.querySelector('.unit').value
+            );
+        });
 
-return;
+        updateLivraison();
 
-}
+        alert('Bordereau de livraison généré à partir de la facture.');
 
-if(target==='bpu'){
+        return;
+    }
 
-document.getElementById('bpuRows').innerHTML='';
 
-rows.forEach(row=>{
+    if(target==='bpu'){
 
-addBPURow(
-row.querySelector('.designation').value,
-row.querySelector('.unit').value,
-row.querySelector('.price').value
-);
+        document.getElementById('bpuRows').innerHTML='';
 
-});
+        rows.forEach(function(row){
 
-document.getElementById('b_objet').value=f_reference.value;
+            addBPURow(
+                row.querySelector('.designation').value,
+                row.querySelector('.unit').value,
+                row.querySelector('.price').value
+            );
+        });
 
-alert('BPU généré.');
+        document.getElementById('b_objet').value=
+        document.getElementById('f_reference').value;
 
-return;
+        document.getElementById('b_reference').value=
+        document.getElementById('f_reference').value;
 
-}
+        updateBPUInfo();
 
-if(target==='technique'){
+        alert('BPU généré à partir de la facture.');
 
-document.getElementById('techniqueRows').innerHTML='';
+        return;
+    }
 
-rows.forEach(row=>{
-addTechniqueRow(row.querySelector('.designation').value);
-});
 
-document.getElementById('t_objet').value=f_reference.value;
+    if(target==='technique'){
 
-alert('Caractéristiques techniques générées.');
+        document.getElementById('techniqueRows').innerHTML='';
 
-return;
+        rows.forEach(function(row){
 
-}
+            addTechniqueRow(
+                row.querySelector('.designation').value
+            );
+        });
 
-if(target==='proforma'){
+        document.getElementById('t_objet').value=
+        document.getElementById('f_reference').value;
 
-copyFields('f','p');
+        document.getElementById('t_reference').value=
+        document.getElementById('f_reference').value;
 
-document.getElementById('proformaRows').innerHTML='';
+        updateTechniqueInfo();
 
-rows.forEach(row=>{
+        alert('Caractéristiques techniques générées à partir de la facture.');
 
-addCommercialRow('proformaRows','proforma');
+        return;
+    }
 
-const newRow=document.querySelector('#proformaRows tr:last-child');
 
-newRow.querySelector('.designation').value=row.querySelector('.designation').value;
-newRow.querySelector('.qty').value=row.querySelector('.qty').value;
-newRow.querySelector('.unit').value=row.querySelector('.unit').value;
-newRow.querySelector('.price').value=row.querySelector('.price').value;
+    if(target==='proforma'){
 
-});
+        copyFields('f','p');
 
-calculateCommercial('proforma');
+        document.getElementById('proformaRows').innerHTML='';
 
-alert('Pro Forma générée.');
+        rows.forEach(function(row){
 
-}
+            addCommercialRow('proformaRows','proforma');
 
-if(target==='devis'){
+            const newRow=document.querySelector(
+                '#proformaRows tr:last-child'
+            );
 
-copyFields('f','d');
+            newRow.querySelector('.designation').value=
+            row.querySelector('.designation').value;
 
-document.getElementById('devisRows').innerHTML='';
+            newRow.querySelector('.qty').value=
+            row.querySelector('.qty').value;
 
-rows.forEach(row=>{
+            newRow.querySelector('.unit').value=
+            row.querySelector('.unit').value;
 
-addCommercialRow('devisRows','devis');
+            newRow.querySelector('.price').value=
+            row.querySelector('.price').value;
+        });
 
-const newRow=document.querySelector('#devisRows tr:last-child');
+        updateDocument('p');
+        calculateCommercial('proforma');
 
-newRow.querySelector('.designation').value=row.querySelector('.designation').value;
-newRow.querySelector('.qty').value=row.querySelector('.qty').value;
-newRow.querySelector('.unit').value=row.querySelector('.unit').value;
-newRow.querySelector('.price').value=row.querySelector('.price').value;
+        alert('Pro Forma générée à partir de la facture.');
 
-});
+        return;
+    }
 
-calculateCommercial('devis');
 
-alert('Devis généré.');
+    if(target==='devis'){
 
-}
+        copyFields('f','d');
 
+        document.getElementById('devisRows').innerHTML='';
+
+        rows.forEach(function(row){
+
+            addCommercialRow('devisRows','devis');
+
+            const newRow=document.querySelector(
+                '#devisRows tr:last-child'
+            );
+
+            newRow.querySelector('.designation').value=
+            row.querySelector('.designation').value;
+
+            newRow.querySelector('.qty').value=
+            row.querySelector('.qty').value;
+
+            newRow.querySelector('.unit').value=
+            row.querySelector('.unit').value;
+
+            newRow.querySelector('.price').value=
+            row.querySelector('.price').value;
+        });
+
+        updateDocument('d');
+        calculateCommercial('devis');
+
+        alert('Devis généré à partir de la facture.');
+
+        return;
+    }
 }
 
 
 function copyFields(from,to){
 
-['client','adresse','phone','email','reference'].forEach(field=>{
+    ['client','adresse','phone','email','reference'].forEach(function(field){
 
-const source=document.getElementById(from+'_'+field);
-const target=document.getElementById(to+'_'+field);
+        const source=document.getElementById(from+'_'+field);
+        const target=document.getElementById(to+'_'+field);
 
-if(source&&target)target.value=source.value;
-
-});
-
+        if(source && target){
+            target.value=source.value;
+        }
+    });
 }
 
 
@@ -1564,42 +2021,85 @@ if(source&&target)target.value=source.value;
 
 function addBPURow(designation='',unit='U',price=0){
 
-const tbody=document.getElementById('bpuRows');
+    const tbody=document.getElementById('bpuRows');
 
-const row=document.createElement('tr');
+    if(!tbody){
+        return;
+    }
 
-row.innerHTML=`
+    const row=document.createElement('tr');
 
-<td>${String(tbody.children.length+1).padStart(2,'0')}</td>
+    row.innerHTML=`
 
-<td><input value="${designation}"></td>
+        <td>${String(tbody.children.length+1).padStart(2,'0')}</td>
 
-<td><input value="${unit}"></td>
+        <td>
+            <input value="${designation}" placeholder="Désignation">
+        </td>
 
-<td>
-<input type="number" value="${price}"
-oninput="updateBPUWords(this)">
-</td>
+        <td>
+            <input value="${unit}">
+        </td>
 
-<td class="price-words">
-${numberToWords(price)} Francs CFA
-</td>
+        <td>
+            <input type="number" value="${price}"
+            oninput="updateBPUWords(this)">
+        </td>
 
-<td class="no-print">
-<button class="btn btn-red" onclick="this.closest('tr').remove()">✕</button>
-</td>
-`;
+        <td class="price-words">
+            ${numberToWords(price)} Francs CFA
+        </td>
 
-tbody.appendChild(row);
+        <td class="no-print">
+            <button class="btn btn-red"
+            onclick="removeSimpleRow(this,'bpuRows')">
+            ✕
+            </button>
+        </td>
+    `;
 
+    tbody.appendChild(row);
 }
 
 
 function updateBPUWords(input){
 
-input.closest('tr').querySelector('.price-words').textContent=
-numberToWords(input.value)+' Francs CFA';
+    const cell=input.closest('tr').querySelector('.price-words');
 
+    if(cell){
+        cell.textContent=
+        numberToWords(input.value)+' Francs CFA';
+    }
+}
+
+
+function updateBPUInfo(){
+
+    const objet=document.getElementById('b_objet');
+    const reference=document.getElementById('b_reference');
+    const numero=document.getElementById('b_numero');
+    const date=document.getElementById('b_date');
+
+    const outObjet=document.getElementById('out_b_objet');
+    const outReference=document.getElementById('out_b_reference');
+    const outNumero=document.getElementById('out_b_numero');
+    const outDate=document.getElementById('out_b_date');
+
+    if(outObjet && objet){
+        outObjet.textContent=objet.value;
+    }
+
+    if(outReference && reference){
+        outReference.textContent=reference.value;
+    }
+
+    if(outNumero && numero){
+        outNumero.textContent=numero.value;
+    }
+
+    if(outDate && date){
+        outDate.textContent=dateFR(date.value);
+    }
 }
 
 
@@ -1607,101 +2107,233 @@ numberToWords(input.value)+' Francs CFA';
 
 function addTechniqueRow(article=''){
 
-const tbody=document.getElementById('techniqueRows');
+    const tbody=document.getElementById('techniqueRows');
 
-const row=document.createElement('tr');
+    if(!tbody){
+        return;
+    }
 
-row.innerHTML=`
+    const row=document.createElement('tr');
 
-<td><input value="${article}" placeholder="Article"></td>
+    row.innerHTML=`
 
-<td>
-<textarea placeholder="Caractéristiques demandées"></textarea>
-</td>
+        <td>
+            <input value="${article}" placeholder="Article">
+        </td>
 
-<td>
-<textarea placeholder="Caractéristiques proposées"></textarea>
-</td>
+        <td>
+            <textarea placeholder="Caractéristiques demandées"></textarea>
+        </td>
 
-<td class="no-print">
-<button class="btn btn-red" onclick="this.closest('tr').remove()">✕</button>
-</td>
-`;
+        <td>
+            <textarea placeholder="Caractéristiques proposées"></textarea>
+        </td>
 
-tbody.appendChild(row);
+        <td class="no-print">
+            <button class="btn btn-red"
+            onclick="removeTechniqueRow(this)">
+            ✕
+            </button>
+        </td>
+    `;
 
+    tbody.appendChild(row);
+}
+
+
+function removeTechniqueRow(button){
+
+    const row=button.closest('tr');
+
+    if(row){
+        row.remove();
+    }
+}
+
+
+function updateTechniqueInfo(){
+
+    const objet=document.getElementById('t_objet');
+    const reference=document.getElementById('t_reference');
+    const numero=document.getElementById('t_numero');
+    const date=document.getElementById('t_date');
+
+    const outObjet=document.getElementById('out_t_objet');
+    const outReference=document.getElementById('out_t_reference');
+    const outNumero=document.getElementById('out_t_numero');
+    const outDate=document.getElementById('out_t_date');
+
+    if(outObjet && objet){
+        outObjet.textContent=objet.value;
+    }
+
+    if(outReference && reference){
+        outReference.textContent=reference.value;
+    }
+
+    if(outNumero && numero){
+        outNumero.textContent=numero.value;
+    }
+
+    if(outDate && date){
+        outDate.textContent=dateFR(date.value);
+    }
 }
 
 
 /* SOCIETE */
 
+function getCompanyData(){
+
+    return {
+
+        nom:document.getElementById('s_nom').value,
+        secteur:document.getElementById('s_secteur').value,
+        slogan:document.getElementById('s_slogan').value,
+        adresse:document.getElementById('s_adresse').value,
+        tel1:document.getElementById('s_tel1').value,
+        tel2:document.getElementById('s_tel2').value,
+        email:document.getElementById('s_email').value,
+        rccm:document.getElementById('s_rccm').value,
+        nif:document.getElementById('s_nif').value,
+        banque:document.getElementById('s_banque').value,
+        guichet:document.getElementById('s_guichet').value,
+        compte:document.getElementById('s_compte').value,
+        rib:document.getElementById('s_rib').value
+    };
+}
+
+
 function saveCompany(){
 
-const company={
+    const company=getCompanyData();
 
-nom:s_nom.value,
-secteur:s_secteur.value,
-slogan:s_slogan.value,
-adresse:s_adresse.value,
-tel1:s_tel1.value,
-tel2:s_tel2.value,
-email:s_email.value,
-rccm:s_rccm.value,
-nif:s_nif.value,
-banque:s_banque.value,
-guichet:s_guichet.value,
-compte:s_compte.value,
-rib:s_rib.value
+    localStorage.setItem(
+        'egcob_company',
+        JSON.stringify(company)
+    );
 
-};
+    applyCompany(company);
 
-localStorage.setItem('egcob_company',JSON.stringify(company));
-
-loadCompany();
-
-alert('Informations de la société enregistrées.');
-
+    alert('Informations de la société enregistrées.');
 }
 
 
 function loadCompany(){
 
-const data=JSON.parse(localStorage.getItem('egcob_company')||'{}');
+    const saved=localStorage.getItem('egcob_company');
 
-if(!data.nom)return;
+    let data;
 
-document.getElementById('companyName').textContent=data.nom;
-document.getElementById('companySector').textContent=data.secteur;
-document.getElementById('companySlogan').textContent=data.slogan;
+    if(saved){
 
-document.getElementById('companyContact').innerHTML=
-'📍 '+data.adresse+'<br>'+
-'📞 '+data.tel1+
-(data.tel2?' / '+data.tel2:'')+
-'<br>✉️ '+data.email;
+        data=JSON.parse(saved);
 
-document.getElementById('adminFacture').innerHTML=`
+        const fields=[
+            'nom',
+            'secteur',
+            'slogan',
+            'adresse',
+            'tel1',
+            'tel2',
+            'email',
+            'rccm',
+            'nif',
+            'banque',
+            'guichet',
+            'compte',
+            'rib'
+        ];
 
-<div class="admin-item"><strong>R.C.C.M.</strong><span>${data.rccm}</span></div>
-<div class="admin-item"><strong>NIF</strong><span>${data.nif}</span></div>
-<div class="admin-item"><strong>CODE BANQUE</strong><span>${data.banque}</span></div>
-<div class="admin-item"><strong>CODE GUICHET</strong><span>${data.guichet}</span></div>
-<div class="admin-item"><strong>N° COMPTE</strong><span>${data.compte}</span></div>
-<div class="admin-item"><strong>RIB</strong><span>${data.rib}</span></div>
+        fields.forEach(function(field){
 
-`;
+            const input=document.getElementById('s_'+field);
 
-const footer=`
+            if(input && data[field]!==undefined){
+                input.value=data[field];
+            }
+        });
 
-<div>📞 ${data.tel1}</div>
-<div>✉️ ${data.email}</div>
-<div>📍 ${data.adresse}</div>
+    }else{
 
-`;
+        data=getCompanyData();
+    }
 
-document.getElementById('footerFacture').innerHTML=footer;
-document.getElementById('footerLivraison').innerHTML=footer;
+    applyCompany(data);
+}
 
+
+function applyCompany(data){
+
+    document.querySelectorAll('.company-name-out').forEach(function(el){
+        el.textContent=data.nom||'EGCOB-SARL';
+    });
+
+    document.querySelectorAll('.company-sector-out').forEach(function(el){
+        el.textContent=data.secteur||'COMMERCE & BTP';
+    });
+
+    document.querySelectorAll('.company-slogan-out').forEach(function(el){
+        el.textContent=data.slogan||'';
+    });
+
+    const contact=
+        '📍 '+(data.adresse||'')+
+        '<br>📞 '+(data.tel1||'')+
+        (data.tel2 ? ' / '+data.tel2 : '')+
+        '<br>✉️ '+(data.email||'');
+
+    document.querySelectorAll('.company-contact-out').forEach(function(el){
+        el.innerHTML=contact;
+    });
+
+    const admin=`
+
+        <div class="admin-item">
+            <strong>R.C.C.M.</strong>
+            <span>${data.rccm||''}</span>
+        </div>
+
+        <div class="admin-item">
+            <strong>NIF</strong>
+            <span>${data.nif||''}</span>
+        </div>
+
+        <div class="admin-item">
+            <strong>CODE BANQUE</strong>
+            <span>${data.banque||''}</span>
+        </div>
+
+        <div class="admin-item">
+            <strong>CODE GUICHET</strong>
+            <span>${data.guichet||''}</span>
+        </div>
+
+        <div class="admin-item">
+            <strong>N° COMPTE</strong>
+            <span>${data.compte||''}</span>
+        </div>
+
+        <div class="admin-item">
+            <strong>RIB</strong>
+            <span>${data.rib||''}</span>
+        </div>
+    `;
+
+    document.querySelectorAll('.admin-company-out').forEach(function(el){
+        el.innerHTML=admin;
+    });
+
+    const footer=`
+
+        <div>📞 ${data.tel1||''}</div>
+        <div>✉️ ${data.email||''}</div>
+        <div>📍 ${data.adresse||''}</div>
+    `;
+
+    document.querySelectorAll('.footer-company-out').forEach(function(el){
+        el.innerHTML=footer;
+    });
 }
 
 
@@ -1709,65 +2341,83 @@ document.getElementById('footerLivraison').innerHTML=footer;
 
 function saveInvoice(){
 
-const invoice={
+    const invoice={
 
-numero:f_numero.value,
-client:f_client.value,
-date:f_date.value,
-total:document.getElementById('ttc_facture').textContent,
-created:new Date().toLocaleString('fr-FR')
+        numero:document.getElementById('f_numero').value,
+        client:document.getElementById('f_client').value,
+        date:document.getElementById('f_date').value,
+        total:document.getElementById('ttc_facture').textContent,
+        created:new Date().toLocaleString('fr-FR')
+    };
 
-};
+    let history=[];
 
-let history=JSON.parse(localStorage.getItem('egcob_history')||'[]');
+    try{
+        history=JSON.parse(
+            localStorage.getItem('egcob_history')||'[]'
+        );
+    }catch(error){
+        history=[];
+    }
 
-history.unshift(invoice);
+    history.unshift(invoice);
 
-localStorage.setItem('egcob_history',JSON.stringify(history));
+    localStorage.setItem(
+        'egcob_history',
+        JSON.stringify(history)
+    );
 
-loadHistory();
+    loadHistory();
 
-alert('Facture sauvegardée.');
-
+    alert('Facture sauvegardée.');
 }
 
 
 function loadHistory(){
 
-const history=JSON.parse(localStorage.getItem('egcob_history')||'[]');
+    let history=[];
 
-const container=document.getElementById('historyList');
+    try{
+        history=JSON.parse(
+            localStorage.getItem('egcob_history')||'[]'
+        );
+    }catch(error){
+        history=[];
+    }
 
-container.innerHTML='';
+    const container=document.getElementById('historyList');
 
-if(!history.length){
+    if(!container){
+        return;
+    }
 
-container.innerHTML='<p>Aucune facture enregistrée.</p>';
+    container.innerHTML='';
 
-return;
+    if(!history.length){
 
-}
+        container.innerHTML=
+        '<p>Aucune facture enregistrée.</p>';
 
-history.forEach(item=>{
+        return;
+    }
 
-const div=document.createElement('div');
+    history.forEach(function(item){
 
-div.className='history-item';
+        const div=document.createElement('div');
 
-div.innerHTML=`
+        div.className='history-item';
 
-<strong>${item.numero}</strong><br>
-Client : ${item.client}<br>
-Date : ${dateFR(item.date)}<br>
-Total : ${item.total}<br>
-<small>Enregistrée : ${item.created}</small>
+        div.innerHTML=`
 
-`;
+            <strong>${item.numero||''}</strong><br>
+            Client : ${item.client||''}<br>
+            Date : ${dateFR(item.date||'')}<br>
+            Total : ${item.total||''}<br>
+            <small>Enregistrée : ${item.created||''}</small>
+        `;
 
-container.appendChild(div);
-
-});
-
+        container.appendChild(div);
+    });
 }
 
 
@@ -1775,254 +2425,181 @@ container.appendChild(div);
 
 function numberToWords(number){
 
-number=Math.round(Number(number||0));
+    number=Math.round(Number(number||0));
 
-if(number===0)return'Zéro';
+    if(number===0){
+        return 'Zéro';
+    }
 
-const units=[
-'','un','deux','trois','quatre',
-'cinq','six','sept','huit','neuf',
-'dix','onze','douze','treize',
-'quatorze','quinze','seize',
-'dix-sept','dix-huit','dix-neuf'
-];
+    const units=[
+        '',
+        'un',
+        'deux',
+        'trois',
+        'quatre',
+        'cinq',
+        'six',
+        'sept',
+        'huit',
+        'neuf',
+        'dix',
+        'onze',
+        'douze',
+        'treize',
+        'quatorze',
+        'quinze',
+        'seize',
+        'dix-sept',
+        'dix-huit',
+        'dix-neuf'
+    ];
 
-const tens=[
-'','','vingt','trente',
-'quarante','cinquante','soixante'
-];
+    const tens=[
+        '',
+        '',
+        'vingt',
+        'trente',
+        'quarante',
+        'cinquante',
+        'soixante'
+    ];
 
-function underHundred(n){
+    function underHundred(n){
 
-if(n<20)return units[n];
+        if(n<20){
+            return units[n];
+        }
 
-if(n<70){
+        if(n<70){
 
-const ten=Math.floor(n/10);
-const unit=n%10;
+            const ten=Math.floor(n/10);
+            const unit=n%10;
 
-return tens[ten]+
-(unit===1?' et un':
-unit?'-'+units[unit]:'');
+            return tens[ten]+
+            (unit===1 ? ' et un' :
+            unit ? '-'+units[unit] : '');
+        }
 
+        if(n<80){
+            return 'soixante-'+underHundred(n-60);
+        }
+
+        return 'quatre-vingt'+
+        (n===80 ? 's' : '-'+underHundred(n-80));
+    }
+
+
+    function underThousand(n){
+
+        if(n<100){
+            return underHundred(n);
+        }
+
+        const hundred=Math.floor(n/100);
+        const rest=n%100;
+
+        let result=
+        hundred===1 ?
+        'cent' :
+        units[hundred]+' cent';
+
+        if(rest===0 && hundred>1){
+            result+='s';
+        }
+
+        if(rest>0){
+            result+=' '+underHundred(rest);
+        }
+
+        return result;
+    }
+
+
+    if(number<1000){
+        return underThousand(number);
+    }
+
+
+    if(number<1000000){
+
+        const thousands=Math.floor(number/1000);
+        const rest=number%1000;
+
+        return (
+            thousands===1 ?
+            'mille' :
+            underThousand(thousands)+' mille'
+        )+
+        (rest ? ' '+underThousand(rest) : '');
+    }
+
+
+    if(number<1000000000){
+
+        const millions=Math.floor(number/1000000);
+        const rest=number%1000000;
+
+        return (
+            millions===1 ?
+            'un million' :
+            numberToWords(millions)+' millions'
+        )+
+        (rest ? ' '+numberToWords(rest) : '');
+    }
+
+    return number.toLocaleString('fr-FR');
 }
-
-if(n<80)return'soixante-'+underHundred(n-60);
-
-return'quatre-vingt'+
-(n===80?'s':'-'+underHundred(n-80));
-
-}
-
-function underThousand(n){
-
-if(n<100)return underHundred(n);
-
-const hundred=Math.floor(n/100);
-const rest=n%100;
-
-let result=
-hundred===1?'cent':units[hundred]+' cent';
-
-if(rest===0&&hundred>1)result+='s';
-
-if(rest>0)result+=' '+underHundred(rest);
-
-return result;
-
-}
-
-if(number<1000)return underThousand(number);
-
-if(number<1000000){
-
-const thousands=Math.floor(number/1000);
-const rest=number%1000;
-
-return(thousands===1?'mille':underThousand(thousands)+' mille')
-+(rest?' '+underThousand(rest):'');
-
-}
-
-if(number<1000000000){
-
-const millions=Math.floor(number/1000000);
-const rest=number%1000000;
-
-return(millions===1?'un million':underThousand(millions)+' millions')
-+(rest?' '+numberToWords(rest):'');
-
-}
-
-return number.toLocaleString('fr-FR');
-
-}
-
-
-/* CREATION PROFORMA */
-
-document.getElementById('proformaContent').innerHTML=`
-
-<div class="document">
-
-<div class="document-top">
-
-<div>
-<h1 class="company-name">EGCOB-SARL</h1>
-<p class="company-sector">COMMERCE & BTP</p>
-<p class="company-slogan">Bâtir aujourd'hui, construire demain</p>
-</div>
-
-<div class="document-title">
-<h2>FACTURE PRO FORMA</h2>
-</div>
-
-</div>
-
-<table class="document-table">
-
-<thead>
-<tr>
-<th>N°</th>
-<th>DÉSIGNATION</th>
-<th>QTÉ</th>
-<th>UNITÉ</th>
-<th>PRIX HT</th>
-<th>MONTANT HT</th>
-<th class="no-print">X</th>
-</tr>
-</thead>
-
-<tbody id="proformaRows"></tbody>
-
-</table>
-
-<div class="actions no-print">
-<button class="btn btn-primary"
-onclick="addCommercialRow('proformaRows','proforma')">
-➕ Ajouter ligne
-</button>
-</div>
-
-<div class="bottom-zone">
-
-<div class="amount-words">
-<h4>MONTANT EN LETTRES</h4>
-<p id="words_proforma"></p>
-</div>
-
-<table class="totals">
-<tr><td>TOTAL HT</td><td id="ht_proforma"></td></tr>
-<tr><td>TVA</td><td id="tva_proforma"></td></tr>
-<tr><td>TOTAL TTC</td><td id="ttc_proforma"></td></tr>
-</table>
-
-</div>
-
-</div>
-
-`;
-
-
-/* CREATION DEVIS */
-
-document.getElementById('devisContent').innerHTML=`
-
-<div class="document">
-
-<div class="document-top">
-
-<div>
-<h1 class="company-name">EGCOB-SARL</h1>
-<p class="company-sector">COMMERCE & BTP</p>
-<p class="company-slogan">Bâtir aujourd'hui, construire demain</p>
-</div>
-
-<div class="document-title">
-<h2>DEVIS</h2>
-</div>
-
-</div>
-
-<table class="document-table">
-
-<thead>
-<tr>
-<th>N°</th>
-<th>DÉSIGNATION</th>
-<th>QTÉ</th>
-<th>UNITÉ</th>
-<th>PRIX HT</th>
-<th>MONTANT HT</th>
-<th class="no-print">X</th>
-</tr>
-</thead>
-
-<tbody id="devisRows"></tbody>
-
-</table>
-
-<div class="actions no-print">
-<button class="btn btn-primary"
-onclick="addCommercialRow('devisRows','devis')">
-➕ Ajouter ligne
-</button>
-</div>
-
-<div class="bottom-zone">
-
-<div class="amount-words">
-<h4>MONTANT EN LETTRES</h4>
-<p id="words_devis"></p>
-</div>
-
-<table class="totals">
-<tr><td>TOTAL HT</td><td id="ht_devis"></td></tr>
-<tr><td>TVA</td><td id="tva_devis"></td></tr>
-<tr><td>TOTAL TTC</td><td id="ttc_devis"></td></tr>
-</table>
-
-</div>
-
-</div>
-
-`;
 
 
 /* INITIALISATION */
 
-const today=new Date().toISOString().split('T')[0];
+document.addEventListener('DOMContentLoaded',function(){
 
-[
-'f_date',
-'p_date',
-'d_date',
-'l_date',
-'b_date',
-'t_date'
-].forEach(id=>{
+    const today=new Date().toISOString().split('T')[0];
 
-const el=document.getElementById(id);
+    [
+        'f_date',
+        'p_date',
+        'd_date',
+        'l_date',
+        'b_date',
+        't_date'
+    ].forEach(function(id){
 
-if(el)el.value=today;
+        const el=document.getElementById(id);
+
+        if(el && !el.value){
+            el.value=today;
+        }
+    });
+
+
+    addCommercialRow('factureRows','facture');
+    addCommercialRow('proformaRows','proforma');
+    addCommercialRow('devisRows','devis');
+
+    addLivraisonRow();
+    addObservationRow();
+
+    addBPURow();
+    addTechniqueRow();
+
+    updateDocument('f');
+    updateDocument('p');
+    updateDocument('d');
+
+    updateLivraison();
+    updateBPUInfo();
+    updateTechniqueInfo();
+
+    calculateCommercial('facture');
+    calculateCommercial('proforma');
+    calculateCommercial('devis');
+
+    loadCompany();
+    loadHistory();
 
 });
-
-addCommercialRow('factureRows','facture');
-addCommercialRow('proformaRows','proforma');
-addCommercialRow('devisRows','devis');
-
-addLivraisonRow();
-addObservationRow();
-
-addBPURow();
-addTechniqueRow();
-
-updateDocument('f');
-updateLivraison();
-
-loadCompany();
-loadHistory();
 
 </script>
 
